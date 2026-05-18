@@ -95,7 +95,7 @@ export default function ContactPage() {
     const resolvedProject = projectType === "Other" ? `Other: ${customProject}` : projectType;
 
     try {
-      const response = await fetch("https://formspree.io/f/REPLACE_WITH_YOUR_ID", {
+      const response = await fetch("https://formspree.io/f/mdajonkr", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ name, email, businessType: resolvedBusiness, projectType: resolvedProject, message }),
