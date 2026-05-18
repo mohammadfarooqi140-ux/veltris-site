@@ -22,7 +22,7 @@ export default function WebsitePreviewStack() {
   }, []);
 
   return (
-    <div className="relative w-full h-[280px] md:h-[600px] flex items-center justify-end pointer-events-none mt-8 md:mt-0">
+    <div className="relative w-full h-auto md:h-[600px] flex items-center justify-end pointer-events-none mt-4 md:mt-0">
       
       {/* Service Indicator */}
       <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-6 z-20 hidden lg:flex pointer-events-auto">
@@ -50,7 +50,7 @@ export default function WebsitePreviewStack() {
       </div>
 
       {/* Stack Area */}
-      <div className="relative w-full lg:w-[85%] h-full flex items-center justify-center lg:justify-end lg:pr-12">
+      <div className="relative w-full lg:w-[85%] h-auto md:h-full flex items-center justify-center lg:justify-end lg:pr-12">
         <AnimatePresence mode="popLayout">
           {servicesList.map((service, index) => {
             const offset = (index - activeIndex + servicesList.length) % servicesList.length;

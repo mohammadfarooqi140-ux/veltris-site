@@ -33,13 +33,13 @@ const timelineSteps = [
 // ─── Shared field classes ─────────────────────────────────────────────────────
 
 const fieldClass =
-  "bg-transparent border border-[#1a1a1a] text-white p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm placeholder:text-[#444]";
+  "bg-transparent border border-[#1a1a1a] text-white p-3 md:p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm placeholder:text-[#444]";
 
 const selectClass =
-  "bg-[#080808] border border-[#1a1a1a] text-white p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm cursor-pointer";
+  "bg-[#080808] border border-[#1a1a1a] text-white p-3 md:p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm cursor-pointer";
 
 const labelClass =
-  "text-[10px] font-semibold uppercase tracking-widest text-[#555] block mb-2";
+  "text-[10px] font-semibold uppercase tracking-widest text-[#555] block mb-1.5 md:mb-2";
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-[#080808] min-h-screen">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-16">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-10 md:pb-16">
 
         {/* ── DESKTOP: 2-col / MOBILE: stacked ── */}
         <div className="flex flex-col lg:flex-row gap-16 xl:gap-24 items-start">
@@ -173,7 +173,7 @@ export default function ContactPage() {
                       ease: [0.22, 1, 0.36, 1],
                       delay: 0.5 + index * 0.1,
                     }}
-                    className="relative pl-8 pb-8 last:pb-0 group"
+                    className="relative pl-8 pb-6 last:pb-0 group"
                   >
                     {/* Node */}
                     <motion.div
@@ -194,7 +194,7 @@ export default function ContactPage() {
             </div>
 
             {/* Direct email */}
-            <div className="mt-12 pt-8 border-t border-[#1a1a1a]">
+            <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#1a1a1a]">
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-3 font-mono">Prefer email?</p>
               <a
                 href="mailto:hello@veltris.com"
@@ -246,7 +246,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-                    className="p-5 md:p-10 space-y-5 md:space-y-7"
+                    className="p-4 md:p-10 space-y-4 md:space-y-7"
                   >
                     {/* Error Banner */}
                     <AnimatePresence>
@@ -264,7 +264,7 @@ export default function ContactPage() {
 
                     {/* Name + Email — staggered fade-up */}
                     <motion.div
-                      className="flex flex-col sm:flex-row gap-6"
+                      className="flex flex-col sm:flex-row gap-4 sm:gap-6"
                       initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
@@ -315,7 +315,7 @@ export default function ContactPage() {
                     </motion.div>
 
                     {/* Business Type + Project Type */}
-                    <div className="flex flex-col sm:flex-row gap-6">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                       {/* Business Type */}
                       <div className="w-full">
                         <label className={labelClass}>Business Type</label>

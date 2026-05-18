@@ -58,7 +58,7 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative pt-28 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
           {/* Left Text */}
           <motion.div
             className="w-full md:w-[55%]"

@@ -19,9 +19,20 @@ export default function Navbar() {
         setIsScrolled(false);
       }
     };
+    
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isOpen]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -96,9 +107,21 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 top-[73px] z-40 bg-[#080808] flex flex-col px-6 pt-12 pb-8 overflow-y-auto"
+            className="md:hidden fixed inset-0 z-[60] bg-[#080808] flex flex-col px-6 py-6 overflow-y-auto"
           >
-            <div className="flex flex-col space-y-6 flex-grow">
+            {/* Top row inside menu */}
+            <div className="flex items-center justify-between mb-16">
+              <span className="text-xl font-bold tracking-wider text-white">Veltris</span>
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
+                aria-label="Close Menu"
+              >
+                <X size={28} />
+              </button>
+            </div>
+
+            <div className="flex flex-col space-y-6 flex-grow pl-2">
               {navLinks.map((link, index) => {
                 const isActive = pathname === link.href;
                 return (
@@ -111,11 +134,16 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className={`block py-3 text-3xl sm:text-4xl tracking-wide uppercase font-bold transition-colors ${
-                        isActive ? "text-white" : "text-neutral-500 hover:text-white"
-                      }`}
+                      className="group flex items-baseline gap-4 py-2"
                     >
-                      {link.name}
+                      <span className="text-[10px] font-mono text-[#555] group-hover:text-[#888] transition-colors">
+                        0{index + 1}
+                      </span>
+                      <span className={`text-2xl tracking-wide uppercase font-semibold transition-colors ${
+                        isActive ? "text-white" : "text-neutral-400 group-hover:text-white"
+                      }`}>
+                        {link.name}
+                      </span>
                     </Link>
                   </motion.div>
                 );
@@ -131,14 +159,14 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-white text-black font-semibold text-sm tracking-widest uppercase py-5 rounded-none hover:bg-neutral-200 transition-all duration-300"
+                className="block w-full text-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase py-4 rounded-none hover:bg-white hover:text-black transition-all duration-300"
               >
                 Start a Project
               </Link>
               
-              <div className="flex justify-between items-center mt-12 text-[#555] text-xs font-mono uppercase tracking-widest">
+              <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
                 <span>© 2025 Veltris</span>
-                <a href="mailto:hello@veltris.com" className="hover:text-white transition-colors">hello@veltris.com</a>
+                <a href="mailto:hello@veltris.com" className="hover:text-[#888] transition-colors">hello@veltris.com</a>
               </div>
             </motion.div>
           </motion.div>

@@ -62,7 +62,7 @@ export default function WorkPage() {
     <main className="min-h-screen bg-[#080808]">
 
       {/* ── 1. COMPACT HERO INTRO ─────────────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto pt-24 md:pt-32 pb-8 md:pb-10">
+      <section className="px-6 md:px-12 max-w-7xl mx-auto pt-24 md:pt-32 pb-4 md:pb-10">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -102,7 +102,7 @@ export default function WorkPage() {
           <div className="flex flex-col lg:flex-row">
 
             {/* LEFT TEXT PANEL — 40% */}
-            <div className="w-full lg:w-[40%] p-6 md:p-10 lg:p-12 flex flex-col justify-between gap-10 border-b lg:border-b-0 lg:border-r border-[#1a1a1a]">
+            <div className="w-full lg:w-[40%] p-5 md:p-10 lg:p-12 flex flex-col justify-between gap-8 md:gap-10 border-b lg:border-b-0 lg:border-r border-[#1a1a1a]">
               <div>
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-5 font-mono">
                   E-COMMERCE / BRAND EXPERIENCE
@@ -150,7 +150,7 @@ export default function WorkPage() {
             </div>
 
             {/* RIGHT VISUAL PANEL — 60% */}
-            <div className="w-full lg:w-[60%] relative bg-[#040404] min-h-[320px] md:min-h-[480px] lg:min-h-0 overflow-hidden flex items-center justify-center p-6 lg:p-12">
+            <div className="w-full lg:w-[60%] relative bg-[#040404] min-h-[260px] md:min-h-[480px] lg:min-h-0 overflow-hidden flex items-center justify-center p-4 lg:p-12">
               {/* Large desktop preview */}
               <motion.div
                 animate={{ y: [0, -10, 0] }}
@@ -199,7 +199,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── 3. BUILD BREAKDOWN TIMELINE ──────────────────────────────────── */}
-      <section className="px-6 md:px-12 max-w-7xl mx-auto py-16 md:py-28">
+      <section className="px-6 md:px-12 max-w-7xl mx-auto py-10 md:py-28">
 
         {/* Section heading */}
         <motion.div
@@ -207,7 +207,7 @@ export default function WorkPage() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="mb-14 md:mb-20 border-b border-[#1a1a1a] pb-8"
+          className="mb-10 md:mb-20 border-b border-[#1a1a1a] pb-8"
         >
           <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-4 font-mono">Build Breakdown</p>
           <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
@@ -238,7 +238,7 @@ export default function WorkPage() {
               </div>
 
               {/* Details */}
-              <div className="p-6">
+              <div className="p-5">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-5 font-mono">Project Snapshot</p>
                 <h3 className="text-xl font-bold text-white mb-6">Aethalgard</h3>
                 <div className="flex flex-col gap-4 mb-7">
@@ -254,14 +254,6 @@ export default function WorkPage() {
                     </div>
                   ))}
                 </div>
-                <a
-                  href="https://athelgard.vercel.app/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-[11px] uppercase tracking-widest text-[#555] hover:text-white transition-colors duration-300 inline-flex items-center gap-2"
-                >
-                  View project <span>&rarr;</span>
-                </a>
               </div>
             </div>
           </motion.div>
@@ -287,7 +279,7 @@ export default function WorkPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: index * 0.08 }}
-                className="group border border-[#1a1a1a] bg-[#050505] p-6 md:p-9 hover:border-[#2d2d2d] hover:-translate-y-1 transition-all duration-500"
+                className="group border border-[#1a1a1a] bg-[#050505] p-5 md:p-9 hover:border-[#2d2d2d] hover:-translate-y-1 transition-all duration-500"
               >
                 <span className="text-[10px] font-mono text-[#444] mb-4 block group-hover:text-[#777] transition-colors duration-300">
                   {step.num}
@@ -302,7 +294,7 @@ export default function WorkPage() {
 
       {/* ── 4. WHAT THIS PROJECT DEMONSTRATES ───────────────────────────── */}
       <section className="border-t border-[#1a1a1a] bg-[#040404]">
-        <div className="px-6 md:px-12 max-w-7xl mx-auto py-16 md:py-24">
+        <div className="px-6 md:px-12 max-w-7xl mx-auto py-10 md:py-24">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -331,7 +323,7 @@ export default function WorkPage() {
                   hidden: { opacity: 0, y: 20 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
                 }}
-                className="bg-[#040404] p-6 md:p-10 group hover:bg-[#070707] transition-colors duration-500"
+                className="bg-[#040404] p-5 md:p-10 group hover:bg-[#070707] transition-colors duration-500"
               >
                 <span className="text-[10px] font-mono text-[#444] mb-5 block">{card.num}</span>
                 <h3 className="text-lg font-bold text-white mb-3">{card.title}</h3>
@@ -343,7 +335,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── 5. FINAL CTA ─────────────────────────────────────────────────── */}
-      <section className="border-t border-[#1a1a1a] py-16 md:py-20 px-6 text-center">
+      <section className="border-t border-[#1a1a1a] py-10 md:py-20 px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
