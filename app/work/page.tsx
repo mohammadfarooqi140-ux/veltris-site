@@ -363,7 +363,7 @@ export default function WorkPage() {
             Your project could be next.
           </h2>
           <p className="text-base text-[#666] mb-10 leading-relaxed">
-            Tell us what you want to build and we'll shape the right website around your business.
+            Tell us what you want to build and we&apos;ll shape the right website around your business.
           </p>
           <Link
             href="/contact"

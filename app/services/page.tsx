@@ -207,7 +207,7 @@ export default function ServicesPage() {
         <div className="max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Not sure what type of website you need?</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-            Tell us what you're building and we'll recommend the right setup.
+            Tell us what you&apos;re building and we&apos;ll recommend the right setup.
           </h2>
           <Link
             href="/contact"

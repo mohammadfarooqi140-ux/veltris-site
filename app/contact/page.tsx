@@ -140,7 +140,7 @@ export default function ContactPage() {
               Start a project.
             </h1>
             <p className="text-base text-[#777] leading-relaxed mb-12 max-w-sm">
-              Tell us what you need. We'll take it from there.
+              Tell us what you need. We&apos;ll take it from there.
             </p>
 
             {/* Divider */}
@@ -229,7 +229,7 @@ export default function ContactPage() {
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3">Message Sent</h3>
                     <p className="text-[#666] text-sm max-w-sm mb-8 leading-relaxed">
-                      Thank you for reaching out. We'll review your project details and get back to you within 24 hours.
+                      Thank you for reaching out. We&apos;ll review your project details and get back to you within 24 hours.
                     </p>
                     <button
                       onClick={() => setStatus("idle")}
