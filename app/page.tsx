@@ -51,7 +51,7 @@ export default function Home() {
   return (
     <div className="bg-[#080808]">
       {/* Section 1 — Hero */}
-      <section className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-[#080808]">
+      <section className="relative min-h-[100vh] flex flex-col items-center justify-center pt-24 sm:pt-28 md:pt-32 overflow-hidden bg-[#080808]">
 
         {/* Scrolling cards background layer */}
         <div className="absolute inset-0 z-0 flex flex-col justify-center pointer-events-none select-none">
