@@ -57,7 +57,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-40 pb-20 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
+      <section className="relative pt-32 pb-12 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left Text */}
           <motion.div
@@ -99,7 +99,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICES BENTO GRID */}
-      <section className="pt-20 pb-32 md:pt-24 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto">
+      <section className="pt-16 pb-20 md:pt-24 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-6 gap-6"
           initial="hidden"
@@ -116,7 +116,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`group bg-black border border-[#1a1a1a] rounded-none p-8 md:p-10 flex flex-col justify-between hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
+              className={`group bg-black border border-[#1a1a1a] rounded-none p-6 md:p-10 flex flex-col justify-between hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
                 service.large ? "md:col-span-3" : "md:col-span-2"
               }`}
               variants={{
@@ -173,8 +173,8 @@ export default function ServicesPage() {
       </section>
 
       {/* PROCESS SECTION */}
-      <section className="py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
-        <div className="mb-24">
+      <section className="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+        <div className="mb-16 md:mb-24">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-4 font-mono">Process</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">How it works</h2>
         </div>
@@ -203,7 +203,7 @@ export default function ServicesPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="border-t border-[#1a1a1a] py-32 px-6 text-center">
+      <section className="border-t border-[#1a1a1a] py-20 md:py-32 px-6 text-center">
         <div className="max-w-2xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Not sure what type of website you need?</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">

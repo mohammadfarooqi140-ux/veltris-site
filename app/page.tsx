@@ -98,7 +98,7 @@ export default function Home() {
       </section>
 
       {/* Section 2 — Services Strip */}
-      <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+      <section className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
         <div className="max-w-3xl mb-16">
           <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
             OUR CAPABILITIES
@@ -117,7 +117,7 @@ export default function Home() {
               key={index}
               whileHover={{ y: -4 }}
               transition={{ duration: 0.2 }}
-              className="group border border-[#1a1a1a] bg-[#0d0d0d] p-6 sm:p-8 rounded-none transition-colors duration-200 hover:border-[#333] flex flex-col justify-between"
+              className="group border border-[#1a1a1a] bg-[#0d0d0d] p-6 md:p-8 rounded-none transition-colors duration-200 hover:border-[#333] flex flex-col justify-between"
             >
               <div>
                 <div className="flex justify-between items-start mb-6">
@@ -134,8 +134,8 @@ export default function Home() {
       </section>
 
       {/* Section 3 — Case Study Teaser */}
-      <section className="py-12 px-6 md:px-12 max-w-7xl mx-auto">
-        <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-8 md:p-12 flex flex-col sm:flex-row items-center justify-between gap-12 rounded-none">
+      <section className="py-10 md:py-12 px-6 md:px-12 max-w-7xl mx-auto">
+        <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-6 md:p-12 flex flex-col sm:flex-row items-center justify-between gap-12 rounded-none">
           {/* Left Column */}
           <div className="flex flex-col items-start max-w-xl w-full">
             <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4">
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* Section 5 — CTA Section */}
-      <section className="bg-[#0d0d0d] border-t border-[#1a1a1a] py-24 text-center px-6">
+      <section className="bg-[#0d0d0d] border-t border-[#1a1a1a] py-16 md:py-24 text-center px-6">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-8">
             Ready to build something?
