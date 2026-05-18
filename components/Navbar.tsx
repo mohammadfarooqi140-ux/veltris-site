@@ -80,10 +80,11 @@ export default function Navbar() {
         {/* Mobile Hamburger Menu Toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white hover:text-neutral-400 transition-colors p-1"
-          aria-label="Toggle Menu"
+          className="md:hidden text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
+          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
@@ -91,36 +92,55 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed inset-0 z-40 bg-[#080808] flex flex-col items-center justify-center space-y-8 px-6"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden fixed inset-0 top-[73px] z-40 bg-[#080808] flex flex-col px-6 pt-12 pb-8 overflow-y-auto"
           >
-            {navLinks.map((link) => {
-              const isActive = pathname === link.href;
-              return (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className={`text-2xl tracking-wider uppercase font-medium transition-colors ${
-                    isActive ? "text-white" : "text-neutral-400 hover:text-white"
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              );
-            })}
-            <div className="pt-4 w-full max-w-sm">
+            <div className="flex flex-col space-y-6 flex-grow">
+              {navLinks.map((link, index) => {
+                const isActive = pathname === link.href;
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.4, delay: 0.1 + index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <Link
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className={`block py-3 text-3xl sm:text-4xl tracking-wide uppercase font-bold transition-colors ${
+                        isActive ? "text-white" : "text-neutral-500 hover:text-white"
+                      }`}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
+            </div>
+            
+            <motion.div 
+              className="mt-12 w-full pt-8 border-t border-[#1a1a1a]"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
+            >
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center bg-white text-black font-semibold text-sm tracking-widest uppercase py-4 rounded-none hover:bg-neutral-200 transition-all duration-300"
+                className="block w-full text-center bg-white text-black font-semibold text-sm tracking-widest uppercase py-5 rounded-none hover:bg-neutral-200 transition-all duration-300"
               >
                 Start a Project
               </Link>
-            </div>
+              
+              <div className="flex justify-between items-center mt-12 text-[#555] text-xs font-mono uppercase tracking-widest">
+                <span>© 2025 Veltris</span>
+                <a href="mailto:hello@veltris.com" className="hover:text-white transition-colors">hello@veltris.com</a>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

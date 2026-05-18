@@ -79,17 +79,9 @@ export default function WorkPage() {
             Aethalgard is a premium dark e-commerce experience designed to show how Veltris approaches visual identity, product presentation, and modern development.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a
-              href="https://athelgard.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-white text-black font-semibold text-[11px] tracking-widest uppercase px-7 py-3.5 hover:bg-[#e8e8e8] transition-colors duration-300"
-            >
-              View Live Project &rarr;
-            </a>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center border border-[#2a2a2a] text-[#aaa] font-semibold text-[11px] tracking-widest uppercase px-7 py-3.5 hover:border-[#555] hover:text-white transition-all duration-300"
+              className="inline-flex items-center justify-center bg-white text-black font-semibold text-[11px] tracking-widest uppercase px-8 py-4 hover:bg-[#e8e8e8] transition-colors duration-300"
             >
               Start Your Project &rarr;
             </Link>

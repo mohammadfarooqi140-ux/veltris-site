@@ -9,9 +9,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#080808] border-t border-[#1a1a1a] text-neutral-400 py-16 px-6 md:px-12">
+    <footer className="bg-[#080808] border-t border-[#1a1a1a] text-neutral-400 py-10 md:py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
           {/* Left Column */}
           <div className="flex flex-col space-y-4">
             <Link href="/" className="text-xl font-bold tracking-wider text-white">

@@ -14,7 +14,7 @@ export default function WebsitePreviewCard({ type, offset }: { type: number, off
   
   return (
     <motion.div
-      className={`absolute w-[280px] md:w-[400px] h-[210px] md:h-[300px] border border-[#1f1f1f] bg-[#050505] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.25)] flex-col rounded-sm ${offset > 0 ? 'hidden md:flex' : 'flex'}`}
+      className={`absolute w-full max-w-[340px] md:max-w-none md:w-[400px] h-[220px] md:h-[300px] border border-[#1f1f1f] bg-[#050505] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.25)] flex-col rounded-sm ${offset > 0 ? 'hidden md:flex' : 'flex'}`}
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={{ 
         opacity: isActive ? 1 : Math.max(0.35, 1 - offset * 0.4),

@@ -57,7 +57,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-32 pb-12 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
+      <section className="relative pt-28 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left Text */}
           <motion.div
@@ -116,7 +116,7 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`group bg-black border border-[#1a1a1a] rounded-none p-6 md:p-10 flex flex-col justify-between hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
+              className={`group bg-black border border-[#1a1a1a] rounded-none p-5 md:p-10 flex flex-col justify-between hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
                 service.large ? "md:col-span-3" : "md:col-span-2"
               }`}
               variants={{
@@ -125,7 +125,7 @@ export default function ServicesPage() {
               }}
             >
               <div>
-                <div className="flex justify-between items-start mb-12">
+                <div className="flex justify-between items-start mb-8 md:mb-12">
                   <span className="text-xs font-mono text-[#555]">{service.number}</span>
                   {/* Subtle fake preview lines animation */}
                   <div className="w-16 h-12 flex flex-col gap-2 overflow-hidden opacity-30 group-hover:opacity-100 transition-opacity duration-500">
@@ -148,7 +148,7 @@ export default function ServicesPage() {
                 <h3 className="text-3xl font-bold text-white mb-4">{service.title}</h3>
                 <p className="text-[#888] text-sm mb-8 leading-relaxed max-w-md">{service.description}</p>
                 
-                <ul className="space-y-3 mb-12">
+                <ul className="space-y-3 mb-8 md:mb-12">
                   {service.features.map((feature, fIndex) => (
                     <li key={fIndex} className="text-[#666] text-sm flex items-center gap-3">
                       <span className="w-1 h-1 bg-[#444] rounded-full" />
