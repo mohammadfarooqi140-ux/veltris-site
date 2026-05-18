@@ -50,6 +50,7 @@ export default function ContactPage() {
   const [customBusiness, setCustomBusiness] = useState("");
   const [projectType, setProjectType] = useState("Landing Page");
   const [customProject, setCustomProject] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -98,12 +99,12 @@ export default function ContactPage() {
       const response = await fetch("https://formspree.io/f/mdajonkr", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, businessType: resolvedBusiness, projectType: resolvedProject, message }),
+        body: JSON.stringify({ name, email, phone: phone || "Not provided", businessType: resolvedBusiness, projectType: resolvedProject, message }),
       });
 
       if (response.ok) {
         setStatus("success");
-        setName(""); setEmail(""); setBusinessType("Corporate / Business");
+        setName(""); setEmail(""); setPhone(""); setBusinessType("Corporate / Business");
         setCustomBusiness(""); setProjectType("Landing Page");
         setCustomProject(""); setMessage("");
       } else {
@@ -290,6 +291,27 @@ export default function ContactPage() {
                           className={fieldClass}
                         />
                       </div>
+                    </motion.div>
+
+                    {/* Business Type + Project Type */}
+                    {/* Phone / WhatsApp — optional */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 12 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+                    >
+                      <label className={labelClass}>
+                        Phone / WhatsApp <span className="text-[#444] normal-case tracking-normal">(optional)</span>
+                      </label>
+                      <input
+                        type="tel"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        placeholder="+1 234 567 8900"
+                        disabled={status === "submitting"}
+                        className={fieldClass}
+                      />
+                      <p className="text-[10px] text-[#444] mt-2 font-mono">So we can reach out on WhatsApp or call you directly.</p>
                     </motion.div>
 
                     {/* Business Type + Project Type */}
