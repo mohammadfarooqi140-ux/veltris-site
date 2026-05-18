@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import WebsitePreviewStack from "@/components/WebsitePreviewStack";
 
@@ -54,28 +54,54 @@ const processSteps = [
 ];
 
 export default function ServicesPage() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative pt-24 pb-12 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-12">
           {/* Left Text */}
-          <motion.div
-            className="w-full md:w-[55%]"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <div className="w-full md:w-[55%]">
             <p className="text-xs uppercase tracking-widest text-[#555] mb-4 md:mb-8 font-mono">
               SERVICES
             </p>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 md:mb-8 tracking-tight leading-[1.05]">
-              Choose the website your business actually needs.
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 md:mb-8 tracking-tight leading-[1.05] flex flex-col">
+              <span className="relative block overflow-hidden pt-3 pb-1 -mt-3 w-full">
+                <motion.span
+                  className="block"
+                  initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                >
+                  Choose the website
+                </motion.span>
+              </span>
+              <span className="relative block overflow-hidden pt-3 pb-1 -mt-3 w-full">
+                <motion.span
+                  className="block"
+                  initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
+                >
+                  your business actually needs.
+                </motion.span>
+              </span>
             </h1>
-            <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-6 md:mb-12">
+            <motion.p 
+              className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-6 md:mb-12"
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.4 }}
+            >
               Clear website packages for businesses that need a sharper online presence — from single-page launches to full custom builds.
-            </p>
-            <div className="flex flex-wrap gap-4">
+            </motion.p>
+            <motion.div 
+              className="flex flex-wrap gap-4"
+              initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.55 }}
+            >
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-white text-black font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-none hover:bg-[#e0e0e0] transition-colors duration-300"
@@ -88,8 +114,8 @@ export default function ServicesPage() {
               >
                 See Our Work &rarr;
               </Link>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
 
           {/* Right Floating Visual */}
           <div className="w-full md:w-[45%]">

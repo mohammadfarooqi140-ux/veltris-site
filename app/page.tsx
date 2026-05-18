@@ -65,7 +65,7 @@ export default function Home() {
         <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-6">Web Design Studio</p>
           <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[1.05] tracking-tight flex flex-col items-center">
-            <span className="relative block overflow-hidden pb-1 w-full text-center">
+            <span className="relative block overflow-hidden pt-3 pb-1 -mt-3 w-full text-center">
               <motion.span
                 className="block"
                 initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
@@ -75,14 +75,24 @@ export default function Home() {
                 Digital Flagships
               </motion.span>
             </span>
-            <span className="relative block overflow-hidden pb-1 w-full text-center">
+            <span className="relative block overflow-hidden pt-3 pb-1 -mt-3 w-full text-center">
               <motion.span
                 className="block"
                 initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.28 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
               >
-                Built Without Compromise.
+                Built Without
+              </motion.span>
+            </span>
+            <span className="relative block overflow-hidden pt-3 pb-1 -mt-3 w-full text-center">
+              <motion.span
+                className="block"
+                initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.34 }}
+              >
+                Compromise.
               </motion.span>
             </span>
           </h1>
