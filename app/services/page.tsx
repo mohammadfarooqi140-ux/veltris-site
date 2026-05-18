@@ -57,8 +57,8 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-28 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
+      <section className="relative pt-24 pb-12 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-4 md:gap-12">
           {/* Left Text */}
           <motion.div
             className="w-full md:w-[55%]"
@@ -66,13 +66,13 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="text-xs uppercase tracking-widest text-[#555] mb-8 font-mono">
+            <p className="text-xs uppercase tracking-widest text-[#555] mb-4 md:mb-8 font-mono">
               SERVICES
             </p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 md:mb-8 tracking-tight leading-[1.05]">
               Choose the website your business actually needs.
             </h1>
-            <p className="text-lg sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-12">
+            <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-6 md:mb-12">
               Clear website packages for businesses that need a sharper online presence — from single-page launches to full custom builds.
             </p>
             <div className="flex flex-wrap gap-4">

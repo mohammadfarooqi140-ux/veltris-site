@@ -14,7 +14,7 @@ export default function WebsitePreviewCard({ type, offset }: { type: number, off
   
   return (
     <motion.div
-      className={`relative md:absolute w-full md:w-[400px] aspect-video md:aspect-auto md:h-[300px] border border-[#1f1f1f] bg-[#050505] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.25)] flex-col rounded-sm ${offset > 0 ? 'hidden md:flex' : 'flex'}`}
+      className={`relative md:absolute w-full md:w-[400px] aspect-video md:aspect-auto md:h-[300px] border border-[#1f1f1f] bg-[#050505] overflow-hidden shadow-[0_0_40px_rgba(0,0,0,0.25)] flex flex-col rounded-sm ${offset > 0 ? 'hidden md:flex' : 'flex'}`}
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={{ 
         opacity: isActive ? 1 : Math.max(0.35, 1 - offset * 0.4),
@@ -26,8 +26,18 @@ export default function WebsitePreviewCard({ type, offset }: { type: number, off
       exit={{ opacity: 0, y: -50, scale: 0.9 }}
       transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
     >
+      {/* Premium Minimal Browser Top Bar */}
+      <div className="flex items-center gap-1.5 px-3 py-2 border-b border-[#141414] bg-[#0a0a0a] shrink-0 select-none">
+        <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+        <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+        <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+        <div className="mx-auto text-[8px] font-mono text-[#555] tracking-[0.2em] pl-4">
+          VELTRIS // CONCEPT_0{type + 1}
+        </div>
+      </div>
+
       <motion.div 
-        className="w-full h-full relative"
+        className="flex-1 w-full relative overflow-hidden"
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
       >

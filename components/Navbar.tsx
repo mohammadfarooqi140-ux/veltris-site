@@ -99,77 +99,92 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* Mobile Navigation Drawer */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 z-[60] bg-[#080808] flex flex-col px-6 py-6 overflow-y-auto"
-          >
-            {/* Top row inside menu */}
-            <div className="flex items-center justify-between mb-16">
-              <span className="text-xl font-bold tracking-wider text-white">Veltris</span>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
-                aria-label="Close Menu"
-              >
-                <X size={28} />
-              </button>
-            </div>
-
-            <div className="flex flex-col space-y-6 flex-grow pl-2">
-              {navLinks.map((link, index) => {
-                const isActive = pathname === link.href;
-                return (
-                  <motion.div
-                    key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.1 + index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-                  >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline gap-4 py-2"
-                    >
-                      <span className="text-[10px] font-mono text-[#555] group-hover:text-[#888] transition-colors">
-                        0{index + 1}
-                      </span>
-                      <span className={`text-2xl tracking-wide uppercase font-semibold transition-colors ${
-                        isActive ? "text-white" : "text-neutral-400 group-hover:text-white"
-                      }`}>
-                        {link.name}
-                      </span>
-                    </Link>
-                  </motion.div>
-                );
-              })}
-            </div>
-            
-            <motion.div 
-              className="mt-12 w-full pt-8 border-t border-[#1a1a1a]"
+          <>
+            {/* Backdrop Overlay */}
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              onClick={() => setIsOpen(false)}
+              className="md:hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-xs"
+            />
+
+            {/* Slide-over Drawer */}
+            <motion.div
+              initial={{ x: "100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "100%" }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="md:hidden fixed top-0 right-0 bottom-0 w-[85%] sm:w-[380px] z-[60] bg-[#080808]/98 backdrop-blur-lg border-l border-[#1a1a1a] flex flex-col px-8 py-6 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-y-auto"
             >
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full text-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase py-4 rounded-none hover:bg-white hover:text-black transition-all duration-300"
-              >
-                Start a Project
-              </Link>
-              
-              <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
-                <span>© 2025 Veltris</span>
-                <a href="mailto:hello@veltris.com" className="hover:text-[#888] transition-colors">hello@veltris.com</a>
+              {/* Top row inside menu */}
+              <div className="flex items-center justify-between mb-16">
+                <span className="text-lg font-bold tracking-widest uppercase text-white">Veltris</span>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
+                  aria-label="Close Menu"
+                >
+                  <X size={24} />
+                </button>
               </div>
+
+              {/* Navigation Links */}
+              <div className="flex flex-col space-y-8 flex-grow pl-1">
+                {navLinks.map((link, index) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <motion.div
+                      key={link.name}
+                      initial={{ opacity: 0, x: 30 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ duration: 0.5, delay: 0.12 + index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+                    >
+                      <Link
+                        href={link.href}
+                        onClick={() => setIsOpen(false)}
+                        className="group flex items-baseline gap-4 py-1"
+                      >
+                        <span className="text-[9px] font-mono text-[#444] group-hover:text-[#888] transition-colors">
+                          0{index + 1}
+                        </span>
+                        <span className={`text-3xl tracking-wide uppercase font-light transition-colors duration-300 ${
+                          isActive ? "text-white font-medium" : "text-neutral-400 group-hover:text-white"
+                        }`}>
+                          {link.name}
+                        </span>
+                      </Link>
+                    </motion.div>
+                  );
+                })}
+              </div>
+              
+              {/* Bottom Drawer Footer */}
+              <motion.div 
+                className="mt-auto w-full pt-8 border-t border-[#1a1a1a] pb-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              >
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full text-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase py-4 rounded-none hover:bg-white hover:text-black transition-all duration-300"
+                >
+                  Start a Project
+                </Link>
+                
+                <div className="flex justify-between items-center mt-10 text-[#555] text-[9px] font-mono uppercase tracking-widest">
+                  <span>© 2026 Veltris</span>
+                  <a href="mailto:hello@veltris.com" className="hover:text-[#888] transition-colors lowercase">hello@veltris.com</a>
+                </div>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
     </nav>

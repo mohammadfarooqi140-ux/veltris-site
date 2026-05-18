@@ -1,11 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion, Variants, useReducedMotion } from "framer-motion";
 import { Globe, ShoppingBag, RefreshCw } from "lucide-react";
 import InfiniteScroll from "@/components/InfiniteScroll";
 
 export default function Home() {
+  const shouldReduceMotion = useReducedMotion();
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -62,13 +64,42 @@ export default function Home() {
         {/* Hero content */}
         <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-6">Web Design Studio</p>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
-            We Build Websites<br />That Work.
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[1.05] tracking-tight flex flex-col items-center">
+            <span className="relative block overflow-hidden pb-1 w-full text-center">
+              <motion.span
+                className="block"
+                initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+              >
+                Digital Flagships
+              </motion.span>
+            </span>
+            <span className="relative block overflow-hidden pb-1 w-full text-center">
+              <motion.span
+                className="block"
+                initial={shouldReduceMotion ? { opacity: 0 } : { y: "100%", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1], delay: 0.28 }}
+              >
+                Built Without Compromise.
+              </motion.span>
+            </span>
           </h1>
-          <p className="text-base sm:text-xl text-[#888] mb-10 max-w-xl mx-auto">
+          <motion.p 
+            className="text-base sm:text-xl text-[#888] mb-10 max-w-xl mx-auto"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
+          >
             Premium web design for businesses ready to grow.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+          </motion.p>
+          <motion.div 
+            className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap"
+            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.6 }}
+          >
             <a href="/work"
               className="bg-white text-black px-8 py-4 font-semibold rounded-none hover:bg-[#e0e0e0] transition-colors duration-200">
               See Our Work
@@ -77,7 +108,7 @@ export default function Home() {
               className="border border-[#333] text-white px-8 py-4 font-semibold rounded-none hover:border-[#666] transition-colors duration-200">
               Get a Free Quote
             </a>
-          </div>
+          </motion.div>
 
           <div className="flex flex-wrap gap-8 sm:gap-12 justify-center mt-14">
             <div className="text-center">
