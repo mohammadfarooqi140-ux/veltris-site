@@ -55,16 +55,16 @@ export default function Home() {
       <section className="relative min-h-[100vh] flex flex-col items-center justify-center pt-28 pb-12 md:pt-36 md:pb-20 overflow-hidden bg-[#080808]">
 
         {/* Scrolling cards background layer */}
-        <div className="absolute inset-0 z-0 flex flex-col justify-center opacity-12 sm:opacity-15 md:opacity-20 pointer-events-none select-none transition-opacity duration-700">
+        <div className="absolute inset-0 z-0 flex flex-col justify-center opacity-12 sm:opacity-15 md:opacity-32 pointer-events-none select-none transition-opacity duration-700">
           <InfiniteScroll />
         </div>
 
         {/* Soft blur overlay to soften background collage contrast */}
-        <div className="absolute inset-0 z-[5] backdrop-blur-[1.5px] pointer-events-none" />
+        <div className="absolute inset-0 z-[5] backdrop-blur-[0.8px] pointer-events-none" />
 
         {/* Deep, multi-layered dark cinematic gradient mask overlays */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080808]/95 via-[#080808]/70 to-[#080808] pointer-events-none" />
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_25%,#080808_95%)] opacity-85 pointer-events-none" />
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080808]/92 via-[#080808]/45 to-[#080808]/95 pointer-events-none" />
+        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_30%,#080808_95%)] opacity-65 pointer-events-none" />
 
         {/* Hero content */}
         <div className="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center justify-center">

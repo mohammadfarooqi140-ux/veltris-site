@@ -52,7 +52,7 @@ function ScrollRow({
               alt="project scroll preview"
               fill
               sizes="256px"
-              className="object-cover opacity-60 hover:opacity-80 transition-opacity duration-300"
+              className="object-cover opacity-85 hover:opacity-95 transition-opacity duration-300"
             />
           </motion.div>
         ))}
