@@ -1,14 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import { motion, Variants, useReducedMotion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Globe, ShoppingBag, RefreshCw } from "lucide-react";
 import InfiniteScroll from "@/components/InfiniteScroll";
 
 export default function Home() {
-  const shouldReduceMotion = useReducedMotion();
-
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -52,98 +49,50 @@ export default function Home() {
   return (
     <div className="bg-[#080808]">
       {/* Section 1 — Hero */}
-      <section className="relative min-h-[100vh] flex flex-col items-center justify-center pt-28 pb-12 md:pt-36 md:pb-20 overflow-hidden bg-[#080808]">
+      <section className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-[#080808]">
 
         {/* Scrolling cards background layer */}
-        <div className="absolute inset-0 z-0 flex flex-col justify-center opacity-12 sm:opacity-15 md:opacity-32 pointer-events-none select-none transition-opacity duration-700">
+        <div className="absolute inset-0 z-0 flex flex-col justify-center pointer-events-none select-none">
           <InfiniteScroll />
         </div>
 
-        {/* Soft blur overlay to soften background collage contrast */}
-        <div className="absolute inset-0 z-[5] backdrop-blur-[0.8px] pointer-events-none" />
-
-        {/* Deep, multi-layered dark cinematic gradient mask overlays */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080808]/92 via-[#080808]/45 to-[#080808]/95 pointer-events-none" />
-        <div className="absolute inset-0 z-10 bg-[radial-gradient(circle_at_center,transparent_30%,#080808_95%)] opacity-65 pointer-events-none" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080808]/90 via-[#080808]/50 to-[#080808] pointer-events-none" />
 
         {/* Hero content */}
-        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto flex flex-col items-center justify-center">
-          <p className="text-[10px] sm:text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Web Design Studio</p>
-          <h1 className="text-3xl sm:text-5xl md:text-[clamp(44px,5.5vw,84px)] font-bold text-white mb-6 leading-[1.08] tracking-tight flex flex-col items-center">
-            <span className="relative block overflow-hidden pt-2 pb-0.5 -mt-2 w-full text-center">
-              <motion.span
-                className="block"
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              >
-                Digital Flagships
-              </motion.span>
-            </span>
-            <span className="relative block overflow-hidden pt-2 pb-0.5 -mt-2 w-full text-center">
-              <motion.span
-                className="block"
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
-              >
-                Built Without
-              </motion.span>
-            </span>
-            <span className="relative block overflow-hidden pt-2 pb-0.5 -mt-2 w-full text-center">
-              <motion.span
-                className="block"
-                initial={shouldReduceMotion ? { opacity: 0 } : { y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.34 }}
-              >
-                Compromise.
-              </motion.span>
-            </span>
+        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
+          <p className="text-xs uppercase tracking-widest text-[#555] mb-6">Web Design Studio</p>
+          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+            We Build Websites<br />That Work.
           </h1>
-          <motion.p 
-            className="text-sm sm:text-base text-[#888] mb-8 max-w-lg mx-auto leading-relaxed"
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.46 }}
-          >
+          <p className="text-base sm:text-xl text-[#888] mb-10 max-w-xl mx-auto">
             Premium web design for businesses ready to grow.
-          </motion.p>
-          <motion.div 
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full sm:w-auto"
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.58 }}
-          >
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="/work"
-              className="bg-white text-black px-8 py-3.5 font-semibold rounded-none hover:bg-[#e0e0e0] transition-colors duration-200 w-full sm:w-auto text-center text-xs sm:text-sm tracking-wider uppercase font-mono">
+              className="bg-white text-black px-8 py-4 font-semibold rounded-none hover:bg-[#e0e0e0] transition-colors duration-200">
               See Our Work
             </a>
             <a href="/contact"
-              className="border border-[#333] text-white px-8 py-3.5 font-semibold rounded-none hover:border-[#666] hover:bg-white/5 transition-all duration-200 w-full sm:w-auto text-center text-xs sm:text-sm tracking-wider uppercase font-mono">
+              className="border border-[#333] text-white px-8 py-4 font-semibold rounded-none hover:border-[#666] transition-colors duration-200">
               Get a Free Quote
             </a>
-          </motion.div>
+          </div>
 
-          <motion.div 
-            className="flex flex-wrap gap-8 sm:gap-16 justify-center mt-20 md:mt-24 pb-8"
-            initial={{ opacity: 0, y: shouldReduceMotion ? 0 : 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.7 }}
-          >
+          <div className="flex flex-wrap gap-8 sm:gap-12 justify-center mt-14">
             <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white font-mono">15+</p>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] mt-1.5">Projects Delivered</p>
+              <p className="text-xl sm:text-2xl font-bold text-white">15+</p>
+              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Projects Delivered</p>
             </div>
             <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white font-mono">2 Weeks</p>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] mt-1.5">Avg Delivery Time</p>
+              <p className="text-xl sm:text-2xl font-bold text-white">2 Weeks</p>
+              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Avg Delivery Time</p>
             </div>
             <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white font-mono">100%</p>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] mt-1.5">Client Satisfaction</p>
+              <p className="text-xl sm:text-2xl font-bold text-white">100%</p>
+              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Client Satisfaction</p>
             </div>
-          </motion.div>
+          </div>
         </div>
 
       </section>
@@ -207,13 +156,11 @@ export default function Home() {
           </div>
 
           {/* Right Column */}
-          <div className="hidden sm:block w-full lg:max-w-md aspect-[16/10] relative border border-[#2a2a2a] rounded-none select-none overflow-hidden">
-            <Image
+          <div className="hidden sm:block w-full lg:max-w-md aspect-[16/10] border border-[#2a2a2a] rounded-none select-none overflow-hidden">
+            <img
               src="/aethelgard-preview.png"
               alt="Aethelgard — Premium Knife E-Commerce Store"
-              fill
-              sizes="(max-width: 768px) 100vw, 400px"
-              className="object-cover object-top"
+              className="w-full h-full object-cover object-top"
             />
           </div>
         </div>

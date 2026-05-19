@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
 
 const images = [
   "https://assets.aceternity.com/components/hero-1.webp",
@@ -45,14 +44,12 @@ function ScrollRow({
             style={{ 
               translateY: offsets[(i + rowIndex * 3) % offsets.length] 
             }}
-            className="flex-shrink-0 w-64 h-40 relative rounded-none overflow-hidden border border-[#ffffff15]"
+            className="flex-shrink-0 w-64 h-40 rounded-none overflow-hidden border border-[#ffffff15]"
           >
-            <Image
+            <img
               src={src}
-              alt="project scroll preview"
-              fill
-              sizes="256px"
-              className="object-cover opacity-85 hover:opacity-95 transition-opacity duration-300"
+              alt="project"
+              className="w-full h-full object-cover opacity-60 hover:opacity-80 transition-opacity duration-300"
             />
           </motion.div>
         ))}
