@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const PREVIEW_IMAGES = [
   "https://assets.aceternity.com/components/hero-1.webp",
@@ -41,10 +42,12 @@ export default function WebsitePreviewCard({ type, offset }: { type: number, off
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 10, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
       >
-        <img 
+        <Image 
           src={PREVIEW_IMAGES[type]} 
-          alt={`Website preview concept`} 
-          className={`w-full h-full object-cover ${type === 1 ? 'object-center' : 'object-top'}`}
+          alt="Website preview concept" 
+          fill
+          sizes="(max-width: 768px) 100vw, 400px"
+          className={`object-cover ${type === 1 ? 'object-center' : 'object-top'}`}
         />
         {/* Subtle dark overlay to blend with the dark premium theme */}
         <div className={`absolute inset-0 bg-black ${isActive ? 'opacity-20' : 'opacity-60'} transition-opacity duration-700`} />

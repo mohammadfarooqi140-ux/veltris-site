@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 // ─── Data ────────────────────────────────────────────────────────────────────
 
@@ -165,10 +166,13 @@ export default function WorkPage() {
                     <span className="w-2 h-2 rounded-full bg-[#2a2a2a]" />
                   </div>
                   <div className="aspect-video relative overflow-hidden">
-                    <img
+                    <Image
                       src="/aethelgard-preview.png"
                       alt="Aethalgard desktop preview"
-                      className="w-full h-full object-cover object-top"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 60vw"
+                      className="object-cover object-top"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-transparent to-transparent opacity-30 pointer-events-none" />
                   </div>
@@ -184,11 +188,13 @@ export default function WorkPage() {
                   <div className="h-4 bg-[#111] border-b border-[#1a1a1a] flex items-center justify-center">
                     <span className="w-6 h-1 rounded-full bg-[#2a2a2a]" />
                   </div>
-                  <div className="aspect-[9/16] overflow-hidden">
-                    <img
+                  <div className="aspect-[9/16] relative overflow-hidden">
+                    <Image
                       src="/aethelgard-preview.png"
                       alt="Aethalgard mobile preview"
-                      className="w-full h-full object-cover object-top scale-150 origin-top"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 20vw"
+                      className="object-cover object-top scale-150 origin-top"
                     />
                   </div>
                 </motion.div>
@@ -229,10 +235,12 @@ export default function WorkPage() {
             <div className="border border-[#1a1a1a] bg-[#050505]">
               {/* Mini thumbnail */}
               <div className="aspect-video overflow-hidden border-b border-[#1a1a1a] relative">
-                <img
+                <Image
                   src="/aethelgard-preview.png"
                   alt="Aethalgard snapshot"
-                  className="w-full h-full object-cover object-top opacity-70"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 30vw"
+                  className="object-cover object-top opacity-70"
                 />
                 <div className="absolute inset-0 bg-black/30" />
               </div>

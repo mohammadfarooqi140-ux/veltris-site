@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion, Variants, useReducedMotion } from "framer-motion";
 import { Globe, ShoppingBag, RefreshCw } from "lucide-react";
 import InfiniteScroll from "@/components/InfiniteScroll";
@@ -206,11 +207,13 @@ export default function Home() {
           </div>
 
           {/* Right Column */}
-          <div className="hidden sm:block w-full lg:max-w-md aspect-[16/10] border border-[#2a2a2a] rounded-none select-none overflow-hidden">
-            <img
+          <div className="hidden sm:block w-full lg:max-w-md aspect-[16/10] relative border border-[#2a2a2a] rounded-none select-none overflow-hidden">
+            <Image
               src="/aethelgard-preview.png"
               alt="Aethelgard — Premium Knife E-Commerce Store"
-              className="w-full h-full object-cover object-top"
+              fill
+              sizes="(max-width: 768px) 100vw, 400px"
+              className="object-cover object-top"
             />
           </div>
         </div>
