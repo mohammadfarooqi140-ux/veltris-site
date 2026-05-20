@@ -166,7 +166,7 @@ export default function Navbar() {
               
               <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
                 <span>© 2025 Veltris</span>
-                <a href="mailto:hello@veltris.com" className="hover:text-[#888] transition-colors">hello@veltris.com</a>
+                <a href="mailto:hello@veltris.uk" className="hover:text-[#888] transition-colors">hello@veltris.uk</a>
               </div>
             </motion.div>
           </motion.div>

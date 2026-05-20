@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { Globe, ShoppingBag, RefreshCw } from "lucide-react";
-import InfiniteScroll from "@/components/InfiniteScroll";
 
 export default function Home() {
   const containerVariants: Variants = {
@@ -51,9 +50,9 @@ export default function Home() {
       {/* Section 1 — Hero */}
       <section className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-[#080808]">
 
-        {/* Scrolling cards background layer */}
-        <div className="absolute inset-0 z-0 flex flex-col justify-center pointer-events-none select-none">
-          <InfiniteScroll />
+        {/* Background image */}
+        <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+          <img src="/aethelgard-preview.png" alt="" className="w-full h-full object-cover opacity-15 blur-sm" />
         </div>
 
         {/* Dark overlay */}
@@ -66,7 +65,7 @@ export default function Home() {
             We Build Websites<br />That Work.
           </h1>
           <p className="text-base sm:text-xl text-[#888] mb-10 max-w-xl mx-auto">
-            Premium web design for businesses ready to grow.
+            Cinematic websites built with AI speed and human taste. No templates. No fluff.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
             <a href="/work"
@@ -79,19 +78,10 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-8 sm:gap-12 justify-center mt-14">
-            <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white">15+</p>
-              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Projects Delivered</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white">2 Weeks</p>
-              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Avg Delivery Time</p>
-            </div>
-            <div className="text-center">
-              <p className="text-xl sm:text-2xl font-bold text-white">100%</p>
-              <p className="text-xs uppercase tracking-widest text-[#555] mt-1">Client Satisfaction</p>
-            </div>
+          <div className="mt-14 max-w-lg mx-auto">
+            <p className="text-sm md:text-base text-[#888] font-medium leading-relaxed">
+              We&apos;re a new studio building our first client projects. <span className="text-white">Founding clients get priority pricing.</span>
+            </p>
           </div>
         </div>
 
@@ -130,6 +120,21 @@ export default function Home() {
               <div className="w-8 h-[1px] bg-white mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Section - Why Veltris? */}
+      <section className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+        <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-8 md:p-12 rounded-none max-w-4xl mx-auto">
+          <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
+            Why Veltris?
+          </span>
+          <p className="text-[#888] text-base md:text-xl leading-relaxed font-light mb-6">
+            Most agency sites look the same because they are the same — recycled templates, filler copy, no soul. <span className="text-white font-medium">Veltris is different.</span>
+          </p>
+          <p className="text-[#888] text-base md:text-xl leading-relaxed font-light">
+            One operator with obsessive taste, using the best AI tools to build faster without sacrificing craft. If you want a site that actually feels like your brand, not a SaaS clone, we should talk.
+          </p>
         </div>
       </section>
 

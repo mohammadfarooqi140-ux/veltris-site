@@ -196,11 +196,11 @@ export default function ContactPage() {
             {/* Direct email */}
             <div className="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-[#1a1a1a]">
               <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-3 font-mono">Prefer email?</p>
-              <a
-                href="mailto:hello@veltris.com"
-                className="text-sm text-[#aaa] hover:text-white transition-colors duration-300 inline-flex items-center gap-1"
+              <a 
+                href="mailto:hello@veltris.uk" 
+                className="text-xl md:text-3xl font-bold text-white hover:text-[#aaa] transition-colors duration-300 mb-8 inline-block"
               >
-                hello@veltris.com &rarr;
+                hello@veltris.uk &rarr;
               </a>
             </div>
           </motion.div>

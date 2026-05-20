@@ -9,7 +9,7 @@ const services = [
     title: "Landing Pages",
     description: "High-converting single pages designed for ad campaigns and product launches.",
     features: ["Optimized for conversion", "Fast loading times", "Mobile responsive"],
-    price: "From $150",
+    price: "From £1,200",
     large: true,
   },
   {
@@ -17,7 +17,7 @@ const services = [
     title: "Business Websites",
     description: "Professional multi-page presences establishing credibility and trust.",
     features: ["Multiple internal pages", "CMS integration", "SEO foundations"],
-    price: "From $300",
+    price: "From £2,500",
     large: true,
   },
   {
@@ -25,7 +25,7 @@ const services = [
     title: "E-Commerce Stores",
     description: "Fully featured digital storefronts built to scale your revenue.",
     features: ["Secure checkout", "Inventory management", "Payment gateways"],
-    price: "From $700",
+    price: "From £4,000",
     large: false,
   },
   {
@@ -33,7 +33,7 @@ const services = [
     title: "Website Redesigns",
     description: "Modernize your outdated site with better performance and contemporary aesthetics.",
     features: ["UI/UX overhaul", "Performance boost", "Content migration"],
-    price: "From $200",
+    price: "Custom quote",
     large: false,
   },
   {
@@ -41,7 +41,7 @@ const services = [
     title: "Custom Website",
     description: "Unique, tailor-made digital solutions built from scratch for specific requirements.",
     features: ["Bespoke design", "Advanced functionality", "API integrations"],
-    price: "Quote Based",
+    price: "Custom quote",
     large: false,
   },
 ];
@@ -57,7 +57,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-28 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
+      <section className="relative pt-24 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
           {/* Left Text */}
           <motion.div
@@ -66,13 +66,13 @@ export default function ServicesPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <p className="text-xs uppercase tracking-widest text-[#555] mb-8 font-mono">
+            <p className="text-xs uppercase tracking-widest text-[#555] mb-4 md:mb-8 font-mono">
               SERVICES
             </p>
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 md:mb-8 tracking-tight leading-[1.05]">
               Choose the website your business actually needs.
             </h1>
-            <p className="text-lg sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-12">
+            <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-8 md:mb-12">
               Clear website packages for businesses that need a sharper online presence — from single-page launches to full custom builds.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -91,10 +91,36 @@ export default function ServicesPage() {
             </div>
           </motion.div>
 
-          {/* Right Floating Visual */}
-          <div className="w-full md:w-[45%]">
+          {/* Right Floating Visual (Desktop/Tablet) */}
+          <div className="hidden md:block w-full md:w-[45%]">
             <WebsitePreviewStack />
           </div>
+
+          {/* Mobile Simplified Preview (Mobile Only) */}
+          <motion.div
+            className="block md:hidden w-full max-w-sm mx-auto mt-8 px-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            <div className="relative border border-[#1a1a1a] bg-[#050505] overflow-hidden rounded-sm shadow-[0_0_30px_rgba(0,0,0,0.3)]">
+              {/* Fake browser header */}
+              <div className="w-full h-6 border-b border-[#1f1f1f] flex items-center px-3 gap-1.5 bg-[#0a0a0a]">
+                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
+              </div>
+              {/* Preview image */}
+              <div className="aspect-video relative w-full overflow-hidden">
+                <img
+                  src="/aethelgard-preview.png"
+                  alt="Aethalgard Premium E-Commerce Preview"
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
+                />
+                <div className="absolute inset-0 bg-black/10" />
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -170,6 +196,11 @@ export default function ServicesPage() {
             </motion.div>
           ))}
         </motion.div>
+        <div className="mt-8 text-center">
+          <p className="text-sm text-[#888] font-mono tracking-wide">
+            Founding client rate: <span className="text-white">40% off first project.</span>
+          </p>
+        </div>
       </section>
 
       {/* PROCESS SECTION */}
