@@ -196,10 +196,10 @@ export default function Home() {
               variants={monumentContainerVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-row overflow-x-auto snap-x snap-mandatory md:overflow-visible items-end gap-6 pb-8 md:pb-0 w-[100vw] -ml-6 px-6 md:w-auto md:ml-0 md:px-0 scrollbar-hide"
+              className="flex flex-row overflow-x-auto snap-x snap-mandatory md:overflow-visible items-end -space-x-8 pb-8 md:pb-0 w-[100vw] -ml-6 px-6 md:w-auto md:ml-0 md:px-0 scrollbar-hide"
             >
               {/* Monument 1 */}
-              <div className="relative group">
+              <div className="relative group z-30">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label1Opacity, y: label1Y }}
@@ -208,14 +208,7 @@ export default function Home() {
                     Aethalgard — E-Commerce
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-md border border-white/10 bg-[#0a0a0a] shadow-2xl flex flex-col overflow-hidden relative">
-                  {/* Browser Chrome */}
-                  <div className="h-8 border-b border-white/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#0f0f0f]">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
-                    <div className="mx-auto text-[8px] text-gray-500 truncate px-2">aethalgard.com</div>
-                  </div>
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] bg-[#0a0a0a] shadow-2xl flex flex-col overflow-hidden relative">
                   <div className="flex-1 overflow-hidden relative">
                     <img src="/aethelgard-preview.png" alt="Aethalgard" className="w-full h-full object-cover object-top" />
                   </div>
@@ -223,7 +216,7 @@ export default function Home() {
               </div>
 
               {/* Monument 2 */}
-              <div className="relative group md:-translate-y-8">
+              <div className="relative group md:-translate-y-8 z-20">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label2Opacity, y: label2Y }}
@@ -232,14 +225,7 @@ export default function Home() {
                     Noir Atelier — Fashion
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[320px] rounded-md border border-white/10 bg-[#f5f5f0] shadow-2xl flex flex-col overflow-hidden relative">
-                  {/* Browser Chrome */}
-                  <div className="h-8 border-b border-black/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#ebebeb]">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
-                    <div className="mx-auto text-[8px] text-gray-500 truncate px-2">noiratelier.com</div>
-                  </div>
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[320px] bg-[#f5f5f0] shadow-2xl flex flex-col overflow-hidden relative">
                   <div className="flex-1 flex items-center justify-center">
                     <span className="font-playfair text-[#111] text-sm tracking-widest font-serif">NOIR ATELIER</span>
                   </div>
@@ -247,7 +233,7 @@ export default function Home() {
               </div>
 
               {/* Monument 3 */}
-              <div className="relative group">
+              <div className="relative group z-10">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label3Opacity, y: label3Y }}
@@ -256,14 +242,7 @@ export default function Home() {
                     Coming Soon
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-md border border-white/10 shadow-2xl flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-                  {/* Browser Chrome */}
-                  <div className="h-8 border-b border-white/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#0f0f0f]">
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
-                    <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
-                    <div className="mx-auto text-[8px] text-gray-500 truncate px-2">stealth.app</div>
-                  </div>
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] shadow-2xl flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
                   <div className="flex-1 flex items-center justify-center">
                     <span className="text-xs text-white/40 tracking-widest">COMING SOON</span>
                   </div>
@@ -312,17 +291,27 @@ export default function Home() {
 
       {/* Section - Why Veltris? */}
       <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
-        <div className="bg-[#0d0d0d] border border-white/15 shadow-[inset_0_0_30px_rgba(255,255,255,0.03)] p-8 md:p-12 rounded-none max-w-4xl mx-auto">
-          <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
-            Why Veltris?
-          </span>
-          <p className="text-[#888] text-base md:text-xl leading-relaxed font-light mb-6">
-            Most agency sites look the same because they are the same — recycled templates, filler copy, no soul.
-            <span className="text-white font-bold text-lg md:text-2xl block mt-4">Veltris is different.</span>
-          </p>
-          <p className="text-[#888] text-base md:text-xl leading-relaxed font-light">
-            One operator with obsessive taste, using the best AI tools to build faster without sacrificing craft. If you want a site that actually feels like your brand, not a SaaS clone, we should talk.
-          </p>
+        <div className="relative bg-[#0d0d0d] border border-white/15 shadow-[inset_0_0_30px_rgba(255,255,255,0.03)] p-8 md:p-12 rounded-none max-w-4xl mx-auto overflow-hidden">
+          {/* Background Image */}
+          <div 
+            className="absolute inset-0 z-0 bg-cover bg-center opacity-[0.12]"
+            style={{ backgroundImage: 'url("/why-veltris-bg.png")' }}
+          />
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black/80 z-0" />
+
+          <div className="relative z-10">
+            <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
+              Why Veltris?
+            </span>
+            <p className="text-[#888] text-base md:text-xl leading-relaxed font-light mb-6">
+              Most agency sites look the same because they are the same — recycled templates, filler copy, no soul.
+              <span className="text-white font-bold text-lg md:text-2xl block mt-4">Veltris is different.</span>
+            </p>
+            <p className="text-[#888] text-base md:text-xl leading-relaxed font-light">
+              One operator with obsessive taste, using the best AI tools to build faster without sacrificing craft. If you want a site that actually feels like your brand, not a SaaS clone, we should talk.
+            </p>
+          </div>
         </div>
       </section>
 
