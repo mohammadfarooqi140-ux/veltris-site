@@ -18,7 +18,7 @@ export default function Footer() {
               Veltris
             </Link>
             <p className="text-sm max-w-sm leading-relaxed">
-              We build websites that work. Premium, bespoke web design and development for growing businesses.
+              Cinematic websites for businesses that care how they look. One operator. Obsessive taste. No templates.
             </p>
           </div>
 

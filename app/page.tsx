@@ -52,7 +52,9 @@ export default function Home() {
 
         {/* Background image */}
         <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-          <img src="/aethelgard-preview.png" alt="" className="w-full h-full object-cover opacity-15 blur-sm" />
+          <img src="/aethelgard-preview.png" alt="" className="w-full h-full object-cover opacity-[0.25] blur-sm" />
+          {/* Top gradient mask to ensure header legibility */}
+          <div className="absolute top-0 w-full h-[40%] bg-gradient-to-b from-black to-transparent" />
         </div>
 
         {/* Dark overlay */}
@@ -124,13 +126,14 @@ export default function Home() {
       </section>
 
       {/* Section - Why Veltris? */}
-      <section className="py-16 md:py-24 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
-        <div className="bg-[#0d0d0d] border border-[#1a1a1a] p-8 md:p-12 rounded-none max-w-4xl mx-auto">
+      <section className="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+        <div className="bg-[#0d0d0d] border border-white/15 shadow-[inset_0_0_30px_rgba(255,255,255,0.03)] p-8 md:p-12 rounded-none max-w-4xl mx-auto">
           <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
             Why Veltris?
           </span>
           <p className="text-[#888] text-base md:text-xl leading-relaxed font-light mb-6">
-            Most agency sites look the same because they are the same — recycled templates, filler copy, no soul. <span className="text-white font-medium">Veltris is different.</span>
+            Most agency sites look the same because they are the same — recycled templates, filler copy, no soul.
+            <span className="text-white font-bold text-lg md:text-2xl block mt-4">Veltris is different.</span>
           </p>
           <p className="text-[#888] text-base md:text-xl leading-relaxed font-light">
             One operator with obsessive taste, using the best AI tools to build faster without sacrificing craft. If you want a site that actually feels like your brand, not a SaaS clone, we should talk.

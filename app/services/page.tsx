@@ -1,7 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import WebsitePreviewStack from "@/components/WebsitePreviewStack";
 
 const services = [
   {
@@ -9,7 +8,7 @@ const services = [
     title: "Landing Pages",
     description: "High-converting single pages designed for ad campaigns and product launches.",
     features: ["Optimized for conversion", "Fast loading times", "Mobile responsive"],
-    price: "From £1,200",
+    price: "From £800",
     large: true,
   },
   {
@@ -17,7 +16,7 @@ const services = [
     title: "Business Websites",
     description: "Professional multi-page presences establishing credibility and trust.",
     features: ["Multiple internal pages", "CMS integration", "SEO foundations"],
-    price: "From £2,500",
+    price: "From £1,500",
     large: true,
   },
   {
@@ -25,7 +24,7 @@ const services = [
     title: "E-Commerce Stores",
     description: "Fully featured digital storefronts built to scale your revenue.",
     features: ["Secure checkout", "Inventory management", "Payment gateways"],
-    price: "From £4,000",
+    price: "From £2,500",
     large: false,
   },
   {
@@ -92,8 +91,24 @@ export default function ServicesPage() {
           </motion.div>
 
           {/* Right Floating Visual (Desktop/Tablet) */}
-          <div className="hidden md:block w-full md:w-[45%]">
-            <WebsitePreviewStack />
+          <div className="hidden md:block w-full md:w-[45%] pl-4">
+            <div className="relative border border-[#1a1a1a] bg-[#050505] overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+              {/* Fake browser header */}
+              <div className="w-full h-8 border-b border-[#1f1f1f] flex items-center px-4 gap-2 bg-[#0a0a0a]">
+                <div className="w-2 h-2 rounded-full bg-[#222]" />
+                <div className="w-2 h-2 rounded-full bg-[#222]" />
+                <div className="w-2 h-2 rounded-full bg-[#222]" />
+              </div>
+              {/* Preview image */}
+              <div className="aspect-[16/10] relative w-full overflow-hidden">
+                <img
+                  src="/aethelgard-preview.png"
+                  alt="Aethalgard Premium E-Commerce"
+                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
+                />
+                <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-all duration-500" />
+              </div>
+            </div>
           </div>
 
           {/* Mobile Simplified Preview (Mobile Only) */}
@@ -236,9 +251,9 @@ export default function ServicesPage() {
       {/* FINAL CTA */}
       <section className="border-t border-[#1a1a1a] py-20 md:py-32 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Not sure what type of website you need?</p>
+          <p className="text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Not sure what you need?</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-            Tell us what you&apos;re building and we&apos;ll recommend the right setup.
+            Tell me what you&apos;re building and I&apos;ll recommend the right approach.
           </h2>
           <Link
             href="/contact"
