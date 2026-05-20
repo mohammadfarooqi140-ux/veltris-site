@@ -46,47 +46,76 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-[#080808]">
+    <div className="bg-[#050505]">
       {/* Section 1 — Hero */}
-      <section className="relative min-h-[100vh] flex flex-col items-center justify-center overflow-hidden bg-[#080808]">
-
-        {/* Background image */}
-        <div className="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-          <img src="/aethelgard-preview.png" alt="" className="w-full h-full object-cover opacity-[0.25] blur-sm" />
-          {/* Top gradient mask to ensure header legibility */}
-          <div className="absolute top-0 w-full h-[40%] bg-gradient-to-b from-black to-transparent" />
-        </div>
-
-        {/* Dark overlay */}
-        <div className="absolute inset-0 z-10 bg-gradient-to-b from-[#080808]/90 via-[#080808]/50 to-[#080808] pointer-events-none" />
-
-        {/* Hero content */}
-        <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#555] mb-6">Web Design Studio</p>
-          <h1 className="text-4xl sm:text-6xl md:text-8xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
-            We Build Websites<br />That Work.
-          </h1>
-          <p className="text-base sm:text-xl text-[#888] mb-10 max-w-xl mx-auto">
-            Cinematic websites built with AI speed and human taste. No templates. No fluff.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
-            <a href="/work"
-              className="bg-white text-black px-8 py-4 font-semibold rounded-none hover:bg-[#e0e0e0] transition-colors duration-200">
-              See Our Work
-            </a>
-            <a href="/contact"
-              className="border border-[#333] text-white px-8 py-4 font-semibold rounded-none hover:border-[#666] transition-colors duration-200">
-              Get a Free Quote
-            </a>
-          </div>
-
-          <div className="mt-14 max-w-lg mx-auto">
-            <p className="text-sm md:text-base text-[#888] font-medium leading-relaxed">
-              We&apos;re a new studio building our first client projects. <span className="text-white">Founding clients get priority pricing.</span>
+      <section className="relative min-h-[100vh] w-full flex items-center justify-center bg-[#050505] overflow-hidden">
+        <div className="w-full max-w-7xl mx-auto px-6 pt-24 md:pt-0 flex flex-col md:flex-row items-center justify-between gap-12">
+          
+          {/* Left Column - 55% */}
+          <div className="w-full md:w-[55%] flex flex-col z-20">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
+              We Build Websites<br />That Work.
+            </h1>
+            <p className="text-lg md:text-xl text-gray-400 max-w-[500px] mb-10">
+              Cinematic websites built with AI speed and human taste. No templates. No fluff.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/contact" className="bg-white text-black px-8 py-4 font-semibold text-center hover:bg-neutral-200 transition-colors">
+                Book a Free Call
+              </Link>
+              <Link href="/work" className="border border-white/20 text-white bg-transparent px-8 py-4 font-semibold text-center hover:bg-white/5 transition-colors">
+                See Our Work
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column - 45% */}
+          <div className="w-full md:w-[45%] mt-12 md:mt-0 z-20">
+            <div className="flex flex-row overflow-x-auto snap-x snap-mandatory md:overflow-visible items-end gap-6 pb-8 md:pb-0 w-[100vw] -ml-6 px-6 md:w-auto md:ml-0 md:px-0 scrollbar-hide">
+              {/* Monument 1 */}
+              <div className="snap-center shrink-0 w-[180px] h-[280px] rounded-md border border-white/10 bg-[#0a0a0a] shadow-2xl flex flex-col overflow-hidden relative">
+                {/* Browser Chrome */}
+                <div className="h-8 border-b border-white/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#0f0f0f]">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  <div className="mx-auto text-[8px] text-gray-500 truncate px-2">aethalgard.com</div>
+                </div>
+                <div className="flex-1 overflow-hidden relative">
+                  <img src="/aethelgard-preview.png" alt="Aethalgard" className="w-full h-full object-cover object-top" />
+                </div>
+              </div>
+
+              {/* Monument 2 */}
+              <div className="snap-center shrink-0 w-[180px] h-[320px] rounded-md border border-white/10 bg-[#f5f5f0] shadow-2xl flex flex-col overflow-hidden relative md:-translate-y-8">
+                {/* Browser Chrome */}
+                <div className="h-8 border-b border-black/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#ebebeb]">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  <div className="mx-auto text-[8px] text-gray-500 truncate px-2">noiratelier.com</div>
+                </div>
+                <div className="flex-1 flex items-center justify-center">
+                  <span className="font-playfair text-[#111] text-sm tracking-widest font-serif">NOIR ATELIER</span>
+                </div>
+              </div>
+
+              {/* Monument 3 */}
+              <div className="snap-center shrink-0 w-[180px] h-[280px] rounded-md border border-white/10 shadow-2xl flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+                {/* Browser Chrome */}
+                <div className="h-8 border-b border-white/10 flex items-center px-3 gap-1.5 shrink-0 bg-[#0f0f0f]">
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]"></div>
+                  <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]"></div>
+                  <div className="mx-auto text-[8px] text-gray-500 truncate px-2">stealth.app</div>
+                </div>
+                <div className="flex-1 flex items-center justify-center">
+                  <span className="text-xs text-white/40 tracking-widest">COMING SOON</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
       </section>
 
       {/* Section 2 — Services Strip */}
