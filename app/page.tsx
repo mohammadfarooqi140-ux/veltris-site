@@ -179,14 +179,19 @@ export default function Home() {
               variants={ctaVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col gap-6"
             >
-              <Link href="/contact" className="bg-white text-black px-8 py-4 font-semibold text-center hover:bg-neutral-200 transition-colors">
-                Book a Free Call
-              </Link>
-              <Link href="/work" className="border border-white/20 text-white bg-transparent px-8 py-4 font-semibold text-center hover:bg-white/5 transition-colors">
-                See Our Work
-              </Link>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link href="/contact" className="bg-white text-black px-8 py-4 font-semibold text-center hover:bg-neutral-200 transition-colors">
+                  Book a Free Call
+                </Link>
+                <Link href="/work" className="border border-white/20 text-white bg-transparent px-8 py-4 font-semibold text-center hover:bg-white/5 transition-colors">
+                  See Our Work
+                </Link>
+              </div>
+              <p className="text-sm text-gray-400 text-center sm:text-left max-w-[500px]">
+                We&apos;re a new studio building our first client projects. <span className="text-white font-medium">Founding clients get priority pricing.</span>
+              </p>
             </motion.div>
           </div>
 
@@ -196,10 +201,10 @@ export default function Home() {
               variants={monumentContainerVariants}
               initial="hidden"
               animate="visible"
-              className="flex flex-row overflow-x-auto snap-x snap-mandatory md:overflow-visible items-end -space-x-8 pb-8 md:pb-0 w-[100vw] -ml-6 px-6 md:w-auto md:ml-0 md:px-0 scrollbar-hide"
+              className="flex flex-row overflow-x-auto snap-x snap-mandatory md:overflow-visible items-end gap-6 pb-8 md:pb-0 w-[100vw] -ml-6 px-6 md:w-auto md:ml-0 md:px-0 scrollbar-hide"
             >
               {/* Monument 1 */}
-              <div className="relative group z-30">
+              <div className="relative group">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label1Opacity, y: label1Y }}
@@ -208,15 +213,18 @@ export default function Home() {
                     Aethalgard — E-Commerce
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] bg-[#0a0a0a] shadow-2xl flex flex-col overflow-hidden relative">
-                  <div className="flex-1 overflow-hidden relative">
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-sm border border-white/10 bg-[#0a0a0a] shadow-lg flex flex-col overflow-hidden relative">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[10px] font-bold text-white tracking-widest leading-relaxed">ABSOLUTE EDGE.<br/>INFINITE DARKNESS.</span>
+                  </div>
+                  <div className="flex-1 overflow-hidden relative z-0">
                     <img src="/aethelgard-preview.png" alt="Aethalgard" className="w-full h-full object-cover object-top" />
                   </div>
                 </motion.div>
               </div>
 
               {/* Monument 2 */}
-              <div className="relative group md:-translate-y-8 z-20">
+              <div className="relative group md:-translate-y-8">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label2Opacity, y: label2Y }}
@@ -225,7 +233,7 @@ export default function Home() {
                     Noir Atelier — Fashion
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[320px] bg-[#f5f5f0] shadow-2xl flex flex-col overflow-hidden relative">
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[320px] rounded-sm border border-white/10 bg-[#f5f5f0] shadow-lg flex flex-col overflow-hidden relative">
                   <div className="flex-1 flex items-center justify-center">
                     <span className="font-playfair text-[#111] text-sm tracking-widest font-serif">NOIR ATELIER</span>
                   </div>
@@ -233,7 +241,7 @@ export default function Home() {
               </div>
 
               {/* Monument 3 */}
-              <div className="relative group z-10">
+              <div className="relative group">
                 {!shouldReduceMotion && (
                   <motion.div
                     style={{ opacity: label3Opacity, y: label3Y }}
@@ -242,7 +250,7 @@ export default function Home() {
                     Coming Soon
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] shadow-2xl flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-sm border border-white/10 shadow-lg flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
                   <div className="flex-1 flex items-center justify-center">
                     <span className="text-xs text-white/40 tracking-widest">COMING SOON</span>
                   </div>
@@ -298,7 +306,7 @@ export default function Home() {
             style={{ backgroundImage: 'url("/why-veltris-bg.png")' }}
           />
           {/* Dark Overlay */}
-          <div className="absolute inset-0 bg-black/80 z-0" />
+          <div className="absolute inset-0 bg-black/85 z-0" />
 
           <div className="relative z-10">
             <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
