@@ -9,7 +9,7 @@ export default function WorkPage() {
       description: "Dark fantasy brand identity. Absolute edge, infinite darkness.",
       tag: "Brand Identity",
       image: "/aethelgard-preview.png",
-      link: "https://athelgard.vercel.app/",
+      link: "https://athelgard.vercel.app",
       isExternal: true
     },
     {
@@ -58,10 +58,10 @@ export default function WorkPage() {
               <LinkComponent 
                 key={project.id} 
                 {...linkProps}
-                className="group block rounded-sm border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-white/5 hover:border-white/20"
+                className="group block rounded-sm border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-white/20"
               >
                 {/* Image Area */}
-                <div className="aspect-video w-full overflow-hidden bg-black/50 relative">
+                <div className="aspect-video w-full rounded-t-sm overflow-hidden bg-black/50 relative">
                   <img 
                     src={project.image} 
                     alt={project.title} 
@@ -78,7 +78,7 @@ export default function WorkPage() {
                     {project.description}
                   </p>
                   <div className="mt-4">
-                    <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+                    <span className="text-xs uppercase tracking-wider text-gray-500">
                       {project.tag}
                     </span>
                   </div>

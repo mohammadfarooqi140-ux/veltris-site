@@ -42,11 +42,11 @@ const staggerContainer = {
 
 export default function NoirAtelier() {
   return (
-    <div className={`bg-[#f5f5f0] text-gray-900 min-h-screen ${inter.className} selection:bg-gray-300 selection:text-black`}>
-      <div className="max-w-6xl mx-auto px-6 overflow-hidden">
-        
-        {/* 1. HERO */}
-        <section className="min-h-[80vh] flex flex-col justify-center items-center text-center py-32">
+    <div className={`text-gray-900 min-h-screen ${inter.className} selection:bg-gray-300 selection:text-black`}>
+      
+      {/* 1. HERO */}
+      <section className="bg-[#f5f5f0] min-h-[85vh] flex flex-col justify-center py-24 md:py-32">
+        <div className="max-w-6xl mx-auto px-6 w-full flex justify-center text-center">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -73,16 +73,18 @@ export default function NoirAtelier() {
               Clothing cut for those who understand restraint before luxury.
             </motion.p>
           </motion.div>
-        </section>
+        </div>
+      </section>
 
-        {/* 2. MANIFESTO */}
-        <section className="py-32 border-t border-black/[0.08]">
+      {/* 2. MANIFESTO */}
+      <section className="bg-[#f0f0ea] py-24 md:py-32 border-t border-black/5">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto text-center"
           >
             <motion.h2 
               variants={fadeInUp}
@@ -97,10 +99,12 @@ export default function NoirAtelier() {
               Every silhouette is deliberate. Every fabric chosen to age with dignity rather than relevance.
             </motion.p>
           </motion.div>
-        </section>
+        </div>
+      </section>
 
-        {/* 3. COLLECTIONS */}
-        <section className="py-32 border-t border-black/[0.08]">
+      {/* 3. COLLECTIONS */}
+      <section className="bg-[#f5f5f0] py-24 md:py-32 border-t border-black/5">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -132,7 +136,7 @@ export default function NoirAtelier() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#d4a574] to-[#c4956a] z-0" />
                 <Image 
                   src="/images/camel-blazer.png" 
-                  alt="Dune Structure Blazer" 
+                  alt="" 
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative"
@@ -163,10 +167,12 @@ export default function NoirAtelier() {
               </p>
             </motion.div>
           </motion.div>
-        </section>
+        </div>
+      </section>
 
-        {/* 4. EMAIL CTA */}
-        <section className="py-32 border-t border-black/[0.08] text-center">
+      {/* 4. EMAIL CTA */}
+      <section className="bg-[#eaeae4] py-24 md:py-32 border-t border-black/5 text-center">
+        <div className="max-w-6xl mx-auto px-6">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -199,19 +205,21 @@ export default function NoirAtelier() {
               </button>
             </motion.form>
           </motion.div>
-        </section>
+        </div>
+      </section>
 
-        {/* Back link */}
-        <footer className="py-12 flex justify-center border-t border-black/[0.08]">
+      {/* Back link */}
+      <footer className="bg-[#eaeae4] py-12 flex justify-center border-t border-black/5">
+        <div className="max-w-6xl mx-auto px-6 w-full flex justify-center">
           <Link 
             href="/" 
             className="text-gray-500 hover:text-black transition-colors text-sm tracking-widest uppercase"
           >
             Back to veltris.uk
           </Link>
-        </footer>
+        </div>
+      </footer>
 
-      </div>
     </div>
   );
 }
