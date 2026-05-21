@@ -198,6 +198,95 @@ export default function WorkPage() {
         </motion.div>
       </section>
 
+      {/* ── 2.5. NOIR ATELIER PROJECT ───────────────────────────────────── */}
+      <section className="px-6 md:px-12 max-w-7xl mx-auto pb-0 mt-20">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+          className="border border-[#1a1a1a] bg-[#050505] overflow-hidden"
+        >
+          {/* Split layout: left text / right visual */}
+          <div className="flex flex-col lg:flex-row-reverse">
+
+            {/* TEXT PANEL — 40% */}
+            <div className="w-full lg:w-[40%] p-5 md:p-10 lg:p-12 flex flex-col justify-between gap-8 md:gap-10 border-b lg:border-b-0 lg:border-l border-[#1a1a1a]">
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#555] mb-5 font-mono">
+                  CONCEPT SITE
+                </p>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight">
+                  Noir Atelier
+                </h2>
+                <p className="text-[#777] text-sm leading-relaxed mb-8">
+                  Luxury fashion concept site. Editorial minimalism, warm off-white palette, Playfair Display typography.
+                </p>
+
+                {/* Stack Tags */}
+                <div className="flex flex-wrap gap-2 mb-10">
+                  {["Concept Site", "Next.js", "Tailwind CSS", "Editorial"].map((tag) => (
+                    <span key={tag} className="text-[10px] uppercase tracking-wider border border-[#222] text-[#666] px-3 py-1">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Metrics grid inside card */}
+                <div className="grid grid-cols-2 gap-px border border-[#1a1a1a] mb-10">
+                  {[
+                    { label: "Type", value: "Concept Site" },
+                    { label: "Stack", value: "Next.js + Tailwind" },
+                    { label: "Design", value: "Minimalism" },
+                    { label: "Status", value: "Live" },
+                  ].map((m) => (
+                    <div key={m.label} className="bg-[#080808] p-4">
+                      <p className="text-[10px] font-mono uppercase tracking-widest text-[#444] mb-1">{m.label}</p>
+                      <p className={`text-sm font-semibold ${m.value === "Live" ? "text-emerald-500" : "text-[#ccc]"}`}>{m.value}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <Link
+                href="/noir-atelier"
+                className="inline-flex items-center justify-center bg-white text-black font-semibold text-[11px] tracking-widest uppercase px-6 py-4 hover:bg-[#e8e8e8] transition-colors duration-300 w-full lg:w-auto"
+              >
+                View Concept Site &rarr;
+              </Link>
+            </div>
+
+            {/* VISUAL PANEL — 60% */}
+            <div className="w-full lg:w-[60%] relative bg-[#040404] min-h-[260px] md:min-h-[480px] lg:min-h-0 overflow-hidden flex items-center justify-center p-4 lg:p-12">
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 9, repeat: Infinity, ease: "easeInOut", repeatType: "reverse" }}
+                className="w-full relative"
+              >
+                <div className="w-full border border-[#1f1f1f] overflow-hidden shadow-2xl bg-[#080808]">
+                  <div className="h-6 bg-[#111] border-b border-[#1a1a1a] flex items-center px-3 gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#2a2a2a]" />
+                    <span className="w-2 h-2 rounded-full bg-[#2a2a2a]" />
+                    <span className="w-2 h-2 rounded-full bg-[#2a2a2a]" />
+                  </div>
+                  <div className="aspect-video relative overflow-hidden flex flex-col items-center justify-center bg-gradient-to-br from-[#111] to-[#0a0a0a]">
+                    <img
+                      src="/images/black-wool.png"
+                      alt="Noir Atelier preview"
+                      className="w-full h-full object-cover object-top opacity-80 mix-blend-lighten"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1544022613-e87ca75a784a?q=80&w=1000&auto=format&fit=crop';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#040404] via-transparent to-transparent opacity-50 pointer-events-none" />
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
       {/* ── 3. BUILD BREAKDOWN TIMELINE ──────────────────────────────────── */}
       <section className="px-6 md:px-12 max-w-7xl mx-auto py-10 md:py-28">
 
