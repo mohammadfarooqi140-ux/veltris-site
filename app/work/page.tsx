@@ -33,8 +33,8 @@ export default function WorkPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white pt-32 pb-16 px-6 font-sans">
-      <div className="max-w-6xl mx-auto">
+    <main className="min-h-screen bg-[#0a0a0a] text-white font-sans">
+      <div className="max-w-6xl mx-auto px-6 py-24">
         
         {/* PAGE HEADER */}
         <header className="mb-16">
@@ -58,30 +58,15 @@ export default function WorkPage() {
               <LinkComponent 
                 key={project.id} 
                 {...linkProps}
-                className="group block rounded-sm border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-white/20"
+                className="group block border border-white/10 rounded-sm overflow-hidden hover:border-white/20 transition-all hover:-translate-y-1 hover:shadow-lg"
               >
-                {/* Image Area */}
-                <div className="aspect-video w-full rounded-t-sm overflow-hidden bg-black/50 relative">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity duration-300" 
-                  />
+                <div className="aspect-video w-full overflow-hidden bg-black">
+                  <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
                 </div>
-                
-                {/* Content Area */}
                 <div className="p-6">
-                  <h2 className="text-xl font-bold text-white group-hover:text-gray-100 transition-colors">
-                    {project.title}
-                  </h2>
-                  <p className="text-sm text-gray-400 mt-2 leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="mt-4">
-                    <span className="text-xs uppercase tracking-wider text-gray-500">
-                      {project.tag}
-                    </span>
-                  </div>
+                  <h3 className="text-xl font-bold text-white">{project.title}</h3>
+                  <p className="text-sm text-gray-400 mt-2">{project.description}</p>
+                  <span className="text-xs uppercase tracking-wider text-gray-500 mt-4 block">{project.tag}</span>
                 </div>
               </LinkComponent>
             );
