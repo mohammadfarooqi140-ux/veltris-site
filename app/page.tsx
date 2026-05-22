@@ -230,12 +230,15 @@ export default function Home() {
                     style={{ opacity: label2Opacity, y: label2Y }}
                     className="absolute -top-12 left-0 w-full text-center text-xs font-mono text-white/60 tracking-wider hidden md:block"
                   >
-                    Noir Atelier — Fashion
+                    NOIR ATELIER
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[320px] rounded-sm border border-white/10 bg-[#f5f5f0] shadow-lg flex flex-col overflow-hidden relative">
-                  <div className="flex-1 flex items-center justify-center">
-                    <span className="font-playfair text-[#111] text-sm tracking-widest font-serif">NOIR ATELIER</span>
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-sm border border-white/10 bg-[#0a0a0a] shadow-lg flex flex-col overflow-hidden relative">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[10px] font-bold text-white tracking-widest leading-relaxed">LUXURY.<br/>RESTRAINT.</span>
+                  </div>
+                  <div className="flex-1 overflow-hidden relative z-0">
+                    <img src="/images/black-wool.png" alt="Noir Atelier" className="w-full h-full object-cover object-top" />
                   </div>
                 </motion.div>
               </div>
@@ -247,12 +250,15 @@ export default function Home() {
                     style={{ opacity: label3Opacity, y: label3Y }}
                     className="absolute -top-12 left-0 w-full text-center text-xs font-mono text-white/60 tracking-wider hidden md:block"
                   >
-                    Coming Soon
+                    KINSHIP
                   </motion.div>
                 )}
-                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-sm border border-white/10 shadow-lg flex flex-col overflow-hidden relative bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a]">
-                  <div className="flex-1 flex items-center justify-center">
-                    <span className="text-xs text-white/40 tracking-widest">COMING SOON</span>
+                <motion.div variants={monumentVariants} className="snap-center shrink-0 w-[180px] h-[280px] rounded-sm border border-white/10 bg-[#0a0a0a] shadow-lg flex flex-col overflow-hidden relative">
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/60 p-4 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <span className="text-[10px] font-bold text-white tracking-widest leading-relaxed">PREMIUM<br/>GROOMING.</span>
+                  </div>
+                  <div className="flex-1 overflow-hidden relative z-0">
+                    <img src="/images/trimmer.png" alt="KINSHIP" className="w-full h-full object-cover object-top" />
                   </div>
                 </motion.div>
               </div>
@@ -267,11 +273,14 @@ export default function Home() {
           <span className="text-[10px] font-semibold text-[#555] tracking-widest uppercase mb-4 block">
             OUR CAPABILITIES
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            We build everything. If it runs in a browser, we can build it.
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            What we build.
           </h2>
+          <p className="text-[#555] text-sm md:text-base font-medium mb-4">
+            Three core packages. No hidden fees. No scope creep.
+          </p>
           <p className="text-[#888] text-sm md:text-base leading-relaxed font-light">
-            From simple high-performance marketing pages to robust SaaS applications and custom e-commerce engines, we deliver bespoke solutions tailored to all business models. Here are our core packages:
+            Every project starts with a conversation. We scope it, price it, build it. You get a website that works — not a template with your logo on it.
           </p>
         </div>
 

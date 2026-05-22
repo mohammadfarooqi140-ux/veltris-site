@@ -6,7 +6,7 @@ export default function WorkPage() {
     {
       id: "aethalgard",
       title: "Aethalgard",
-      description: "Dark fantasy brand identity. Absolute edge, infinite darkness.",
+      description: "Dark fantasy brand identity.",
       tag: "Brand Identity",
       image: "/aethelgard-preview.png",
       link: "https://athelgard.vercel.app",
@@ -15,7 +15,7 @@ export default function WorkPage() {
     {
       id: "noir-atelier",
       title: "Noir Atelier",
-      description: "Luxury fashion concept. Editorial minimalism, warm off-white palette.",
+      description: "Luxury fashion concept.",
       tag: "Concept Site",
       image: "/images/black-wool.png",
       link: "/noir-atelier",
@@ -24,7 +24,7 @@ export default function WorkPage() {
     {
       id: "kinship",
       title: "KINSHIP",
-      description: "Premium men's grooming. Warm charcoal, burnished gold accents.",
+      description: "Premium men's grooming.",
       tag: "Concept Site",
       image: "/images/trimmer.png",
       link: "/kinship",

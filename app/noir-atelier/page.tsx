@@ -132,15 +132,8 @@ export default function NoirAtelier() {
 
             {/* Card 2 */}
             <motion.div variants={fadeInUp} className="group cursor-pointer">
-              <div className="aspect-[3/4] bg-gray-200 overflow-hidden mb-6 relative shadow-sm group-hover:-translate-y-1 group-hover:shadow-md transition-all duration-500 ease-[0.25,0.1,0.25,1]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#d4a574] to-[#c4956a] z-0" />
-                <Image 
-                  src="/images/camel-blazer.png" 
-                  alt="" 
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out z-10 relative"
-                />
+              <div className="aspect-[3/4] overflow-hidden mb-6 relative shadow-sm group-hover:-translate-y-1 group-hover:shadow-md transition-all duration-500 ease-[0.25,0.1,0.25,1]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#d4a574] via-[#c4956a] to-[#b8885a]" />
               </div>
               <h3 className={`text-xl font-semibold mb-2 ${playfair.className}`}>Dune Structure Blazer</h3>
               <p className="text-sm text-gray-500 mb-4 font-medium">£285</p>

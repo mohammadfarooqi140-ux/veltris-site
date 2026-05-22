@@ -68,11 +68,14 @@ export default function ServicesPage() {
             <p className="text-xs uppercase tracking-widest text-[#555] mb-4 md:mb-8 font-mono">
               SERVICES
             </p>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-4 md:mb-8 tracking-tight leading-[1.05]">
-              Choose the website your business actually needs.
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-3 md:mb-4 tracking-tight leading-[1.05]">
+              What we build.
             </h1>
+            <p className="text-base sm:text-lg text-[#555] font-medium mb-4 md:mb-6">
+              Three core packages. No hidden fees. No scope creep.
+            </p>
             <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-8 md:mb-12">
-              Clear website packages for businesses that need a sharper online presence — from single-page launches to full custom builds.
+              Every project starts with a conversation. We scope it, price it, build it. You get a website that works — not a template with your logo on it.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
