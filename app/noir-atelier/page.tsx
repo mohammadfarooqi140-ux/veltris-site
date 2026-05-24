@@ -43,10 +43,10 @@ export default function NoirAtelierPage() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2000&auto=format&fit=crop" 
-            alt="High-end fashion atelier fabric detail" 
+            src="/images/black-wool.png" 
+            alt="Dark premium wool fabric texture" 
             fill 
-            className="object-cover opacity-25 grayscale"
+            className="object-cover opacity-40"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0A]/40 via-transparent to-[#0A0A0A]"></div>
@@ -165,10 +165,10 @@ export default function NoirAtelierPage() {
               <Image src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1600&auto=format&fit=crop" alt="Tailor working on fabric" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-[#111]">
-              <Image src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?q=80&w=800&auto=format&fit=crop" alt="Fabric details" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
+              <Image src="/images/ivory-cashmere.png" alt="Cream silk fabric detail" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-[#111]">
-              <Image src="https://images.unsplash.com/photo-1598532163257-ae3c6b2524b6?q=80&w=800&auto=format&fit=crop" alt="Measuring tape and scissors" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
+              <Image src="/images/camel-blazer.png" alt="Camel cashmere fabric detail" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
             </div>
           </div>
           <div className="mt-12 text-center max-w-2xl mx-auto">
@@ -184,8 +184,8 @@ export default function NoirAtelierPage() {
         <div className="max-w-6xl mx-auto">
           <FadeIn>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-              <div className="relative aspect-[3/4] overflow-hidden grayscale">
-                <Image src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1000&auto=format&fit=crop" alt="Elena Voss" fill className="object-cover" />
+              <div className="relative aspect-[3/4] overflow-hidden">
+                <Image src="/images/elena_voss.png" alt="Elena Voss, Head Designer" fill className="object-cover grayscale" />
               </div>
               <div>
                 <h2 className="font-cinzel text-4xl md:text-5xl text-[#F0F0F0] mb-2 tracking-widest uppercase">Elena Voss</h2>

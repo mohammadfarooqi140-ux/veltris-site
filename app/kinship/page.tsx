@@ -44,7 +44,7 @@ export default function KinshipPage() {
       <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="https://images.unsplash.com/photo-1593702288056-ccbfcb0326db?q=80&w=2000&auto=format&fit=crop" 
+            src="/images/kinship_hero.png" 
             alt="Dark moody barbershop interior" 
             fill 
             className="object-cover opacity-30"
@@ -189,8 +189,8 @@ export default function KinshipPage() {
             <h2 className="font-playfair text-4xl md:text-5xl text-[#F5F0EB] mb-16 text-center">The Team</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {[
-                { name: "Marcus", role: "Fades & texture, 8 years", img: "https://images.unsplash.com/photo-1534308143481-c55f00be8bd7?q=80&w=800&auto=format&fit=crop" },
-                { name: "Leo", role: "Classic cuts, straight razor, 12 years", img: "https://images.unsplash.com/photo-1622281561081-0026e6f98725?q=80&w=800&auto=format&fit=crop" },
+                { name: "Marcus", role: "Fades & texture, 8 years", img: "/images/barber_marcus.png" },
+                { name: "Leo", role: "Classic cuts, straight razor, 12 years", img: "/images/barber_leo.png" },
                 { name: "Ava", role: "Beard sculpting, pattern work, 5 years", img: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=800&auto=format&fit=crop" }
               ].map((barber, idx) => (
                 <div key={idx} className="group text-center">
