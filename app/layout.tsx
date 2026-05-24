@@ -27,6 +27,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-92G8DB3QE3"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-92G8DB3QE3');
+            `,
+          }}
+        />
+      </head>
       <body className={cn("min-h-screen font-sans antialiased bg-[#080808] text-[#F5F5F5] flex flex-col justify-between")}>
         <Navbar />
         <div className="flex-grow">
