@@ -173,7 +173,7 @@ export default function NoirAtelierPage() {
           </div>
           <div className="mt-12 text-center max-w-2xl mx-auto">
             <p className="text-lg md:text-xl font-cinzel text-[#F0F0F0] tracking-widest uppercase">
-              "From first fitting to final stitch — 4 weeks."
+              &quot;From first fitting to final stitch — 4 weeks.&quot;
             </p>
           </div>
         </FadeIn>
@@ -202,11 +202,11 @@ export default function NoirAtelierPage() {
 
                 <div className="mt-12 space-y-8 border-l border-[#C0C0C0]/20 pl-6">
                   <div>
-                    <p className="font-cinzel text-lg text-[#F0F0F0] italic mb-2 tracking-wide">"Voss is single-handedly redefining what modern luxury feels like in London."</p>
+                    <p className="font-cinzel text-lg text-[#F0F0F0] italic mb-2 tracking-wide">&quot;Voss is single-handedly redefining what modern luxury feels like in London.&quot;</p>
                     <p className="text-[#C0C0C0]/50 font-thin text-xs uppercase tracking-widest">— Vogue UK</p>
                   </div>
                   <div>
-                    <p className="font-cinzel text-lg text-[#F0F0F0] italic mb-2 tracking-wide">"A masterclass in restraint. The tailoring is sharp enough to cut glass."</p>
+                    <p className="font-cinzel text-lg text-[#F0F0F0] italic mb-2 tracking-wide">&quot;A masterclass in restraint. The tailoring is sharp enough to cut glass.&quot;</p>
                     <p className="text-[#C0C0C0]/50 font-thin text-xs uppercase tracking-widest">— ES Magazine</p>
                   </div>
                 </div>

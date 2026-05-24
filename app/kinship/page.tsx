@@ -102,14 +102,14 @@ export default function KinshipPage() {
               <Scissors className="w-10 h-10 text-[#B85C38] mb-6 mx-auto md:mx-0 transition-transform duration-500 group-hover:-translate-y-2" />
               <h3 className="font-playfair text-2xl text-[#F5F0EB] mb-4">No mystery pricing</h3>
               <p className="text-[#D4C5B0]/80 leading-relaxed">
-                Our menu is straightforward and presented upfront. You'll never be surprised by hidden costs, mandatory products, or last-minute upsells at the till.
+                Our menu is straightforward and presented upfront. You&apos;ll never be surprised by hidden costs, mandatory products, or last-minute upsells at the till.
               </p>
             </div>
             <div className="text-center md:text-left group">
               <UserCheck className="w-10 h-10 text-[#B85C38] mb-6 mx-auto md:mx-0 transition-transform duration-500 group-hover:-translate-y-2" />
               <h3 className="font-playfair text-2xl text-[#F5F0EB] mb-4">No strangers</h3>
               <p className="text-[#D4C5B0]/80 leading-relaxed">
-                When you book with a barber, that's who cuts your hair. We believe in building consistency so your barber understands exactly how your hair sits.
+                When you book with a barber, that&apos;s who cuts your hair. We believe in building consistency so your barber understands exactly how your hair sits.
               </p>
             </div>
           </div>
@@ -176,7 +176,7 @@ export default function KinshipPage() {
           </div>
           <div className="mt-8 text-center max-w-2xl mx-auto">
             <p className="text-xl md:text-2xl font-playfair text-[#F5F0EB] italic leading-relaxed">
-              "4 chairs. No waiting music we didn't choose. Coffee from a local roaster."
+              &quot;4 chairs. No waiting music we didn&apos;t choose. Coffee from a local roaster.&quot;
             </p>
           </div>
         </FadeIn>
@@ -226,7 +226,7 @@ export default function KinshipPage() {
               { text: "Ava sorted my beard out perfectly before my wedding. The vibe in the shop is relaxed, no pretension, just good music and great cuts.", author: "Tom H.", time: "3 months ago" }
             ].map((review, idx) => (
               <div key={idx} className="bg-[#222222] p-8 md:p-10 border border-[#D4C5B0]/5 hover:border-[#B85C38]/30 transition-colors duration-300">
-                <p className="text-[#F5F0EB] font-playfair text-lg md:text-xl leading-relaxed mb-6 italic">"{review.text}"</p>
+                <p className="text-[#F5F0EB] font-playfair text-lg md:text-xl leading-relaxed mb-6 italic">&quot;{review.text}&quot;</p>
                 <div className="flex justify-between items-center border-t border-[#D4C5B0]/10 pt-4">
                   <span className="font-bold tracking-wide text-[#D4C5B0]">{review.author}</span>
                   <span className="text-sm text-[#D4C5B0]/50">{review.time}</span>
