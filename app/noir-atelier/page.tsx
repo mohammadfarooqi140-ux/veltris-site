@@ -162,7 +162,7 @@ export default function NoirAtelierPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 auto-rows-[300px]">
             <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden bg-[#111]">
-              <Image src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?q=80&w=1600&auto=format&fit=crop" alt="Tailor working on fabric" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
+              <Image src="/images/black-wool.png" alt="Tailor working on fabric" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-[#111]">
               <Image src="/images/ivory-cashmere.png" alt="Cream silk fabric detail" fill className="object-cover grayscale opacity-70 transition-transform duration-1000 group-hover:scale-105" />

@@ -161,8 +161,8 @@ export default function KinshipPage() {
       <section className="py-24 px-6 max-w-7xl mx-auto">
         <FadeIn>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-6 auto-rows-[250px]">
-            <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden">
-              <Image src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600&auto=format&fit=crop" alt="Barbershop interior" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div className="md:col-span-8 md:row-span-2 relative group overflow-hidden bg-[#111]">
+              <Image src="/images/kinship_hero.png" alt="Barbershop interior" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-colors duration-500"></div>
             </div>
             <div className="md:col-span-4 md:row-span-1 relative group overflow-hidden">
@@ -190,8 +190,7 @@ export default function KinshipPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
               {[
                 { name: "Marcus", role: "Fades & texture, 8 years", img: "/images/barber_marcus.png" },
-                { name: "Leo", role: "Classic cuts, straight razor, 12 years", img: "/images/barber_leo.png" },
-                { name: "Ava", role: "Beard sculpting, pattern work, 5 years", img: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?q=80&w=800&auto=format&fit=crop" }
+                { name: "Leo", role: "Classic cuts, straight razor, 12 years", img: "/images/barber_leo.png" }
               ].map((barber, idx) => (
                 <div key={idx} className="group text-center">
                   <div className="relative w-full aspect-[4/5] mb-6 overflow-hidden bg-[#1A1A1A]">
