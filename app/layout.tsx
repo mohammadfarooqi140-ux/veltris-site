@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cinzel } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
@@ -15,6 +15,11 @@ const playfair = Playfair_Display({
   variable: "--font-playfair",
 });
 
+const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+});
+
 export const metadata: Metadata = {
   title: "Veltris — Cinematic Web Design Studio",
   description: "Premium web design for businesses that care how they look. Built with AI speed and human taste.",
@@ -26,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cinzel.variable}`}>
       <head>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-92G8DB3QE3"></script>
         <script

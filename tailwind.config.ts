@@ -11,6 +11,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         playfair: ["var(--font-playfair)", "serif"],
+        cinzel: ["var(--font-cinzel)", "serif"],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
