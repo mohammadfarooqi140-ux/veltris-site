@@ -72,10 +72,10 @@ export default function ServicesPage() {
               What we build.
             </h1>
             <p className="text-base sm:text-lg text-[#555] font-medium mb-4 md:mb-6">
-              Three core packages. No hidden fees. No scope creep.
+              Custom websites. Flat pricing.
             </p>
             <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-8 md:mb-12">
-              Every project starts with a conversation. We scope it, price it, build it. You get a website that works — not a template with your logo on it.
+              We work directly with you to design and build your website. You receive a fully custom site tailored to your brand&apos;s goals.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -216,7 +216,7 @@ export default function ServicesPage() {
         </motion.div>
         <div className="mt-8 text-center">
           <p className="text-sm text-[#888] font-mono tracking-wide">
-            Founding client rate: <span className="text-white">40% off first project.</span>
+            Partner rate: <span className="text-white">40% off your project.</span>
           </p>
         </div>
       </section>

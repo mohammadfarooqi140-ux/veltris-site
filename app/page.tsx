@@ -33,8 +33,8 @@ export default function Home() {
   const label3Y = useTransform(scrollYProgress, [0, 0.62, 0.68, 0.85], [15, 15, 0, 0]);
 
   // Load animations
-  const line1 = "We Build Websites".split(" ");
-  const line2 = "That Work.".split(" ");
+  const line1 = "Cinematic websites".split(" ");
+  const line2 = "for premium brands.".split(" ");
 
   const headlineContainerVariants: Variants = {
     hidden: {},
@@ -172,7 +172,7 @@ export default function Home() {
               animate="visible"
               className="text-lg md:text-xl text-gray-400 max-w-[500px] mb-10"
             >
-              Cinematic websites built with AI speed and human taste. No templates. No fluff.
+              Next.js · Framer Motion · Tailwind CSS · 0.8s load times
             </motion.p>
             
             <motion.div 
@@ -190,7 +190,7 @@ export default function Home() {
                 </Link>
               </div>
               <p className="text-sm text-gray-400 text-center sm:text-left max-w-[500px]">
-                We&apos;re a new studio building our first client projects. <span className="text-white font-medium">Founding clients get priority pricing.</span>
+                Based in Karachi. Working globally.
               </p>
             </motion.div>
           </div>
@@ -277,10 +277,10 @@ export default function Home() {
             What we build.
           </h2>
           <p className="text-[#555] text-sm md:text-base font-medium mb-4">
-            Three core packages. No hidden fees. No scope creep.
+            Custom websites. Flat pricing.
           </p>
           <p className="text-[#888] text-sm md:text-base leading-relaxed font-light">
-            Every project starts with a conversation. We scope it, price it, build it. You get a website that works — not a template with your logo on it.
+            We work directly with you to design and build your website. You receive a fully custom site tailored to your brand&apos;s goals.
           </p>
         </div>
 
@@ -322,11 +322,11 @@ export default function Home() {
               Why Veltris?
             </span>
             <p className="text-[#888] text-base md:text-xl leading-relaxed font-light mb-6">
-              Most agency sites look the same because they are the same — recycled templates, filler copy, no soul.
+              Many agencies rely on generic templates and recycled layouts. We build custom websites designed specifically for your brand.
               <span className="text-white font-bold text-lg md:text-2xl block mt-4">Veltris is different.</span>
             </p>
             <p className="text-[#888] text-base md:text-xl leading-relaxed font-light">
-              One operator with obsessive taste, using the best AI tools to build faster without sacrificing craft. If you want a site that actually feels like your brand, not a SaaS clone, we should talk.
+              We focus on clean design and modern web development. By prioritizing simplicity and performance, we deliver websites that help your business grow.
             </p>
           </div>
         </div>
