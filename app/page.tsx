@@ -136,7 +136,7 @@ export default function Home() {
           />
         )}
         
-        <div className="w-full max-w-7xl mx-auto px-6 pt-24 md:pt-0 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="w-full max-w-7xl mx-auto px-6 pt-32 md:pt-24 flex flex-col md:flex-row items-center justify-between gap-12">
           
           {/* Left Column - 55% */}
           <div className="w-full md:w-[55%] flex flex-col z-20">
@@ -170,9 +170,18 @@ export default function Home() {
               variants={subheadlineVariants}
               initial="hidden"
               animate="visible"
+              className="text-lg md:text-xl text-white max-w-[500px] mb-2"
+            >
+              Based in Karachi. Working globally.
+            </motion.p>
+
+            <motion.p 
+              variants={subheadlineVariants}
+              initial="hidden"
+              animate="visible"
               className="text-lg md:text-xl text-gray-400 max-w-[500px] mb-10"
             >
-              Next.js · Framer Motion · Tailwind CSS · 0.8s load times
+              Aethalgard · Live store · 0.8s load · Next.js
             </motion.p>
             
             <motion.div 
@@ -182,16 +191,10 @@ export default function Home() {
               className="flex flex-col gap-6"
             >
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link href="/contact" className="bg-white text-black px-8 py-4 font-semibold text-center hover:bg-neutral-200 transition-colors">
-                  Book a Free Call
-                </Link>
                 <Link href="/work" className="border border-white/20 text-white bg-transparent px-8 py-4 font-semibold text-center hover:bg-white/5 transition-colors">
                   See Our Work
                 </Link>
               </div>
-              <p className="text-sm text-gray-400 text-center sm:text-left max-w-[500px]">
-                Based in Karachi. Working globally.
-              </p>
             </motion.div>
           </div>
 
