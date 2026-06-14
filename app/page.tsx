@@ -1,47 +1,23 @@
 "use client";
 
 import Link from "next/link";
-import { Globe, Layers, LayoutTemplate, Search, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Home() {
-  const services = [
-    {
-      icon: <Globe className="w-8 h-8 text-white mb-6" />,
-      title: "Landing Pages",
-      desc: "Fast, polished one-page sites for ad campaigns and product launches.",
-    },
-    {
-      icon: <Layers className="w-8 h-8 text-white mb-6" />,
-      title: "Business Websites",
-      desc: "Professional multi-page presences establishing credibility and trust.",
-    },
-    {
-      icon: <LayoutTemplate className="w-8 h-8 text-white mb-6" />,
-      title: "Redesigns",
-      desc: "Modern redesigns for outdated websites that need a functional upgrade.",
-    },
-    {
-      icon: <Search className="w-8 h-8 text-white mb-6" />,
-      title: "Simple E-Commerce & Advanced",
-      desc: "Custom functionality and stores quoted strictly by scope.",
-    },
-  ];
-
   return (
     <div className="bg-[#050505] text-[#F5F5F5] font-sans selection:bg-[#F5F5F5] selection:text-[#050505]">
+
       {/* 1. Hero */}
-      <section className="relative min-h-[85vh] w-full flex items-center bg-[#050505] overflow-hidden border-b border-white/10">
+      <section className="relative min-h-[80vh] w-full flex items-center bg-[#050505] overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-        <div className="w-full max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32">
+        <div className="w-full max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32 md:pb-20">
           <div className="max-w-4xl z-20 relative">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
-              Websites for businesses that need more than Instagram.
+              Make your business look established online
             </h1>
-            
-            <p className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl mb-12 leading-relaxed">
-              Veltris builds premium-looking websites for tattoo studios, salons, barbers, photographers, cafes, and independent service brands — delivered fast, priced clearly, and built to make your business look established.
+            <p className="text-lg md:text-xl text-[#A0A0A0] max-w-2xl mb-10 leading-relaxed">
+              Veltris helps local businesses create a sharper online presence through premium websites, clear information, and fast, polished digital experiences built to earn trust before a customer ever contacts you.
             </p>
-            
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/contact" className="bg-[#F5F5F5] text-[#050505] px-8 py-4 font-semibold text-center hover:bg-[#E0E0E0] transition-colors uppercase text-sm tracking-widest">
                 Request Free Concept
@@ -54,17 +30,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. Problem Section (Refactored) */}
+      {/* 2. Value Section */}
       <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto border-b border-white/10">
-        <div className="border border-white/10 bg-[#0A0A0A] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-12 items-center">
-          <div className="md:w-1/2">
-            <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
-              Instagram shows your work.<br />A website builds trust.
-            </h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8 md:mb-10">
+          Your online presence should do more than exist
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="border border-white/10 bg-[#0A0A0A] p-6">
+            <h3 className="text-base font-bold text-white mb-3">Look established</h3>
+            <p className="text-sm text-[#888] leading-relaxed">
+              A polished website gives customers a clearer first impression before they contact you.
+            </p>
           </div>
-          <div className="md:w-1/2">
-            <p className="text-lg text-[#A0A0A0] leading-relaxed">
-              Many local businesses rely on Instagram, Google Maps, or a booking link. That works until a serious customer wants clear information, prices, FAQs, opening hours, or a professional first impression. A proper website makes the business easier to trust and easier to contact.
+          <div className="border border-white/10 bg-[#0A0A0A] p-6">
+            <h3 className="text-base font-bold text-white mb-3">Make information easy to find</h3>
+            <p className="text-sm text-[#888] leading-relaxed">
+              Show services, menus, opening hours, locations, FAQs, prices, and contact details in one place.
+            </p>
+          </div>
+          <div className="border border-white/10 bg-[#0A0A0A] p-6">
+            <h3 className="text-base font-bold text-white mb-3">Turn interest into action</h3>
+            <p className="text-sm text-[#888] leading-relaxed">
+              Guide visitors toward booking, calling, visiting, enquiring, or buying.
             </p>
           </div>
         </div>
@@ -73,64 +60,66 @@ export default function Home() {
       {/* 3. Services Preview */}
       <section className="py-16 md:py-20 px-6 bg-[#0A0A0A] border-b border-white/10">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-10 md:mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+          <div className="mb-10">
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
               What we build
             </h2>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="group border border-white/10 bg-[#0F0F0F] p-8 rounded-none transition-colors duration-200 hover:border-white/20 flex flex-col justify-between"
-              >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            {[
+              { title: "Landing Pages", desc: "Fast, polished one-page sites for ad campaigns and product launches.", price: "From £600" },
+              { title: "Business Websites", desc: "Professional multi-page presences establishing credibility and trust.", price: "From £900" },
+              { title: "Redesigns", desc: "Modern redesigns for outdated websites that need a functional upgrade.", price: "From £900" },
+              { title: "E-Commerce & Advanced", desc: "Custom functionality and stores quoted strictly by scope.", price: "Quoted after scope" },
+            ].map((service, index) => (
+              <div key={index} className="border border-white/10 bg-[#0F0F0F] p-6 flex flex-col justify-between hover:border-white/20 transition-colors duration-200">
                 <div>
-                  <div className="mb-6">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-3">{service.title}</h3>
-                  <p className="text-[#A0A0A0] text-sm leading-relaxed font-light">{service.desc}</p>
+                  <h3 className="text-base font-bold text-white mb-2">{service.title}</h3>
+                  <p className="text-[#888] text-sm leading-relaxed">{service.desc}</p>
                 </div>
+                <p className="text-sm font-semibold text-white mt-4 pt-4 border-t border-white/10">{service.price}</p>
               </div>
             ))}
           </div>
-
-          <div className="text-center sm:text-left">
-             <Link href="/services" className="inline-flex items-center gap-2 text-sm text-white font-semibold uppercase tracking-widest hover:text-[#A0A0A0] transition-colors">
-                View Services & Pricing <ArrowRight className="w-4 h-4" />
-             </Link>
-          </div>
+          <Link href="/services" className="inline-flex items-center gap-2 text-sm text-white font-semibold uppercase tracking-widest hover:text-[#A0A0A0] transition-colors">
+            View Services &amp; Pricing <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
 
-      {/* 4. Small Work Teaser */}
-      <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto border-b border-white/10 text-center">
-        <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Concepts built to show what’s possible</h2>
-          <p className="text-lg text-[#A0A0A0] leading-relaxed mb-4">
-            See proof-of-work concepts for tattoo studios, sandwich shops, e-commerce brands, and local businesses.
-          </p>
-          <Link href="/work" className="inline-flex items-center gap-2 text-sm text-[#050505] bg-[#F5F5F5] font-semibold uppercase tracking-widest hover:bg-[#E0E0E0] transition-colors px-8 py-4">
+      {/* 4. Work Teaser */}
+      <section className="py-16 md:py-20 px-6 border-b border-white/10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">Concepts built to show what&apos;s possible</h2>
+            <p className="text-[#888] leading-relaxed max-w-xl">
+              See proof-of-work concepts for food shops, tattoo studios, e-commerce brands, and local service businesses.
+            </p>
+          </div>
+          <Link href="/work" className="shrink-0 inline-flex items-center gap-2 bg-[#F5F5F5] text-[#050505] font-semibold uppercase tracking-widest text-sm hover:bg-[#E0E0E0] transition-colors px-8 py-4">
             View Work
           </Link>
         </div>
       </section>
 
-      {/* 5. Final CTA Section */}
-      <section className="py-20 md:py-24 px-6">
+      {/* 5. Final CTA */}
+      <section className="py-16 md:py-20 px-6">
         <div className="max-w-4xl mx-auto border border-white/10 bg-[#0A0A0A] p-10 md:p-16 text-center">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
             Want to see what your business could look like?
           </h2>
+          <p className="text-[#888] mb-8 leading-relaxed max-w-xl mx-auto">
+            We build free homepage concepts for businesses that are a clear fit. Fill out the form and we will get back to you within 48 hours.
+          </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#F5F5F5] text-[#050505] px-10 py-5 font-semibold uppercase tracking-widest text-sm hover:bg-[#E0E0E0] transition-transform hover:-translate-y-1"
+            className="inline-block bg-[#F5F5F5] text-[#050505] px-10 py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#E0E0E0] transition-transform hover:-translate-y-1"
           >
             Request Free Concept
           </Link>
         </div>
       </section>
+
     </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Footer() {
               Veltris
             </Link>
             <p className="text-sm max-w-sm leading-relaxed">
-              Premium websites for local businesses that need a clearer, more credible online presence.
+              Premium websites and digital presence for local businesses that want to look clearer, sharper, and more established online.
             </p>
           </div>
 
