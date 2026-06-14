@@ -102,24 +102,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 5. Final CTA */}
-      <section className="py-16 md:py-20 px-6">
-        <div className="max-w-4xl mx-auto border border-white/10 bg-[#0A0A0A] p-10 md:p-16 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-            Want to see what your business could look like?
-          </h2>
-          <p className="text-[#888] mb-8 leading-relaxed max-w-xl mx-auto">
-            We build free homepage concepts for businesses that are a clear fit. Fill out the form and we will get back to you within 48 hours.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[#F5F5F5] text-[#050505] px-10 py-4 font-semibold uppercase tracking-widest text-sm hover:bg-[#E0E0E0] transition-transform hover:-translate-y-1"
-          >
-            Request Free Concept
-          </Link>
-        </div>
-      </section>
-
     </div>
   );
 }
