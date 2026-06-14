@@ -21,8 +21,8 @@ const cinzel = Cinzel({
 });
 
 export const metadata: Metadata = {
-  title: "Veltris — Cinematic Web Design Studio",
-  description: "Premium web design for businesses that care how they look. Built with AI speed and human taste.",
+  title: "Veltris — Premium Websites for Local Businesses",
+  description: "Veltris builds modern, conversion-focused websites for tattoo studios, salons, barbers, and service brands. Delivered fast, priced clearly.",
 };
 
 export default function RootLayout({
