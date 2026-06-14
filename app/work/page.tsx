@@ -87,11 +87,11 @@ export default function WorkPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#050505] overflow-hidden text-white pt-24 pb-32">
+    <main className="min-h-screen bg-[#050505] overflow-hidden text-white pt-24 pb-20 md:pb-24">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         
         {/* HEADER */}
-        <div className="mb-20">
+        <div className="mb-12 md:mb-16">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">Concepts & Builds</h1>
           <p className="text-[#A0A0A0] text-lg max-w-2xl leading-relaxed">
             Proof-of-work concepts designed to show local businesses how a proper website looks, feels, and converts. We build these to set the standard before writing a single line of code for a client.
@@ -99,7 +99,7 @@ export default function WorkPage() {
         </div>
 
         {/* 2x2 GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
           {projects.map((project, idx) => (
             <div key={idx} className="flex flex-col group">
               {/* Image / Preview Container (Equal aspect ratio) */}

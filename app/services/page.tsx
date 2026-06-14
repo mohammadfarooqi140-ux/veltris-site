@@ -48,7 +48,7 @@ export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
-      <section className="relative pt-24 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
+      <section className="relative pt-24 pb-8 md:pt-32 md:pb-16 px-6 md:px-12 border-b border-[#1a1a1a]">
         <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
             className="max-w-4xl"
@@ -78,7 +78,7 @@ export default function ServicesPage() {
       </section>
 
       {/* SERVICES BENTO GRID (NOW WITH PRICING) */}
-      <section className="pt-16 pb-20 md:pt-24 md:pb-32 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#1a1a1a]">
+      <section className="pt-12 pb-16 md:pt-16 md:pb-20 px-6 md:px-12 max-w-7xl mx-auto border-b border-[#1a1a1a]">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-6 gap-6"
           initial="hidden"
@@ -137,8 +137,8 @@ export default function ServicesPage() {
       </section>
 
       {/* PROCESS SECTION */}
-      <section className="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
-        <div className="mb-16 md:mb-24">
+      <section className="py-16 md:py-20 px-6 md:px-12 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+        <div className="mb-12 md:mb-16">
           <p className="text-xs uppercase tracking-widest text-[#555] mb-4 font-mono">Process</p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">How it works</h2>
         </div>
@@ -166,8 +166,8 @@ export default function ServicesPage() {
       </section>
 
       {/* FINAL CTA */}
-      <section className="border-t border-[#1a1a1a] py-20 md:py-32 px-6 text-center">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-4xl mx-auto border border-[#1a1a1a] bg-[#0A0A0A] p-10 md:p-16 text-center">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
             Want to see what your business could look like?
           </h2>

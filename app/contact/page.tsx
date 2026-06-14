@@ -61,13 +61,13 @@ export default function ContactPage() {
 
   return (
     <main className="bg-[#080808] min-h-screen">
-      <div className="max-w-4xl mx-auto px-6 md:px-12 pt-24 md:pt-40 pb-20 md:pb-32">
+      <div className="max-w-4xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-24">
 
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.08]">
             Request Free Concept

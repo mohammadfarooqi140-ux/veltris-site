@@ -32,9 +32,9 @@ export default function Home() {
       {/* 1. Hero */}
       <section className="relative min-h-[85vh] w-full flex items-center bg-[#050505] overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
-        <div className="w-full max-w-7xl mx-auto px-6 pt-32 pb-24 md:pt-40">
+        <div className="w-full max-w-7xl mx-auto px-6 pt-24 pb-16 md:pt-32">
           <div className="max-w-4xl z-20 relative">
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-white mb-6 leading-[1.05]">
               Websites for businesses that need more than Instagram.
             </h1>
             
@@ -55,7 +55,7 @@ export default function Home() {
       </section>
 
       {/* 2. Problem Section (Refactored) */}
-      <section className="py-24 px-6 max-w-7xl mx-auto border-b border-white/10">
+      <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto border-b border-white/10">
         <div className="border border-white/10 bg-[#0A0A0A] p-8 md:p-12 lg:p-16 flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
@@ -71,15 +71,15 @@ export default function Home() {
       </section>
 
       {/* 3. Services Preview */}
-      <section className="py-24 px-6 bg-[#0A0A0A] border-b border-white/10">
+      <section className="py-16 md:py-20 px-6 bg-[#0A0A0A] border-b border-white/10">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
+          <div className="mb-10 md:mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
               What we build
             </h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -105,7 +105,7 @@ export default function Home() {
       </section>
 
       {/* 4. Small Work Teaser */}
-      <section className="py-24 px-6 max-w-7xl mx-auto border-b border-white/10 text-center">
+      <section className="py-16 md:py-20 px-6 max-w-7xl mx-auto border-b border-white/10 text-center">
         <div className="max-w-2xl mx-auto flex flex-col items-center gap-6">
           <h2 className="text-3xl md:text-4xl font-bold text-white">Concepts built to show what’s possible</h2>
           <p className="text-lg text-[#A0A0A0] leading-relaxed mb-4">
@@ -118,9 +118,9 @@ export default function Home() {
       </section>
 
       {/* 5. Final CTA Section */}
-      <section className="py-32 px-6 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-10">
+      <section className="py-20 md:py-24 px-6">
+        <div className="max-w-4xl mx-auto border border-white/10 bg-[#0A0A0A] p-10 md:p-16 text-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
             Want to see what your business could look like?
           </h2>
           <Link
