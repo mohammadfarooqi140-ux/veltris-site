@@ -18,7 +18,7 @@ export default function Footer() {
               Veltris
             </Link>
             <p className="text-sm max-w-sm leading-relaxed">
-              Cinematic websites for businesses that care how they look. One operator. Obsessive taste. No templates.
+              Premium websites for local businesses that need a clearer, more credible online presence.
             </p>
           </div>
 
