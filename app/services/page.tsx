@@ -5,51 +5,39 @@ import Link from "next/link";
 const services = [
   {
     number: "01",
-    title: "Landing Pages",
-    description: "High-converting single pages designed for ad campaigns and product launches.",
+    title: "Landing Pages & SEO Microsites",
+    description: "Fast, polished one-page sites designed for ad campaigns and product launches.",
     features: ["Optimized for conversion", "Fast loading times", "Mobile responsive"],
-    price: "From £800",
     large: true,
   },
   {
     number: "02",
-    title: "Business Websites",
-    description: "Professional multi-page presences establishing credibility and trust.",
+    title: "Multi-Page Business Websites",
+    description: "3–5 page websites establishing credibility and trust for service brands.",
     features: ["Multiple internal pages", "CMS integration", "SEO foundations"],
-    price: "From £1,500",
     large: true,
   },
   {
     number: "03",
-    title: "E-Commerce Stores",
-    description: "Fully featured digital storefronts built to scale your revenue.",
-    features: ["Secure checkout", "Inventory management", "Payment gateways"],
-    price: "From £2,500",
+    title: "Website Redesigns",
+    description: "Modernize your outdated, slow, or weak website with better performance and contemporary aesthetics.",
+    features: ["UI/UX overhaul", "Performance boost", "Content migration"],
     large: false,
   },
   {
     number: "04",
-    title: "Website Redesigns",
-    description: "Modernize your outdated site with better performance and contemporary aesthetics.",
-    features: ["UI/UX overhaul", "Performance boost", "Content migration"],
-    price: "Custom quote",
-    large: false,
-  },
-  {
-    number: "05",
-    title: "Custom Website",
-    description: "Unique, tailor-made digital solutions built from scratch for specific requirements.",
-    features: ["Bespoke design", "Advanced functionality", "API integrations"],
-    price: "Custom quote",
+    title: "Simple E-Commerce / Advanced Builds",
+    description: "Custom functionality and stores. Only offered where requirements are crystal clear.",
+    features: ["Secure checkout", "Inventory management", "Payment gateways"],
     large: false,
   },
 ];
 
 const processSteps = [
-  { num: "01", title: "Tell us what you need" },
-  { num: "02", title: "We design the direction" },
-  { num: "03", title: "We build the site" },
-  { num: "04", title: "You launch and grow" },
+  { num: "01", title: "Quick discovery" },
+  { num: "02", title: "Free homepage concept" },
+  { num: "03", title: "Full build" },
+  { num: "04", title: "Launch & support" },
 ];
 
 export default function ServicesPage() {
@@ -57,24 +45,20 @@ export default function ServicesPage() {
     <main className="min-h-screen bg-[#080808] overflow-hidden">
       {/* HERO SECTION */}
       <section className="relative pt-24 pb-8 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-[#1a1a1a]">
-        <div className="max-w-7xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
-          {/* Left Text */}
+        <div className="max-w-7xl mx-auto relative z-10">
           <motion.div
-            className="w-full md:w-[55%]"
+            className="max-w-4xl"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <p className="text-xs uppercase tracking-widest text-[#555] mb-4 md:mb-8 font-mono">
-              SERVICES
+              SERVICES &amp; PRICING
             </p>
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-3 md:mb-4 tracking-tight leading-[1.05]">
-              What we build.
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-[1.05]">
+              Websites built for local businesses, not generic templates
             </h1>
-            <p className="text-base sm:text-lg text-[#555] font-medium mb-4 md:mb-6">
-              Custom websites. Flat pricing.
-            </p>
-            <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-8 md:mb-12">
+            <p className="text-base sm:text-xl text-[#888] max-w-2xl leading-relaxed mb-12">
               We work directly with you to design and build your website. You receive a fully custom site tailored to your brand&apos;s goals.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -82,61 +66,8 @@ export default function ServicesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center bg-white text-black font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-none hover:bg-[#e0e0e0] transition-colors duration-300"
               >
-                Start a Project &rarr;
+                Request Free Concept &rarr;
               </Link>
-              <Link
-                href="/work"
-                className="inline-flex items-center justify-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase px-8 py-4 rounded-none hover:bg-[#111] hover:border-[#555] transition-all duration-300"
-              >
-                See Our Work &rarr;
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* Right Floating Visual (Desktop/Tablet) */}
-          <div className="hidden md:block w-full md:w-[45%] pl-4">
-            <div className="relative border border-[#1a1a1a] bg-[#050505] overflow-hidden rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.5)]">
-              {/* Fake browser header */}
-              <div className="w-full h-8 border-b border-[#1f1f1f] flex items-center px-4 gap-2 bg-[#0a0a0a]">
-                <div className="w-2 h-2 rounded-full bg-[#222]" />
-                <div className="w-2 h-2 rounded-full bg-[#222]" />
-                <div className="w-2 h-2 rounded-full bg-[#222]" />
-              </div>
-              {/* Preview image */}
-              <div className="aspect-[16/10] relative w-full overflow-hidden">
-                <img
-                  src="/aethelgard-preview.png"
-                  alt="Aethalgard Premium E-Commerce"
-                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700 hover:scale-[1.02]"
-                />
-                <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-all duration-500" />
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile Simplified Preview (Mobile Only) */}
-          <motion.div
-            className="block md:hidden w-full max-w-sm mx-auto mt-8 px-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            <div className="relative border border-[#1a1a1a] bg-[#050505] overflow-hidden rounded-sm shadow-[0_0_30px_rgba(0,0,0,0.3)]">
-              {/* Fake browser header */}
-              <div className="w-full h-6 border-b border-[#1f1f1f] flex items-center px-3 gap-1.5 bg-[#0a0a0a]">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
-                <div className="w-1.5 h-1.5 rounded-full bg-[#222]" />
-              </div>
-              {/* Preview image */}
-              <div className="aspect-video relative w-full overflow-hidden">
-                <img
-                  src="/aethelgard-preview.png"
-                  alt="Aethalgard Premium E-Commerce Preview"
-                  className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
-                />
-                <div className="absolute inset-0 bg-black/10" />
-              </div>
             </div>
           </motion.div>
         </div>
@@ -160,65 +91,32 @@ export default function ServicesPage() {
           {services.map((service, index) => (
             <motion.div
               key={index}
-              className={`group bg-black border border-[#1a1a1a] rounded-none p-5 md:p-10 flex flex-col justify-between hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
-                service.large ? "md:col-span-3" : "md:col-span-2"
+              className={`group bg-[#050505] border border-[#1a1a1a] rounded-none p-5 md:p-10 flex flex-col hover:border-[#444] transition-all duration-500 hover:-translate-y-1 ${
+                service.large ? "md:col-span-3" : "md:col-span-3"
               }`}
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
               }}
             >
-              <div>
-                <div className="flex justify-between items-start mb-8 md:mb-12">
-                  <span className="text-xs font-mono text-[#555]">{service.number}</span>
-                  {/* Subtle fake preview lines animation */}
-                  <div className="w-16 h-12 flex flex-col gap-2 overflow-hidden opacity-30 group-hover:opacity-100 transition-opacity duration-500">
-                    <motion.div className="w-full h-[2px] bg-[#333]" />
-                    <motion.div 
-                      className="w-3/4 h-[2px] bg-[#333]" 
-                      initial={{ x: -10, opacity: 0.5 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.3 }}
-                    />
-                    <motion.div 
-                      className="w-1/2 h-[2px] bg-[#333]" 
-                      initial={{ x: -20, opacity: 0.5 }}
-                      whileHover={{ x: 0, opacity: 1 }}
-                      transition={{ duration: 0.4 }}
-                    />
-                  </div>
-                </div>
-                
-                <h3 className="text-3xl font-bold text-white mb-4">{service.title}</h3>
-                <p className="text-[#888] text-sm mb-8 leading-relaxed max-w-md">{service.description}</p>
-                
-                <ul className="space-y-3 mb-8 md:mb-12">
-                  {service.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="text-[#666] text-sm flex items-center gap-3">
-                      <span className="w-1 h-1 bg-[#444] rounded-full" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+              <div className="flex justify-between items-start mb-8">
+                <span className="text-xs font-mono text-[#555]">{service.number}</span>
               </div>
-
-              <div className="pt-8 border-t border-[#1a1a1a] flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-                <p className="text-xl font-bold text-white">{service.price}</p>
-                <Link
-                  href={`/contact?service=${encodeURIComponent(service.title)}`}
-                  className="inline-block bg-[#111] border border-[#222] text-white text-[10px] uppercase tracking-widest px-6 py-3 hover:bg-white hover:text-black transition-all duration-300 text-center rounded-none group-hover:border-white"
-                >
-                  Get a Quote
-                </Link>
-              </div>
+              
+              <h3 className="text-2xl font-bold text-white mb-4">{service.title}</h3>
+              <p className="text-[#888] text-sm mb-8 leading-relaxed flex-grow">{service.description}</p>
+              
+              <ul className="space-y-3">
+                {service.features.map((feature, fIndex) => (
+                  <li key={fIndex} className="text-[#666] text-sm flex items-center gap-3">
+                    <span className="w-1 h-1 bg-[#444] rounded-full" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>
-        <div className="mt-8 text-center">
-          <p className="text-sm text-[#888] font-mono tracking-wide">
-            Partner rate: <span className="text-white">40% off your project.</span>
-          </p>
-        </div>
       </section>
 
       {/* PROCESS SECTION */}
@@ -229,7 +127,6 @@ export default function ServicesPage() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center relative">
-          {/* Animated background line for desktop */}
           <div className="hidden md:block absolute top-1/2 left-0 right-0 h-[1px] bg-[#1a1a1a] -z-10" />
           <motion.div
             className="hidden md:block absolute top-1/2 left-0 h-[1px] bg-[#555] -z-10"
@@ -251,18 +148,60 @@ export default function ServicesPage() {
         </div>
       </section>
 
+      {/* PRICING GRID SECTION */}
+      <section className="py-24 md:py-32 px-6 max-w-7xl mx-auto border-t border-[#1a1a1a]">
+        <div className="max-w-3xl mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Simple, clear pricing.</h2>
+          <p className="text-lg text-[#888]">No hidden fees. You know exactly what to expect.</p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="border border-[#1a1a1a] p-8 flex flex-col justify-between hover:border-[#444] transition-colors">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">Landing Page / Microsite</h3>
+              <p className="text-sm text-[#888] mb-8">Fast, polished one-page sites.</p>
+            </div>
+            <p className="text-2xl text-white font-light">from £600</p>
+          </div>
+          <div className="border border-[#1a1a1a] p-8 flex flex-col justify-between hover:border-[#444] transition-colors bg-[#050505]">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">3–5 Page Business Website</h3>
+              <p className="text-sm text-[#888] mb-8">For studios, salons, barbers, and service brands.</p>
+            </div>
+            <p className="text-2xl text-white font-light">from £900</p>
+          </div>
+          <div className="border border-[#1a1a1a] p-8 flex flex-col justify-between hover:border-[#444] transition-colors bg-[#050505]">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">Website Redesign</h3>
+              <p className="text-sm text-[#888] mb-8">Modernize your outdated, slow website.</p>
+            </div>
+            <p className="text-2xl text-white font-light">from £900</p>
+          </div>
+          <div className="border border-[#1a1a1a] p-8 flex flex-col justify-between hover:border-[#444] transition-colors">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-2">Simple E-Commerce / Advanced</h3>
+              <p className="text-sm text-[#888] mb-8">Custom functionality and multi-product stores.</p>
+            </div>
+            <p className="text-2xl text-white font-light">Quoted after scope</p>
+          </div>
+        </div>
+        <div className="mt-8 p-6 bg-[#111] border border-[#1a1a1a]">
+          <p className="text-sm text-[#888]">
+            <strong className="text-white">Note:</strong> Final pricing depends on pages, content, integrations, booking tools, e-commerce complexity, and revision scope.
+          </p>
+        </div>
+      </section>
+
       {/* FINAL CTA */}
       <section className="border-t border-[#1a1a1a] py-20 md:py-32 px-6 text-center">
         <div className="max-w-2xl mx-auto">
-          <p className="text-xs uppercase tracking-widest text-[#555] mb-6 font-mono">Not sure what you need?</p>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-8 leading-tight">
-            Tell me what you&apos;re building and I&apos;ll recommend the right approach.
+            Want to see what your business could look like?
           </h2>
           <Link
             href="/contact"
             className="inline-block bg-white text-black font-semibold text-xs tracking-widest uppercase px-10 py-5 rounded-none hover:bg-[#e0e0e0] transition-all duration-300 hover:-translate-y-1"
           >
-            Start a Project
+            Request Free Concept
           </Link>
         </div>
       </section>

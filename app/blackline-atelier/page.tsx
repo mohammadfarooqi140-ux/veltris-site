@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ChevronRight, Check } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 export default function BlacklineAtelier() {
@@ -34,7 +34,7 @@ export default function BlacklineAtelier() {
       </div>
 
       {/* Navigation */}
-      <nav className="border-b border-white/10 px-6 py-6 md:px-12 flex justify-between items-center">
+      <nav className="border-b border-white/10 px-6 py-6 md:px-12 flex justify-between items-center relative z-20 bg-[#030303]">
         <div className="font-playfair text-2xl tracking-widest uppercase">
           Blackline
         </div>
@@ -50,27 +50,66 @@ export default function BlacklineAtelier() {
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="relative min-h-[80vh] flex items-center justify-center px-6 border-b border-white/10 overflow-hidden">
+      {/* Editorial Hero */}
+      <section className="relative min-h-[90vh] flex items-center justify-center px-6 border-b border-white/10 overflow-hidden pt-12 md:pt-0">
         <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent" />
-        <div className="relative z-10 text-center max-w-4xl mx-auto py-24">
-          <span className="text-[#8B0000] text-xs font-bold tracking-[0.3em] uppercase block mb-8">
-            London
-          </span>
-          <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl mb-8 leading-[1.1] text-[#EBEBEB]">
-            Your studio deserves more than an Instagram link.
-          </h1>
-          <p className="text-lg text-white/50 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-            A premium tattoo studio concept built to showcase artists, simplify enquiries, and make the business look established before a client even messages.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <Link href="#booking" className="bg-[#EBEBEB] text-[#030303] px-8 py-4 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-[#8B0000] hover:text-white transition-colors duration-300">
-              Book a Consultation
-            </Link>
-            <Link href="#artists" className="border border-white/20 text-[#EBEBEB] px-8 py-4 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-white/5 transition-colors duration-300">
-              View Artists
-            </Link>
+        <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-24">
+          
+          {/* Left: Text */}
+          <div className="w-full md:w-1/2">
+            <span className="text-[#8B0000] text-xs font-bold tracking-[0.3em] uppercase block mb-8">
+              London
+            </span>
+            <h1 className="font-playfair text-5xl md:text-6xl lg:text-7xl mb-8 leading-[1.1] text-[#EBEBEB]">
+              Your studio deserves more than an Instagram link.
+            </h1>
+            <p className="text-lg text-white/50 mb-12 font-light leading-relaxed max-w-lg">
+              A premium tattoo studio concept built to showcase artists, simplify enquiries, and make the business look established before a client even messages.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6">
+              <Link href="#booking" className="bg-[#EBEBEB] text-[#030303] px-8 py-4 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-[#8B0000] hover:text-white transition-colors duration-300 text-center">
+                Book Consultation
+              </Link>
+              <Link href="#artists" className="border border-white/20 text-[#EBEBEB] px-8 py-4 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-white/5 transition-colors duration-300 text-center">
+                View Artists
+              </Link>
+            </div>
           </div>
+
+          {/* Right: Asymmetrical Grid */}
+          <div className="w-full md:w-1/2 relative h-[600px] hidden md:block">
+            {/* Card 1 */}
+            <div className="absolute top-0 right-10 w-48 h-64 bg-[#0A0A0A] border border-white/10 shadow-2xl p-4 flex flex-col justify-end overflow-hidden group z-20">
+               <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/20 to-transparent pointer-events-none" />
+               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
+               <span className="relative z-10 text-white/70 font-mono text-xs uppercase tracking-widest">01</span>
+               <h3 className="relative z-10 font-playfair text-white text-lg tracking-wide mt-1">Blackwork</h3>
+            </div>
+            
+            {/* Card 2 */}
+            <div className="absolute top-32 right-64 w-56 h-72 bg-[#080808] border border-white/10 shadow-2xl p-4 flex flex-col justify-end overflow-hidden z-10 transform -rotate-3 hover:rotate-0 transition-transform duration-500">
+               <div className="absolute inset-0 bg-[#050505]" />
+               <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay" />
+               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
+               <span className="relative z-10 text-white/70 font-mono text-xs uppercase tracking-widest">02</span>
+               <h3 className="relative z-10 font-playfair text-white text-lg tracking-wide mt-1">Fine Line</h3>
+            </div>
+
+            {/* Card 3 */}
+            <div className="absolute bottom-20 right-20 w-64 h-48 bg-[#111] border border-white/10 shadow-2xl p-4 flex flex-col justify-end overflow-hidden z-30">
+               <div className="absolute top-4 right-4 w-12 h-12 border border-white/20 rounded-full flex items-center justify-center opacity-30">
+                  <div className="w-8 h-8 border border-white/20 rounded-full" />
+               </div>
+               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black to-transparent" />
+               <span className="relative z-10 text-white/70 font-mono text-xs uppercase tracking-widest">03</span>
+               <h3 className="relative z-10 font-playfair text-white text-lg tracking-wide mt-1">Studio</h3>
+            </div>
+            
+            {/* Background elements */}
+            <div className="absolute top-1/2 left-1/4 w-[1px] h-32 bg-white/10" />
+            <div className="absolute top-1/4 right-1/4 w-32 h-[1px] bg-white/10" />
+          </div>
+
         </div>
       </section>
 
@@ -89,8 +128,14 @@ export default function BlacklineAtelier() {
               It separates casual browsers from serious clients who respect your time and value your process.
             </p>
           </div>
-          <div className="aspect-[4/3] bg-[#0A0A0A] border border-white/5 flex items-center justify-center relative">
-            <div className="text-white/10 font-playfair text-4xl">STUDIO_IMG_01</div>
+          <div className="aspect-[4/3] bg-[#0A0A0A] border border-white/5 flex items-center justify-center relative overflow-hidden group">
+            <div className="absolute inset-0 bg-[#080808]" />
+            {/* Stylized geometric background placeholder */}
+            <div className="absolute w-full h-[1px] bg-white/5 top-1/2 transform -translate-y-1/2" />
+            <div className="absolute h-full w-[1px] bg-white/5 left-1/2 transform -translate-x-1/2" />
+            <div className="w-32 h-32 border border-white/10 rounded-full group-hover:scale-110 transition-transform duration-700 ease-in-out flex items-center justify-center">
+                <div className="w-16 h-16 border border-[#8B0000]/30 rounded-full" />
+            </div>
           </div>
         </div>
       </section>
@@ -107,7 +152,7 @@ export default function BlacklineAtelier() {
               { name: "Custom Pieces", desc: "Tailored designs built from scratch based on your vision and our expertise." }
             ].map((style, i) => (
               <div key={i} className="group border border-white/10 p-8 hover:border-white/30 transition-colors bg-[#0A0A0A]">
-                <div className="aspect-square bg-[#111] mb-6 flex items-center justify-center">
+                <div className="aspect-square bg-[#111] mb-6 flex items-center justify-center border border-white/5">
                    <div className="text-white/10 font-playfair text-sm tracking-widest">{style.name.toUpperCase()}</div>
                 </div>
                 <h3 className="text-xl font-playfair text-[#EBEBEB] mb-3">{style.name}</h3>
@@ -131,9 +176,17 @@ export default function BlacklineAtelier() {
               { name: "Mara Voss", spec: "Fine Line & Ornamental", bio: "Mara creates delicate, intricate designs inspired by classical architecture and botany.", ig: "@maravoss.ink" },
               { name: "Theo Kane", spec: "Realism & Portrait", bio: "Theo specializes in high-contrast realism, bringing photographic precision to the skin.", ig: "@theokane.art" }
             ].map((artist, i) => (
-              <div key={i} className="flex flex-col">
-                <div className="aspect-[3/4] bg-[#0A0A0A] border border-white/10 mb-6 flex items-center justify-center">
-                   <div className="text-white/10 font-playfair text-sm">{artist.name.split(' ')[0].toUpperCase()}</div>
+              <div key={i} className="flex flex-col group">
+                <div className="aspect-[3/4] bg-[#0A0A0A] border border-white/10 mb-6 flex flex-col items-center justify-center relative overflow-hidden">
+                   {/* Portrait Placeholder block */}
+                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" />
+                   <div className="absolute inset-0 bg-[#050505] opacity-50" />
+                   <h2 className="font-playfair text-8xl text-white/5 relative z-20 group-hover:scale-110 transition-transform duration-700">
+                      {artist.name.split(' ')[0][0]}
+                   </h2>
+                   <div className="absolute bottom-4 left-4 z-20">
+                     <span className="text-[10px] font-mono uppercase tracking-widest text-white/50 border border-white/10 px-2 py-1 bg-black/50">Resident</span>
+                   </div>
                 </div>
                 <h3 className="text-2xl font-playfair text-[#EBEBEB] mb-1">{artist.name}</h3>
                 <p className="text-[#8B0000] text-xs font-bold tracking-[0.1em] uppercase mb-4">{artist.spec}</p>
@@ -154,20 +207,65 @@ export default function BlacklineAtelier() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <h2 className="font-playfair text-3xl md:text-4xl text-[#EBEBEB]">Selected Work</h2>
             <div className="flex gap-4 text-xs uppercase tracking-widest text-white/50 overflow-x-auto pb-2 md:pb-0 scrollbar-hide w-full md:w-auto">
-              <span className="text-white whitespace-nowrap">Healed Work</span>
-              <span className="hover:text-white transition-colors cursor-pointer whitespace-nowrap">Studio Details</span>
+              <span className="text-white whitespace-nowrap">All Work</span>
+              <span className="hover:text-white transition-colors cursor-pointer whitespace-nowrap">Healed</span>
+              <span className="hover:text-white transition-colors cursor-pointer whitespace-nowrap">Studio</span>
               <span className="hover:text-white transition-colors cursor-pointer whitespace-nowrap">Flash</span>
-              <span className="hover:text-white transition-colors cursor-pointer whitespace-nowrap">Custom</span>
             </div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div className="aspect-square bg-[#0A0A0A] border border-white/5" />
-            <div className="aspect-square bg-[#0D0D0D] border border-white/5 md:row-span-2 md:aspect-auto" />
-            <div className="aspect-square bg-[#0F0F0F] border border-white/5" />
-            <div className="aspect-square bg-[#0A0A0A] border border-white/5" />
-            <div className="aspect-square bg-[#0F0F0F] border border-white/5" />
-            <div className="aspect-square bg-[#0A0A0A] border border-white/5 md:col-span-2 md:aspect-[2/1]" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
+            {/* Block 1 */}
+            <div className="bg-[#0A0A0A] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group md:col-span-2 md:row-span-2">
+              <div className="absolute inset-0 bg-[#111] opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 border border-white/5" />
+              <h3 className="relative z-10 text-white/80 font-playfair text-2xl">Healed Work</h3>
+              <p className="relative z-10 text-white/40 text-xs font-mono mt-2">View 12 pieces</p>
+            </div>
+
+            {/* Block 2 */}
+            <div className="bg-[#0D0D0D] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group">
+              <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-80" />
+              <div className="absolute top-4 right-4 w-2 h-2 rounded-full bg-[#8B0000]/50" />
+              <h3 className="relative z-10 text-white/80 font-playfair text-lg">Studio Details</h3>
+            </div>
+
+            {/* Block 3 */}
+            <div className="bg-[#0A0A0A] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group">
+              <div className="absolute inset-0 flex items-center justify-center">
+                 <div className="w-[1px] h-full bg-white/5" />
+              </div>
+              <h3 className="relative z-10 text-white/80 font-playfair text-lg">Flash</h3>
+            </div>
+
+            {/* Block 4 */}
+            <div className="bg-[#111] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group md:row-span-2">
+              <div className="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-white/20 to-transparent" />
+              <h3 className="relative z-10 text-white/80 font-playfair text-xl">Custom Pieces</h3>
+            </div>
+
+            {/* Block 5 */}
+            <div className="bg-[#080808] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group">
+               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] mix-blend-overlay opacity-10" />
+              <h3 className="relative z-10 text-white/80 font-playfair text-lg">Fine Line</h3>
+            </div>
+
+            {/* Block 6 */}
+            <div className="bg-[#0A0A0A] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group">
+              <h3 className="relative z-10 text-white/80 font-playfair text-lg">Blackwork</h3>
+            </div>
+            
+            {/* Block 7 */}
+            <div className="bg-[#050505] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group md:col-span-2">
+               <div className="absolute left-0 top-1/2 w-full h-[1px] bg-white/5" />
+              <h3 className="relative z-10 text-white/80 font-playfair text-xl">Guest Artists</h3>
+            </div>
+
+            {/* Block 8 */}
+            <div className="bg-[#0D0D0D] border border-white/5 flex flex-col justify-end p-4 relative overflow-hidden group md:col-span-2">
+              <h3 className="relative z-10 text-white/80 font-playfair text-xl">Aftercare Products</h3>
+            </div>
+
           </div>
         </div>
       </section>
@@ -253,8 +351,8 @@ export default function BlacklineAtelier() {
           <p className="text-white/50 text-lg font-light leading-relaxed mb-12">
             A website like this helps a tattoo studio present its artists, explain the booking process, and turn casual interest into serious enquiries.
           </p>
-          <Link href="/" className="inline-block bg-[#EBEBEB] text-[#030303] px-10 py-5 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-[#8B0000] hover:text-white transition-colors duration-300">
-            Start a Project
+          <Link href="/contact" className="inline-block bg-[#EBEBEB] text-[#030303] px-10 py-5 uppercase tracking-[0.15em] text-sm font-semibold hover:bg-[#8B0000] hover:text-white transition-colors duration-300">
+            Request Free Concept
           </Link>
         </div>
       </section>

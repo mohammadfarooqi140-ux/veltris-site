@@ -84,7 +84,7 @@ export default function Navbar() {
             href="/contact"
             className="inline-block bg-white text-black font-semibold text-xs tracking-widest uppercase px-6 py-3 rounded-none hover:bg-neutral-200 transition-all duration-300 hover:scale-[1.02]"
           >
-            Start a Project
+            Request Free Concept
           </Link>
         </div>
 
@@ -161,7 +161,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase py-4 rounded-none hover:bg-white hover:text-black transition-all duration-300"
               >
-                Start a Project
+                Request Free Concept
               </Link>
               
               <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
