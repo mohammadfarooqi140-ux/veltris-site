@@ -5,6 +5,26 @@ import Image from "next/image";
 export default function WorkPage() {
   const projects = [
     {
+      title: "Ancoats Lunchbox",
+      label: "Local cafe concept / proof of work",
+      desc: "A personalised concept for a long-running Manchester cafe, focused on breakfast, matchday visitors, menu clarity, opening hours, reviews, and call-ahead convenience.",
+      link: "/ancoats-lunchbox",
+      cta: "View Concept",
+      preview: (
+        <div className="w-full h-full bg-[#faf8f5] relative overflow-hidden flex items-end justify-start border border-[#e8e4db]">
+          <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3 w-full px-6 text-center">
+            <p className="font-sans text-2xl text-[#1a1a1a] font-bold">Ancoats Lunchbox</p>
+            <div className="w-8 h-[2px] bg-[#8b1c1c]" />
+            <p className="text-[#666] text-[10px] uppercase tracking-widest">Proper Manchester Breakfasts</p>
+          </div>
+          <div className="relative z-10 p-6">
+            <p className="text-xs text-[#8b1c1c] uppercase tracking-widest font-bold">Cafe Concept</p>
+          </div>
+        </div>
+      )
+    },
+    {
       title: "Marlow Deli",
       label: "Sandwich shop concept / proof of work",
       desc: "A modern sandwich shop concept built around menu discovery, opening hours, location, reviews, and a stronger customer experience than Instagram-only.",
