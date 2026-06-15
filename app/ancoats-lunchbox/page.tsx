@@ -1,30 +1,31 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MapPin, Clock } from "lucide-react";
 
 // --- STRUCTURED DATA ---
 
 const images = {
-  hero: "full-english.jpg",
-  matchday: "storefront.jpg",
-  story: "cafe-interior.jpg",
+  hero: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (2).jpeg",
+  matchday: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.13 PM (1).jpeg",
+  story: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (8).jpeg",
   gallery: [
-    "storefront.jpg",
-    "cafe-interior.jpg",
-    "menu-board.jpg",
-    "full-english.jpg",
-    "cumberland-sausage.jpg",
-    "breakfast-bap.jpg",
-    "tea-toast.jpg",
-    "burger-chips.jpg"
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.13 PM (1).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (7).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (9).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (2).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.13 PM.jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (4).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (1).jpeg",
+    "/ancoat/WhatsApp Image 2026-06-15 at 12.01.13 PM (3).jpeg"
   ],
   menuItems: {
-    fullEnglish: "full-english.jpg",
-    breakfastBap: "breakfast-bap.jpg",
-    cumberlandSausage: "cumberland-sausage.jpg",
-    steakMelt: "steak-melt.jpg",
-    teaToast: "tea-toast.jpg",
+    fullEnglish: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (2).jpeg",
+    breakfastBap: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (4).jpeg",
+    cumberlandSausage: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.13 PM.jpeg",
+    steakMelt: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (6).jpeg", // Updated to Panini
+    teaToast: "/ancoat/WhatsApp Image 2026-06-15 at 12.01.12 PM (1).jpeg",
   }
 };
 
@@ -163,10 +164,27 @@ const reviews = [
 
 // Helper for image slots
 function ImageSlot({ label, className = "" }: { label: string, className?: string }) {
+  if (label === "Map Area Placeholder") {
+    return (
+      <div className={`bg-[#e8e4db] flex flex-col items-center justify-center border-2 border-dashed border-[#d0cac0] text-[#7a7369] p-4 text-center ${className}`}>
+        <span className="text-sm font-medium uppercase tracking-wider block mb-1">Map Slot</span>
+        <span className="text-xs">{label}</span>
+      </div>
+    );
+  }
+
+  // Remove the border and padding styling for actual images to allow full bleed
+  const cleanClassName = className.replace(/border-2 border-dashed border-\[#d0cac0\]/g, "").replace(/p-1/g, "");
+
   return (
-    <div className={`bg-[#e8e4db] flex flex-col items-center justify-center border-2 border-dashed border-[#d0cac0] text-[#7a7369] p-4 text-center ${className}`}>
-      <span className="text-sm font-medium uppercase tracking-wider block mb-1">Image Slot</span>
-      <span className="text-xs">{label}</span>
+    <div className={`relative overflow-hidden bg-[#e8e4db] ${cleanClassName}`}>
+      <Image 
+        src={label} 
+        alt="Ancoats Lunchbox" 
+        fill 
+        className="object-cover hover:scale-105 transition-transform duration-700" 
+        sizes="(max-width: 768px) 100vw, 50vw" 
+      />
     </div>
   );
 }
