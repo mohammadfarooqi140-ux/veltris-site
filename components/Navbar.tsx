@@ -82,9 +82,9 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="inline-block bg-white text-black font-semibold text-xs tracking-widest uppercase px-6 py-3 rounded-none hover:bg-neutral-200 transition-all duration-300 hover:scale-[1.02]"
+            className="inline-flex items-center justify-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98]"
           >
-            Request Free Concept
+            Request Free Homepage Concept
           </Link>
         </div>
 
@@ -159,9 +159,9 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="block w-full text-center border border-[#333] text-white font-semibold text-xs tracking-widest uppercase py-4 rounded-none hover:bg-white hover:text-black transition-all duration-300"
+                className="flex items-center justify-center w-full text-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98]"
               >
-                Request Free Concept
+                Request Free Homepage Concept
               </Link>
               
               <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">

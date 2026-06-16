@@ -5,30 +5,30 @@ import Link from "next/link";
 const services = [
   {
     number: "01",
-    title: "Landing Pages & SEO Microsites",
-    description: "A focused page for businesses that need a clear, credible online presence around one offer, location, or service.",
-    features: ["Optimized for conversion", "Fast loading times", "Mobile responsive"],
+    title: "Landing Pages",
+    description: "A focused page for turning online traffic and Instagram visitors into real enquiries with a single, clear offer.",
+    features: ["Optimized for conversion", "Clear CTA paths", "Mobile first design"],
     price: "From £600",
   },
   {
     number: "02",
-    title: "Multi-Page Business Websites",
-    description: "A complete online home for service businesses that need pages for services, work, FAQs, contact, location, and trust-building.",
-    features: ["Multiple internal pages", "CMS integration", "SEO foundations"],
+    title: "Business Websites",
+    description: "A complete online home designed to help local businesses look credible, established, and easy to contact.",
+    features: ["Service & menu clarity", "Trust-building layouts", "Fast loading times"],
     price: "From £900",
   },
   {
     number: "03",
     title: "Website Redesigns",
-    description: "For businesses with outdated, unclear, slow, or weak websites that no longer reflect the quality of the business.",
-    features: ["UI/UX overhaul", "Performance boost", "Content migration"],
+    description: "For businesses with outdated, unclear, slow, or weak mobile websites that are costing them enquiries.",
+    features: ["Mobile usability overhaul", "Modern visual style", "Improved conversion paths"],
     price: "From £900",
   },
   {
     number: "04",
-    title: "Simple E-Commerce / Advanced Builds",
-    description: "For businesses that need product presentation, simple selling flows, booking-ready layouts, or more advanced functionality.",
-    features: ["Secure checkout", "Inventory management", "Payment gateways"],
+    title: "Ecommerce Websites",
+    description: "For product-based businesses needing polished product presentation and a high-trust shopping experience.",
+    features: ["Premium product display", "High-trust checkout", "Brand atmosphere"],
     price: "Quoted after scope",
   },
 ];
@@ -79,9 +79,9 @@ export default function ServicesPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center bg-white text-black font-sans font-semibold text-xs tracking-widest uppercase px-8 py-4 hover:bg-[#e0e0e0] transition-colors duration-300"
+              className="inline-flex items-center justify-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-8 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98] w-full sm:w-auto"
             >
-              Request Free Concept &rarr;
+              Request Free Homepage Concept
             </Link>
           </motion.div>
         </div>
@@ -174,9 +174,9 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-white text-black font-sans font-semibold text-xs tracking-widest uppercase px-8 py-4 hover:bg-[#e0e0e0] transition-all duration-300 hover:-translate-y-1"
+            className="inline-flex items-center justify-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-8 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98] w-full sm:w-auto mt-4"
           >
-            Request Free Concept
+            Request Free Homepage Concept
           </Link>
         </div>
       </section>

@@ -22,7 +22,6 @@ export default function ContactPage() {
   const [businessType, setBusinessType] = useState("Corporate / Business");
   const [websiteLink, setWebsiteLink] = useState("");
   const [improvement, setImprovement] = useState("");
-  const [budget, setBudget] = useState("");
   
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -41,13 +40,13 @@ export default function ContactPage() {
       const response = await fetch("https://formspree.io/f/mdajonkr", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({ name, email, businessName, businessType, websiteLink, improvement, budget: budget || "Not provided" }),
+        body: JSON.stringify({ name, email, businessName, businessType, websiteLink, improvement }),
       });
 
       if (response.ok) {
         setStatus("success");
         setName(""); setEmail(""); setBusinessName(""); setBusinessType("Corporate / Business");
-        setWebsiteLink(""); setImprovement(""); setBudget("");
+        setWebsiteLink(""); setImprovement("");
       } else {
         const data = await response.json();
         setErrorMessage(data?.errors ? data.errors.map((err: any) => err.message).join(", ") : "Failed to send. Please try again.");
@@ -70,14 +69,14 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.08]">
-            Request Free Concept
+            Request a free homepage concept
           </h1>
           <p className="text-base sm:text-lg text-[#888] leading-relaxed max-w-2xl mx-auto">
-            We build free homepage concepts for businesses that are a good fit. Fill out the details below so we understand your current presence and what needs improving.
+            Send your Instagram or current website link and I will review whether a free homepage concept makes sense for your business.
           </p>
           <div className="mt-8 p-4 border border-[#1a1a1a] bg-[#050505] max-w-xl mx-auto inline-block">
-             <p className="text-xs text-[#555] font-mono leading-relaxed">
-               <strong className="text-white">Note:</strong> Free concepts are offered where there is a clear fit and enough information to create a useful direction.
+             <p className="text-xs text-[#555] font-mono leading-relaxed text-left">
+               <strong className="text-white">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a homepage direction before you decide on a full build.
              </p>
           </div>
         </motion.div>
@@ -202,49 +201,29 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>What do you want improved?</label>
+                    <label className={labelClass}>What do you want the website to help with?</label>
                     <textarea
                       rows={4}
                       value={improvement}
                       onChange={(e) => setImprovement(e.target.value)}
-                      placeholder="e.g. My current site looks outdated, I'm only using Instagram, I want to look more premium..."
+                      placeholder="e.g. Look more established, make it easier to book, get more enquiries..."
                       disabled={status === "submitting"}
                       className={`${fieldClass} resize-none`}
                     />
                   </div>
 
-                  <div>
-                    <label className={labelClass}>
-                      Budget Range <span className="text-[#444] normal-case tracking-normal">(optional)</span>
-                    </label>
-                    <select
-                      value={budget}
-                      onChange={(e) => setBudget(e.target.value)}
-                      disabled={status === "submitting"}
-                      className={selectClass}
-                    >
-                      <option value="">Select a range...</option>
-                      <option value="£600 - £900 (Landing Page)">£600 - £900 (Landing Page)</option>
-                      <option value="£900 - £1,500 (Multi-Page)">£900 - £1,500 (Multi-Page)</option>
-                      <option value="£1,500+ (Advanced)">£1,500+ (Advanced)</option>
-                    </select>
-                  </div>
-
                   <motion.button
                     onClick={handleSubmit}
                     disabled={status === "submitting"}
-                    whileHover={{ y: -2 }}
-                    whileTap={{ y: 0 }}
-                    transition={{ duration: 0.2 }}
-                    className="w-full bg-white text-black font-semibold text-[11px] tracking-widest uppercase py-5 mt-4 hover:bg-[#e8e8e8] transition-colors duration-300 flex items-center justify-center gap-2 disabled:opacity-60"
+                    className="flex items-center justify-center w-full text-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98] mt-4 disabled:opacity-60"
                   >
                     {status === "submitting" ? (
                       <>
-                        <Loader2 className="w-4 h-4 animate-spin" />
+                        <Loader2 className="w-4 h-4 animate-spin mr-2" />
                         Submitting...
                       </>
                     ) : (
-                      "Request Free Concept"
+                      "Request Free Homepage Concept"
                     )}
                   </motion.button>
                 </motion.div>
