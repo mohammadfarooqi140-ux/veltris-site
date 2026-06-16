@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Home, FolderKanban, Mail } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -73,14 +73,31 @@ export default function Navbar() {
 
 
 
-        {/* Mobile Hamburger Menu Toggle */}
+        {/* Mobile menu toggle is moved to bottom hotbar */}
+      </div>
+
+      {/* Mobile Bottom Hotbar */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-t border-white/5 px-6 py-3 pb-safe flex justify-around items-center">
+        <Link href="/" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+          <Home size={20} />
+          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Home</span>
+        </Link>
+        <Link href="/work" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+          <FolderKanban size={20} />
+          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Work</span>
+        </Link>
+        <Link href="/contact" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
+          <Mail size={20} />
+          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Contact</span>
+        </Link>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
+          className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors"
           aria-label={isOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
+          {isOpen ? <X size={20} /> : <Menu size={20} />}
+          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Menu</span>
         </button>
       </div>
 
@@ -88,15 +105,15 @@ export default function Navbar() {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, x: "100%" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100%" }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className="md:hidden fixed inset-0 z-[60] bg-zinc-950 flex flex-col px-6 py-6 overflow-y-auto"
           >
             {/* Top row inside menu */}
-            <div className="flex items-center justify-between mb-16">
-              <span className="text-xl font-bold tracking-wider text-white">Veltris</span>
+            <div className="flex items-center justify-between mb-12">
+              <span className="text-xl font-bold tracking-wider text-white">Navigation</span>
               <button
                 onClick={() => setIsOpen(false)}
                 className="text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
