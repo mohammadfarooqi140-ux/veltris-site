@@ -7,13 +7,13 @@ import { Check, Loader2 } from "lucide-react";
 // ─── Shared field classes ─────────────────────────────────────────────────────
 
 const fieldClass =
-  "bg-transparent border border-[#1a1a1a] text-white p-3 md:p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm placeholder:text-[#444]";
+  "bg-zinc-900/40 border border-transparent text-white p-4 md:p-5 rounded-2xl w-full focus:bg-white/[0.03] outline-none transition-all duration-500 text-sm placeholder:text-zinc-600 shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]";
 
 const selectClass =
-  "bg-[#080808] border border-[#1a1a1a] text-white p-3 md:p-4 rounded-none w-full focus:border-[#333] outline-none transition-colors duration-200 text-sm cursor-pointer";
+  "bg-zinc-900/40 border border-transparent text-white p-4 md:p-5 rounded-2xl w-full focus:bg-white/[0.03] outline-none transition-all duration-500 text-sm cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]";
 
 const labelClass =
-  "text-[10px] font-semibold uppercase tracking-widest text-[#555] block mb-1.5 md:mb-2";
+  "text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500 block mb-3 pl-1";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -59,7 +59,8 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-[#080808] min-h-screen">
+    <main className="bg-zinc-950 min-h-screen relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
       <div className="max-w-4xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-24">
 
         <motion.div
@@ -68,15 +69,15 @@ export default function ContactPage() {
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.08]">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-6 tracking-tight leading-[1.08]">
             Request a free homepage concept
           </h1>
-          <p className="text-base sm:text-lg text-[#888] leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
             Send your Instagram or current website link and I will review whether a free homepage concept makes sense for your business.
           </p>
-          <div className="mt-8 p-4 border border-[#1a1a1a] bg-[#050505] max-w-xl mx-auto inline-block">
-             <p className="text-xs text-[#555] font-mono leading-relaxed text-left">
-               <strong className="text-white">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a homepage direction before you decide on a full build.
+          <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+             <p className="text-xs text-zinc-400 leading-relaxed text-left">
+               <strong className="text-white font-semibold">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a homepage direction before you decide on a full build.
              </p>
           </div>
         </motion.div>
@@ -86,7 +87,7 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
         >
-          <div className="border border-[#1a1a1a] bg-[#050505]">
+          <div className="rounded-[2.5rem] bg-zinc-900/30 backdrop-blur-xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05),0_20px_40px_rgba(0,0,0,0.4)] relative z-10 overflow-hidden">
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <motion.div
@@ -100,13 +101,13 @@ export default function ContactPage() {
                   <div className="w-16 h-16 bg-white flex items-center justify-center mb-8">
                     <Check className="w-8 h-8 text-black" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">Request Sent</h3>
-                  <p className="text-[#888] text-base max-w-md mx-auto mb-10 leading-relaxed">
+                  <h3 className="text-3xl font-playfair font-bold text-white mb-4">Request Sent</h3>
+                  <p className="text-zinc-400 text-base max-w-md mx-auto mb-10 leading-relaxed">
                     Thank you. We&apos;ll review your business and get back to you within 24-48 hours with next steps.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="border border-[#333] text-[#888] text-[11px] tracking-widest uppercase px-8 py-4 hover:border-white hover:text-white transition-all duration-300"
+                    className="border border-white/10 rounded-full text-zinc-400 text-[11px] tracking-widest uppercase px-8 py-4 hover:border-white hover:text-white transition-all duration-300"
                   >
                     Submit Another Request
                   </button>
@@ -215,7 +216,7 @@ export default function ContactPage() {
                   <motion.button
                     onClick={handleSubmit}
                     disabled={status === "submitting"}
-                    className="flex items-center justify-center w-full text-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98] mt-4 disabled:opacity-60"
+                    className="flex items-center justify-center w-full text-center bg-white text-zinc-950 min-h-[56px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98] mt-8 disabled:opacity-60"
                   >
                     {status === "submitting" ? (
                       <>

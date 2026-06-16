@@ -43,8 +43,8 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#080808] ${
-        isScrolled ? "border-b border-[#1a1a1a] py-4" : "py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-zinc-950/80 backdrop-blur-md ${
+        isScrolled ? "border-b border-white/5 py-4" : "py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -61,18 +61,11 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-sm tracking-wider uppercase font-medium transition-colors ${
-                  isActive ? "text-white" : "text-neutral-400 hover:text-white"
+                className={`relative px-4 py-2 rounded-full text-[11px] tracking-[0.2em] uppercase font-medium transition-colors ${
+                  isActive ? "bg-white/5 text-white" : "text-zinc-400 hover:text-white hover:bg-white/[0.02]"
                 }`}
               >
                 {link.name}
-                {isActive && (
-                  <motion.div
-                    layoutId="activeNavBorder"
-                    className="absolute -bottom-1 left-0 right-0 h-[1px] bg-white"
-                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
-                  />
-                )}
               </Link>
             );
           })}
@@ -82,7 +75,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <Link
             href="/contact"
-            className="inline-flex items-center justify-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98]"
+            className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[48px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98]"
           >
             Request Free Homepage Concept
           </Link>
@@ -107,7 +100,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 z-[60] bg-[#080808] flex flex-col px-6 py-6 overflow-y-auto"
+            className="md:hidden fixed inset-0 z-[60] bg-zinc-950 flex flex-col px-6 py-6 overflow-y-auto"
           >
             {/* Top row inside menu */}
             <div className="flex items-center justify-between mb-16">
@@ -159,7 +152,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center w-full text-center bg-[#F5F5F5] text-[#050505] min-h-[48px] px-6 py-4 rounded-none text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white active:scale-[0.98]"
+                className="flex items-center justify-center w-full text-center bg-white text-zinc-950 min-h-[48px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98]"
               >
                 Request Free Homepage Concept
               </Link>

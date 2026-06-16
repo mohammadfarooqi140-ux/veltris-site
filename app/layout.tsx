@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Inter, Playfair_Display, Cinzel } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -33,19 +34,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${cinzel.variable}`}>
       <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-92G8DB3QE3"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-92G8DB3QE3');
-            `,
-          }}
-        />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-92G8DB3QE3" strategy="afterInteractive" />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-92G8DB3QE3');
+          `}
+        </Script>
       </head>
-      <body className={cn("min-h-screen font-sans antialiased bg-[#080808] text-[#F5F5F5] flex flex-col justify-between")}>
+      <body className={cn("min-h-screen font-sans antialiased bg-zinc-950 text-zinc-50 flex flex-col justify-between")}>
         <Navbar />
         <div className="flex-grow">
           {children}
