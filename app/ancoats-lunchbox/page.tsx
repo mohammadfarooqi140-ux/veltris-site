@@ -94,34 +94,34 @@ export default function AncoatsLunchboxConcept() {
       <section className="relative px-6 pt-28 pb-12 md:pt-40 md:pb-20 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         <div className="flex-1 space-y-6 z-10 w-full">
           <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-[#1a1a1a] leading-[1.1]">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold tracking-tight text-[#1a1a1a] leading-[1.05]">
               Manchester breakfasts <span className="text-[#8b1c1c]">done right</span> for over 22 years.
             </h1>
-            <p className="text-base sm:text-lg text-[#555] max-w-xl leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-[#555] max-w-xl leading-relaxed">
               Family-run for three generations. Proper breakfasts, hot dinners, and takeaway favourites served from the heart of Ancoats.
             </p>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+          <div className="flex flex-col sm:flex-row gap-4 pt-2">
             <a 
               href={businessInfo.phoneLink}
-              className="bg-[#8b1c1c] text-white px-6 py-4 font-bold text-center hover:bg-[#6b1414] transition-colors flex items-center justify-center gap-2"
+              className="bg-[#8b1c1c] text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] text-center hover:bg-[#6b1414] transition-colors flex items-center justify-center gap-2 shadow-lg"
             >
-              <Phone size={18} />
+              <Phone size={16} />
               Call Ahead & Collect
             </a>
             <a 
               href="#menu"
-              className="bg-transparent border-2 border-[#2d2d2d] text-[#2d2d2d] px-6 py-4 font-bold text-center hover:bg-[#2d2d2d] hover:text-[#faf8f5] transition-colors"
+              className="bg-transparent border border-[#2d2d2d] text-[#2d2d2d] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] text-center hover:bg-[#2d2d2d] hover:text-[#faf8f5] transition-colors"
             >
               View Menu
             </a>
           </div>
 
-          <div className="pt-4 border-t border-[#d0cac0] flex flex-wrap gap-x-5 gap-y-2 text-xs sm:text-sm font-medium text-[#666]">
-            {["22+ years serving Manchester", "Family-run cafe", "7 minutes from the Etihad"].map((item, idx) => (
-              <span key={idx} className="flex items-center gap-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#8b1c1c]"></span>
+          <div className="pt-6 flex flex-wrap gap-x-4 gap-y-3">
+            {["22+ years serving Manchester", "Family-run cafe", "7 mins from the Etihad"].map((item, idx) => (
+              <span key={idx} className="flex items-center gap-2 px-4 py-2 bg-[#8b1c1c]/[0.03] border border-[#8b1c1c]/10 rounded-full text-[10px] uppercase font-semibold tracking-widest text-[#8b1c1c]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#8b1c1c]/50"></span>
                 {item}
               </span>
             ))}
@@ -144,20 +144,24 @@ export default function AncoatsLunchboxConcept() {
       {/* 2. MATCHDAY SECTION */}
       <section className="bg-[#1a1a1a] text-[#faf8f5] px-6 py-12 md:py-16">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row-reverse items-center gap-8 md:gap-12">
-          <div className="flex-1 space-y-5 w-full">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Heading to the <span className="text-white">Etihad Stadium?</span></h2>
-            <p className="text-[#d0cac0] text-base sm:text-lg leading-relaxed max-w-lg">
+          <div className="flex-1 space-y-6 w-full">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold tracking-tight text-white leading-tight">
+              Heading to the <span className="italic text-[#d0cac0]">Etihad Stadium?</span>
+            </h2>
+            <p className="text-[#d0cac0] text-base sm:text-lg md:text-xl leading-relaxed max-w-lg">
               We are a quick <strong className="text-white">7-minute walk</strong> from the stadium. Drop in before the match for a proper breakfast, lunch, sandwiches, and hot food.
             </p>
-            <a 
-              href={businessInfo.directionsLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-full sm:w-auto justify-center bg-white text-[#1a1a1a] px-6 py-3 font-bold hover:bg-[#d0cac0] transition-colors items-center gap-2"
-            >
-              <MapPin size={18} />
-              Get Directions
-            </a>
+            <div className="pt-2">
+              <a 
+                href={businessInfo.directionsLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-full sm:w-auto justify-center bg-white text-[#1a1a1a] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] hover:bg-[#e8e4db] transition-colors items-center gap-2"
+              >
+                <MapPin size={16} />
+                Get Directions
+              </a>
+            </div>
           </div>
           <div className="flex-1 w-full">
             <div className="relative overflow-hidden bg-[#333] w-full aspect-video border border-[#333]">
@@ -186,12 +190,14 @@ export default function AncoatsLunchboxConcept() {
             />
           </div>
         </div>
-        <div className="flex-1 space-y-6 order-1 md:order-2 w-full">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">Three generations. One local favourite.</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="flex-1 space-y-8 order-1 md:order-2 w-full">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold tracking-tight text-[#1a1a1a] leading-tight">
+            Three generations. <br className="hidden md:block"/>One local favourite.
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {whyLocals.map((item, idx) => (
-              <div key={idx} className="bg-white border border-[#e8e4db] p-4 shadow-sm">
-                <h3 className="font-bold text-base mb-1 text-[#8b1c1c]">{item.title}</h3>
+              <div key={idx} className="bg-white p-6 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#e8e4db]/60">
+                <h3 className="font-bold text-base mb-2 text-[#8b1c1c]">{item.title}</h3>
                 <p className="text-[#666] text-sm leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -200,17 +206,18 @@ export default function AncoatsLunchboxConcept() {
       </section>
 
       {/* 4. REVIEWS SECTION */}
-      <section className="bg-[#8b1c1c] text-white px-6 py-12 md:py-16">
+      <section className="bg-[#1a1a1a] text-white px-6 py-20 md:py-32">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-8">What our customers say</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-center mb-16 text-white">What our customers say</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {reviews.map((review, idx) => (
-              <div key={idx} className="bg-[#7a1818] p-5 shadow-sm border border-[#9c2020] flex flex-col">
-                <div className="flex gap-1 mb-2 text-[#f0ece1] text-sm">
+              <div key={idx} className="bg-[#222] p-8 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] border border-[#333] flex flex-col relative overflow-hidden group hover:bg-[#2a2a2a] transition-colors">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors" />
+                <div className="flex gap-1 mb-4 text-[#d0cac0] text-sm">
                   ★★★★★
                 </div>
-                <p className="text-base font-medium leading-snug mb-3 flex-grow">&quot;{review.text}&quot;</p>
-                <p className="text-xs text-[#d0cac0] uppercase tracking-widest">— {review.name}</p>
+                <p className="text-base font-medium leading-relaxed mb-6 flex-grow text-[#e8e4db]">&quot;{review.text}&quot;</p>
+                <p className="text-[10px] text-[#888] uppercase tracking-[0.2em] font-semibold">— {review.name}</p>
               </div>
             ))}
           </div>
@@ -218,23 +225,23 @@ export default function AncoatsLunchboxConcept() {
       </section>
 
       {/* 5. FEATURED FOOD */}
-      <section id="menu" className="bg-[#f0ece1] px-6 py-12 md:py-16">
+      <section id="menu" className="bg-[#f0ece1] px-6 py-20 md:py-32">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10 space-y-3">
-            <div className="inline-block bg-[#4a5d23] text-white px-3 py-1 text-xs font-bold tracking-widest uppercase mb-2 shadow-sm">
+          <div className="text-center mb-16 space-y-4">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-[#4a5d23]/10 text-[10px] uppercase font-semibold tracking-[0.2em] text-[#4a5d23] mb-4">
               Proper Portions
             </div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">Featured Favorites</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold tracking-tight text-[#1a1a1a]">Featured Favorites</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {featuredFood.map((item, idx) => (
-              <div key={idx} className="bg-white flex flex-col border border-[#e8e4db] shadow-sm overflow-hidden">
-                <div className="relative w-full aspect-square bg-[#e8e4db]">
+              <div key={idx} className="bg-white flex flex-col rounded-3xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#e8e4db]/50 group perspective-[1000px]">
+                <div className="relative w-full aspect-square bg-[#e8e4db] overflow-hidden transform-gpu transition-all duration-700 ease-out group-hover:rotate-x-[2deg] group-hover:-rotate-y-[2deg] group-hover:scale-[1.02]">
                   <Image src={item.image} alt={item.name} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
                 </div>
-                <div className="p-4 flex flex-col flex-grow">
-                  <h3 className="font-bold text-lg text-[#1a1a1a] mb-1">{item.name}</h3>
+                <div className="p-6 flex flex-col flex-grow">
+                  <h3 className="font-playfair font-bold text-xl text-[#1a1a1a] mb-2">{item.name}</h3>
                   <p className="text-[#666] text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -244,12 +251,12 @@ export default function AncoatsLunchboxConcept() {
       </section>
 
       {/* 6. FULL MENU */}
-      <section className="px-6 py-12 md:py-16 max-w-5xl mx-auto">
-        <h2 className="text-2xl sm:text-3xl font-bold text-center mb-10">Full Menu</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <section className="px-6 py-20 md:py-32 max-w-5xl mx-auto border-b border-[#d0cac0]">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold text-center mb-16 text-[#1a1a1a]">Full Menu</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {fullMenu.map((category, idx) => (
-            <div key={idx} className="space-y-6">
-              <h3 className="text-xl font-bold border-b-2 border-[#8b1c1c] pb-2 inline-block">
+            <div key={idx} className="space-y-8">
+              <h3 className="text-xl font-playfair font-bold border-b border-[#d0cac0] pb-3 text-[#1a1a1a]">
                 {category.category}
               </h3>
               <div className="space-y-6">
@@ -266,53 +273,53 @@ export default function AncoatsLunchboxConcept() {
       </section>
 
       {/* 7. OPENING HOURS & CONTACT */}
-      <section className="bg-[#f0ece1] px-6 py-12 md:py-16">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-8 bg-white p-6 md:p-10 shadow-sm border border-[#e8e4db]">
-          <div className="flex-1 space-y-6">
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight">Open early for breakfast and lunch</h2>
+      <section className="bg-[#f0ece1] px-6 py-20 md:py-32">
+        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-8 bg-white p-8 md:p-12 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-[#e8e4db]/60">
+          <div className="flex-1 space-y-8">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-bold tracking-tight text-[#1a1a1a]">Open early for breakfast and lunch</h2>
             
-            <div className="space-y-3">
-              <h3 className="font-bold text-[#8b1c1c] flex items-center gap-2">
-                <Clock size={18} /> Opening Hours
+            <div className="space-y-4">
+              <h3 className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#8b1c1c] flex items-center gap-2">
+                <Clock size={14} /> Opening Hours
               </h3>
-              <ul className="space-y-1.5 text-[#555] text-sm sm:text-base">
+              <ul className="space-y-2.5 text-[#555] text-sm sm:text-base">
                 {businessInfo.hours.map((h, idx) => (
-                  <li key={idx} className="flex justify-between max-w-[280px]">
+                  <li key={idx} className="flex justify-between max-w-[320px]">
                     <span>{h.day}</span>
-                    <span className="font-medium text-[#1a1a1a]">{h.time}</span>
+                    <span className="font-semibold text-[#1a1a1a]">{h.time}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="space-y-3">
-              <h3 className="font-bold text-[#8b1c1c] flex items-center gap-2">
-                <MapPin size={18} /> Location
+            <div className="space-y-4">
+              <h3 className="text-[10px] uppercase tracking-[0.2em] font-semibold text-[#8b1c1c] flex items-center gap-2">
+                <MapPin size={14} /> Location
               </h3>
               <p className="text-[#555] text-sm sm:text-base leading-relaxed">
                 {businessInfo.address.split(", ").map((line, idx) => <span key={idx} className="block">{line}</span>)}
               </p>
             </div>
 
-            <div className="pt-2 flex flex-col gap-3">
+            <div className="pt-4 flex flex-col sm:flex-row gap-4">
               <a 
                 href={businessInfo.phoneLink}
-                className="w-full bg-[#8b1c1c] text-white px-6 py-4 font-bold text-center hover:bg-[#6b1414] transition-colors"
+                className="w-full sm:w-auto bg-[#8b1c1c] text-white px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] text-center hover:bg-[#6b1414] transition-colors"
               >
-                Call to Order: {businessInfo.phoneDisplay}
+                Call to Order
               </a>
               <a 
                 href={businessInfo.directionsLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full bg-[#e8e4db] text-[#1a1a1a] px-6 py-4 font-bold text-center hover:bg-[#d0cac0] transition-colors"
+                className="w-full sm:w-auto bg-transparent border border-[#d0cac0] text-[#1a1a1a] px-8 py-4 rounded-full text-xs font-semibold uppercase tracking-[0.16em] text-center hover:bg-[#e8e4db] transition-colors"
               >
                 Get Directions
               </a>
             </div>
           </div>
           
-          <div className="flex-1 w-full min-h-[250px] md:min-h-full relative bg-[#e8e4db]">
+          <div className="flex-1 w-full min-h-[300px] md:min-h-full relative bg-[#e8e4db] rounded-2xl overflow-hidden border border-[#d0cac0]/50">
              <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2374.3415309990815!2d-2.221586723223508!3d53.48025287232533!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bb1a1bc6db961%3A0x6bba843b006c8ba8!2s17%20Cambrian%20St%2C%20Manchester%20M40%207EP!5e0!3m2!1sen!2suk!4v1700000000000!5m2!1sen!2suk" 
                 className="absolute inset-0 w-full h-full border-0"
