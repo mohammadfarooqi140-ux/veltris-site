@@ -1,38 +1,58 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Home, FolderKanban, Mail } from "lucide-react";
+import { MoreHorizontal, X } from "lucide-react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const menuRef = useRef<HTMLDivElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 10);
     };
-    
+
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape" && isOpen) {
         setIsOpen(false);
       }
     };
 
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        isOpen &&
+        menuRef.current &&
+        !menuRef.current.contains(e.target as Node) &&
+        toggleRef.current &&
+        !toggleRef.current.contains(e.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, [isOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    setIsOpen(false);
+  }, [pathname]);
 
   const navLinks = [
     { name: "Home", href: "/" },
@@ -71,99 +91,46 @@ export default function Navbar() {
           })}
         </div>
 
-
-
-        {/* Mobile menu toggle is moved to bottom hotbar */}
-      </div>
-
-      {/* Mobile Bottom Hotbar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-md border-t border-white/5 px-6 py-3 pb-safe flex justify-around items-center">
-        <Link href="/" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
-          <Home size={20} />
-          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Home</span>
-        </Link>
-        <Link href="/work" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
-          <FolderKanban size={20} />
-          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Work</span>
-        </Link>
-        <Link href="/contact" className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors">
-          <Mail size={20} />
-          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Contact</span>
-        </Link>
+        {/* Mobile Menu Toggle — Three Dots */}
         <button
+          ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
-          className="text-zinc-400 hover:text-white flex flex-col items-center gap-1 transition-colors"
+          className="md:hidden text-white hover:text-zinc-400 transition-colors p-2 -mr-2"
           aria-label={isOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-          <span className="text-[9px] uppercase tracking-[0.15em] font-medium">Menu</span>
+          {isOpen ? <X size={24} /> : <MoreHorizontal size={24} />}
         </button>
       </div>
 
-      {/* Mobile Navigation Dropdown */}
+      {/* Mobile Dropdown Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, x: "100%" }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: "100%" }}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden fixed inset-0 z-[60] bg-zinc-950 flex flex-col px-6 py-6 overflow-y-auto"
+            ref={menuRef}
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="md:hidden absolute top-full left-0 right-0 bg-zinc-950/95 backdrop-blur-xl border-b border-white/5 overflow-hidden"
           >
-            {/* Top row inside menu */}
-            <div className="flex items-center justify-between mb-12">
-              <span className="text-xl font-bold tracking-wider text-white">Navigation</span>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-white hover:text-neutral-400 transition-colors p-2 -mr-2"
-                aria-label="Close Menu"
-              >
-                <X size={28} />
-              </button>
-            </div>
-
-            <div className="flex flex-col space-y-6 flex-grow pl-2">
-              {navLinks.map((link, index) => {
+            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col">
+              {navLinks.map((link) => {
                 const isActive = pathname === link.href;
                 return (
-                  <motion.div
+                  <Link
                     key={link.name}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.1 + index * 0.05, ease: [0.22, 1, 0.36, 1] }}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`py-4 text-[12px] uppercase tracking-[0.2em] font-medium border-b border-white/5 last:border-b-0 transition-colors ${
+                      isActive ? "text-white" : "text-zinc-400 active:text-white"
+                    }`}
                   >
-                    <Link
-                      href={link.href}
-                      onClick={() => setIsOpen(false)}
-                      className="group flex items-baseline gap-4 py-2"
-                    >
-                      <span className="text-[10px] font-mono text-[#555] group-hover:text-[#888] transition-colors">
-                        0{index + 1}
-                      </span>
-                      <span className={`text-2xl tracking-wide uppercase font-semibold transition-colors ${
-                        isActive ? "text-white" : "text-neutral-400 group-hover:text-white"
-                      }`}>
-                        {link.name}
-                      </span>
-                    </Link>
-                  </motion.div>
+                    {link.name}
+                  </Link>
                 );
               })}
             </div>
-            
-            <motion.div 
-              className="mt-12 w-full pt-8 border-t border-[#1a1a1a]"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-            >
-
-              <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
-                <span>© 2025 Veltris</span>
-                <a href="mailto:hello@veltris.uk" className="hover:text-[#888] transition-colors">hello@veltris.uk</a>
-              </div>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
