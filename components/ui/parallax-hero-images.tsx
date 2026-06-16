@@ -7,6 +7,7 @@ import {
   useTransform,
   MotionValue,
 } from "motion/react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 type ImagePosition = {
@@ -173,16 +174,20 @@ const ParallaxImage = memo(function ParallaxImage({
         ease: [0.25, 0.1, 0.25, 1],
       }}
     >
-      <img
-        src={src}
-        alt=""
-        loading="lazy"
-        decoding="async"
+      <div
         className={cn(
-          "aspect-4/3 h-20 w-32 rounded-lg object-cover shadow-sm ring-1 ring-black/10 sm:h-40 sm:w-56 md:h-52 md:w-80 dark:ring-white/10",
+          "relative aspect-4/3 h-20 w-32 overflow-hidden rounded-lg shadow-sm ring-1 ring-black/10 sm:h-40 sm:w-56 md:h-52 md:w-80 dark:ring-white/10",
           imageClassName,
         )}
-      />
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          sizes="(max-width: 640px) 128px, (max-width: 768px) 224px, 320px"
+          className="object-cover"
+        />
+      </div>
     </motion.div>
   );
 });

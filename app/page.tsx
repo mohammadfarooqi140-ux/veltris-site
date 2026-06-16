@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
+import { conceptProjects } from "@/lib/data/concepts";
 
 export default function Home() {
   return (
@@ -161,69 +162,33 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
-            
-            {/* Aethalgard */}
-            <div className="group flex flex-col">
-              <div className="w-full aspect-[4/3] mb-6 overflow-hidden relative bg-[#0a0a0a] border border-[#1a1a1a] flex items-center justify-center">
-                <p className="text-white text-lg tracking-[0.4em] uppercase font-light">Aethalgard</p>
-              </div>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] font-mono mb-2">Luxury ecommerce • Concept project</p>
-              <h3 className="text-xl font-bold text-white mb-3">Aethalgard</h3>
-              <p className="text-[#888] text-sm leading-relaxed mb-6 flex-grow">
-                A premium ecommerce interface concept built to show polished product presentation, dark visual direction, and a high trust shopping experience.
-              </p>
-              <div className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-[#555]">
-                Concept preview
-              </div>
-            </div>
-
-            {/* Ancoats Lunchbox */}
-            <div className="group flex flex-col">
-              <Link href="/ancoats-lunchbox" className="block w-full aspect-[4/3] mb-6 overflow-hidden relative bg-[#faf8f5] border border-[#e8e4db] flex flex-col items-center justify-center text-center">
-                 <p className="font-sans text-2xl text-[#1a1a1a] font-bold">Ancoats Lunchbox</p>
-                 <div className="w-8 h-[2px] bg-[#8b1c1c] my-3" />
-                 <p className="text-[#666] text-[10px] uppercase tracking-widest">Cafe Concept</p>
-              </Link>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] font-mono mb-2">Local cafe or lunch spot • Concept project</p>
-              <h3 className="text-xl font-bold text-white mb-3">Ancoats Lunchbox</h3>
-              <p className="text-[#888] text-sm leading-relaxed mb-6 flex-grow">
-                A mobile first homepage concept for a local food business that needs to show menu highlights, location, opening times, and enquiry options clearly.
-              </p>
-              <Link href="/ancoats-lunchbox" className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-white hover:text-[#888] transition-colors border-b border-white/20 pb-1 self-start">
-                View Concept <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </div>
-
-            {/* Marlow Deli */}
-            <div className="group flex flex-col">
-              <Link href="/marlow-deli" className="block w-full aspect-[4/3] mb-6 overflow-hidden relative bg-[#1a1a1a] border border-[#1a1a1a] flex items-end justify-start p-6">
-                <p className="font-serif text-2xl text-white font-bold drop-shadow-md">Marlow Deli</p>
-              </Link>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] font-mono mb-2">Deli or cafe • Concept project</p>
-              <h3 className="text-xl font-bold text-white mb-3">Marlow Deli</h3>
-              <p className="text-[#888] text-sm leading-relaxed mb-6 flex-grow">
-                A clean local business concept focused on making the brand feel established, trustworthy, and easy to visit or contact.
-              </p>
-              <Link href="/marlow-deli" className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-white hover:text-[#888] transition-colors border-b border-white/20 pb-1 self-start">
-                View Concept <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </div>
-
-            {/* Blackline Atelier */}
-            <div className="group flex flex-col">
-              <Link href="/blackline-atelier" className="block w-full aspect-[4/3] mb-6 overflow-hidden relative bg-[#080808] border border-[#1a1a1a] flex flex-col items-center justify-center">
-                <p className="font-serif text-lg text-white tracking-[0.25em] uppercase mb-2">Blackline</p>
-                <p className="text-[#600000] text-[10px] uppercase tracking-[0.4em]">London</p>
-              </Link>
-              <p className="text-[10px] uppercase tracking-widest text-[#555] font-mono mb-2">Tattoo studio • Concept project</p>
-              <h3 className="text-xl font-bold text-white mb-3">Blackline Atelier</h3>
-              <p className="text-[#888] text-sm leading-relaxed mb-6 flex-grow">
-                A dark premium tattoo studio concept built around artist credibility, work previews, booking clarity, and a stronger first impression.
-              </p>
-              <Link href="/blackline-atelier" className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-white hover:text-[#888] transition-colors border-b border-white/20 pb-1 self-start">
-                View Concept <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </div>
+            {conceptProjects.map((project, idx) => {
+              const isLink = !!project.link;
+              return (
+                <div key={idx} className="group flex flex-col">
+                  {isLink ? (
+                    <Link href={project.link as string} className="block w-full aspect-[4/3] mb-6 overflow-hidden relative">
+                      {project.preview}
+                    </Link>
+                  ) : (
+                    <div className="w-full aspect-[4/3] mb-6 overflow-hidden relative border border-[#1a1a1a]">
+                      {project.preview}
+                    </div>
+                  )}
+                  <p className="text-[10px] uppercase tracking-widest text-[#A0A0A0] font-mono mb-2">{project.label}</p>
+                  <h3 className="text-xl font-bold text-white mb-4 flex-grow">{project.title}</h3>
+                  {isLink ? (
+                    <Link href={project.link as string} className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-white hover:text-[#A0A0A0] transition-colors border-b border-white/20 pb-1 self-start">
+                      {project.cta} <ArrowRight className="w-4 h-4 ml-2" />
+                    </Link>
+                  ) : (
+                    <div className="inline-flex items-center text-sm font-semibold uppercase tracking-widest text-[#777] self-start">
+                      {project.cta}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
 
           <div className="border-t border-white/10 pt-10 text-center">
