@@ -11,23 +11,7 @@ export default function Footer() {
   return (
     <footer className="bg-zinc-950 border-t border-white/5 text-zinc-400 py-16 md:py-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        {/* CTA Section */}
-        <div className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-center justify-between gap-8 border-b border-white/5 pb-16 md:pb-24">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-white mb-4">Want to see what your business could look like online?</h2>
-            <p className="text-zinc-400 max-w-xl text-sm md:text-base leading-relaxed">
-              Send your Instagram or current website link and I will review whether a free homepage concept makes sense for your business.
-            </p>
-          </div>
-          <div className="shrink-0">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[48px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98] w-full md:w-auto"
-            >
-              Request Free Homepage Concept
-            </Link>
-          </div>
-        </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
           {/* Left Column */}

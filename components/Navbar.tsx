@@ -71,15 +71,7 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Start a Project Button (Desktop) */}
-        <div className="hidden md:block">
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[48px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98]"
-          >
-            Request Free Homepage Concept
-          </Link>
-        </div>
+
 
         {/* Mobile Hamburger Menu Toggle */}
         <button
@@ -149,14 +141,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
             >
-              <Link
-                href="/contact"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center justify-center w-full text-center bg-white text-zinc-950 min-h-[48px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98]"
-              >
-                Request Free Homepage Concept
-              </Link>
-              
+
               <div className="flex justify-between items-center mt-12 text-[#555] text-[10px] font-mono uppercase tracking-widest">
                 <span>© 2025 Veltris</span>
                 <a href="mailto:hello@veltris.uk" className="hover:text-[#888] transition-colors">hello@veltris.uk</a>

@@ -166,24 +166,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="py-24 md:py-32 px-6 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
-        <div className="max-w-4xl mx-auto rounded-3xl bg-zinc-900/30 p-12 md:p-16 text-center backdrop-blur-sm relative z-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 leading-tight">
-            Want to see what your business could look like?
-          </h2>
-          <p className="text-zinc-400 mb-10 leading-relaxed max-w-xl mx-auto text-lg">
-            We build free homepage concepts for businesses that are a clear fit.
-          </p>
-          <Link
-            href="/contact"
-            className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto"
-          >
-            Request Free Homepage Concept
-          </Link>
-        </div>
-      </section>
+
     </main>
   );
 }
