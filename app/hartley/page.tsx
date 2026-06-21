@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -21,6 +20,7 @@ const fadeIn = {
 };
 
 const staggerContainer = {
+  initial: {},
   animate: {
     transition: {
       staggerChildren: 0.1,
@@ -43,13 +43,13 @@ export default function HartleyConceptPage() {
             className="object-cover opacity-40"
             priority
           />
-          {/* Dark gradient overlay from bottom for text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-[#0f0f0f]/60 to-transparent" />
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-6 w-full text-center flex flex-col items-center mt-10">
           <motion.h1 
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-playfair font-bold text-white mb-6 max-w-4xl leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 max-w-4xl leading-tight"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -112,7 +112,7 @@ export default function HartleyConceptPage() {
       </section>
 
       {/* 3. SERVICES SECTION */}
-      <section className="bg-white py-24">
+      <section id="services" className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             className="text-center mb-16"
@@ -121,9 +121,8 @@ export default function HartleyConceptPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#111]">What We Do</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>What We Do</h2>
           </motion.div>
-
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -134,7 +133,6 @@ export default function HartleyConceptPage() {
             {/* Card 1 */}
             <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden">
-                {/* REPLACE WITH CLIENT REAL PHOTO: exposed brick, insulation, real renovation work */}
                 <Image 
                   src="/images/olek-buzunov-hnwkK0lQwBw-unsplash (1).jpg" 
                   alt="Renovation & Refurbishment" 
@@ -143,17 +141,15 @@ export default function HartleyConceptPage() {
                 />
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-playfair font-bold text-[#111] mb-3">Renovation & Refurbishment</h3>
+                <h3 className="text-2xl font-bold text-[#111] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Renovation & Refurbishment</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Transforming existing spaces with full structural updates, modern finishes, and careful attention to heritage details.
                 </p>
               </div>
             </motion.div>
-
             {/* Card 2 */}
             <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden">
-                {/* REPLACE WITH CLIENT REAL PHOTO: modern office interior with concrete pillar */}
                 <Image 
                   src="/images/bernd-dittrich-pYlBAu3de0w-unsplash.jpg" 
                   alt="Commercial Fit-Out" 
@@ -162,17 +158,15 @@ export default function HartleyConceptPage() {
                 />
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-playfair font-bold text-[#111] mb-3">Commercial Fit-Out</h3>
+                <h3 className="text-2xl font-bold text-[#111] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Commercial Fit-Out</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Office, retail, and warehouse interiors built to specification — from shell to fully operational workspace.
                 </p>
               </div>
             </motion.div>
-
             {/* Card 3 */}
             <motion.div variants={fadeIn} className="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 overflow-hidden flex flex-col group">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden">
-                {/* REPLACE WITH CLIENT REAL PHOTO: workers on rebar grid, foundation work */}
                 <Image 
                   src="/images/pexels-tkirkgoz-37733178 (1).jpg" 
                   alt="New Build Residential" 
@@ -181,7 +175,7 @@ export default function HartleyConceptPage() {
                 />
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <h3 className="text-2xl font-playfair font-bold text-[#111] mb-3">New Build Residential</h3>
+                <h3 className="text-2xl font-bold text-[#111] mb-3" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>New Build Residential</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Complete residential construction from groundworks to handover, including extensions and bespoke builds.
                 </p>
@@ -201,9 +195,8 @@ export default function HartleyConceptPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#111]">Why Clients Choose Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Why Clients Choose Us</h2>
           </motion.div>
-
           <motion.div 
             className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12 max-w-4xl mx-auto"
             variants={staggerContainer}
@@ -227,7 +220,7 @@ export default function HartleyConceptPage() {
       </section>
 
       {/* 5. PROJECTS SECTION */}
-      <section className="bg-white py-24">
+      <section id="projects" className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             className="flex flex-col items-center text-center mb-16"
@@ -236,10 +229,9 @@ export default function HartleyConceptPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#111] mb-4">Recent Work</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111] mb-4" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Recent Work</h2>
             <p className="text-gray-500 max-w-2xl">Representative projects — your actual work will be featured here</p>
           </motion.div>
-
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={staggerContainer}
@@ -250,7 +242,6 @@ export default function HartleyConceptPage() {
             {/* Project 1 */}
             <motion.div variants={fadeIn} className="group cursor-pointer">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden mb-6 rounded-xl">
-                {/* REPLACE WITH CLIENT REAL PHOTO: Commercial Fit-Out */}
                 <Image 
                   src="/images/bernd-dittrich-pYlBAu3de0w-unsplash.jpg" 
                   alt="Commercial Fit-Out" 
@@ -263,11 +254,9 @@ export default function HartleyConceptPage() {
                 Full office fit-out for a 40-person commercial team. Complete interior build, electrics, and finishes.
               </p>
             </motion.div>
-
             {/* Project 2 */}
             <motion.div variants={fadeIn} className="group cursor-pointer">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden mb-6 rounded-xl">
-                {/* REPLACE WITH CLIENT REAL PHOTO: Residential New Build */}
                 <Image 
                   src="/images/pexels-tkirkgoz-37733178 (1).jpg" 
                   alt="Residential New Build" 
@@ -280,11 +269,9 @@ export default function HartleyConceptPage() {
                 Ground-up family home with 4 bedrooms, integrated garage, and landscaped garden.
               </p>
             </motion.div>
-
             {/* Project 3 */}
             <motion.div variants={fadeIn} className="group cursor-pointer">
               <div className="relative w-full aspect-[16/9] bg-gray-200 overflow-hidden mb-6 rounded-xl">
-                {/* REPLACE WITH CLIENT REAL PHOTO: Office Renovation */}
                 <Image 
                   src="/images/pexels-kindelmedia-8488031.jpg" 
                   alt="Office Renovation" 
@@ -298,7 +285,6 @@ export default function HartleyConceptPage() {
               </p>
             </motion.div>
           </motion.div>
-
           <motion.div 
             className="mt-16 text-center"
             initial="initial"
@@ -323,9 +309,8 @@ export default function HartleyConceptPage() {
             viewport={{ once: true }}
             variants={fadeIn}
           >
-            <h2 className="text-4xl md:text-5xl font-playfair font-bold text-[#111]">What Our Clients Say</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111]" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>What Our Clients Say</h2>
           </motion.div>
-
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-2 gap-8"
             variants={staggerContainer}
@@ -336,16 +321,15 @@ export default function HartleyConceptPage() {
             {/* Testimonial 1 */}
             <motion.div variants={fadeIn} className="bg-white p-10 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col">
               <Quote className="w-10 h-10 text-gray-200 mb-6" />
-              <p className="text-xl md:text-2xl text-[#111] leading-relaxed font-playfair mb-8 flex-1">
+              <p className="text-xl md:text-2xl text-[#111] leading-relaxed mb-8 flex-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 &quot;Hartley & Co. delivered our office fit-out two weeks ahead of schedule. Professional from start to finish.&quot;
               </p>
               <p className="font-bold text-[#111] uppercase tracking-widest text-[11px]">— Sarah T., Facilities Manager</p>
             </motion.div>
-
             {/* Testimonial 2 */}
             <motion.div variants={fadeIn} className="bg-white p-10 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col">
               <Quote className="w-10 h-10 text-gray-200 mb-6" />
-              <p className="text-xl md:text-2xl text-[#111] leading-relaxed font-playfair mb-8 flex-1">
+              <p className="text-xl md:text-2xl text-[#111] leading-relaxed mb-8 flex-1" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>
                 &quot;The renovation on our family home was stress-free. Clear communication and quality work throughout.&quot;
               </p>
               <p className="font-bold text-[#111] uppercase tracking-widest text-[11px]">— James R., Homeowner</p>
@@ -358,7 +342,8 @@ export default function HartleyConceptPage() {
       <section id="quote" className="bg-[#0f0f0f] py-32">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.h2 
-            className="text-4xl md:text-5xl font-playfair font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            style={{ fontFamily: "'Playfair Display', Georgia, serif" }}
             initial="initial"
             whileInView="animate"
             viewport={{ once: true }}
@@ -396,32 +381,25 @@ export default function HartleyConceptPage() {
       {/* 8. FOOTER */}
       <footer className="bg-[#0a0a0a] text-gray-400 py-16 border-t border-[#222]">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center md:items-start gap-10 text-center md:text-left">
-          
           <div className="flex flex-col gap-2">
-            <h3 className="text-2xl font-playfair font-bold text-white">Hartley & Co. Builders</h3>
+            <h3 className="text-2xl font-bold text-white" style={{ fontFamily: "'Playfair Display', Georgia, serif" }}>Hartley & Co. Builders</h3>
             <p className="text-[11px] tracking-widest uppercase">Building What Matters</p>
           </div>
-
           <div className="flex flex-col gap-2 text-sm">
             <p className="text-gray-300 hover:text-white transition-colors cursor-pointer">hello@hartleybuilders.co.uk</p>
             <p className="text-gray-300 hover:text-white transition-colors cursor-pointer">01234 567 890</p>
           </div>
-
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 text-[11px] font-semibold tracking-widest uppercase text-gray-400">
             <Link href="#services" className="hover:text-white transition-colors">Services</Link>
             <Link href="#projects" className="hover:text-white transition-colors">Projects</Link>
-            <Link href="#about" className="hover:text-white transition-colors">About</Link>
             <Link href="#quote" className="hover:text-white transition-colors">Contact</Link>
           </div>
-
         </div>
-        
         <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-[#222] flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
           <p>© {new Date().getFullYear()} Hartley & Co. Builders</p>
           <p className="uppercase tracking-widest text-[#555]">Concept direction created by Veltris</p>
         </div>
       </footer>
-
     </main>
   );
 }

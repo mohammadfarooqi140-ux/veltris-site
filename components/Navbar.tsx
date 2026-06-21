@@ -24,7 +24,7 @@ export default function Navbar() {
       }
     };
 
-    const handleClickOutside = (e: MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
       if (
         isOpen &&
         menuRef.current &&
