@@ -95,5 +95,26 @@ export const conceptProjects = [
         <div className="absolute bottom-4 right-4 w-4 h-4 border-b border-r border-[#600000]/40" />
       </div>
     )
+  },
+  {
+    title: "Hartley & Co. Builders",
+    businessType: "Construction company",
+    label: "Construction company • Concept project",
+    desc: "A robust, professional single-page concept for a UK construction firm. Dark hero, clear services, and high trust signals.",
+    link: "/hartley",
+    cta: "View Concept",
+    preview: (
+      <div className="w-full h-full bg-[#0f0f0f] relative overflow-hidden flex items-end justify-start border border-[#1a1a1a]">
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent z-10" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20 w-full px-4 text-center">
+          <p className="font-playfair text-2xl text-white font-bold tracking-wide">Hartley & Co.</p>
+          <div className="w-10 h-[2px] bg-[#c75b2a]" />
+          <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em]">Building What Matters</p>
+        </div>
+        <div className="relative z-20 p-6 w-full flex justify-between items-end">
+          <p className="text-[10px] text-[#c75b2a] font-bold uppercase tracking-widest">Construction</p>
+        </div>
+      </div>
+    )
   }
 ];
