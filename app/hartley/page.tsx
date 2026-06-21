@@ -337,7 +337,7 @@ export default function HartleyConceptPage() {
             <motion.div variants={fadeIn} className="bg-white p-10 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col">
               <Quote className="w-10 h-10 text-gray-200 mb-6" />
               <p className="text-xl md:text-2xl text-[#111] leading-relaxed font-playfair mb-8 flex-1">
-                "Hartley & Co. delivered our office fit-out two weeks ahead of schedule. Professional from start to finish."
+                &quot;Hartley & Co. delivered our office fit-out two weeks ahead of schedule. Professional from start to finish.&quot;
               </p>
               <p className="font-bold text-[#111] uppercase tracking-widest text-[11px]">— Sarah T., Facilities Manager</p>
             </motion.div>
@@ -346,7 +346,7 @@ export default function HartleyConceptPage() {
             <motion.div variants={fadeIn} className="bg-white p-10 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col">
               <Quote className="w-10 h-10 text-gray-200 mb-6" />
               <p className="text-xl md:text-2xl text-[#111] leading-relaxed font-playfair mb-8 flex-1">
-                "The renovation on our family home was stress-free. Clear communication and quality work throughout."
+                &quot;The renovation on our family home was stress-free. Clear communication and quality work throughout.&quot;
               </p>
               <p className="font-bold text-[#111] uppercase tracking-widest text-[11px]">— James R., Homeowner</p>
             </motion.div>
@@ -374,7 +374,7 @@ export default function HartleyConceptPage() {
             variants={fadeIn}
             transition={{ delay: 0.1 }}
           >
-            Tell us what you need. We'll send a clear, fixed-price quote within 24 hours.
+            Tell us what you need. We&apos;ll send a clear, fixed-price quote within 24 hours.
           </motion.p>
           <motion.div
             initial="initial"
