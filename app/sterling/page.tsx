@@ -85,7 +85,7 @@ export default function SterlingFlooringPage() {
       <section id="hero" className="relative pt-20 pb-32 md:pt-32 md:pb-48 flex items-center min-h-[90vh]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
+            src="/images/download(1).jpg"
             alt="Warehouse interior with polished concrete floor"
             fill
             className="object-cover"
@@ -170,17 +170,17 @@ export default function SterlingFlooringPage() {
               {
                 title: "Epoxy Flooring Systems",
                 desc: "Seamless, chemical-resistant epoxy coatings for warehouses, factories, and production facilities.",
-                img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                img: "/images/images (2).jpg"
               },
               {
                 title: "Resin Flooring",
                 desc: "Heavy-duty polyurethane and methyl methacrylate systems for extreme temperature and traffic conditions.",
-                img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
+                img: "/images/download (1)(1).jpg"
               },
               {
                 title: "Concrete Polishing",
                 desc: "Diamond-polished concrete with high-gloss or matte finish. Low maintenance, long lifespan.",
-                img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                img: "/images/images (4).jpg"
               }
             ].map((service, i) => (
               <motion.div 
@@ -259,7 +259,7 @@ export default function SterlingFlooringPage() {
               className="relative h-[600px] w-full bg-gray-200"
             >
               <Image
-                src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1000&q=80"
+                src="/images/download(1).jpg"
                 alt="Sterling team at work"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
@@ -307,17 +307,17 @@ export default function SterlingFlooringPage() {
               {
                 title: "Warehouse Flooring, Midlands",
                 desc: "35,000 sq ft epoxy coating for a distribution centre. Completed in 5 days with zero operational downtime.",
-                img: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80"
+                img: "/images/download(1).jpg"
               },
               {
                 title: "Factory Refurbishment, North West",
                 desc: "Full resin floor system for a food production facility. Temperature-resistant and hygienically sealed.",
-                img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&q=80"
+                img: "/images/download (1)(1).jpg"
               },
               {
                 title: "Retail Showroom, London",
                 desc: "Polished concrete with decorative aggregate exposure. High-traffic retail environment.",
-                img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80"
+                img: "/images/images (4).jpg"
               }
             ].map((project, i) => (
               <motion.div 
