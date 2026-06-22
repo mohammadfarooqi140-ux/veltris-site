@@ -85,7 +85,7 @@ export default function SterlingFlooringPage() {
       <section id="hero" className="relative pt-20 pb-32 md:pt-32 md:pb-48 flex items-center min-h-[90vh]">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/download(1).jpg"
+            src="/images/hero.jpg"
             alt="Warehouse interior with polished concrete floor"
             fill
             className="object-cover"
@@ -170,17 +170,17 @@ export default function SterlingFlooringPage() {
               {
                 title: "Epoxy Flooring Systems",
                 desc: "Seamless, chemical-resistant epoxy coatings for warehouses, factories, and production facilities.",
-                img: "/images/images (2).jpg"
+                img: "/images/epoxy-worker.jpg"
               },
               {
                 title: "Resin Flooring",
                 desc: "Heavy-duty polyurethane and methyl methacrylate systems for extreme temperature and traffic conditions.",
-                img: "/images/download (1)(1).jpg"
+                img: "/images/warehouse.jpg"
               },
               {
                 title: "Concrete Polishing",
                 desc: "Diamond-polished concrete with high-gloss or matte finish. Low maintenance, long lifespan.",
-                img: "/images/images (4).jpg"
+                img: "/images/concrete.jpg"
               }
             ].map((service, i) => (
               <motion.div 
@@ -259,7 +259,7 @@ export default function SterlingFlooringPage() {
               className="relative h-[600px] w-full bg-gray-200"
             >
               <Image
-                src="/images/download(1).jpg"
+                src="/images/hero.jpg"
                 alt="Sterling team at work"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
@@ -307,17 +307,17 @@ export default function SterlingFlooringPage() {
               {
                 title: "Warehouse Flooring, Midlands",
                 desc: "35,000 sq ft epoxy coating for a distribution centre. Completed in 5 days with zero operational downtime.",
-                img: "/images/download(1).jpg"
+                img: "/images/hero.jpg"
               },
               {
                 title: "Factory Refurbishment, North West",
                 desc: "Full resin floor system for a food production facility. Temperature-resistant and hygienically sealed.",
-                img: "/images/download (1)(1).jpg"
+                img: "/images/warehouse.jpg"
               },
               {
                 title: "Retail Showroom, London",
                 desc: "Polished concrete with decorative aggregate exposure. High-traffic retail environment.",
-                img: "/images/images (4).jpg"
+                img: "/images/concrete.jpg"
               }
             ].map((project, i) => (
               <motion.div 
