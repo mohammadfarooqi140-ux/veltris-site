@@ -107,12 +107,41 @@ export const conceptProjects = [
       <div className="w-full h-full bg-[#0f0f0f] relative overflow-hidden flex items-end justify-start border border-[#1a1a1a]">
         <div className="absolute inset-0 bg-gradient-to-t from-[#0f0f0f] via-transparent to-transparent z-10" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20 w-full px-4 text-center">
-          <p className="font-playfair text-2xl text-white font-bold tracking-wide">Hartley & Co.</p>
+          <p className="font-serif text-2xl text-white font-bold tracking-wide">Hartley & Co.</p>
           <div className="w-10 h-[2px] bg-[#c75b2a]" />
           <p className="text-gray-400 text-[10px] uppercase tracking-[0.2em]">Building What Matters</p>
         </div>
         <div className="relative z-20 p-6 w-full flex justify-between items-end">
           <p className="text-[10px] text-[#c75b2a] font-bold uppercase tracking-widest">Construction</p>
+        </div>
+      </div>
+    )
+  },
+  {
+    title: "Sterling Industrial Flooring",
+    businessType: "Industrial Flooring",
+    label: "Industrial Flooring • Concept project",
+    desc: "Concept homepage for a UK industrial flooring contractor specialising in epoxy, resin, and polished concrete systems.",
+    link: "/sterling",
+    cta: "View Concept",
+    preview: (
+      <div className="w-full h-full bg-[#1a1a1a] relative overflow-hidden flex items-end justify-start border border-[#333]">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&q=80"
+            alt="Sterling Concept"
+            fill
+            className="object-cover opacity-50 hover:opacity-70 transition-all duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
+        </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-4 z-20 w-full px-4 text-center">
+          <p className="font-serif text-2xl text-white font-bold tracking-wide">STERLING.</p>
+          <div className="w-10 h-[2px] bg-[#c75b2a]" />
+          <p className="text-gray-300 text-[10px] uppercase tracking-[0.2em]">Industrial Flooring</p>
+        </div>
+        <div className="relative z-20 p-6 w-full flex justify-between items-end">
+          <p className="text-[10px] text-[#c75b2a] font-bold uppercase tracking-widest">Concept</p>
         </div>
       </div>
     )
