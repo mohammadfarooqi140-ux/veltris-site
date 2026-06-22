@@ -402,9 +402,9 @@ export default function SterlingFlooringPage() {
                 }}
                 className="bg-white p-10 shadow-sm border border-gray-100 text-left relative"
               >
-                <div className="text-[#c75b2a] text-6xl font-serif absolute top-6 left-6 opacity-20">"</div>
+                <div className="text-[#c75b2a] text-6xl font-serif absolute top-6 left-6 opacity-20">&ldquo;</div>
                 <p className="text-lg text-gray-700 italic mb-6 relative z-10 pt-4">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 <p className="font-bold text-gray-900 uppercase tracking-wider text-sm">
                   {testimonial.author}
@@ -428,7 +428,7 @@ export default function SterlingFlooringPage() {
               Request Your Free Site Survey
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              We'll assess your space, recommend the right system, and provide a fixed-price quote within 48 hours.
+              We&apos;ll assess your space, recommend the right system, and provide a fixed-price quote within 48 hours.
             </p>
             <button className="bg-[#c75b2a] hover:bg-[#b04f24] text-white px-10 py-5 rounded-sm text-lg font-medium transition-all shadow-lg shadow-[#c75b2a]/20">
               Get a Free Site Survey
