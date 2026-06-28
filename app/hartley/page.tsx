@@ -30,7 +30,7 @@ const staggerContainer = {
 
 export default function HartleyConceptPage() {
   return (
-    <main className="min-h-screen bg-[#f8f9fa] text-[#111] font-sans selection:bg-[#c75b2a] selection:text-white pt-24 pb-0">
+    <main className="min-h-screen bg-[#f8f9fa] text-[#111] font-sans selection:bg-[#c75b2a] selection:text-white pb-0">
       
       {/* 1. HERO SECTION */}
       <section className="relative w-full h-[90vh] min-h-[600px] flex items-center justify-center bg-[#0f0f0f] overflow-hidden">
