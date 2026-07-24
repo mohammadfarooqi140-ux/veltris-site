@@ -10,22 +10,22 @@ const projects = [
 
 export const WorkSection = () => {
   return (
-    <section id="work" className="py-20 bg-[#161616]">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeInUp className="text-center mb-12">
+    <section id="work" className="py-24 bg-[#161616]">
+      <div className="max-w-5xl mx-auto sm:px-6 lg:px-8">
+        <FadeInUp className="text-center mb-16 px-4 sm:px-0">
           <h2 className="text-4xl font-bold text-white uppercase tracking-widest">Projects</h2>
-          <div className="h-1 w-20 bg-yellow-600 mx-auto mt-4"></div>
+          <div className="h-1 w-20 bg-zinc-400 mx-auto mt-6"></div>
         </FadeInUp>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-1 sm:gap-4">
           {projects.map((imgSrc, idx) => (
             <FadeInUp key={idx} delay={idx * 0.1}>
-              <div className="relative aspect-video overflow-hidden bg-black">
+              <div className="relative aspect-[4/3] sm:aspect-video overflow-hidden bg-black group">
                 <Image 
                   src={imgSrc} 
                   alt={`Project ${idx + 1}`} 
                   fill
-                  className="object-cover opacity-90 hover:opacity-100 transition-opacity duration-300"
+                  className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                 />
               </div>
             </FadeInUp>

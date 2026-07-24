@@ -8,7 +8,7 @@ import { FadeInUp } from "@/components/FadeInUp";
 
 export default function Home() {
   return (
-    <div className="font-sans selection:bg-zinc-200 selection:text-zinc-950">
+    <div className="font-sans selection:bg-zinc-200 selection:text-zinc-950 overflow-x-hidden">
 
       {/* 1. Hero Section */}
       <section className="relative min-h-[90vh] w-full flex items-center bg-zinc-950 overflow-hidden border-b border-white/5">
@@ -154,7 +154,7 @@ export default function Home() {
 
 
       {/* 6. Final CTA Section */}
-      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center relative">
+      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
         <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6 relative z-10">
           Ready to look established?

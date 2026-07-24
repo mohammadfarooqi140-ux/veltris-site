@@ -2,7 +2,7 @@ import { FadeInUp } from "@/components/FadeInUp";
 
 export const PartnersSection = () => {
   return (
-    <section className="py-16 bg-[#222]">
+    <section className="py-24 bg-[#111]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <FadeInUp>
           <h2 className="text-3xl font-bold text-gray-200 mb-4">Our Partners</h2>
@@ -34,8 +34,8 @@ export const PartnersSection = () => {
         </FadeInUp>
 
         <FadeInUp delay={0.4} className="mt-12 flex justify-center">
-          <div className="border border-blue-900 bg-[#1a2b4c] text-white px-6 py-2 flex flex-col items-center">
-             <span className="text-xs text-blue-400 font-semibold tracking-wider">WE ARE RECOMMENDED ON</span>
+          <div className="border border-zinc-700 bg-zinc-900 text-white px-6 py-3 flex flex-col items-center rounded-sm">
+             <span className="text-[10px] text-zinc-400 font-semibold tracking-widest mb-1">WE ARE RECOMMENDED ON</span>
              <span className="text-2xl font-black tracking-tighter"><span className="text-orange-500">my</span><span className="text-blue-500">workman</span></span>
           </div>
         </FadeInUp>
