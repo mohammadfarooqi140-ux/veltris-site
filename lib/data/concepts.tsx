@@ -145,5 +145,26 @@ export const conceptProjects = [
         </div>
       </div>
     )
+  },
+  {
+    title: "UK Properties",
+    businessType: "Construction & Renovation",
+    label: "Construction & Renovation • Redesign",
+    desc: "A premium local architectural aesthetic for high-end home extensions and bespoke kitchens, featuring dynamic scroll-driven interfaces.",
+    link: "/work/uk-properties",
+    cta: "View Redesign",
+    preview: (
+      <div className="w-full h-full bg-[#0a0a0a] relative overflow-hidden flex items-end justify-start border border-[#1a1a1a]">
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] opacity-30 pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-3 w-full px-4 text-center z-10">
+          <p className="font-sans text-xl text-white font-bold tracking-tight uppercase">UK Properties</p>
+          <div className="w-8 h-[1px] bg-[#d4af37]" />
+          <p className="text-gray-400 text-[8px] uppercase tracking-[0.3em]">Quality Construction</p>
+        </div>
+        <div className="relative z-20 p-4 w-full flex justify-between items-end">
+          <p className="text-[10px] text-[#d4af37] font-bold uppercase tracking-widest">Case Study</p>
+        </div>
+      </div>
+    )
   }
 ];
