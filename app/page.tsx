@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Search, PenTool, Rocket } from "lucide-react";
 import Image from "next/image";
 import { conceptProjects } from "@/lib/data/concepts";
+import { FadeInUp } from "@/components/FadeInUp";
 
 export default function Home() {
   return (
@@ -16,36 +17,40 @@ export default function Home() {
         
         <div className="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24">
           <div className="max-w-4xl z-20 relative text-center mx-auto flex flex-col items-center">
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
-              Accepting new local business concepts
-            </div>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
-              Turn online visitors into <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">real enquiries</span>
-            </h1>
-            <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mb-10 leading-relaxed">
-              Veltris builds clean, mobile-first websites for local businesses relying on Instagram, broken links, or outdated sites—helping you look credible and making it easy for customers to book.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 w-full sm:w-auto">
-              <Link href="/work" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-                View Example Work
-              </Link>
-            </div>
-            <div className="flex items-center gap-2 text-sm text-zinc-500">
-              <CheckCircle2 className="w-4 h-4 text-zinc-400" />
-              <p>No pressure. No commitment. See the concept before deciding.</p>
-            </div>
+            <FadeInUp>
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
+                Accepting new local business concepts
+              </div>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
+                Turn online visitors into <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">real enquiries</span>
+              </h1>
+              <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Veltris builds clean, mobile-first websites for local businesses relying on Instagram, broken links, or outdated sites—helping you look credible and making it easy for customers to book.
+              </p>
+            </FadeInUp>
+            <FadeInUp delay={0.2}>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 w-full sm:w-auto">
+                <Link href="/work" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
+                  View Example Work
+                </Link>
+              </div>
+              <div className="flex items-center justify-center gap-2 text-sm text-zinc-500">
+                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
+                <p>No pressure. No commitment. See the concept before deciding.</p>
+              </div>
+            </FadeInUp>
           </div>
         </div>
       </section>
 
       {/* 2. Problem Section */}
       <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
-        <div className="text-center mb-16">
+        <FadeInUp className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
             Social media isn&apos;t enough to build complete trust
           </h2>
           <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If your business only has Instagram, a broken link, or an outdated website, customers hesitate before contacting you.</p>
-        </div>
+        </FadeInUp>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">

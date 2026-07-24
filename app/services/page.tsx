@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { FadeInUp } from "@/components/FadeInUp";
 
 const services = [
   {
@@ -64,12 +65,7 @@ export default function ServicesPage() {
       {/* HERO SECTION */}
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-white/5">
         <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left flex flex-col items-center md:items-start">
-          <motion.div
-            className="max-w-4xl"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+          <FadeInUp className="max-w-4xl">
             <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
               SERVICES &amp; PRICING
             </div>
@@ -85,7 +81,7 @@ export default function ServicesPage() {
             >
               Request Free Homepage Concept
             </Link>
-          </motion.div>
+          </FadeInUp>
         </div>
       </section>
 
@@ -147,13 +143,13 @@ export default function ServicesPage() {
 
       {/* HOW IT WORKS — BENTO GRID */}
       <section className="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5">
-        <div className="mb-12 text-center md:text-left">
+        <FadeInUp className="mb-12 text-center md:text-left">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-6 tracking-[0.2em]">
             Process
           </div>
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">How it works</h2>
           <p className="text-lg text-zinc-400">A simple process from first look to launch.</p>
-        </div>
+        </FadeInUp>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {processSteps.map((step, index) => (
