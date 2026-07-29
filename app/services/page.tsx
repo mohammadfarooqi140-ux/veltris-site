@@ -85,8 +85,65 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SERVICES GRID WITH PRICING */}
-      <section className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
+      {/* AI AUTOMATION SECTION */}
+      <section id="automation" className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
+        <FadeInUp className="mb-12">
+          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">AI Automation</h2>
+          <p className="text-lg text-zinc-400 max-w-2xl">Stop wasting hours on manual admin. We build custom AI systems that run your operations quietly and perfectly in the background.</p>
+        </FadeInUp>
+        
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.1 },
+            },
+          }}
+        >
+          <motion.div
+            className="group bg-zinc-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:bg-zinc-900/60 transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+            }}
+          >
+            <div>
+              <div className="flex justify-between items-start mb-6">
+                <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">Working Demo</span>
+              </div>
+              <h3 className="text-2xl font-playfair font-bold text-white mb-3">Field-to-Office Reporting</h3>
+              <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">Turn messy voice notes from the field into formatted, professional PDFs instantly. This isn&apos;t a promise; it&apos;s a working demo of how AI eliminates hours of manual typing.</p>
+              <ul className="space-y-3 mb-8">
+                <li className="text-zinc-500 text-sm flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Voice-note transcription
+                </li>
+                <li className="text-zinc-500 text-sm flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Instant PDF formatting
+                </li>
+                <li className="text-zinc-500 text-sm flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Automated email delivery
+                </li>
+              </ul>
+            </div>
+            <div className="pt-6 border-t border-white/5 mt-auto">
+              <p className="text-lg font-sans font-semibold tracking-normal text-white">£850 - 1,200 setup + £100 - 150/mo</p>
+            </div>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* WEB DEVELOPMENT SECTION */}
+      <section id="web-dev" className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
+        <FadeInUp className="mb-12">
+          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">Web Development</h2>
+          <p className="text-lg text-zinc-400 max-w-2xl">Premium, high-converting websites designed to make your local business look established and credible.</p>
+        </FadeInUp>
+
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-6"
           initial="hidden"
@@ -136,7 +193,7 @@ export default function ServicesPage() {
 
         <div className="mt-8 p-6 rounded-2xl bg-zinc-900/30 max-w-2xl text-left shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
           <p className="text-sm text-zinc-400 leading-relaxed">
-            <strong className="text-white font-sans font-semibold">Note:</strong> Final pricing depends on pages, content, integrations, booking tools, e-commerce complexity, and revision scope.
+            <strong className="text-white font-sans font-semibold">Note:</strong> Web development projects are quoted per project based on scope, page count, custom functionality, and integrations.
           </p>
         </div>
       </section>

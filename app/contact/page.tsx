@@ -70,14 +70,14 @@ export default function ContactPage() {
           className="text-center mb-12"
         >
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-6 tracking-tight leading-[1.08]">
-            Request a free homepage concept
+            Start your project
           </h1>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            Send your Instagram or current website link and I will review whether a free homepage concept makes sense for your business.
+            Send your details and I will review whether a free homepage concept or an AI automation demo makes sense for your business.
           </p>
           <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
              <p className="text-xs text-zinc-400 leading-relaxed text-left">
-               <strong className="text-white font-semibold">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a homepage direction before you decide on a full build.
+               <strong className="text-white font-semibold">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a custom concept or demo before you decide.
              </p>
           </div>
         </motion.div>
@@ -202,12 +202,12 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label className={labelClass}>What do you want the website to help with?</label>
+                    <label className={labelClass}>What do you want us to help with?</label>
                     <textarea
                       rows={4}
                       value={improvement}
                       onChange={(e) => setImprovement(e.target.value)}
-                      placeholder="e.g. Look more established, make it easier to book, get more enquiries..."
+                      placeholder="e.g. Look more established, get more enquiries, or automate my manual admin tasks..."
                       disabled={status === "submitting"}
                       className={`${fieldClass} resize-none`}
                     />
@@ -224,7 +224,7 @@ export default function ContactPage() {
                         Submitting...
                       </>
                     ) : (
-                      "Request Free Homepage Concept"
+                      "Send Request"
                     )}
                   </motion.button>
                 </motion.div>

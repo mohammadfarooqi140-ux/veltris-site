@@ -3,7 +3,8 @@ import Link from "next/link";
 export default function Footer() {
   const links = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "AI Automation", href: "/services#automation" },
+    { name: "Web Development", href: "/services#web-dev" },
     { name: "Work", href: "/work" },
     { name: "Contact", href: "/contact" },
   ];
@@ -20,7 +21,7 @@ export default function Footer() {
               Veltris
             </Link>
             <p className="text-sm max-w-sm leading-relaxed">
-              Premium websites and digital presence for local businesses that want to look clearer, sharper, and more established online.
+              Premium websites and AI automation systems for local businesses that want to scale efficiently and look established online.
             </p>
           </div>
 

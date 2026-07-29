@@ -19,24 +19,24 @@ export default function Home() {
           <div className="max-w-4xl z-20 relative text-center mx-auto flex flex-col items-center">
             <FadeInUp>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
-                Accepting new local business concepts
+                Premium Websites & AI Automation
               </div>
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
-                Turn online visitors into <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">real enquiries</span>
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
+                Websites that convert.<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">Automations that scale.</span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Veltris builds clean, mobile-first websites for local businesses relying on Instagram, broken links, or outdated sites—helping you look credible and making it easy for customers to book.
+                Veltris builds high-converting websites and custom AI automation systems for local businesses—helping you look established, capture more enquiries, and run your daily operations without the manual busywork.
               </p>
             </FadeInUp>
             <FadeInUp delay={0.2}>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 w-full sm:w-auto">
-                <Link href="/work" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-                  View Example Work
+                <Link href="/services" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
+                  View Our Services
                 </Link>
               </div>
               <div className="flex items-center justify-center gap-2 text-sm text-zinc-500">
                 <CheckCircle2 className="w-4 h-4 text-zinc-400" />
-                <p>No pressure. No commitment. See the concept before deciding.</p>
+                <p>No pressure. No commitment. Built for your brand.</p>
               </div>
             </FadeInUp>
           </div>
@@ -47,9 +47,9 @@ export default function Home() {
       <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
         <FadeInUp className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
-            Social media isn&apos;t enough to build complete trust
+            Growing your business shouldn&apos;t mean working longer hours
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If your business only has Instagram, a broken link, or an outdated website, customers hesitate before contacting you.</p>
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If you are losing leads to an outdated website or drowning in manual admin work, you are hitting an artificial ceiling.</p>
         </FadeInUp>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -62,9 +62,9 @@ export default function Home() {
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">02</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Lack of authority</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Manual busywork</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              A social media profile shows what you do, but a premium website shows that you are an established, serious business.
+              Typing up field notes, manually entering data, or chasing reports drains the energy you should be spending on growth.
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -81,7 +81,7 @@ export default function Home() {
       <section className="py-20 md:py-32 px-6 bg-zinc-950 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-16 text-center">
-            Your online presence should do more than exist
+            Your business systems should do more than exist
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -90,16 +90,16 @@ export default function Home() {
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Look established</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                A premium, modern design gives customers immediate confidence in your business before they even speak to you.
+                A premium, modern web design gives customers immediate confidence in your business before they even speak to you.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
               <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
                 <div className="w-5 h-5 bg-zinc-400 rounded-sm" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Make information easy</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Scale without busywork</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Clear menus, logical structure, and upfront details mean customers aren&apos;t left guessing about your services.
+                Custom AI automations turn your field voice notes into formatted PDFs instantly, cutting hours of daily admin tasks.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
