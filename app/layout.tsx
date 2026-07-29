@@ -9,17 +9,22 @@ import Footer from "@/components/Footer";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
 });
 
 const cinzel = Cinzel({
   subsets: ["latin"],
   variable: "--font-cinzel",
+  display: "swap",
 });
+
+export const dynamic = "force-static";
 
 export const metadata: Metadata = {
   title: "Veltris — Premium Websites for Local Businesses",
