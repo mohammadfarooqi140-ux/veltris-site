@@ -66,7 +66,7 @@ export default function Home() {
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Calendar size={20} /></div>
             <h3 className="text-lg md:text-xl font-bold text-white mb-4">Books jobs & takes messages</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              The AI doesn't just say hello—it understands what the caller wants, asks the right questions, and books them in or takes detailed messages.
+              The AI doesn&apos;t just say hello—it understands what the caller wants, asks the right questions, and books them in or takes detailed messages.
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -126,7 +126,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Scale without busywork</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                AI agents and custom automations cut out hours of daily admin tasks, taking calls and notes so you don't have to.
+                AI agents and custom automations cut out hours of daily admin tasks, taking calls and notes so you don&apos;t have to.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
