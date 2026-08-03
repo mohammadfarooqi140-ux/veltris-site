@@ -135,7 +135,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Turn interest into action</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Strategic websites and intelligent phone agents guide your visitors exactly where you want them: booking, calling, or buying.
+                The AI agent handles the calls. The website handles the first impression. You get more done without more staff.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -144,7 +144,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Look established</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                A premium, modern web design gives customers immediate confidence in your business before they even interact with you.
+                Customers form an opinion in the first few seconds. A well built, fast, mobile-ready website makes that opinion a good one.
               </p>
             </div>
           </div>
@@ -169,14 +169,14 @@ export default function Home() {
             <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl transition-colors duration-500" />
             <Search className="w-8 h-8 text-zinc-400 mb-6" />
             <h4 className="text-white font-bold text-xl mb-3">1. Discovery Review</h4>
-            <p className="text-sm text-zinc-400 leading-relaxed">We look at your Instagram, old site, or business goals to understand exactly what your brand needs to stand out.</p>
+            <p className="text-sm text-zinc-400 leading-relaxed">We look at your current site, Instagram, or what you do and figure out what the homepage needs to say to actually get enquiries.</p>
           </div>
           
           <div className="bg-zinc-900/30 rounded-3xl p-10 flex flex-col items-start relative overflow-hidden group md:mt-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl transition-colors duration-500" />
             <PenTool className="w-8 h-8 text-zinc-400 mb-6" />
             <h4 className="text-white font-bold text-xl mb-3">2. Concept Design</h4>
-            <p className="text-sm text-zinc-400 leading-relaxed">You receive a custom, premium homepage direction designed specifically for you. No templates, tailored to your aesthetic.</p>
+            <p className="text-sm text-zinc-400 leading-relaxed">You get a free homepage direction built for your business. Not a template. Something that actually fits what you do.</p>
           </div>
 
           <div className="bg-zinc-900/30 rounded-3xl p-10 flex flex-col items-start relative overflow-hidden group md:mt-16 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -196,7 +196,7 @@ export default function Home() {
           Stop losing jobs to missed calls.
         </h2>
         <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
-          Contact me to schedule a live demo of our AI voice agents tailored for your business, or request a free homepage design concept.
+          Get in touch and I will set up a live demo of the AI voice agent for your number, or put together a free homepage concept for your business.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
           <Link href="/contact" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">

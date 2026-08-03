@@ -27,8 +27,8 @@ const cinzel = Cinzel({
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Veltris | Premium Websites for Businesses",
-  description: "Veltris builds modern, conversion-focused websites for tattoo studios, salons, barbers, and service brands. Delivered fast, priced clearly.",
+  title: "Veltris | AI Voice Agents & Premium Websites",
+  description: "AI voice agents that answer your phone 24/7 and premium websites that convert. Built for cleaning companies, trades, roofers and facilities teams.",
 };
 
 export default function RootLayout({
