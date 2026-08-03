@@ -24,7 +24,7 @@ export default function Home() {
                 Never miss <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">another job call.</span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                AI voice agents that answer your phone 24/7, book jobs, and take messages—so your team can stay on site and still win the work. Built for cleaning companies, facilities managers, roofers, and trades that lose jobs every time the phone goes unanswered.
+                AI voice agents that answer your phone 24/7, take the details, and book the job so your team can stay on site without losing work. Built for cleaning companies, facilities teams, roofers and trades that lose jobs every time the phone goes unanswered.
               </p>
             </FadeInUp>
             <FadeInUp delay={0.2}>
@@ -49,9 +49,9 @@ export default function Home() {
       <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
         <FadeInUp className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
-            Your phones answered perfectly, 24/7
+            Your phones answered properly, 24/7
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">Missed calls mean lost jobs. Our AI agents handle your customer enquiries instantly, sounding natural and professional, even when you are on the tools.</p>
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">Missed calls cost real jobs. When a customer rings while you are on site or after hours, they usually just call the next company. These AI agents pick up every time, sound natural, and actually do the work.</p>
         </FadeInUp>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -59,21 +59,21 @@ export default function Home() {
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Phone size={20} /></div>
             <h3 className="text-lg md:text-xl font-bold text-white mb-4">Answers every call</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              Whether it is after hours, weekends, or while you are on a ladder, the AI picks up instantly. Works perfectly with your existing phone number.
+              Works with your existing number. Evenings, weekends, or while the team is already out, it picks up straight away.
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Calendar size={20} /></div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Books jobs & takes messages</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Books jobs and takes proper messages</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              The AI doesn&apos;t just say hello—it understands what the caller wants, asks the right questions, and books them in or takes detailed messages.
+              It does not just say leave a message. It asks the right questions, books the job where possible, or takes a clear detailed message.
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><MessageSquare size={20} /></div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Instant notifications</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Sends you the info instantly</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              As soon as the call ends, you receive a full summary and transcription directly via Email, SMS, or WhatsApp.
+              As soon as the call ends you get a full summary by email, SMS or WhatsApp.
             </p>
           </div>
         </div>
@@ -160,7 +160,7 @@ export default function Home() {
             Need a digital refresh? See it before you commit
           </h2>
           <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            Alongside AI, I create a free homepage concept for selected local businesses so you can see how your brand could look online before paying for a full website.
+            Alongside AI, I create a free homepage concept for selected businesses so you can see how your brand could look online before paying for a full website.
           </p>
         </div>
 

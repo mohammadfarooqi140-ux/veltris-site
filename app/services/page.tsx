@@ -7,28 +7,28 @@ const services = [
   {
     number: "01",
     title: "Landing Pages",
-    description: "A focused page for turning online traffic and Instagram visitors into real enquiries with a single, clear offer.",
+    description: "A focused page that turns traffic and Instagram visitors into real enquiries with one clear offer.",
     features: ["Optimized for conversion", "Clear CTA paths", "Mobile first design"],
     price: "From £600",
   },
   {
     number: "02",
     title: "Business Websites",
-    description: "A complete online home designed to help local businesses look credible, established, and easy to contact.",
+    description: "A complete online home that makes your business look established, credible and easy to contact.",
     features: ["Service & menu clarity", "Trust-building layouts", "Fast loading times"],
     price: "From £900",
   },
   {
     number: "03",
     title: "Website Redesigns",
-    description: "For businesses with outdated, unclear, slow, or weak mobile websites that are costing them enquiries.",
+    description: "For businesses with outdated, slow or weak mobile sites that are costing them enquiries.",
     features: ["Mobile usability overhaul", "Modern visual style", "Improved conversion paths"],
-    price: "From £900",
+    price: "From £1,000",
   },
   {
     number: "04",
     title: "Ecommerce Websites",
-    description: "For product-based businesses needing polished product presentation and a high-trust shopping experience.",
+    description: "For product based businesses that need polished product presentation and a high trust shopping experience.",
     features: ["Premium product display", "High-trust checkout", "Brand atmosphere"],
     price: "Quoted after scope",
   },
@@ -38,7 +38,7 @@ const processSteps = [
   {
     num: "01",
     title: "Understand the business",
-    desc: "We look at your current problems—whether you are losing jobs to missed calls, or your website is driving away customers.",
+    desc: "We look at your current problems: whether you are losing jobs to missed calls, or your website is driving away customers.",
   },
   {
     num: "02",
@@ -70,7 +70,7 @@ export default function ServicesPage() {
               SERVICES &amp; PRICING
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-playfair font-bold text-white mb-6 tracking-tight leading-[1.08]">
-              Built to stop local <br className="hidden md:block"/>businesses losing jobs.
+              Built to stop <br className="hidden md:block"/>businesses losing jobs.
             </h1>
             <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10 mx-auto md:mx-0">
               We fix the two biggest leaks in a service business: missed phone calls and unprofessional websites.
@@ -127,22 +127,26 @@ export default function ServicesPage() {
               </div>
               <h3 className="text-2xl font-playfair font-bold text-white mb-3">AI Voice Call Agents</h3>
               <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">
-                Missed calls mean lost jobs. We deploy AI voice agents that pick up your phone instantly, 24/7. They sound natural, understand what the caller needs, book jobs, and send you the details immediately via WhatsApp/Email.
+                Missed calls mean lost jobs. We set up AI voice agents that answer your phone 24/7, understand what the caller needs, book work where possible, and send you the details immediately.
               </p>
               <ul className="space-y-3 mb-8">
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Answers 24/7 (After-hours & weekends)
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Answers every call including evenings and weekends
                 </li>
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Books jobs or takes detailed messages
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Books jobs or takes clear detailed messages
                 </li>
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
                   <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Works with your existing phone number
                 </li>
+                <li className="text-zinc-500 text-sm flex items-center gap-3">
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Full call summary sent to you straight away
+                </li>
               </ul>
             </div>
             <div className="pt-6 border-t border-white/5 mt-auto">
-              <p className="text-lg font-sans font-semibold tracking-normal text-white">Setup from £499 + £150/mo</p>
+              <p className="text-lg font-sans font-semibold tracking-normal text-white">Setup £800 to £1,000 + £100 per month</p>
+              <Link href="/contact" className="mt-4 inline-flex items-center text-sm font-semibold text-white group hover:text-zinc-300">Get a free 5 minute demo for your business <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span></Link>
             </div>
           </motion.div>
 
@@ -158,22 +162,22 @@ export default function ServicesPage() {
               <div className="flex justify-between items-start mb-6">
                 <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">Working Demo</span>
               </div>
-              <h3 className="text-2xl font-playfair font-bold text-white mb-3">Field-to-Office Reporting</h3>
-              <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">Turn messy voice notes from the field into formatted, professional PDFs instantly. This eliminates hours of manual typing at the end of the day.</p>
+              <h3 className="text-2xl font-playfair font-bold text-white mb-3">Field to Office Reporting</h3>
+              <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">Turn messy voice notes from the field into clean professional PDFs without spending your evening typing. The system listens, formats everything properly, and sends the finished report to the right place.</p>
               <ul className="space-y-3 mb-8">
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Voice-note transcription
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Voice note transcription
                 </li>
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
                   <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Instant PDF formatting
                 </li>
                 <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Automated email delivery
+                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Automated delivery by email
                 </li>
               </ul>
             </div>
             <div className="pt-6 border-t border-white/5 mt-auto">
-              <p className="text-lg font-sans font-semibold tracking-normal text-white">£850 - 1,200 setup + £100 - 150/mo</p>
+              <p className="text-lg font-sans font-semibold tracking-normal text-white">£850 to £1,200 setup + £100 to £150 per month</p>
             </div>
           </motion.div>
         </motion.div>
@@ -183,7 +187,7 @@ export default function ServicesPage() {
       <section id="web-dev" className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
         <FadeInUp className="mb-12">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">Web Development</h2>
-          <p className="text-lg text-zinc-400 max-w-2xl">Premium, high-converting websites designed to make your local business look established and credible.</p>
+          <p className="text-lg text-zinc-400 max-w-2xl">Premium, high-converting websites designed to make your business look established and credible.</p>
         </FadeInUp>
 
         <motion.div

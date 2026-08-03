@@ -22,7 +22,7 @@ export default function Footer() {
               Veltris
             </Link>
             <p className="text-sm max-w-sm leading-relaxed">
-              Premium websites and AI automation systems for local businesses that want to scale efficiently and look established online.
+              Premium websites and AI automation systems for businesses that want to scale efficiently and look established online.
             </p>
           </div>
 

@@ -18,7 +18,7 @@ export default function WorkPage() {
             Proof of concept.
           </h1>
           <p className="text-zinc-400 text-base md:text-lg max-w-2xl leading-relaxed">
-            These are concept projects created to show the kind of premium, mobile-first online presence Veltris can build for local businesses. Concept work is labelled clearly.
+            These are concept projects created to show the kind of premium, mobile-first online presence Veltris can build for businesses. Concept work is labelled clearly.
           </p>
         </div>
 

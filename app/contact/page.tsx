@@ -73,11 +73,11 @@ export default function ContactPage() {
             Start your project
           </h1>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            Tell us which problem is costing you more right now — missed calls or a weak website.
+            Tell us which problem is costing you more right now: missed calls or a weak website.
           </p>
           <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
              <p className="text-xs text-zinc-400 leading-relaxed text-left">
-               <strong className="text-white font-semibold">Note:</strong> No pressure. No commitment. If the business is a good fit, I will create a custom concept or demo before you decide.
+               No pressure. If it is a good fit I will set up a short AI demo or a free homepage concept before you decide anything.
              </p>
           </div>
         </motion.div>
@@ -184,7 +184,7 @@ export default function ContactPage() {
                         <option value="Photographer / Creative">Photographer / Creative</option>
                         <option value="Restaurant / Cafe">Restaurant / Cafe</option>
                         <option value="Corporate / Business">Corporate / Business</option>
-                        <option value="Other Local Service">Other Local Service</option>
+                        <option value="Other Service">Other Service</option>
                       </select>
                     </div>
                   </div>
