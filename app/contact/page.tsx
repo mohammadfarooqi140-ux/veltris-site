@@ -73,7 +73,7 @@ export default function ContactPage() {
             Start your project
           </h1>
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            Send your details and I will review whether a free homepage concept or an AI automation demo makes sense for your business.
+            Tell us which problem is costing you more right now — missed calls or a weak website.
           </p>
           <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
              <p className="text-xs text-zinc-400 leading-relaxed text-left">
@@ -203,14 +203,18 @@ export default function ContactPage() {
 
                   <div>
                     <label className={labelClass}>What do you want us to help with?</label>
-                    <textarea
-                      rows={4}
+                    <select
                       value={improvement}
                       onChange={(e) => setImprovement(e.target.value)}
-                      placeholder="e.g. Look more established, get more enquiries, or automate my manual admin tasks..."
                       disabled={status === "submitting"}
-                      className={`${fieldClass} resize-none`}
-                    />
+                      className={selectClass}
+                    >
+                      <option value="" disabled hidden>Select an option...</option>
+                      <option value="AI Voice Agent Demo">I want an AI voice agent demo</option>
+                      <option value="Free Homepage Concept">I want a free homepage concept</option>
+                      <option value="Both">I need both</option>
+                      <option value="Other">Other</option>
+                    </select>
                   </div>
 
                   <motion.button

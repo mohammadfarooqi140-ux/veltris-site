@@ -1,9 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Search, PenTool, Rocket } from "lucide-react";
+import { ArrowRight, CheckCircle2, Search, PenTool, Rocket, Phone, MessageSquare, Calendar } from "lucide-react";
 import Image from "next/image";
-import { conceptProjects } from "@/lib/data/concepts";
 import { FadeInUp } from "@/components/FadeInUp";
 
 export default function Home() {
@@ -19,65 +18,102 @@ export default function Home() {
           <div className="max-w-4xl z-20 relative text-center mx-auto flex flex-col items-center">
             <FadeInUp>
               <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
-                Premium Websites & AI Automation
+                AI Voice Agents & Premium Websites
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
-                Websites that convert.<br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">Automations that scale.</span>
+                Never miss <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">another job call.</span>
               </h1>
               <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                Veltris builds high-converting websites and custom AI automation systems for local businesses—helping you look established, capture more enquiries, and run your daily operations without the manual busywork.
+                AI voice agents that answer your phone 24/7, book jobs, and take messages—so your team can stay on site and still win the work. Built for cleaning companies, facilities managers, roofers, and trades that lose jobs every time the phone goes unanswered.
               </p>
             </FadeInUp>
             <FadeInUp delay={0.2}>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 w-full sm:w-auto">
-                <Link href="/services" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-                  View Our Services
+                <Link href="/contact" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
+                  See a live AI call demo
+                </Link>
+                <Link href="/contact" className="inline-flex items-center justify-center bg-white/[0.03] border border-white/10 text-white hover:bg-white/10 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition active:scale-[0.98] w-full sm:w-auto">
+                  Request free homepage concept
                 </Link>
               </div>
               <div className="flex items-center justify-center gap-2 text-sm text-zinc-500">
                 <CheckCircle2 className="w-4 h-4 text-zinc-400" />
-                <p>No pressure. No commitment. Built for your brand.</p>
+                <p>Designed for businesses that hate missing work because the team is already on site.</p>
               </div>
             </FadeInUp>
           </div>
         </div>
       </section>
 
-      {/* 2. Problem Section */}
+      {/* 2. AI Voice Agents Section */}
       <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
         <FadeInUp className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
-            Growing your business shouldn&apos;t mean working longer hours
+            Your phones answered perfectly, 24/7
           </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If you are losing leads to an outdated website or drowning in manual admin work, you are hitting an artificial ceiling.</p>
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">Missed calls mean lost jobs. Our AI agents handle your customer enquiries instantly, sounding natural and professional, even when you are on the tools.</p>
+        </FadeInUp>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Phone size={20} /></div>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Answers every call</h3>
+            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+              Whether it is after hours, weekends, or while you are on a ladder, the AI picks up instantly. Works perfectly with your existing phone number.
+            </p>
+          </div>
+          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Calendar size={20} /></div>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Books jobs & takes messages</h3>
+            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+              The AI doesn't just say hello—it understands what the caller wants, asks the right questions, and books them in or takes detailed messages.
+            </p>
+          </div>
+          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><MessageSquare size={20} /></div>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Instant notifications</h3>
+            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
+              As soon as the call ends, you receive a full summary and transcription directly via Email, SMS, or WhatsApp.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Problem Section */}
+      <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
+        <FadeInUp className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
+            Growing your business shouldn&apos;t mean dropping the ball
+          </h2>
+          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If you are losing leads to missed calls, an outdated website, or drowning in manual admin, you are hitting an artificial ceiling.</p>
         </FadeInUp>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">01</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Hard to find details</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">The missed call penalty</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              Burying your services, pricing, or location in an Instagram bio makes it harder for customers to make a quick decision.
+              When a customer calls for an emergency fix or a quote and it goes to voicemail, they immediately call your competitor. 
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">02</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Manual busywork</h3>
+            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Hard to find details</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              Typing up field notes, manually entering data, or chasing reports drains the energy you should be spending on growth.
+              Burying your services, pricing, or location on a confusing website or Instagram bio makes it harder for customers to choose you.
             </p>
           </div>
           <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
             <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">03</div>
             <h3 className="text-lg md:text-xl font-bold text-white mb-4">Weak mobile experience</h3>
             <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              If your current site is broken on mobile or slow to load, visitors will leave before they ever reach out.
+              If your current site is broken on mobile or slow to load, visitors will leave before they even attempt to call.
             </p>
           </div>
         </div>
       </section>
 
-      {/* 3. Value Section */}
+      {/* 4. Value Section */}
       <section className="py-20 md:py-32 px-6 bg-zinc-950 border-b border-white/5">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-16 text-center">
@@ -88,18 +124,9 @@ export default function Home() {
               <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
                 <div className="w-5 h-5 bg-zinc-400 rounded-full" />
               </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Look established</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                A premium, modern web design gives customers immediate confidence in your business before they even speak to you.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-              <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
-                <div className="w-5 h-5 bg-zinc-400 rounded-sm" />
-              </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Scale without busywork</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Custom AI automations turn your field voice notes into formatted PDFs instantly, cutting hours of daily admin tasks.
+                AI agents and custom automations cut out hours of daily admin tasks, taking calls and notes so you don't have to.
               </p>
             </div>
             <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
@@ -108,23 +135,32 @@ export default function Home() {
               </div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-3">Turn interest into action</h3>
               <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Strategic calls-to-action guide your visitors exactly where you want them: booking, calling, or buying.
+                Strategic websites and intelligent phone agents guide your visitors exactly where you want them: booking, calling, or buying.
+              </p>
+            </div>
+            <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
+              <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
+                <div className="w-5 h-5 bg-zinc-400 rounded-sm" />
+              </div>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Look established</h3>
+              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
+                A premium, modern web design gives customers immediate confidence in your business before they even interact with you.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. Free Concept Section (Bento Grid) */}
+      {/* 5. Free Concept Section (Bento Grid) - Repositioned */}
       <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.02] to-transparent pointer-events-none" />
         
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 leading-tight">
-            See your homepage before you commit
+            Need a digital refresh? See it before you commit
           </h2>
           <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            I create a free homepage concept for selected local businesses so you can see how your brand could look online before paying for a full website.
+            Alongside AI, I create a free homepage concept for selected local businesses so you can see how your brand could look online before paying for a full website.
           </p>
         </div>
 
@@ -157,14 +193,19 @@ export default function Home() {
       <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
         <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6 relative z-10">
-          Ready to look established?
+          Stop losing jobs to missed calls.
         </h2>
         <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
-          Send your Instagram or current website link and I will review whether a free homepage concept makes sense for your business.
+          Contact me to schedule a live demo of our AI voice agents tailored for your business, or request a free homepage design concept.
         </p>
-        <Link href="/contact" className="relative z-10 inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-          Request Free Homepage Concept
-        </Link>
+        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
+          <Link href="/contact" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
+            Get an AI Voice Demo
+          </Link>
+          <Link href="/contact" className="inline-flex items-center justify-center bg-white/[0.03] border border-white/10 text-white hover:bg-white/10 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition active:scale-[0.98] w-full sm:w-auto">
+            Request Homepage Concept
+          </Link>
+        </div>
       </section>
 
     </div>

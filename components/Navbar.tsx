@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoreHorizontal, X, Home } from "lucide-react";
 
-const mainPages = ["/", "/services", "/work", "/contact"];
+const mainPages = ["/", "/services", "/work", "/contact", "/about"];
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,7 +61,8 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "AI Automation", href: "/services#automation" },
+    { name: "About", href: "/about" },
+    { name: "AI Voice Agents", href: "/services#automation" },
     { name: "Web Development", href: "/services#web-dev" },
     { name: "Work", href: "/work" },
     { name: "Contact", href: "/contact" },
