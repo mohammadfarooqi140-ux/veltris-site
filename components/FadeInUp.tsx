@@ -23,3 +23,5 @@ export const FadeInUp = ({ children, delay = 0, className = "", duration = 0.3 }
     </motion.div>
   );
 };
+
+export default FadeInUp;

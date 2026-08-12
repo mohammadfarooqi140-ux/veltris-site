@@ -1,271 +1,225 @@
 "use client";
-import { motion } from "framer-motion";
+
 import Link from "next/link";
-import { FadeInUp } from "@/components/FadeInUp";
-
-const services = [
-  {
-    number: "01",
-    title: "Landing Pages",
-    description: "A focused page that turns traffic and Instagram visitors into real enquiries with one clear offer.",
-    features: ["Optimized for conversion", "Clear CTA paths", "Mobile first design"],
-    price: "From £600",
-  },
-  {
-    number: "02",
-    title: "Business Websites",
-    description: "A complete online home that makes your business look established, credible and easy to contact.",
-    features: ["Service & menu clarity", "Trust-building layouts", "Fast loading times"],
-    price: "From £900",
-  },
-  {
-    number: "03",
-    title: "Website Redesigns",
-    description: "For businesses with outdated, slow or weak mobile sites that are costing them enquiries.",
-    features: ["Mobile usability overhaul", "Modern visual style", "Improved conversion paths"],
-    price: "From £1,000",
-  },
-  {
-    number: "04",
-    title: "Ecommerce Websites",
-    description: "For product based businesses that need polished product presentation and a high trust shopping experience.",
-    features: ["Premium product display", "High-trust checkout", "Brand atmosphere"],
-    price: "Quoted after scope",
-  },
-];
-
-const processSteps = [
-  {
-    num: "01",
-    title: "Understand the business",
-    desc: "We look at your current problems: whether you are losing jobs to missed calls, or your website is driving away customers.",
-  },
-  {
-    num: "02",
-    title: "Create a demo or concept",
-    desc: "You get a free AI Voice Agent demo on your phone, or a free homepage concept, before you ever commit.",
-  },
-  {
-    num: "03",
-    title: "Build the full system",
-    desc: "We deploy the AI agent to your phone lines or build out the full, responsive website experience.",
-  },
-  {
-    num: "04",
-    title: "Launch & scale",
-    desc: "Your business runs smoother. You stop missing job calls, and your online presence converts visitors into clients.",
-  },
-];
+import { motion } from "framer-motion";
+import FadeInUp from "@/components/FadeInUp";
 
 export default function ServicesPage() {
   return (
-    <main className="bg-zinc-950 overflow-hidden min-h-screen relative">
-      <div className="absolute top-0 right-0 w-[800px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
+    <main className="min-h-screen bg-zinc-950 text-white pt-32 pb-24 overflow-hidden relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
       
-      {/* HERO SECTION */}
-      <section className="relative pt-32 pb-16 md:pt-40 md:pb-24 px-6 md:px-12 border-b border-white/5">
-        <div className="max-w-7xl mx-auto relative z-10 text-center md:text-left flex flex-col items-center md:items-start">
-          <FadeInUp className="max-w-4xl">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
-              SERVICES &amp; PRICING
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        
+        {/* HERO SECTION */}
+        <section className="mb-32">
+          <FadeInUp className="text-center md:text-left">
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-6 tracking-[0.2em]">
+              SERVICES & PRICING
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-playfair font-bold text-white mb-6 tracking-tight leading-[1.08]">
-              Built to stop <br className="hidden md:block"/>businesses losing jobs.
+            <h1 className="text-5xl md:text-7xl font-playfair font-bold tracking-tight mb-8 max-w-4xl leading-[1.1] text-white">
+              The deck that gets the meeting.
             </h1>
-            <p className="text-lg sm:text-xl text-zinc-400 max-w-2xl leading-relaxed mb-10 mx-auto md:mx-0">
-              We fix the two biggest leaks in a service business: missed phone calls and unprofessional websites.
+            <p className="text-zinc-400 text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+              We design pitch decks for founders raising Pre-Seed through Series C. Every deck is built from scratch around your story, your numbers, and your raise.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row gap-4 mb-16 md:justify-start justify-center">
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto"
               >
-                Get a Free AI Demo
+                Start Your Deck
               </Link>
               <Link
-                href="/contact"
-                className="inline-flex items-center justify-center bg-white/[0.03] border border-white/10 text-white min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-white/10 active:scale-[0.98] w-full sm:w-auto"
+                href="/work"
+                className="inline-flex items-center justify-center bg-zinc-900 border border-white/10 text-white min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-zinc-800 active:scale-[0.98] w-full sm:w-auto"
               >
-                Request Free Homepage Concept
+                View Our Work
               </Link>
             </div>
           </FadeInUp>
-        </div>
-      </section>
 
-      {/* AI AUTOMATION SECTION */}
-      <section id="automation" className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
-        <FadeInUp className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">AI Automation</h2>
-          <p className="text-lg text-zinc-400 max-w-2xl">Stop losing work to missed calls and stop wasting hours on manual admin. We build AI systems that run your operations quietly in the background.</p>
-        </FadeInUp>
-        
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.1 },
-            },
-          }}
-        >
-          {/* Main AI Offer: Voice Call Agents */}
-          <motion.div
-            className="group bg-zinc-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:bg-zinc-900/60 transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] border border-white/10"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-            }}
-          >
-            <div>
-              <div className="flex justify-between items-start mb-6">
-                <span className="text-[10px] font-mono tracking-widest text-white uppercase bg-white/10 px-3 py-1 rounded-full">Primary Offer</span>
+          <FadeInUp delay={0.2} className="relative mx-auto rounded-2xl overflow-hidden border border-white/5 bg-[#0a0a0a] shadow-2xl max-w-4xl">
+            <div className="flex items-center px-4 py-3 bg-[#0a0a0a] border-b border-white/5 gap-2">
+              <div className="w-3 h-3 rounded-full bg-red-500/80" />
+              <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
+              <div className="w-3 h-3 rounded-full bg-green-500/80" />
+              <div className="ml-4 flex items-center justify-center w-full pr-12">
+                <span className="text-[10px] text-zinc-500 font-medium tracking-[0.2em] uppercase">Deck Performance Metrics</span>
               </div>
-              <h3 className="text-2xl font-playfair font-bold text-white mb-3">AI Voice Call Agents</h3>
-              <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">
-                Missed calls mean lost jobs. We set up AI voice agents that answer your phone 24/7, understand what the caller needs, book work where possible, and send you the details immediately.
-              </p>
-              <ul className="space-y-3 mb-8">
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Answers every call including evenings and weekends
-                </li>
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Books jobs or takes clear detailed messages
-                </li>
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Works with your existing phone number
-                </li>
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Full call summary sent to you straight away
-                </li>
-              </ul>
             </div>
-            <div className="pt-6 border-t border-white/5 mt-auto">
-              <p className="text-lg font-sans font-semibold tracking-normal text-white">Setup £800 to £1,000 + £100 per month</p>
-              <Link href="/contact" className="mt-4 inline-flex items-center text-sm font-semibold text-white group hover:text-zinc-300">Get a free 5 minute demo for your business <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span></Link>
-            </div>
-          </motion.div>
-
-          {/* Secondary AI Offer: Field-to-Office */}
-          <motion.div
-            className="group bg-zinc-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:bg-zinc-900/60 transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
-            variants={{
-              hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-            }}
-          >
-            <div>
-              <div className="flex justify-between items-start mb-6">
-                <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">Working Demo</span>
-              </div>
-              <h3 className="text-2xl font-playfair font-bold text-white mb-3">Field to Office Reporting</h3>
-              <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">Turn messy voice notes from the field into clean professional PDFs without spending your evening typing. The system listens, formats everything properly, and sends the finished report to the right place.</p>
-              <ul className="space-y-3 mb-8">
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Voice note transcription
-                </li>
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Instant PDF formatting
-                </li>
-                <li className="text-zinc-500 text-sm flex items-center gap-3">
-                  <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />Automated delivery by email
-                </li>
-              </ul>
-            </div>
-            <div className="pt-6 border-t border-white/5 mt-auto">
-              <p className="text-lg font-sans font-semibold tracking-normal text-white">£850 to £1,200 setup + £100 to £150 per month</p>
-            </div>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* WEB DEVELOPMENT SECTION */}
-      <section id="web-dev" className="pt-20 pb-20 md:pt-24 md:pb-24 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5 relative z-10">
-        <FadeInUp className="mb-12">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">Web Development</h2>
-          <p className="text-lg text-zinc-400 max-w-2xl">Premium, high-converting websites designed to make your business look established and credible.</p>
-        </FadeInUp>
-
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={{
-            hidden: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { staggerChildren: 0.1 },
-            },
-          }}
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              className="group bg-zinc-900/40 backdrop-blur-sm rounded-3xl p-8 md:p-10 flex flex-col justify-between hover:bg-zinc-900/60 transition-all duration-300 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-              }}
-            >
-              <div>
-                <div className="flex justify-between items-start mb-6">
-                  <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">Service {service.number}</span>
+            <div className="bg-[#0a0a0a] p-8 md:p-16">
+              <div className="flex items-end justify-between h-48 md:h-64 gap-4 md:gap-8 border-b border-zinc-800 pb-4">
+                {/* Bar 1 */}
+                <div className="flex flex-col items-center justify-end flex-1 h-full">
+                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">+340%</div>
+                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)]" style={{ height: '100%' }}></div>
+                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Investor<br/>Meetings</div>
                 </div>
-
-                <h3 className="text-2xl font-playfair font-bold text-white mb-3">{service.title}</h3>
-                <p className="text-zinc-400 text-sm md:text-base mb-8 leading-relaxed">{service.description}</p>
-
-                <ul className="space-y-3 mb-8">
-                  {service.features.map((feature, fIndex) => (
-                    <li key={fIndex} className="text-zinc-500 text-sm flex items-center gap-3">
-                      <span className="w-1.5 h-1.5 bg-zinc-400 rounded-full shrink-0" />
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                {/* Bar 2 */}
+                <div className="flex flex-col items-center justify-end flex-1 h-full">
+                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">+67%</div>
+                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-80" style={{ height: '60%' }}></div>
+                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Close<br/>Rate</div>
+                </div>
+                {/* Bar 3 */}
+                <div className="flex flex-col items-center justify-end flex-1 h-full">
+                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">-40%</div>
+                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-60" style={{ height: '40%' }}></div>
+                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Time to<br/>Term Sheet</div>
+                </div>
+                {/* Bar 4 */}
+                <div className="flex flex-col items-center justify-end flex-1 h-full">
+                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">9.4/10</div>
+                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-90" style={{ height: '90%' }}></div>
+                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Deck<br/>Score</div>
+                </div>
               </div>
-
-              <div className="pt-6 border-t border-white/5 mt-auto">
-                <p className="text-lg font-sans font-semibold tracking-normal text-white">{service.price}</p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        <div className="mt-8 p-6 rounded-2xl bg-zinc-900/30 max-w-2xl text-left shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-          <p className="text-sm text-zinc-400 leading-relaxed">
-            <strong className="text-white font-sans font-semibold">Note:</strong> Web development projects are quoted per project based on scope, page count, custom functionality, and integrations.
-          </p>
-        </div>
-      </section>
-
-      {/* HOW IT WORKS — BENTO GRID */}
-      <section className="py-20 md:py-32 px-6 md:px-12 max-w-7xl mx-auto border-b border-white/5">
-        <FadeInUp className="mb-12 text-center md:text-left">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-6 tracking-[0.2em]">
-            Process
-          </div>
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-4">How it works</h2>
-          <p className="text-lg text-zinc-400">A simple process from first look to launch.</p>
-        </FadeInUp>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {processSteps.map((step, index) => (
-            <div key={index} className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:bg-zinc-900/60 transition-all duration-300">
-              <span className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-[10px] font-mono text-zinc-400 mb-6">{step.num}</span>
-              <h3 className="text-xl font-bold text-white mb-3 font-sans">{step.title}</h3>
-              <p className="text-base text-zinc-400 leading-relaxed">{step.desc}</p>
             </div>
-          ))}
-        </div>
-      </section>
+          </FadeInUp>
+        </section>
 
+        {/* SERVICES GRID */}
+        <section className="mb-32">
+          <FadeInUp>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* Seed Decks */}
+              <div className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 flex flex-col hover:bg-zinc-900/60 transition duration-300">
+                <div className="text-zinc-500 font-mono text-sm mb-4">01</div>
+                <h3 className="text-3xl font-playfair font-bold text-white mb-4">Seed Decks</h3>
+                <p className="text-zinc-400 mb-8 leading-relaxed">
+                  For founders at the earliest stage, building conviction from scratch.
+                </p>
+                <div className="mb-10 flex-grow">
+                  <h4 className="text-xs uppercase tracking-widest text-zinc-500 mb-4 font-semibold">Deliverables</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Up to 15 slides</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> PPTX and PDF formats</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> 2 revision rounds</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Market research inclusion</li>
+                  </ul>
+                </div>
+                <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-lg text-white font-medium">From £1,999</span>
+                  <Link href="/contact" className="text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                    Get a Quote →
+                  </Link>
+                </div>
+              </div>
 
+              {/* Series A Decks */}
+              <div className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 flex flex-col hover:bg-zinc-900/60 transition duration-300">
+                <div className="text-zinc-500 font-mono text-sm mb-4">02</div>
+                <h3 className="text-3xl font-playfair font-bold text-white mb-4">Series A Decks</h3>
+                <p className="text-zinc-400 mb-8 leading-relaxed">
+                  For founders scaling up who need a deck that matches their traction.
+                </p>
+                <div className="mb-10 flex-grow">
+                  <h4 className="text-xs uppercase tracking-widest text-zinc-500 mb-4 font-semibold">Deliverables</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Up to 20 slides</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> PPTX and PDF formats</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> 3 revision rounds</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Financial data visualization</li>
+                  </ul>
+                </div>
+                <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-lg text-white font-medium">From £2,999</span>
+                  <Link href="/contact" className="text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                    Get a Quote →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Sales Decks */}
+              <div className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 flex flex-col hover:bg-zinc-900/60 transition duration-300">
+                <div className="text-zinc-500 font-mono text-sm mb-4">03</div>
+                <h3 className="text-3xl font-playfair font-bold text-white mb-4">Sales Decks</h3>
+                <p className="text-zinc-400 mb-8 leading-relaxed">
+                  Turn your pitch into a weapon for enterprise deals and partnerships.
+                </p>
+                <div className="mb-10 flex-grow">
+                  <h4 className="text-xs uppercase tracking-widest text-zinc-500 mb-4 font-semibold">Deliverables</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Up to 15 slides</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> PPTX and PDF formats</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> 2 revision rounds</li>
+                  </ul>
+                </div>
+                <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-lg text-white font-medium">From £1,499</span>
+                  <Link href="/contact" className="text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                    Get a Quote →
+                  </Link>
+                </div>
+              </div>
+
+              {/* Investor Updates */}
+              <div className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 flex flex-col hover:bg-zinc-900/60 transition duration-300">
+                <div className="text-zinc-500 font-mono text-sm mb-4">04</div>
+                <h3 className="text-3xl font-playfair font-bold text-white mb-4">Investor Updates</h3>
+                <p className="text-zinc-400 mb-8 leading-relaxed">
+                  Keep your current investors informed and future investors interested.
+                </p>
+                <div className="mb-10 flex-grow">
+                  <h4 className="text-xs uppercase tracking-widest text-zinc-500 mb-4 font-semibold">Deliverables</h4>
+                  <ul className="space-y-3">
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Up to 10 slides</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> PPTX and PDF formats</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> 1 revision round</li>
+                  </ul>
+                </div>
+                <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-lg text-white font-medium">From £999</span>
+                  <Link href="/contact" className="text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                    Get a Quote →
+                  </Link>
+                </div>
+              </div>
+
+            </div>
+          </FadeInUp>
+        </section>
+
+        {/* PROCESS STEPS */}
+        <section className="mb-32">
+          <FadeInUp>
+            <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-10 tracking-[0.2em]">
+              THE PROCESS
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              {[
+                { step: "01", title: "You share the brief", desc: "Tell us about your company, raise target, and who you are pitching." },
+                { step: "02", title: "We shape the narrative", desc: "We build the story arc, slide structure, and financial data layout." },
+                { step: "03", title: "We design the deck", desc: "Every slide crafted perfectly, then exported to PPTX and PDF." },
+                { step: "04", title: "You pitch and raise", desc: "Delivered in 5 to 7 days. You pitch with confidence." }
+              ].map((process, i) => (
+                <div key={i} className="flex flex-col border-l border-white/10 pl-6 py-2">
+                  <span className="text-xs font-mono text-zinc-500 mb-4">{process.step}</span>
+                  <h4 className="text-lg font-playfair font-bold text-white mb-2">{process.title}</h4>
+                  <p className="text-sm text-zinc-400 leading-relaxed">{process.desc}</p>
+                </div>
+              ))}
+            </div>
+          </FadeInUp>
+        </section>
+
+        {/* FINAL CTA */}
+        <section className="text-center pt-16 border-t border-white/5 relative">
+          <FadeInUp>
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
+            <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-10">Let us build your deck.</h2>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-10 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98]"
+            >
+              Start a Project
+            </Link>
+          </FadeInUp>
+        </section>
+
+      </div>
     </main>
   );
 }

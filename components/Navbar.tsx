@@ -62,8 +62,7 @@ export default function Navbar() {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "AI Voice Agents", href: "/services#automation" },
-    { name: "Web Development", href: "/services#web-dev" },
+    { name: "Services", href: "/services" },
     { name: "Work", href: "/work" },
     { name: "Contact", href: "/contact" },
   ];
@@ -110,6 +109,13 @@ export default function Navbar() {
                     </Link>
                   );
                 })}
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-2 mx-2 py-3 bg-white text-zinc-950 text-center text-[11px] uppercase tracking-[0.2em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
+                >
+                  Start Your Deck
+                </Link>
               </div>
             </motion.div>
           )}
@@ -147,6 +153,12 @@ export default function Navbar() {
               </Link>
             );
           })}
+          <Link
+            href="/contact"
+            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.2em] uppercase font-bold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors"
+          >
+            Start Your Deck
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle — Three Dots */}
@@ -188,6 +200,13 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 py-4 px-4 rounded-xl text-[13px] uppercase tracking-[0.2em] font-bold bg-white text-zinc-950 text-center transition-colors hover:bg-zinc-200"
+              >
+                Start Your Deck
+              </Link>
             </div>
           </motion.div>
         )}

@@ -1,213 +1,197 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Search, PenTool, Rocket, Phone, MessageSquare, Calendar } from "lucide-react";
-import Image from "next/image";
-import { FadeInUp } from "@/components/FadeInUp";
+import { motion } from "framer-motion";
+import { ArrowRight, FileText, TrendingUp, Briefcase } from "lucide-react";
+import FadeInUp from "@/components/FadeInUp";
+import dynamic from "next/dynamic";
+
+const Hero3D = dynamic(() => import("@/components/ui/Hero3D"), { ssr: false });
 
 export default function Home() {
   return (
-    <div className="font-sans selection:bg-zinc-200 selection:text-zinc-950 overflow-x-hidden">
-
-      {/* 1. Hero Section */}
-      <section className="relative min-h-[90vh] w-full flex items-center bg-zinc-950 overflow-hidden border-b border-white/5">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-zinc-900/40 via-zinc-950 to-zinc-950 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
-        
-        <div className="w-full max-w-7xl mx-auto px-6 pt-32 pb-16 md:pt-40 md:pb-24">
-          <div className="max-w-4xl z-20 relative text-center mx-auto flex flex-col items-center">
-            <FadeInUp>
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-8 tracking-[0.2em]">
-                AI Voice Agents & Premium Websites
-              </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold tracking-tight text-white mb-8 leading-[1.1]">
-                Never miss <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-200 to-zinc-500 italic">another job call.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                AI voice agents that answer your phone 24/7, take the details, and book the job so your team can stay on site without losing work. Built for cleaning companies, facilities teams, roofers and trades that lose jobs every time the phone goes unanswered.
-              </p>
-            </FadeInUp>
-            <FadeInUp delay={0.2}>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mb-8 w-full sm:w-auto">
-                <Link href="/contact" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-                  See a live AI call demo
-                </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center bg-white/[0.03] border border-white/10 text-white hover:bg-white/10 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition active:scale-[0.98] w-full sm:w-auto">
-                  Request free homepage concept
-                </Link>
-              </div>
-              <div className="flex items-center justify-center gap-2 text-sm text-zinc-500">
-                <CheckCircle2 className="w-4 h-4 text-zinc-400" />
-                <p>Designed for businesses that hate missing work because the team is already on site.</p>
-              </div>
-            </FadeInUp>
-          </div>
+    <main className="min-h-screen bg-black text-white selection:bg-zinc-800">
+      {/* HERO SECTION */}
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <Hero3D />
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+          <FadeInUp>
+            <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
+              We build pitch decks <br className="hidden md:block" />
+              that get founders funded.
+            </h1>
+            <p className="max-w-2xl mx-auto text-lg md:text-xl text-zinc-400 mb-10 font-light leading-relaxed">
+              Premium pitch decks for founders raising Pre-Seed through Series C. We clarify your narrative, visualize your financial data, and design an investor-ready presentation.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                href="/contact"
+                className="rounded-full bg-white text-black px-8 py-4 font-medium transition-transform hover:scale-105 active:scale-95 flex items-center gap-2"
+              >
+                Start Your Deck <ArrowRight className="w-4 h-4" />
+              </Link>
+              <Link
+                href="/work"
+                className="rounded-full bg-transparent border border-zinc-700 text-white px-8 py-4 font-medium transition-colors hover:bg-zinc-800"
+              >
+                View Our Work
+              </Link>
+            </div>
+            <p className="text-sm text-zinc-500">
+              From £1,999. Delivered in 5 to 7 days.
+            </p>
+          </FadeInUp>
         </div>
       </section>
 
-      {/* 2. AI Voice Agents Section */}
-      <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
-        <FadeInUp className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
-            Your phones answered properly, 24/7
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">Missed calls cost real jobs. When a customer rings while you are on site or after hours, they usually just call the next company. These AI agents pick up every time, sound natural, and actually do the work.</p>
-        </FadeInUp>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Phone size={20} /></div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Answers every call</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              Works with your existing number. Evenings, weekends, or while the team is already out, it picks up straight away.
-            </p>
-          </div>
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><Calendar size={20} /></div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Books jobs and takes proper messages</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              It does not just say leave a message. It asks the right questions, books the job where possible, or takes a clear detailed message.
-            </p>
-          </div>
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-400"><MessageSquare size={20} /></div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Sends you the info instantly</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              As soon as the call ends you get a full summary by email, SMS or WhatsApp.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Problem Section */}
-      <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5">
-        <FadeInUp className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 max-w-3xl mx-auto leading-snug">
-            Growing your business shouldn&apos;t mean dropping the ball
-          </h2>
-          <p className="text-zinc-400 text-lg max-w-2xl mx-auto">If you are losing leads to missed calls, an outdated website, or drowning in manual admin, you are hitting an artificial ceiling.</p>
-        </FadeInUp>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">01</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">The missed call penalty</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              When a customer calls for an emergency fix or a quote and it goes to voicemail, they immediately call your competitor. 
-            </p>
-          </div>
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">02</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Hard to find details</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              Burying your services, pricing, or location on a confusing website or Instagram bio makes it harder for customers to choose you.
-            </p>
-          </div>
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-10 transition hover:bg-zinc-900/60 flex flex-col h-full shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="w-10 h-10 rounded-full bg-white/[0.03] flex items-center justify-center mb-6 text-zinc-500 text-[10px] font-mono">03</div>
-            <h3 className="text-lg md:text-xl font-bold text-white mb-4">Weak mobile experience</h3>
-            <p className="text-sm md:text-base text-zinc-400 leading-relaxed">
-              If your current site is broken on mobile or slow to load, visitors will leave before they even attempt to call.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Value Section */}
-      <section className="py-20 md:py-32 px-6 bg-zinc-950 border-b border-white/5">
+      {/* WHAT WE DO STRIP */}
+      <section className="py-24 px-6 relative z-10 bg-black">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-16 text-center">
-            Your business systems should do more than exist
-          </h2>
+          <FadeInUp>
+            <h2 className="font-playfair text-3xl md:text-4xl mb-12 text-center">What we make</h2>
+          </FadeInUp>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-              <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
-                <div className="w-5 h-5 bg-zinc-400 rounded-full" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Scale without busywork</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                AI agents and custom automations cut out hours of daily admin tasks, taking calls and notes so you don&apos;t have to.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-              <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
-                <div className="w-5 h-5 border-2 border-zinc-400 rotate-45" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Turn interest into action</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                The AI agent handles the calls. The website handles the first impression. You get more done without more staff.
-              </p>
-            </div>
-            <div className="flex flex-col items-center text-center p-8 bg-zinc-900/30 rounded-3xl shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-              <div className="w-14 h-14 bg-white/[0.03] rounded-full flex items-center justify-center mb-6">
-                <div className="w-5 h-5 bg-zinc-400 rounded-sm" />
-              </div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3">Look established</h3>
-              <p className="text-zinc-400 leading-relaxed text-sm md:text-base">
-                Customers form an opinion in the first few seconds. A well built, fast, mobile-ready website makes that opinion a good one.
-              </p>
-            </div>
+            {[
+              {
+                icon: FileText,
+                title: "Seed Decks",
+                desc: "Clear, compelling narratives for early-stage founders."
+              },
+              {
+                icon: TrendingUp,
+                title: "Series A Decks",
+                desc: "Data-driven presentations built for conviction."
+              },
+              {
+                icon: Briefcase,
+                title: "Sales & Investor Update Decks",
+                desc: "Professional updates to keep stakeholders engaged."
+              }
+            ].map((item, i) => (
+              <FadeInUp key={i} delay={i * 0.1}>
+                <div className="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50 hover:bg-zinc-900/60 transition-colors h-full">
+                  <item.icon className="w-8 h-8 text-zinc-400 mb-6" />
+                  <h3 className="text-xl font-medium mb-3">{item.title}</h3>
+                  <p className="text-zinc-500 font-light">{item.desc}</p>
+                </div>
+              </FadeInUp>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* 5. Free Concept Section (Bento Grid) - Repositioned */}
-      <section className="py-20 md:py-32 px-6 max-w-7xl mx-auto border-b border-white/5 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/[0.02] to-transparent pointer-events-none" />
-        
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-playfair font-bold text-white mb-6 leading-tight">
-            Need a digital refresh? See it before you commit
-          </h2>
-          <p className="text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
-            Alongside AI, I create a free homepage concept for selected businesses so you can see how your brand could look online before paying for a full website.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="bg-zinc-900/30 rounded-3xl p-10 flex flex-col items-start relative overflow-hidden group shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl transition-colors duration-500" />
-            <Search className="w-8 h-8 text-zinc-400 mb-6" />
-            <h4 className="text-white font-bold text-xl mb-3">1. Discovery Review</h4>
-            <p className="text-sm text-zinc-400 leading-relaxed">We look at your current site, Instagram, or what you do and figure out what the homepage needs to say to actually get enquiries.</p>
-          </div>
-          
-          <div className="bg-zinc-900/30 rounded-3xl p-10 flex flex-col items-start relative overflow-hidden group md:mt-8 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl transition-colors duration-500" />
-            <PenTool className="w-8 h-8 text-zinc-400 mb-6" />
-            <h4 className="text-white font-bold text-xl mb-3">2. Concept Design</h4>
-            <p className="text-sm text-zinc-400 leading-relaxed">You get a free homepage direction built for your business. Not a template. Something that actually fits what you do.</p>
-          </div>
-
-          <div className="bg-zinc-900/30 rounded-3xl p-10 flex flex-col items-start relative overflow-hidden group md:mt-16 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-            <div className="absolute -right-6 -top-6 w-32 h-32 bg-white/5 rounded-full blur-2xl transition-colors duration-500" />
-            <Rocket className="w-8 h-8 text-zinc-400 mb-6" />
-            <h4 className="text-white font-bold text-xl mb-3">3. The Decision</h4>
-            <p className="text-sm text-zinc-400 leading-relaxed">If you love it, we can build out the rest of the site. If not, there is absolutely no pressure or cost to you.</p>
-          </div>
+      {/* WHY VELTRIS */}
+      <section className="py-32 px-6 relative z-10">
+        <div className="max-w-4xl mx-auto relative">
+          <div className="absolute inset-0 bg-zinc-900 blur-3xl opacity-20 rounded-full"></div>
+          <FadeInUp>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-[2.5rem] p-10 md:p-16 text-center relative shadow-[inset_0_0_80px_rgba(255,255,255,0.02)]">
+              <h2 className="font-playfair text-3xl md:text-5xl leading-tight mb-8">
+                &ldquo;Most pitch decks look the same because they came from the same template. Investors see hundreds of decks a month. Yours needs to command attention immediately.&rdquo;
+              </h2>
+              <p className="text-zinc-400 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                Veltris is a boutique pitch deck studio. One designer. Deep market research. Every deck is built from scratch around your story, your numbers, and what makes your business worth betting on.
+              </p>
+            </div>
+          </FadeInUp>
         </div>
       </section>
 
-
-      {/* 6. Final CTA Section */}
-      <section className="py-24 md:py-32 px-6 max-w-4xl mx-auto text-center relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.015] rounded-full blur-[100px] pointer-events-none" />
-        <h2 className="text-4xl md:text-6xl font-playfair font-bold text-white mb-6 relative z-10">
-          Stop losing jobs to missed calls.
-        </h2>
-        <p className="text-lg text-zinc-400 leading-relaxed mb-10 max-w-2xl mx-auto relative z-10">
-          Get in touch and I will set up a live demo of the AI voice agent for your number, or put together a free homepage concept for your business.
-        </p>
-        <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-          <Link href="/contact" className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto">
-            Get an AI Voice Demo
-          </Link>
-          <Link href="/contact" className="inline-flex items-center justify-center bg-white/[0.03] border border-white/10 text-white hover:bg-white/10 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition active:scale-[0.98] w-full sm:w-auto">
-            Request Homepage Concept
-          </Link>
+      {/* CASE STUDY TEASER */}
+      <section className="py-24 px-6 relative z-10 bg-black">
+        <div className="max-w-6xl mx-auto">
+          <FadeInUp>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl overflow-hidden flex flex-col md:flex-row">
+              <div className="p-10 md:p-16 flex flex-col justify-center w-full md:w-1/2">
+                <span className="text-xs font-medium tracking-widest text-zinc-500 uppercase mb-4">Case Study</span>
+                <h3 className="font-playfair text-3xl md:text-4xl mb-6">Aethalgard. Series A Deck.</h3>
+                <p className="text-zinc-400 mb-10 font-light leading-relaxed text-lg">
+                  A premium Series A pitch deck built for conviction. Clear financial data visualization and a strong narrative flow.
+                </p>
+                <div>
+                  <Link
+                    href="/work/aethalgard"
+                    className="inline-flex items-center gap-2 text-sm font-medium border-b border-zinc-700 pb-1 hover:border-white transition-colors"
+                  >
+                    View Project <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+              </div>
+              <div className="w-full md:w-1/2 relative min-h-[300px] md:min-h-0 bg-[#0a0a0a] flex flex-col p-6 md:p-10 font-sans border-l border-[#1a1a1a]">
+                <div className="text-zinc-500 text-xs font-semibold tracking-[0.2em] uppercase mb-8">Revenue Growth (2020-2027)</div>
+                <div className="flex-1 relative flex">
+                  {/* Y-axis labels */}
+                  <div className="flex flex-col justify-between text-[10px] text-zinc-600 pb-8 pr-4 font-mono">
+                    <span>$300M</span>
+                    <span>$200M</span>
+                    <span>$100M</span>
+                    <span>$0M</span>
+                  </div>
+                  {/* Graph area */}
+                  <div className="flex-1 relative border-l border-b border-zinc-800/50 mb-8">
+                    {/* Grid lines */}
+                    <div className="absolute inset-0 flex flex-col justify-between">
+                      <div className="w-full border-t border-zinc-800/30"></div>
+                      <div className="w-full border-t border-zinc-800/30"></div>
+                      <div className="w-full border-t border-zinc-800/30"></div>
+                      <div className="w-full border-t border-transparent"></div>
+                    </div>
+                    {/* SVG Line */}
+                    <svg className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 700 300">
+                      <polyline
+                        points="0,288 100,272 200,236 300,195 400,140 500,92 600,65 700,55"
+                        fill="none"
+                        stroke="#c8a84e"
+                        strokeWidth="4"
+                        strokeLinejoin="round"
+                        strokeLinecap="round"
+                        className="drop-shadow-[0_0_8px_rgba(200,168,78,0.4)]"
+                      />
+                      {/* Dots */}
+                      <circle cx="0" cy="288" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="100" cy="272" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="200" cy="236" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="300" cy="195" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="400" cy="140" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="500" cy="92" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="600" cy="65" r="4" fill="#0a0a0a" stroke="#c8a84e" strokeWidth="2" />
+                      <circle cx="700" cy="55" r="5" fill="#c8a84e" className="drop-shadow-[0_0_8px_rgba(200,168,78,0.8)]" />
+                    </svg>
+                    {/* X-axis labels */}
+                    <div className="absolute left-0 right-0 -bottom-8 flex justify-between text-[10px] text-zinc-600 font-mono">
+                      <span>'20</span>
+                      <span>'21</span>
+                      <span>'22</span>
+                      <span>'23</span>
+                      <span>'24</span>
+                      <span>'25</span>
+                      <span>'26</span>
+                      <span>'27</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </FadeInUp>
         </div>
       </section>
 
-    </div>
+      {/* FINAL CTA SECTION */}
+      <section className="py-32 px-6 relative z-10 text-center">
+        <div className="max-w-2xl mx-auto">
+          <FadeInUp>
+            <h2 className="font-playfair text-5xl md:text-7xl mb-10">Ready to raise?</h2>
+            <Link
+              href="/contact"
+              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-10 py-5 text-lg font-medium transition-transform hover:scale-105 active:scale-95"
+            >
+              Start Your Deck <ArrowRight className="w-5 h-5" />
+            </Link>
+          </FadeInUp>
+        </div>
+      </section>
+    </main>
   );
 }

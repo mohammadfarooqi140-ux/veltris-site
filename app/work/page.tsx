@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 import { conceptProjects } from "@/lib/data/concepts";
 
@@ -12,13 +13,13 @@ export default function WorkPage() {
         {/* HEADER */}
         <div className="mb-16 md:mb-20 text-center md:text-left">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-6 tracking-[0.2em]">
-            Selected concept work — real client case studies coming soon
+            CONCEPT WORK — REAL CLIENT DECKS COMING SOON
           </div>
           <h1 className="text-4xl md:text-6xl font-playfair font-bold tracking-tight mb-6 max-w-3xl leading-tight text-white">
-            Proof of concept.
+            Proof of craft.
           </h1>
           <p className="text-zinc-400 text-base md:text-lg max-w-2xl leading-relaxed">
-            These are concept projects created to show the kind of premium, mobile-first online presence Veltris can build for businesses. Concept work is labelled clearly.
+            These are concept pitch decks created to demonstrate the kind of high end, investor ready presentations Veltris designs. Concept work is labelled clearly.
           </p>
         </div>
 
@@ -65,27 +66,27 @@ export default function WorkPage() {
           })}
         </div>
         
-        {/* Trust Note */}
+        {/* Trust Note & CTA Section */}
         <div className="mt-20 text-center border-t border-white/5 pt-16 relative">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
           <p className="text-xs text-zinc-500 max-w-xl mx-auto leading-relaxed mb-10">
-            These concepts are used to demonstrate direction, quality, and structure before a full website build. Real client work will be added as Veltris grows.
+            These concepts are used to show direction, narrative structure, and visual quality before a full engagement. Real client work will be added as Veltris grows.
           </p>
           
-          <h2 className="text-2xl md:text-4xl font-playfair font-bold text-white mb-8">Ready to upgrade your business?</h2>
+          <h2 className="text-2xl md:text-4xl font-playfair font-bold text-white mb-8">Ready to raise?</h2>
           
           <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto"
             >
-              Get an AI Voice Demo
+              Start Your Deck
             </Link>
             <Link
-              href="/contact"
+              href="/services"
               className="inline-flex items-center justify-center bg-zinc-900 border border-white/10 text-white min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-zinc-800 active:scale-[0.98] w-full sm:w-auto"
             >
-              Request Free Homepage Concept
+              View Services
             </Link>
           </div>
         </div>

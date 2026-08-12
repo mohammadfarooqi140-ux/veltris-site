@@ -1,55 +1,59 @@
 import Link from "next/link";
 
 export default function Footer() {
-  const links = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "AI Voice Agents", href: "/services#automation" },
-    { name: "Web Development", href: "/services#web-dev" },
-    { name: "Work", href: "/work" },
-    { name: "Contact", href: "/contact" },
-  ];
-
   return (
-    <footer className="bg-zinc-950 border-t border-white/5 text-zinc-400 py-16 md:py-24 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
-
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 md:mb-16">
-          {/* Left Column */}
-          <div className="flex flex-col space-y-4">
-            <Link href="/" className="text-xl font-bold tracking-wider text-white">
-              Veltris
+    <footer className="bg-zinc-950 border-t border-white/5 pt-20 pb-10 text-white selection:bg-white/20">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-8 mb-20">
+          <div>
+            <Link href="/" className="inline-block text-2xl font-bold tracking-tighter mb-6">
+              VELTRIS
             </Link>
-            <p className="text-sm max-w-sm leading-relaxed">
-              Premium websites and AI automation systems for businesses that want to scale efficiently and look established online.
+            <p className="text-zinc-400 text-lg max-w-sm leading-relaxed">
+              A luxury pitch deck studio for founders who are serious about raising. Pre-Seed through Series C.
             </p>
           </div>
-
-          {/* Right Column */}
-          <div className="flex flex-col md:items-end space-y-4">
-            <h4 className="text-xs font-semibold text-white tracking-widest uppercase mb-2">Navigation</h4>
-            <div className="flex flex-col space-y-3 md:items-end">
-              {links.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-sm hover:text-white transition-colors tracking-wider"
-                >
-                  {link.name}
-                </Link>
-              ))}
+          <div className="grid grid-cols-2 gap-8 md:justify-self-end">
+            <div>
+              <h4 className="text-sm font-semibold text-white/90 mb-6 uppercase tracking-wider">Navigation</h4>
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/" className="text-zinc-400 hover:text-white transition-colors">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="text-zinc-400 hover:text-white transition-colors">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="text-zinc-400 hover:text-white transition-colors">
+                    Services
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="text-sm font-semibold text-white/90 mb-6 uppercase tracking-wider">Work & Contact</h4>
+              <ul className="space-y-4">
+                <li>
+                  <Link href="/work" className="text-zinc-400 hover:text-white transition-colors">
+                    Work
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className="text-zinc-400 hover:text-white transition-colors">
+                    Contact
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-
-        {/* Bottom Bar */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs">
-          <p>© 2025 Veltris. All rights reserved.</p>
-          <div className="flex space-x-6">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          </div>
+        
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-sm text-zinc-500">
+          <p>© 2026 Veltris</p>
         </div>
       </div>
     </footer>

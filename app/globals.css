@@ -10,7 +10,22 @@
   }
   
   body {
-    background-color: #080808 !important;
+    background-color: #000000 !important;
     color: #F5F5F5 !important;
+  }
+
+  select option {
+    background-color: #0a0a0a;
+    color: #e4e4e7;
+    padding: 8px;
+  }
+  
+  select option:checked {
+    background-color: #18181b;
+    color: #ffffff;
+  }
+  
+  select option:hover {
+    background-color: #18181b;
   }
 }
