@@ -161,14 +161,14 @@ export default function Home() {
                     </svg>
                     {/* X-axis labels */}
                     <div className="absolute left-0 right-0 -bottom-8 flex justify-between text-[10px] text-zinc-600 font-mono">
-                      <span>'20</span>
-                      <span>'21</span>
-                      <span>'22</span>
-                      <span>'23</span>
-                      <span>'24</span>
-                      <span>'25</span>
-                      <span>'26</span>
-                      <span>'27</span>
+                      <span>&apos;20</span>
+                      <span>&apos;21</span>
+                      <span>&apos;22</span>
+                      <span>&apos;23</span>
+                      <span>&apos;24</span>
+                      <span>&apos;25</span>
+                      <span>&apos;26</span>
+                      <span>&apos;27</span>
                     </div>
                   </div>
                 </div>

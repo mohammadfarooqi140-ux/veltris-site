@@ -25,7 +25,7 @@ export default function AboutPage() {
             <FadeInUp delay={0.1}>
               <div className="space-y-6 text-lg md:text-xl text-zinc-400 max-w-2xl">
                 <p>
-                  Most investors spend less than 3 minutes on a deck. At Veltris, we make every second count. I'm Mohammad, and I lead a luxury pitch deck studio dedicated to the 1% of founders who refuse to blend in.
+                  Most investors spend less than 3 minutes on a deck. At Veltris, we make every second count. I&apos;m Mohammad, and I lead a luxury pitch deck studio dedicated to the 1% of founders who refuse to blend in.
                 </p>
                 <p>
                   We partner with founders from Pre-Seed through Series C to transform raw data into a clear, confident, and visually compelling narrative. While others focus on slides, we focus on the storytelling that secures the meeting.
