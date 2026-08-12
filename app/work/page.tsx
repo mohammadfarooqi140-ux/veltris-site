@@ -1,95 +1,123 @@
 "use client";
 
 import Link from "next/link";
-import { conceptProjects } from "@/lib/data/concepts";
+import { ArrowRight, Lock, Sparkles, FolderGit2 } from "lucide-react";
+import FadeInUp from "@/components/FadeInUp";
 
 export default function WorkPage() {
   return (
-    <main className="min-h-screen bg-zinc-950 overflow-hidden text-white pt-32 pb-24 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
-      
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <main className="min-h-screen bg-black overflow-hidden text-white pt-32 pb-24 relative">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
+
+      <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
 
         {/* HEADER */}
-        <div className="mb-16 md:mb-20 text-center md:text-left">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/[0.03] border border-white/[0.05] text-[10px] uppercase font-semibold text-zinc-400 mb-6 tracking-[0.2em]">
-            CONCEPT WORK — REAL CLIENT DECKS COMING SOON
-          </div>
-          <h1 className="text-4xl md:text-6xl font-playfair font-bold tracking-tight mb-6 max-w-3xl leading-tight text-white">
-            Proof of craft.
-          </h1>
-          <p className="text-zinc-400 text-base md:text-lg max-w-2xl leading-relaxed">
-            These are concept pitch decks created to demonstrate the kind of high end, investor ready presentations Veltris designs. Concept work is labelled clearly.
-          </p>
+        <div className="mb-20 text-center max-w-3xl mx-auto">
+          <FadeInUp>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900/80 border border-white/10 text-[10px] sm:text-xs uppercase font-semibold text-amber-400 mb-6 tracking-[0.2em] shadow-lg">
+              <Lock className="w-3.5 h-3.5" />
+              CONFIDENTIAL CLIENT PORTFOLIO
+            </div>
+            
+            <h1 className="text-4xl sm:text-6xl md:text-7xl font-playfair font-medium tracking-tight mb-6 leading-tight text-white">
+              Design & Client Work Coming Soon.
+            </h1>
+            
+            <p className="text-zinc-400 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
+              Due to strict non-disclosure agreements (NDAs) with our founder partners, live client pitch decks remain private during active fundraising rounds.
+            </p>
+          </FadeInUp>
         </div>
 
-        {/* 2x2 GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-          {conceptProjects.map((project, idx) => {
-            const isLink = !!project.link;
-            
-            return (
-              <div key={idx} className="flex flex-col group bg-zinc-900/30 rounded-3xl p-4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] perspective-[1000px]">
-                {/* Preview */}
-                <div className="relative transform-gpu transition-all duration-700 ease-out group-hover:rotate-x-[2deg] group-hover:-rotate-y-[2deg] group-hover:scale-[1.02]">
-                {isLink ? (
-                  <Link href={project.link as string} className="block w-full aspect-[4/3] mb-5 overflow-hidden rounded-2xl relative">
-                    {project.preview}
-                  </Link>
-                ) : (
-                  <div className="block w-full aspect-[4/3] mb-5 overflow-hidden rounded-2xl relative bg-zinc-900 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-                    {project.preview}
-                  </div>
-                )}
-                </div>
+        {/* TEASER CARDS */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24">
+          <FadeInUp delay={0.1}>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 flex flex-col justify-between h-64 relative overflow-hidden group hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between text-xs text-zinc-500 font-mono">
+                <span>SERIES A</span>
+                <span className="inline-flex items-center gap-1 text-amber-400/80"><Lock className="w-3 h-3" /> NDA Protected</span>
+              </div>
+              <div>
+                <h3 className="font-playfair text-2xl font-medium mb-2 text-white">AI Enterprise Infrastructure</h3>
+                <p className="text-zinc-500 text-sm font-light">$18M Raise — 16 Custom Slides</p>
+              </div>
+              <div className="text-xs font-medium text-zinc-400 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Case Study Publishing Q3
+              </div>
+            </div>
+          </FadeInUp>
 
-                {/* Content */}
-                <div className="flex flex-col flex-grow px-2 pb-2">
-                  <p className="text-[10px] uppercase tracking-[0.2em] text-zinc-500 font-semibold mb-3">{project.label}</p>
-                  <h2 className="text-2xl font-playfair font-bold text-white mb-3">{project.title}</h2>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-5 flex-grow">{project.desc}</p>
-                  {isLink ? (
-                    <Link
-                      href={project.link as string}
-                      className="inline-block text-sm font-semibold uppercase tracking-widest text-white hover:text-zinc-400 transition-colors pb-1 self-start"
-                    >
-                      {project.cta}
-                    </Link>
-                  ) : (
-                    <span className="inline-block text-sm font-semibold uppercase tracking-widest text-zinc-600 self-start">
-                      {project.cta}
-                    </span>
-                  )}
+          <FadeInUp delay={0.2}>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 flex flex-col justify-between h-64 relative overflow-hidden group hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between text-xs text-zinc-500 font-mono">
+                <span>SEED DECK</span>
+                <span className="inline-flex items-center gap-1 text-amber-400/80"><Lock className="w-3 h-3" /> NDA Protected</span>
+              </div>
+              <div>
+                <h3 className="font-playfair text-2xl font-medium mb-2 text-white">Fintech Protocol & Paytech</h3>
+                <p className="text-zinc-500 text-sm font-light">$4.5M Raise — 14 Custom Slides</p>
+              </div>
+              <div className="text-xs font-medium text-zinc-400 flex items-center gap-2">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" /> Case Study Publishing Q3
+              </div>
+            </div>
+          </FadeInUp>
+
+          <FadeInUp delay={0.3}>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 flex flex-col justify-between h-64 relative overflow-hidden group hover:border-zinc-700 transition-colors">
+              <div className="flex items-center justify-between text-xs text-zinc-500 font-mono">
+                <span>SERIES B</span>
+                <span className="inline-flex items-center gap-1 text-amber-400/80"><Lock className="w-3 h-3" /> NDA Protected</span>
+              </div>
+              <div>
+                <h3 className="font-playfair text-2xl font-medium mb-2 text-white">BioTech & Health Intelligence</h3>
+                <p className="text-zinc-500 text-sm font-light">$32M Raise — 20 Custom Slides</p>
+              </div>
+              <div className="text-xs font-medium text-zinc-400 flex items-center gap-2">
+                <FolderGit2 className="w-3.5 h-3.5 text-amber-400" /> Breakdown Coming Soon
+              </div>
+            </div>
+          </FadeInUp>
+        </div>
+
+        {/* CTA SECTION */}
+        <section className="py-12 relative z-10">
+          <FadeInUp>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden text-center shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-zinc-500/5 to-amber-500/10 blur-3xl pointer-events-none opacity-60" />
+              
+              <div className="relative z-10 max-w-3xl mx-auto">
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90 mb-4 inline-block">
+                  Work With Veltris
+                </span>
+                
+                <h2 className="font-playfair text-3xl sm:text-5xl md:text-6xl font-medium mb-6 text-white leading-tight">
+                  Want to see private samples?
+                </h2>
+                
+                <p className="text-zinc-400 text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                  We share select anonymized deck slides and narrative architectures during private founder intro calls.
+                </p>
+
+                <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-white text-black px-8 py-4 rounded-full text-base font-medium hover:bg-zinc-200 transition-colors shadow-lg"
+                  >
+                    Start Your Deck <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="inline-flex items-center justify-center bg-zinc-900 border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-zinc-800 transition-colors"
+                  >
+                    View Services & Pricing
+                  </Link>
                 </div>
               </div>
-            );
-          })}
-        </div>
-        
-        {/* Trust Note & CTA Section */}
-        <div className="mt-20 text-center border-t border-white/5 pt-16 relative">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-white/5 rounded-full blur-2xl pointer-events-none" />
-          <p className="text-xs text-zinc-500 max-w-xl mx-auto leading-relaxed mb-10">
-            These concepts are used to show direction, narrative structure, and visual quality before a full engagement. Real client work will be added as Veltris grows.
-          </p>
-          
-          <h2 className="text-2xl md:text-4xl font-playfair font-bold text-white mb-8">Ready to raise?</h2>
-          
-          <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-white text-zinc-950 min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] active:scale-[0.98] w-full sm:w-auto"
-            >
-              Start Your Deck
-            </Link>
-            <Link
-              href="/services"
-              className="inline-flex items-center justify-center bg-zinc-900 border border-white/10 text-white min-h-[56px] px-8 py-4 rounded-full text-sm font-semibold uppercase tracking-[0.16em] transition hover:bg-zinc-800 active:scale-[0.98] w-full sm:w-auto"
-            >
-              View Services
-            </Link>
-          </div>
-        </div>
+            </div>
+          </FadeInUp>
+        </section>
 
       </div>
     </main>

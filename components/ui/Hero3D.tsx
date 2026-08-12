@@ -1,47 +1,49 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, Environment, ContactShadows, MeshTransmissionMaterial } from "@react-three/drei";
-import { useRef } from "react";
+import { Float, Environment } from "@react-three/drei";
+import { useRef, useState, useEffect } from "react";
 import * as THREE from "three";
 
 function LuxuryShape() {
   const meshRef = useRef<THREE.Mesh>(null);
+  const [scale, setScale] = useState(0.85);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setScale(0.7); // Smaller scale on mobile to prevent cutting off
+      } else {
+        setScale(1.05);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useFrame((state) => {
     if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.3;
-      meshRef.current.rotation.y += 0.018;
-      
-      // Interactive mouse follow
-      const targetX = (state.mouse.x * Math.PI) / 10;
-      const targetY = (state.mouse.y * Math.PI) / 10;
-      
-      meshRef.current.rotation.y += (targetX - meshRef.current.rotation.y) * 0.05;
-      meshRef.current.rotation.x += (-targetY - meshRef.current.rotation.x) * 0.05;
+      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.4) * 0.2;
+      meshRef.current.rotation.y += 0.015;
     }
   });
 
   return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
-      <mesh ref={meshRef} position={[0, 0, 0]} scale={1.5}>
+    <Float speed={1.5} rotationIntensity={0.4} floatIntensity={0.8}>
+      <mesh ref={meshRef} position={[0, 0, 0]} scale={scale}>
         <icosahedronGeometry args={[1, 0]} />
-        <MeshTransmissionMaterial
-          backside
-          backsideThickness={5}
-          thickness={2}
-          roughness={0.1}
-          transmission={1}
-          ior={1.5}
-          chromaticAberration={0.04}
-          anisotropy={0.3}
-          color="#1a1a1a"
-          attenuationDistance={0.5}
-          attenuationColor="#ffffff"
+        <meshPhysicalMaterial
+          color="#18181b"
+          roughness={0.12}
+          metalness={0.88}
+          clearcoat={1}
+          clearcoatRoughness={0.1}
+          reflectivity={0.9}
         />
         <lineSegments>
           <edgesGeometry args={[new THREE.IcosahedronGeometry(1, 0)]} />
-          <lineBasicMaterial color="#333333" linewidth={2} />
+          <lineBasicMaterial color="#444444" linewidth={1} />
         </lineSegments>
       </mesh>
     </Float>
@@ -50,16 +52,19 @@ function LuxuryShape() {
 
 export default function Hero3D() {
   return (
-    <div className="absolute inset-0 w-full h-full pointer-events-auto z-0">
-      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} gl={{ antialias: true, alpha: true }}>
+    <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+      <Canvas
+        camera={{ position: [0, 0, 7], fov: 45 }}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        dpr={[1, 1.5]}
+      >
         <ambientLight intensity={0.5} />
-        <directionalLight position={[10, 10, 10]} intensity={1} color="#ffffff" />
-        <directionalLight position={[-10, -10, -10]} intensity={0.5} color="#444444" />
+        <directionalLight position={[10, 10, 10]} intensity={1.8} color="#ffffff" />
+        <directionalLight position={[-10, -10, -10]} intensity={0.6} color="#c8a84e" />
         
         <LuxuryShape />
         
         <Environment preset="city" />
-        <ContactShadows position={[0, -2.5, 0]} opacity={0.4} scale={10} blur={2} far={4} color="#000000" />
       </Canvas>
     </div>
   );

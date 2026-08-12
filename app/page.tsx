@@ -179,16 +179,34 @@ export default function Home() {
       </section>
 
       {/* FINAL CTA SECTION */}
-      <section className="py-32 px-6 relative z-10 text-center">
-        <div className="max-w-2xl mx-auto">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 relative z-10 bg-black">
+        <div className="max-w-5xl mx-auto">
           <FadeInUp>
-            <h2 className="font-playfair text-5xl md:text-7xl mb-10">Ready to raise?</h2>
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-white text-black px-10 py-5 text-lg font-medium transition-transform hover:scale-105 active:scale-95"
-            >
-              Start Your Deck <ArrowRight className="w-5 h-5" />
-            </Link>
+            <div className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-3xl p-8 sm:p-12 md:p-16 relative overflow-hidden text-center shadow-2xl">
+              <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-zinc-500/5 to-amber-500/10 blur-3xl pointer-events-none opacity-60" />
+              
+              <div className="relative z-10 max-w-3xl mx-auto">
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90 mb-4 inline-block">
+                  Veltris Pitch Deck Studio
+                </span>
+                
+                <h2 className="font-playfair text-3xl sm:text-5xl md:text-6xl font-medium mb-6 text-white leading-tight">
+                  Ready to raise?
+                </h2>
+                
+                <p className="text-zinc-400 text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
+                  Partner with a dedicated studio to craft an investor-ready presentation that commands attention, clarifies your narrative, and drives meetings.
+                </p>
+
+                <Link 
+                  href="/contact" 
+                  className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-base sm:text-lg font-medium hover:bg-zinc-200 transition-all duration-300 shadow-lg hover:shadow-white/10"
+                >
+                  Start Your Deck
+                  <ArrowRight className="w-5 h-5" />
+                </Link>
+              </div>
+            </div>
           </FadeInUp>
         </div>
       </section>
