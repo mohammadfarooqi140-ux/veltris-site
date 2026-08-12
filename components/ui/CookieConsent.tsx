@@ -20,8 +20,7 @@ export default function CookieConsent() {
     const stored = getStoredConsent();
     setConsent(stored);
     if (!stored.hasResponded) {
-      // Delay slightly for smooth page entrance
-      const timer = setTimeout(() => setShowBanner(true), 1000);
+      const timer = setTimeout(() => setShowBanner(true), 800);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -51,33 +50,33 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Floating Re-open Button (PEC/GDPR withdrawal mechanism) */}
+      {/* Floating Re-open Shield Button (Bottom Left) */}
       {consent.hasResponded && !showBanner && !showModal && (
         <button
           onClick={() => setShowModal(true)}
-          className="fixed bottom-6 left-6 z-40 bg-zinc-900/90 border border-white/10 text-zinc-400 hover:text-white p-3 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          title="Privacy & Cookie Settings"
-          aria-label="Privacy & Cookie Settings"
+          className="fixed bottom-5 left-5 z-40 bg-zinc-900/90 border border-white/15 text-zinc-400 hover:text-white p-2.5 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-110 flex items-center justify-center group"
+          title="Privacy & Cookie Preferences"
+          aria-label="Privacy & Cookie Preferences"
         >
           <Shield className="w-4 h-4 text-amber-400 group-hover:rotate-12 transition-transform" />
         </button>
       )}
 
-      {/* Main Cookie Banner */}
+      {/* Main Cookie Banner (25% smaller & sleeker) */}
       {showBanner && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 md:p-8 pointer-events-none">
-          <div className="max-w-4xl mx-auto bg-[#0d0d0d] border border-[#222222] rounded-3xl p-6 sm:p-8 shadow-2xl backdrop-blur-2xl pointer-events-auto relative text-white animate-in fade-in slide-in-from-bottom-8 duration-500">
-            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-              <div className="space-y-2 flex-grow pr-4">
-                <div className="flex items-center gap-2 text-amber-400 text-xs uppercase font-semibold tracking-widest">
-                  <Shield className="w-4 h-4" />
-                  UK GDPR & Privacy Preferences
+        <div className="fixed bottom-0 left-0 right-0 z-50 p-3 sm:p-4 md:p-6 pointer-events-none">
+          <div className="max-w-3xl mx-auto bg-[#0d0d0d]/95 border border-[#262626] rounded-2xl p-4 sm:p-5 shadow-2xl backdrop-blur-xl pointer-events-auto relative text-white animate-in fade-in slide-in-from-bottom-6 duration-300">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+              <div className="space-y-1 flex-grow pr-2">
+                <div className="flex items-center gap-1.5 text-amber-400 text-[10px] uppercase font-semibold tracking-wider">
+                  <Shield className="w-3.5 h-3.5" />
+                  UK GDPR & PECR Privacy Preferences
                 </div>
-                <h3 className="font-playfair text-xl sm:text-2xl font-medium text-white">
-                  We respect your privacy
+                <h3 className="font-playfair text-lg font-medium text-white">
+                  We value your privacy
                 </h3>
-                <p className="text-zinc-400 text-xs sm:text-sm font-light leading-relaxed max-w-2xl">
-                  We use cookies to analyze site traffic and enhance your browsing experience. Essential cookies are required for security and core functionality. Non-essential cookies are only enabled with your explicit consent. Read our{" "}
+                <p className="text-zinc-400 text-xs font-light leading-relaxed max-w-xl">
+                  We use cookies for security and analytics. Non-essential cookies load only with your explicit consent. Read our{" "}
                   <Link href="/privacy-policy" className="text-amber-400 underline hover:text-amber-300">
                     Privacy Policy
                   </Link>{" "}
@@ -88,23 +87,23 @@ export default function CookieConsent() {
                 </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full md:w-auto shrink-0">
+              <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 w-full md:w-auto shrink-0">
                 <button
                   onClick={() => setShowModal(true)}
-                  className="px-5 py-3 rounded-full border border-white/10 bg-zinc-900 text-zinc-300 text-xs font-semibold uppercase tracking-wider hover:bg-zinc-800 hover:text-white transition-all text-center flex items-center justify-center gap-2"
+                  className="flex-1 sm:flex-none px-3.5 py-2 rounded-full border border-white/10 bg-zinc-900 text-zinc-300 text-[11px] font-semibold uppercase tracking-wider hover:bg-zinc-800 hover:text-white transition-all text-center flex items-center justify-center gap-1.5"
                 >
-                  <Settings className="w-3.5 h-3.5" />
+                  <Settings className="w-3 h-3 text-amber-400" />
                   Preferences
                 </button>
                 <button
                   onClick={handleRejectAll}
-                  className="px-5 py-3 rounded-full border border-white/10 bg-zinc-900 text-zinc-300 text-xs font-semibold uppercase tracking-wider hover:bg-zinc-800 hover:text-white transition-all text-center"
+                  className="flex-1 sm:flex-none px-3.5 py-2 rounded-full border border-white/10 bg-zinc-900 text-zinc-300 text-[11px] font-semibold uppercase tracking-wider hover:bg-zinc-800 hover:text-white transition-all text-center"
                 >
                   Reject All
                 </button>
                 <button
                   onClick={handleAcceptAll}
-                  className="px-6 py-3 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-all text-center shadow-lg"
+                  className="w-full sm:w-auto px-5 py-2 rounded-full bg-white text-black text-[11px] font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-all text-center shadow-lg"
                 >
                   Accept All
                 </button>
@@ -114,107 +113,128 @@ export default function CookieConsent() {
         </div>
       )}
 
-      {/* Preferences Modal */}
+      {/* Preferences Modal (Backdrop Click to Close, Perfectly Positioned Below Header) */}
       {showModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-300">
-          <div className="bg-[#0d0d0d] border border-[#222222] rounded-3xl p-6 sm:p-8 max-w-xl w-full text-white shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button
-              onClick={() => setShowModal(false)}
-              className="absolute top-6 right-6 text-zinc-500 hover:text-white p-2 transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
+        <div
+          onClick={(e) => {
+            if (e.target === e.currentTarget) setShowModal(false);
+          }}
+          className="fixed inset-0 z-50 flex items-start justify-center pt-20 sm:pt-24 pb-8 px-4 bg-black/80 backdrop-blur-md overflow-y-auto animate-in fade-in duration-200"
+        >
+          <div className="bg-[#0d0d0d] border border-[#262626] rounded-2xl p-5 sm:p-7 max-w-lg w-full text-white shadow-2xl relative my-auto max-h-[85vh] overflow-y-auto flex flex-col justify-between">
+            
+            {/* Modal Header */}
+            <div>
+              <div className="flex items-center justify-between pb-4 mb-4 border-b border-white/10 pr-8">
+                <div>
+                  <span className="text-[10px] uppercase font-semibold tracking-widest text-amber-400 block mb-0.5">
+                    Privacy Preferences
+                  </span>
+                  <h2 className="font-playfair text-xl sm:text-2xl font-medium text-white">
+                    Manage Cookie Options
+                  </h2>
+                </div>
+                <button
+                  onClick={() => setShowModal(false)}
+                  className="absolute top-5 right-5 text-zinc-400 hover:text-white p-1.5 rounded-full bg-zinc-900 hover:bg-zinc-800 transition-colors"
+                  aria-label="Close preferences"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
 
-            <div className="mb-6 pr-8">
-              <span className="text-xs uppercase font-semibold tracking-widest text-amber-400 block mb-1">
-                Cookie Preferences
-              </span>
-              <h2 className="font-playfair text-2xl font-medium text-white">
-                Manage Privacy Options
-              </h2>
-              <p className="text-zinc-400 text-xs font-light mt-2">
-                Configure your cookie preferences below. You can update or withdraw your consent at any time.
+              <p className="text-zinc-400 text-xs font-light mb-5 leading-relaxed">
+                Customize your privacy settings below. You can return or update consent at any time.
               </p>
-            </div>
 
-            <div className="space-y-4 mb-8">
-              {/* Essential */}
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-white/5 flex items-start justify-between gap-4">
-                <div>
-                  <div className="flex items-center gap-2 font-medium text-sm text-white mb-1">
-                    Strictly Necessary Cookies
-                    <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-zinc-800 text-zinc-400">Required</span>
+              {/* Toggles List */}
+              <div className="space-y-3 mb-6">
+                {/* Essential */}
+                <div className="p-3.5 rounded-xl bg-zinc-900/70 border border-white/5 flex items-start justify-between gap-3">
+                  <div>
+                    <div className="flex items-center gap-2 font-medium text-xs text-white mb-1">
+                      Strictly Necessary Cookies
+                      <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded bg-zinc-800 text-amber-400/90 border border-amber-500/20">Required</span>
+                    </div>
+                    <p className="text-zinc-400 text-[11px] font-light leading-snug">
+                      Core security, session tokens, and navigation. Cannot be turned off.
+                    </p>
                   </div>
-                  <p className="text-zinc-400 text-xs font-light">
-                    Required for core security, session state, navigation, and CSRF protection. Cannot be disabled.
-                  </p>
+                  <div className="w-8 h-5 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-center shrink-0">
+                    <Check className="w-3 h-3 text-amber-400" />
+                  </div>
                 </div>
-                <div className="w-10 h-6 rounded-full bg-amber-500/20 border border-amber-500/40 flex items-center justify-end px-1 shrink-0">
-                  <Check className="w-3.5 h-3.5 text-amber-400" />
-                </div>
-              </div>
 
-              {/* Analytics */}
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-white/5 flex items-start justify-between gap-4">
-                <div>
-                  <div className="font-medium text-sm text-white mb-1">Analytics & Performance Cookies</div>
-                  <p className="text-zinc-400 text-xs font-light">
-                    Helps us measure site traffic, popular deck services, and user interaction patterns to improve site experience.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setPreferences(prev => ({ ...prev, analytics: !prev.analytics }))}
-                  className={`w-11 h-6 rounded-full transition-colors duration-300 relative shrink-0 p-0.5 border ${
-                    preferences.analytics ? "bg-amber-500 border-amber-400" : "bg-zinc-800 border-zinc-700"
-                  }`}
-                >
-                  <div
-                    className={`w-4 h-4 rounded-full bg-white transition-transform duration-300 ${
-                      preferences.analytics ? "translate-x-5" : "translate-x-0"
+                {/* Analytics */}
+                <div className="p-3.5 rounded-xl bg-zinc-900/70 border border-white/5 flex items-start justify-between gap-3">
+                  <div>
+                    <div className="font-medium text-xs text-white mb-1">Analytics &amp; Performance Cookies</div>
+                    <p className="text-zinc-400 text-[11px] font-light leading-snug">
+                      Anonymous usage metrics to help us optimize deck service experience.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPreferences(prev => ({ ...prev, analytics: !prev.analytics }))}
+                    className={`w-10 h-5.5 rounded-full transition-colors duration-200 relative shrink-0 p-0.5 border ${
+                      preferences.analytics ? "bg-amber-500 border-amber-400" : "bg-zinc-800 border-zinc-700"
                     }`}
-                  />
-                </button>
-              </div>
+                  >
+                    <div
+                      className={`w-4 h-4 rounded-full bg-white transition-transform duration-200 ${
+                        preferences.analytics ? "translate-x-4" : "translate-x-0"
+                      }`}
+                    />
+                  </button>
+                </div>
 
-              {/* Marketing */}
-              <div className="p-4 rounded-2xl bg-zinc-900/60 border border-white/5 flex items-start justify-between gap-4">
-                <div>
-                  <div className="font-medium text-sm text-white mb-1">Marketing & Attribution Cookies</div>
-                  <p className="text-zinc-400 text-xs font-light">
-                    Used to measure referral campaigns and tailor pitch deck service inquiries for founders.
-                  </p>
-                </div>
-                <button
-                  type="button"
-                  onClick={() => setPreferences(prev => ({ ...prev, marketing: !prev.marketing }))}
-                  className={`w-11 h-6 rounded-full transition-colors duration-300 relative shrink-0 p-0.5 border ${
-                    preferences.marketing ? "bg-amber-500 border-amber-400" : "bg-zinc-800 border-zinc-700"
-                  }`}
-                >
-                  <div
-                    className={`w-4 h-4 rounded-full bg-white transition-transform duration-300 ${
-                      preferences.marketing ? "translate-x-5" : "translate-x-0"
+                {/* Marketing */}
+                <div className="p-3.5 rounded-xl bg-zinc-900/70 border border-white/5 flex items-start justify-between gap-3">
+                  <div>
+                    <div className="font-medium text-xs text-white mb-1">Marketing &amp; Attribution Cookies</div>
+                    <p className="text-zinc-400 text-[11px] font-light leading-snug">
+                      Measures marketing attribution for founder outreach campaigns.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setPreferences(prev => ({ ...prev, marketing: !prev.marketing }))}
+                    className={`w-10 h-5.5 rounded-full transition-colors duration-200 relative shrink-0 p-0.5 border ${
+                      preferences.marketing ? "bg-amber-500 border-amber-400" : "bg-zinc-800 border-zinc-700"
                     }`}
-                  />
-                </button>
+                  >
+                    <div
+                      className={`w-4 h-4 rounded-full bg-white transition-transform duration-200 ${
+                        preferences.marketing ? "translate-x-4" : "translate-x-0"
+                      }`}
+                    />
+                  </button>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-end gap-3 border-t border-white/10 pt-6">
+            {/* Modal Footer Actions */}
+            <div className="flex flex-col sm:flex-row items-center justify-end gap-2 border-t border-white/10 pt-4">
               <button
                 onClick={handleRejectAll}
-                className="w-full sm:w-auto px-5 py-3 rounded-full border border-white/10 text-zinc-400 text-xs uppercase tracking-wider font-semibold hover:text-white hover:bg-zinc-900 transition-colors text-center"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-full border border-white/10 text-zinc-400 text-[11px] uppercase tracking-wider font-semibold hover:text-white hover:bg-zinc-900 transition-colors text-center"
               >
                 Reject Non-Essential
               </button>
               <button
                 onClick={handleSavePreferences}
-                className="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-black text-xs uppercase tracking-wider font-semibold hover:bg-zinc-200 transition-colors text-center shadow-lg"
+                className="w-full sm:w-auto px-4 py-2.5 rounded-full bg-zinc-800 border border-white/20 text-white text-[11px] uppercase tracking-wider font-semibold hover:bg-zinc-700 transition-colors text-center"
               >
-                Save Preferences
+                Save Selected
+              </button>
+              <button
+                onClick={handleAcceptAll}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-white text-black text-[11px] uppercase tracking-wider font-semibold hover:bg-zinc-200 transition-colors text-center shadow-lg"
+              >
+                Accept All
               </button>
             </div>
+
           </div>
         </div>
       )}
