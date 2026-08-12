@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date('2026-08-04')
+  const lastModified = new Date()
 
   return [
     {
@@ -20,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.veltris.uk/about',
       lastModified,
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
     },
     {
       url: 'https://www.veltris.uk/work',
@@ -32,43 +32,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://www.veltris.uk/contact',
       lastModified,
       changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.9,
     },
     {
-      url: 'https://www.veltris.uk/ancoats-lunchbox',
+      url: 'https://www.veltris.uk/privacy',
       lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.4,
     },
     {
-      url: 'https://www.veltris.uk/marlow-deli',
+      url: 'https://www.veltris.uk/terms',
       lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/blackline-atelier',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/hartley',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/sterling',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/work/uk-properties',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
+      changeFrequency: 'yearly',
+      priority: 0.4,
     },
   ]
 }
