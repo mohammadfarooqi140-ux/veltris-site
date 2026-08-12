@@ -89,15 +89,25 @@ export default function WorkPage() {
               
               <div className="relative z-10 max-w-3xl mx-auto">
                 <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90 mb-4 inline-block">
-                  Work With Veltris
+                  Private Portfolio
                 </span>
                 
                 <h2 className="font-playfair text-3xl sm:text-5xl md:text-6xl font-medium mb-6 text-white leading-tight">
-                  Want to see private samples?
+                  Our work is shared privately.
                 </h2>
                 
-                <p className="text-zinc-400 text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                  We share select anonymized deck slides and narrative architectures during private founder intro calls.
+                <p className="text-zinc-400 text-base sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto">
+                  Due to NDAs and active fundraising rounds, we share our work privately with prospective clients. If you&apos;d like to see our portfolio, just ask &mdash; we&apos;ll set up a short intro call.
+                </p>
+
+                <p className="text-zinc-500 text-sm mb-10">
+                  Reach us directly at{" "}
+                  <a
+                    href="mailto:muhammad@veltris.uk"
+                    className="text-amber-400/90 hover:text-amber-300 transition-colors underline underline-offset-2"
+                  >
+                    muhammad@veltris.uk
+                  </a>
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center gap-4 w-full">
@@ -111,7 +121,7 @@ export default function WorkPage() {
                     href="/services"
                     className="inline-flex items-center justify-center bg-zinc-900 border border-white/10 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-zinc-800 transition-colors"
                   >
-                    View Services & Pricing
+                    View Services &amp; Pricing
                   </Link>
                 </div>
               </div>

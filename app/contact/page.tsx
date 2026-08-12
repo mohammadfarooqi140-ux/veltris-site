@@ -75,6 +75,12 @@ export default function ContactPage() {
           <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
             Tell us about your raise and we will come back within 24 hours.
           </p>
+          <p className="text-zinc-500 text-sm mt-3">
+            Or email us directly at{" "}
+            <a href="mailto:muhammad@veltris.uk" className="text-amber-400/90 hover:text-amber-300 transition-colors underline underline-offset-2">
+              muhammad@veltris.uk
+            </a>
+          </p>
           <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
              <p className="text-xs text-zinc-400 leading-relaxed text-left">
                No commitment required. We will review your brief, and if it is a fit we will jump on a short call to align on scope and timeline before anything moves.

@@ -45,35 +45,22 @@ export default function ServicesPage() {
               <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
               <div className="w-3 h-3 rounded-full bg-green-500/80" />
               <div className="ml-4 flex items-center justify-center w-full pr-12">
-                <span className="text-[10px] text-zinc-500 font-medium tracking-[0.2em] uppercase">Deck Performance Metrics</span>
+                <span className="text-[10px] text-zinc-500 font-medium tracking-[0.2em] uppercase">The Veltris Difference</span>
               </div>
             </div>
             <div className="bg-[#0a0a0a] p-8 md:p-16">
-              <div className="flex items-end justify-between h-48 md:h-64 gap-4 md:gap-8 border-b border-zinc-800 pb-4">
-                {/* Bar 1 */}
-                <div className="flex flex-col items-center justify-end flex-1 h-full">
-                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">+340%</div>
-                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)]" style={{ height: '100%' }}></div>
-                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Investor<br/>Meetings</div>
-                </div>
-                {/* Bar 2 */}
-                <div className="flex flex-col items-center justify-end flex-1 h-full">
-                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">+67%</div>
-                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-80" style={{ height: '60%' }}></div>
-                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Close<br/>Rate</div>
-                </div>
-                {/* Bar 3 */}
-                <div className="flex flex-col items-center justify-end flex-1 h-full">
-                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">-40%</div>
-                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-60" style={{ height: '40%' }}></div>
-                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Time to<br/>Term Sheet</div>
-                </div>
-                {/* Bar 4 */}
-                <div className="flex flex-col items-center justify-end flex-1 h-full">
-                  <div className="text-[#c8a84e] font-playfair font-bold text-2xl md:text-4xl mb-3">9.4/10</div>
-                  <div className="w-full max-w-[60px] bg-[#c8a84e] rounded-t-md shadow-[0_0_15px_rgba(200,168,78,0.2)] opacity-90" style={{ height: '90%' }}></div>
-                  <div className="text-zinc-500 text-[10px] md:text-xs text-center font-medium tracking-wider uppercase mt-4 h-8">Deck<br/>Score</div>
-                </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { label: "Narrative-First", description: "We architect your story before designing a single slide." },
+                  { label: "Zero Templates", description: "Every deck is built from scratch for your specific audience." },
+                  { label: "Bespoke Design", description: "Precision-crafted visuals that reflect the quality of your vision." },
+                  { label: "Founder-Speed", description: "High-velocity execution without compromising on craft." },
+                ].map((item) => (
+                  <div key={item.label} className="border border-zinc-800/60 rounded-2xl p-6 flex flex-col gap-2">
+                    <div className="text-[#c8a84e] font-playfair font-semibold text-lg">{item.label}</div>
+                    <div className="text-zinc-500 text-sm leading-relaxed">{item.description}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </FadeInUp>
