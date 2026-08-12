@@ -16,7 +16,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <Hero3D />
         </div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-36 md:pt-44">
           <FadeInUp>
             <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
               We build pitch decks <br className="hidden md:block" />

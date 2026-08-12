@@ -35,7 +35,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: 'https://www.veltris.uk/privacy',
+      url: 'https://www.veltris.uk/privacy-policy',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.4,
+    },
+    {
+      url: 'https://www.veltris.uk/cookie-policy',
       lastModified,
       changeFrequency: 'yearly',
       priority: 0.4,

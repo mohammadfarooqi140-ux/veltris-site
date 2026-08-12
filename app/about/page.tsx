@@ -34,8 +34,8 @@ export default function AboutPage() {
             </FadeInUp>
           </div>
 
-          {/* 3D Element (40% on desktop - HIDDEN ON MOBILE) */}
-          <div className="hidden lg:block w-full lg:w-[40%] h-[500px] relative pointer-events-none overflow-hidden">
+          {/* 3D Element (Appears behind text on mobile, 40% side column on desktop) */}
+          <div className="absolute inset-0 z-0 opacity-30 pointer-events-none overflow-hidden lg:relative lg:opacity-100 lg:w-[40%] lg:h-[500px] lg:z-auto">
             <About3D />
           </div>
         </div>

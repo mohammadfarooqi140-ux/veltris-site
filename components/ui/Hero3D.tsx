@@ -14,7 +14,7 @@ function LuxuryShape() {
       if (window.innerWidth < 768) {
         setScale(0.7); // Smaller scale on mobile to prevent cutting off
       } else {
-        setScale(1.05);
+        setScale(1.21); // Increased desktop size by 15%
       }
     };
     handleResize();
