@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, TrendingUp, Briefcase } from "lucide-react";
+import { ArrowRight, FileText, Globe } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 import dynamic from "next/dynamic";
 
@@ -18,12 +18,11 @@ export default function Home() {
         </div>
         <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-36 md:pt-44">
           <FadeInUp>
-            <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8">
-              We build pitch decks <br className="hidden md:block" />
-              that get founders funded.
+            <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-8 max-w-4xl mx-auto leading-tight">
+              Investor-ready pitch decks for founders raising capital.
             </h1>
             <p className="max-w-2xl mx-auto text-lg md:text-xl text-zinc-400 mb-10 font-light leading-relaxed">
-              Premium pitch decks for founders raising Pre-Seed through Series C. We clarify your narrative, visualize your financial data, and design an investor-ready presentation.
+              We also design and build premium websites for startups and real estate projects.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Link
@@ -48,36 +47,34 @@ export default function Home() {
 
       {/* WHAT WE DO STRIP */}
       <section className="py-24 px-6 relative z-10 bg-black">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <FadeInUp>
-            <h2 className="font-playfair text-3xl md:text-4xl mb-12 text-center">What we make</h2>
+            <h2 className="font-playfair text-3xl md:text-4xl mb-12 text-center">What we do</h2>
           </FadeInUp>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                icon: FileText,
-                title: "Seed Decks",
-                desc: "Clear, compelling narratives for early-stage founders."
-              },
-              {
-                icon: TrendingUp,
-                title: "Series A Decks",
-                desc: "Data-driven presentations built for conviction."
-              },
-              {
-                icon: Briefcase,
-                title: "Sales & Investor Update Decks",
-                desc: "Professional updates to keep stakeholders engaged."
-              }
-            ].map((item, i) => (
-              <FadeInUp key={i} delay={i * 0.1}>
-                <div className="bg-zinc-900/40 p-8 rounded-3xl border border-zinc-800/50 hover:bg-zinc-900/60 transition-colors h-full">
-                  <item.icon className="w-8 h-8 text-zinc-400 mb-6" />
-                  <h3 className="text-xl font-medium mb-3">{item.title}</h3>
-                  <p className="text-zinc-500 font-light">{item.desc}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <FadeInUp delay={0.1}>
+              <div className="bg-zinc-900/40 p-8 md:p-10 rounded-3xl border border-zinc-800/50 hover:bg-zinc-900/60 transition-colors h-full flex flex-col justify-between">
+                <div>
+                  <FileText className="w-8 h-8 text-zinc-400 mb-6" />
+                  <h3 className="text-2xl font-playfair font-medium mb-3">Pitch Decks</h3>
+                  <p className="text-zinc-400 font-light leading-relaxed">
+                    Premium pitch decks for founders raising Pre-Seed through Series C. Data-driven, narrative-first presentations built for conviction.
+                  </p>
                 </div>
-              </FadeInUp>
-            ))}
+              </div>
+            </FadeInUp>
+
+            <FadeInUp delay={0.2}>
+              <div className="bg-zinc-900/40 p-8 md:p-10 rounded-3xl border border-zinc-800/50 hover:bg-zinc-900/60 transition-colors h-full flex flex-col justify-between">
+                <div>
+                  <Globe className="w-8 h-8 text-zinc-400 mb-6" />
+                  <h3 className="text-2xl font-playfair font-medium mb-3">Premium Websites</h3>
+                  <p className="text-zinc-400 font-light leading-relaxed">
+                    Clean, high-end websites for startups and real estate developments. Focused on design quality, speed, and conversion.
+                  </p>
+                </div>
+              </div>
+            </FadeInUp>
           </div>
         </div>
       </section>

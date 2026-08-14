@@ -165,6 +165,30 @@ export default function ServicesPage() {
                 </div>
               </div>
 
+              {/* Premium Websites */}
+              <div className="bg-zinc-900/40 border border-white/5 rounded-3xl p-8 flex flex-col hover:bg-zinc-900/60 transition duration-300 md:col-span-2">
+                <div className="text-zinc-500 font-mono text-sm mb-4">05</div>
+                <h3 className="text-3xl font-playfair font-bold text-white mb-4">Premium Websites</h3>
+                <p className="text-zinc-400 mb-8 leading-relaxed max-w-2xl">
+                  Clean, high-end websites for startups and real estate developments. Focused on design quality, speed, and conversion.
+                </p>
+                <div className="mb-10 flex-grow">
+                  <h4 className="text-xs uppercase tracking-widest text-zinc-500 mb-4 font-semibold">Deliverables</h4>
+                  <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-2xl">
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Bespoke Responsive Web Design</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Next.js & Modern Tech Stack</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Speed & SEO Optimization</li>
+                    <li className="flex items-start text-sm text-zinc-300"><span className="text-zinc-600 mr-3">•</span> Conversion Architecture</li>
+                  </ul>
+                </div>
+                <div className="mt-auto border-t border-white/10 pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <span className="text-lg text-white font-medium">Bespoke Quote</span>
+                  <Link href="/contact" className="text-sm font-semibold uppercase tracking-widest text-zinc-400 hover:text-white transition">
+                    Get a Quote →
+                  </Link>
+                </div>
+              </div>
+
             </div>
           </FadeInUp>
         </section>

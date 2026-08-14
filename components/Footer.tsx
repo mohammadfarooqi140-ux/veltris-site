@@ -10,7 +10,7 @@ export default function Footer() {
               VELTRIS
             </Link>
             <p className="text-zinc-400 text-lg max-w-sm leading-relaxed font-light">
-              A luxury pitch deck studio for founders who are serious about raising. Pre-Seed through Series C.
+              A luxury pitch deck studio for founders who are serious about raising. We also build premium websites for startups and real estate projects.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:justify-self-end">

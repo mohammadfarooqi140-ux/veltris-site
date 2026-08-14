@@ -30,6 +30,9 @@ export default function AboutPage() {
                 <p>
                   We partner with founders from Pre-Seed through Series C to transform raw data into a clear, confident, and visually compelling narrative. While others focus on slides, we focus on the storytelling that secures the meeting.
                 </p>
+                <p className="text-zinc-500 text-sm md:text-base font-normal">
+                  Alongside pitch decks, we also design and build premium websites for select startups and real estate projects.
+                </p>
               </div>
             </FadeInUp>
           </div>
