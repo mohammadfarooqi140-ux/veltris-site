@@ -81,6 +81,46 @@ export default function WorkPage() {
           </FadeInUp>
         </div>
 
+        {/* WEBSITE PROTOTYPES SECTION */}
+        <section className="mb-24">
+          <FadeInUp>
+            <div className="flex items-center justify-between mb-8">
+              <div>
+                <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-400/90 block mb-1">
+                  Design Architecture
+                </span>
+                <h2 className="font-playfair text-2xl sm:text-4xl font-medium text-white">
+                  Website Prototypes
+                </h2>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                { name: "Noir Atelier", desc: "Luxury Bespoke Fashion", href: "/prototypes/noir-atelier" },
+                { name: "Blackline Atelier", desc: "Private Tattoo Studio", href: "/prototypes/blackline-atelier" },
+                { name: "Sterling", desc: "Architectural Flooring", href: "/prototypes/sterling" },
+                { name: "Hartley", desc: "Commercial Construction", href: "/prototypes/hartley" },
+              ].map((proto, idx) => (
+                <Link
+                  key={idx}
+                  href={proto.href}
+                  className="bg-[#0d0d0d] border border-[#1a1a1a] rounded-2xl p-6 hover:border-zinc-700 transition-colors group flex flex-col justify-between"
+                >
+                  <div>
+                    <h3 className="font-playfair text-lg font-medium text-white group-hover:text-amber-400 transition-colors mb-1">
+                      {proto.name}
+                    </h3>
+                    <p className="text-zinc-500 text-xs font-light">{proto.desc}</p>
+                  </div>
+                  <div className="mt-6 text-[11px] font-semibold uppercase tracking-wider text-zinc-400 flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+                    View Prototype &rarr;
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </FadeInUp>
+        </section>
+
         {/* CTA SECTION */}
         <section className="py-12 relative z-10">
           <FadeInUp>

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink, Monitor, Smartphone } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 
-export default function SterlingDemoPage() {
+export default function HartleyPrototypePage() {
   const [deviceView, setDeviceView] = useState<"desktop" | "mobile">("desktop");
 
   return (
@@ -30,22 +30,22 @@ export default function SterlingDemoPage() {
         <div className="max-w-3xl mb-16">
           <FadeInUp>
             <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-400/90 mb-4 inline-block">
-              Website Concept Demo
+              Website Prototype Showcase
             </span>
             <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight mb-6 text-white leading-tight">
-              Sterling
+              Hartley
             </h1>
             <p className="text-zinc-400 text-lg sm:text-xl font-light leading-relaxed mb-8">
-              A high-end commercial and architectural flooring specialist platform.
+              A premium commercial construction and architectural subcontracting concept.
             </p>
             <div className="flex items-center gap-4">
               <a
-                href="/sterling"
+                href="/hartley"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
               >
-                Open Fullscreen Site <ExternalLink className="w-3.5 h-3.5" />
+                Open Fullscreen Prototype <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
               {/* View Toggle */}
@@ -73,7 +73,7 @@ export default function SterlingDemoPage() {
           </FadeInUp>
         </div>
 
-        {/* DEMO MOCKUP CONTAINER */}
+        {/* PROTOTYPE MOCKUP CONTAINER */}
         <FadeInUp delay={0.2}>
           <div className="flex justify-center transition-all duration-300">
             {deviceView === "desktop" ? (
@@ -87,14 +87,14 @@ export default function SterlingDemoPage() {
                     <div className="w-3 h-3 rounded-full bg-green-500/80" />
                   </div>
                   <div className="mx-auto bg-zinc-900/80 border border-white/5 rounded-md px-4 py-1 text-[11px] font-mono text-zinc-500 max-w-sm w-full text-center truncate">
-                    sterlingflooring.veltris.uk
+                    hartley.veltris.uk
                   </div>
                 </div>
                 {/* Iframe content */}
                 <div className="w-full h-[650px] md:h-[800px] bg-black">
                   <iframe
-                    src="/sterling"
-                    title="Sterling Website Preview"
+                    src="/hartley"
+                    title="Hartley Prototype Preview"
                     className="w-full h-full border-none"
                   />
                 </div>
@@ -111,8 +111,8 @@ export default function SterlingDemoPage() {
                 {/* Mobile Iframe */}
                 <div className="w-full h-[700px] bg-black">
                   <iframe
-                    src="/sterling"
-                    title="Sterling Mobile Preview"
+                    src="/hartley"
+                    title="Hartley Mobile Prototype Preview"
                     className="w-full h-full border-none"
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function SterlingDemoPage() {
         {/* FOOTER DISCLAIMER */}
         <div className="mt-28 pt-12 border-t border-white/5 text-center">
           <p className="text-xs text-zinc-500 font-mono tracking-wider">
-            Design sample created by Veltris — for inspiration and portfolio purposes only.
+            Live Prototype created by Veltris for inspiration and portfolio purposes only.
           </p>
         </div>
 

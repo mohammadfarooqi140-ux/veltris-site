@@ -53,7 +53,7 @@ export default function Footer() {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/5 text-xs text-zinc-500 gap-4">
-          <p>© 2026 Veltris Pitch Deck Studio. All rights reserved.</p>
+          <p>© 2025 Veltris Pitch Deck Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-zinc-300 transition-colors">
               Privacy Policy

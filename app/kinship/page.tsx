@@ -385,7 +385,7 @@ export default function KinshipPage() {
             <a href="#" className="text-[#D4C5B0]/60 hover:text-[#B85C38] transition-colors uppercase tracking-widest text-sm">TikTok</a>
           </div>
           <div className="text-[#D4C5B0]/40 text-sm text-center md:text-right">
-            <p>© 2026 KINSHIP Barber Co.</p>
+            <p>© 2025 KINSHIP Barber Co.</p>
             <p className="mt-1">
               Website by <Link href="/" className="hover:text-[#F5F0EB] transition-colors border-b border-transparent hover:border-[#D4C5B0]/30 pb-0.5">Veltris</Link>
             </p>

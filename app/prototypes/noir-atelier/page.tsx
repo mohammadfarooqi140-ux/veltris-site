@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowLeft, ExternalLink, Monitor, Smartphone } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 
-export default function NoirAtelierDemoPage() {
+export default function NoirAtelierPrototypePage() {
   const [deviceView, setDeviceView] = useState<"desktop" | "mobile">("desktop");
 
   return (
@@ -30,7 +30,7 @@ export default function NoirAtelierDemoPage() {
         <div className="max-w-3xl mb-16">
           <FadeInUp>
             <span className="text-[10px] font-semibold uppercase tracking-[0.25em] text-amber-400/90 mb-4 inline-block">
-              Website Concept Demo
+              Website Prototype Showcase
             </span>
             <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl font-medium tracking-tight mb-6 text-white leading-tight">
               Noir Atelier
@@ -45,7 +45,7 @@ export default function NoirAtelierDemoPage() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black text-xs font-semibold uppercase tracking-wider hover:bg-zinc-200 transition-colors shadow-lg"
               >
-                Open Fullscreen Site <ExternalLink className="w-3.5 h-3.5" />
+                Open Fullscreen Prototype <ExternalLink className="w-3.5 h-3.5" />
               </a>
 
               {/* View Toggle */}
@@ -73,7 +73,7 @@ export default function NoirAtelierDemoPage() {
           </FadeInUp>
         </div>
 
-        {/* DEMO MOCKUP CONTAINER */}
+        {/* PROTOTYPE MOCKUP CONTAINER */}
         <FadeInUp delay={0.2}>
           <div className="flex justify-center transition-all duration-300">
             {deviceView === "desktop" ? (
@@ -94,7 +94,7 @@ export default function NoirAtelierDemoPage() {
                 <div className="w-full h-[650px] md:h-[800px] bg-black">
                   <iframe
                     src="/noir-atelier"
-                    title="Noir Atelier Website Preview"
+                    title="Noir Atelier Prototype Preview"
                     className="w-full h-full border-none"
                   />
                 </div>
@@ -112,7 +112,7 @@ export default function NoirAtelierDemoPage() {
                 <div className="w-full h-[700px] bg-black">
                   <iframe
                     src="/noir-atelier"
-                    title="Noir Atelier Mobile Preview"
+                    title="Noir Atelier Mobile Prototype Preview"
                     className="w-full h-full border-none"
                   />
                 </div>
@@ -124,7 +124,7 @@ export default function NoirAtelierDemoPage() {
         {/* FOOTER DISCLAIMER */}
         <div className="mt-28 pt-12 border-t border-white/5 text-center">
           <p className="text-xs text-zinc-500 font-mono tracking-wider">
-            Design sample created by Veltris — for inspiration and portfolio purposes only.
+            Live Prototype created by Veltris for inspiration and portfolio purposes only.
           </p>
         </div>
 

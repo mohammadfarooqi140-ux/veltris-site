@@ -341,7 +341,7 @@ export default function MarlowDeli() {
       
       {/* Footer */}
       <footer className="py-8 px-6 text-center border-t border-[#1B3B2B]/10">
-         <p className="text-[#1B3B2B]/50 text-sm">© 2026 Marlow Deli. All rights reserved.</p>
+         <p className="text-[#1B3B2B]/50 text-sm">© 2025 Marlow Deli. All rights reserved.</p>
       </footer>
     </div>
   );

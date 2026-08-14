@@ -346,13 +346,20 @@ export default function NoirAtelierPage() {
             <a href="#" className="text-[#C0C0C0]/60 hover:text-[#F0F0F0] transition-colors font-thin text-xs uppercase tracking-widest">Journal</a>
           </div>
           <div className="text-[#C0C0C0]/40 font-thin text-xs tracking-widest uppercase">
-            <p>© 2026 NOIR ATELIER</p>
+            <p>© 2025 NOIR ATELIER</p>
             <p className="mt-2">
               DESIGN BY <Link href="/" className="hover:text-[#F0F0F0] transition-colors">VELTRIS</Link>
             </p>
           </div>
         </div>
       </footer>
+
+      {/* Disclaimer */}
+      <div className="bg-black py-4 px-6 text-center border-t border-white/5">
+        <p className="text-[11px] text-zinc-500 font-mono tracking-wider">
+          Live Prototype created by Veltris for inspiration and portfolio purposes only.
+        </p>
+      </div>
     </main>
   );
 }

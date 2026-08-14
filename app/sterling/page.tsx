@@ -469,11 +469,18 @@ export default function SterlingFlooringPage() {
           </div>
 
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>© 2026 Sterling Industrial Flooring</p>
+            <p>© 2025 Sterling Industrial Flooring</p>
             <p className="text-gray-600">Concept direction created by Veltris</p>
           </div>
         </div>
       </footer>
+
+      {/* Disclaimer */}
+      <div className="bg-black py-4 px-6 text-center border-t border-white/5">
+        <p className="text-[11px] text-zinc-500 font-mono tracking-wider">
+          Live Prototype created by Veltris for inspiration and portfolio purposes only.
+        </p>
+      </div>
     </div>
   );
 }

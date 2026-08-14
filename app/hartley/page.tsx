@@ -400,6 +400,13 @@ export default function HartleyConceptPage() {
           <p className="uppercase tracking-widest text-[#555]">Concept direction created by Veltris</p>
         </div>
       </footer>
+
+      {/* Disclaimer */}
+      <div className="bg-black py-4 px-6 text-center border-t border-white/5">
+        <p className="text-[11px] text-zinc-500 font-mono tracking-wider">
+          Live Prototype created by Veltris for inspiration and portfolio purposes only.
+        </p>
+      </div>
     </main>
   );
 }

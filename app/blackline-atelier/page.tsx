@@ -360,12 +360,19 @@ export default function BlacklineAtelier() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-white/10 text-center flex flex-col items-center">
         <p className="text-white/30 text-xs tracking-widest uppercase mb-4">
-          © 2026 Blackline Atelier
+          © 2025 Blackline Atelier
         </p>
         <p className="text-white/20 text-[10px] tracking-widest uppercase font-mono max-w-xl leading-relaxed">
           This is a fictional concept build created by Veltris. It is not a real tattoo studio. Designed to demonstrate premium web development capabilities for local businesses.
         </p>
       </footer>
+
+      {/* Disclaimer */}
+      <div className="bg-black py-4 px-6 text-center border-t border-white/5">
+        <p className="text-[11px] text-zinc-500 font-mono tracking-wider">
+          Live Prototype created by Veltris for inspiration and portfolio purposes only.
+        </p>
+      </div>
     </div>
   );
 }
