@@ -16,8 +16,21 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.veltris.uk"),
   title: "Veltris — Cinematic Web Design Studio",
-  description: "Premium web design for businesses that care how they look. Built with AI speed and human taste.",
+  description:
+    "Premium web design for businesses that care how they look. Built with AI speed and human taste.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Veltris — Cinematic Web Design Studio",
+    description:
+      "Premium web design for businesses that care how they look. Built with AI speed and human taste.",
+    url: "https://www.veltris.uk",
+    siteName: "Veltris",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -27,11 +40,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
-      <body className={cn("min-h-screen font-sans antialiased bg-[#080808] text-[#F5F5F5] flex flex-col justify-between")}>
+      <body
+        className={cn(
+          "min-h-screen font-sans antialiased bg-[#080808] text-[#F5F5F5] flex flex-col justify-between"
+        )}
+      >
         <Navbar />
-        <div className="flex-grow">
-          {children}
-        </div>
+        <div className="flex-grow">{children}</div>
         <Footer />
       </body>
     </html>
