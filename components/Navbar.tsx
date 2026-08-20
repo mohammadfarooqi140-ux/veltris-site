@@ -75,10 +75,10 @@ export default function Navbar() {
         <button
           ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
-          className="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-zinc-950 border border-white/10 rounded-full flex items-center justify-center text-white shadow-2xl hover:bg-zinc-900 transition-all active:scale-95"
+          className="fixed bottom-6 right-6 z-[100] w-14 h-14 bg-surface border border-border-subtle rounded-full flex items-center justify-center text-ink shadow-2xl hover:bg-surface-raised transition-all active:scale-95"
           aria-label={isOpen ? "Close Veltris Menu" : "Open Veltris Menu"}
         >
-          {isOpen ? <X size={24} /> : <MoreHorizontal size={24} />}
+          {isOpen ? <X size={22} /> : <MoreHorizontal size={22} />}
         </button>
 
         {/* Mobile / Floating Dropdown Menu */}
@@ -90,10 +90,10 @@ export default function Navbar() {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.2 }}
-              className="fixed bottom-24 right-6 w-64 z-[100] bg-zinc-950/95 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden shadow-2xl"
+              className="fixed bottom-24 right-6 w-64 z-[100] bg-surface/95 backdrop-blur-xl border border-border-subtle rounded-2xl overflow-hidden shadow-2xl"
             >
-              <div className="p-4 bg-white/5 border-b border-white/5">
-                <p className="text-[10px] uppercase tracking-widest text-zinc-400 font-semibold text-center">Back to Veltris</p>
+              <div className="p-4 bg-paper/60 border-b border-border-subtle">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-ink-dim font-semibold text-center">Back to Veltris</p>
               </div>
               <div className="p-2 flex flex-col">
                 {navLinks.map((link) => {
@@ -102,9 +102,9 @@ export default function Navbar() {
                       key={link.name}
                       href={link.href}
                       onClick={() => setIsOpen(false)}
-                      className="px-4 py-3 text-sm uppercase tracking-[0.15em] font-medium rounded-lg transition-colors text-zinc-300 hover:bg-white/5 hover:text-white flex items-center gap-3"
+                      className="px-4 py-3 text-xs uppercase tracking-[0.16em] font-medium rounded-lg transition-colors text-ink-muted hover:bg-surface-raised hover:text-ink flex items-center gap-3"
                     >
-                      {link.name === "Home" && <Home size={16} />}
+                      {link.name === "Home" && <Home size={15} />}
                       {link.name}
                     </Link>
                   );
@@ -112,7 +112,7 @@ export default function Navbar() {
                 <Link
                   href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-2 mx-2 py-3 bg-white text-zinc-950 text-center text-[11px] uppercase tracking-[0.2em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
+                  className="mt-2 mx-2 py-3 bg-ink text-paper text-center text-[11px] uppercase tracking-[0.18em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
                 >
                   Start Your Deck
                 </Link>
@@ -127,13 +127,13 @@ export default function Navbar() {
   // STANDARD NAVBAR FOR MAIN VELTRIS PAGES
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-zinc-950/90 backdrop-blur-xl ${
-        isScrolled ? "border-b border-white/5 py-4 shadow-lg" : "py-6"
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 bg-paper/85 backdrop-blur-xl ${
+        isScrolled ? "border-b border-border-subtle py-4 shadow-lg" : "py-6"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold tracking-wider text-white hover:opacity-80 transition-opacity relative z-[101]">
+        <Link href="/" className="text-xl font-bold tracking-wider text-ink hover:opacity-80 transition-opacity relative z-[101]">
           Veltris
         </Link>
 
@@ -145,8 +145,8 @@ export default function Navbar() {
                <Link
                 key={link.name}
                 href={link.href}
-                className={`relative px-4 py-2 rounded-full text-[11px] tracking-[0.2em] uppercase font-medium transition-colors ${
-                  isActive ? "bg-white/5 text-white" : "text-zinc-400 hover:text-white hover:bg-white/[0.02]"
+                className={`relative px-4 py-2 rounded-full text-[11px] tracking-[0.18em] uppercase font-medium transition-colors ${
+                  isActive ? "bg-surface-raised text-ink border border-border-subtle" : "text-ink-muted hover:text-ink hover:bg-surface"
                 }`}
               >
                 {link.name}
@@ -155,7 +155,7 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.2em] uppercase font-bold bg-white text-zinc-950 hover:bg-zinc-200 transition-colors"
+            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-bold bg-ink text-paper hover:bg-zinc-200 transition-colors"
           >
             Start Your Deck
           </Link>
@@ -165,11 +165,11 @@ export default function Navbar() {
         <button
           ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden relative z-[101] flex items-center justify-center w-10 h-10 bg-white/5 rounded-full text-white hover:bg-white/10 hover:text-white transition-colors border border-white/5"
+          className="md:hidden relative z-[101] flex items-center justify-center w-10 h-10 bg-surface rounded-full text-ink hover:bg-surface-raised transition-colors border border-border-subtle"
           aria-label={isOpen ? "Close Menu" : "Open Menu"}
           aria-expanded={isOpen}
         >
-          {isOpen ? <X size={20} /> : <MoreHorizontal size={20} />}
+          {isOpen ? <X size={18} /> : <MoreHorizontal size={18} />}
         </button>
       </div>
 
@@ -182,7 +182,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="md:hidden absolute top-full left-0 right-0 bg-zinc-950 border-b border-white/5 overflow-hidden shadow-2xl"
+            className="md:hidden absolute top-full left-0 right-0 bg-paper border-b border-border-subtle overflow-hidden shadow-2xl"
           >
             <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-2">
               {navLinks.map((link) => {
@@ -192,8 +192,8 @@ export default function Navbar() {
                     key={link.name}
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className={`py-4 px-4 rounded-xl text-[13px] uppercase tracking-[0.2em] font-medium transition-colors flex items-center ${
-                      isActive ? "bg-white/10 text-white" : "text-zinc-400 hover:bg-white/5 hover:text-white"
+                    className={`py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-medium transition-colors flex items-center ${
+                      isActive ? "bg-surface-raised text-ink border border-border-subtle" : "text-ink-muted hover:bg-surface hover:text-ink"
                     }`}
                   >
                     {link.name}
@@ -203,7 +203,7 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 py-4 px-4 rounded-xl text-[13px] uppercase tracking-[0.2em] font-bold bg-white text-zinc-950 text-center transition-colors hover:bg-zinc-200"
+                className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-bold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
               >
                 Start Your Deck
               </Link>

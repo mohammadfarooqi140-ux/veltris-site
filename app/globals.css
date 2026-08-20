@@ -4,28 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Hallmark Editorial Luxury Token System */
+  --color-paper: oklch(14% 0.012 45); /* Warm obsidian/charcoal */
+  --color-paper-subtle: oklch(17% 0.014 45);
+  --color-surface: oklch(19% 0.012 45);
+  --color-surface-raised: oklch(22% 0.014 45);
+  --color-border: oklch(26% 0.012 45);
+  --color-border-subtle: oklch(21% 0.01 45);
+  --color-ink: oklch(96% 0.005 50);
+  --color-ink-muted: oklch(72% 0.01 50);
+  --color-ink-dim: oklch(52% 0.01 50);
+  --color-accent: oklch(80% 0.12 75); /* Refined champagne gold */
+  --color-accent-subtle: oklch(75% 0.08 75 / 0.15);
+}
+
 @layer base {
   * {
-    @apply border-[#1a1a1a];
+    border-color: var(--color-border-subtle);
+  }
+
+  html {
+    overflow-x: clip;
+    scroll-behavior: smooth;
   }
   
   body {
-    background-color: #000000 !important;
-    color: #F5F5F5 !important;
+    background-color: var(--color-paper) !important;
+    color: var(--color-ink) !important;
+    overflow-x: clip;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   select option {
-    background-color: #0a0a0a;
-    color: #e4e4e7;
+    background-color: var(--color-surface);
+    color: var(--color-ink);
     padding: 8px;
   }
   
   select option:checked {
-    background-color: #18181b;
-    color: #ffffff;
+    background-color: var(--color-surface-raised);
+    color: var(--color-ink);
   }
   
   select option:hover {
-    background-color: #18181b;
+    background-color: var(--color-surface-raised);
   }
 }

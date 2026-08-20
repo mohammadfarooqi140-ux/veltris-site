@@ -8,6 +8,19 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        paper: "var(--color-paper)",
+        "paper-subtle": "var(--color-paper-subtle)",
+        surface: "var(--color-surface)",
+        "surface-raised": "var(--color-surface-raised)",
+        border: "var(--color-border)",
+        "border-subtle": "var(--color-border-subtle)",
+        ink: "var(--color-ink)",
+        "ink-muted": "var(--color-ink-muted)",
+        "ink-dim": "var(--color-ink-dim)",
+        accent: "var(--color-accent)",
+        "accent-subtle": "var(--color-accent-subtle)",
+      },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
         playfair: ["var(--font-playfair)", "serif"],

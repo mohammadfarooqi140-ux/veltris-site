@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable} ${cinzel.variable}`}>
       <head />
-      <body className={cn("min-h-screen font-sans antialiased bg-black text-zinc-50 flex flex-col justify-between selection:bg-amber-500/20 selection:text-amber-200")}>
+      <body className={cn("min-h-screen font-sans antialiased bg-paper text-ink flex flex-col justify-between selection:bg-surface-raised selection:text-ink")}>
         <AnalyticsScriptLoader />
         <Navbar />
         <div className="flex-grow">

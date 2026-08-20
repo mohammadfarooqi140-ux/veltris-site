@@ -7,13 +7,13 @@ import { Check, Loader2 } from "lucide-react";
 // ─── Shared field classes ─────────────────────────────────────────────────────
 
 const fieldClass =
-  "bg-zinc-900/40 border border-transparent text-white p-4 md:p-5 rounded-2xl w-full focus:bg-white/[0.03] outline-none transition-all duration-500 text-sm placeholder:text-zinc-600 shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]";
+  "bg-surface border border-border-subtle text-ink p-4 md:p-5 rounded-2xl w-full focus:border-border outline-none transition-all duration-300 text-sm placeholder:text-ink-dim";
 
 const selectClass =
-  "bg-zinc-900/40 border border-transparent text-white p-4 md:p-5 rounded-2xl w-full focus:bg-white/[0.03] outline-none transition-all duration-500 text-sm cursor-pointer shadow-[inset_0_1px_1px_rgba(255,255,255,0.02)]";
+  "bg-surface border border-border-subtle text-ink p-4 md:p-5 rounded-2xl w-full focus:border-border outline-none transition-all duration-300 text-sm cursor-pointer";
 
 const labelClass =
-  "text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-500 block mb-3 pl-1";
+  "text-[10px] font-mono font-semibold uppercase tracking-[0.2em] text-ink-dim block mb-3 pl-1";
 
 export default function ContactPage() {
   const [name, setName] = useState("");
@@ -59,41 +59,43 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-black min-h-screen relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-[100px] pointer-events-none" />
+    <main className="bg-paper min-h-screen relative text-ink">
       <div className="max-w-4xl mx-auto px-6 md:px-12 pt-24 md:pt-32 pb-16 md:pb-24">
 
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-white mb-6 tracking-tight leading-[1.08]">
+          <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-4">
+            Direct Studio Inquiry
+          </span>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-bold text-ink mb-6 tracking-tight leading-[1.08]">
             Start your deck.
           </h1>
-          <p className="text-base sm:text-lg text-zinc-400 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-ink-muted leading-relaxed max-w-2xl mx-auto">
             Tell us about your raise and we will come back within 24 hours.
           </p>
-          <p className="text-zinc-500 text-sm mt-3">
+          <p className="text-ink-dim text-xs font-mono mt-3">
             Or email us directly at{" "}
-            <a href="mailto:muhammad@veltris.uk" className="text-amber-400/90 hover:text-amber-300 transition-colors underline underline-offset-2">
+            <a href="mailto:muhammad@veltris.uk" className="text-accent hover:underline underline-offset-2">
               muhammad@veltris.uk
             </a>
           </p>
-          <div className="mt-12 p-6 rounded-3xl bg-zinc-900/30 max-w-xl mx-auto inline-block shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]">
-             <p className="text-xs text-zinc-400 leading-relaxed text-left">
+          <div className="mt-8 p-6 rounded-2xl bg-surface border border-border-subtle max-w-xl mx-auto inline-block">
+             <p className="text-xs text-ink-muted leading-relaxed text-left">
                No commitment required. We will review your brief, and if it is a fit we will jump on a short call to align on scope and timeline before anything moves.
              </p>
           </div>
         </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
         >
-          <div className="bg-zinc-900/40 rounded-3xl p-8 md:p-12 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] relative z-10 overflow-hidden backdrop-blur-xl">
+          <div className="bg-surface border border-border-subtle rounded-3xl p-8 md:p-12 relative z-10">
             <AnimatePresence mode="wait">
               {status === "success" ? (
                 <motion.div
@@ -104,16 +106,16 @@ export default function ContactPage() {
                   transition={{ duration: 0.4 }}
                   className="text-center py-24 px-10 flex flex-col items-center justify-center"
                 >
-                  <div className="w-16 h-16 bg-white flex items-center justify-center mb-8 rounded-full">
-                    <Check className="w-8 h-8 text-black" />
+                  <div className="w-14 h-14 bg-ink flex items-center justify-center mb-6 rounded-full">
+                    <Check className="w-6 h-6 text-paper" />
                   </div>
-                  <h3 className="text-3xl font-playfair font-bold text-white mb-4">Brief received.</h3>
-                  <p className="text-zinc-400 text-base max-w-md mx-auto mb-10 leading-relaxed">
+                  <h3 className="text-3xl font-playfair font-bold text-ink mb-4">Brief received.</h3>
+                  <p className="text-ink-muted text-base max-w-md mx-auto mb-10 leading-relaxed">
                     We will review your details and come back within 24 hours.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="border border-white/10 rounded-full text-zinc-400 text-[11px] tracking-widest uppercase px-8 py-4 hover:border-white hover:text-white transition-all duration-300"
+                    className="border border-border-subtle rounded-full text-ink-muted text-[11px] font-mono tracking-widest uppercase px-8 py-3.5 hover:border-ink hover:text-ink transition-all duration-300"
                   >
                     Submit Another Brief
                   </button>
@@ -124,7 +126,7 @@ export default function ContactPage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                  transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
                   className="space-y-6 md:space-y-8"
                 >
                   <AnimatePresence>
@@ -133,7 +135,7 @@ export default function ContactPage() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="bg-red-950/40 border border-red-900/50 text-red-400 p-4 text-xs font-mono overflow-hidden rounded-xl"
+                        className="bg-red-950/30 border border-red-900/40 text-red-400 p-4 text-xs font-mono overflow-hidden rounded-xl"
                       >
                         {errorMessage}
                       </motion.div>
@@ -244,7 +246,7 @@ export default function ContactPage() {
                   <motion.button
                     onClick={handleSubmit}
                     disabled={status === "submitting"}
-                    className="flex items-center justify-center w-full text-center bg-white text-zinc-950 min-h-[56px] px-6 py-4 rounded-full text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] transition hover:shadow-[0_0_20px_rgba(255,255,255,0.15)] active:scale-[0.98] mt-8 disabled:opacity-60"
+                    className="flex items-center justify-center w-full text-center bg-ink text-paper min-h-[52px] px-6 py-3.5 rounded-full text-xs font-semibold uppercase tracking-[0.16em] transition hover:bg-zinc-200 active:scale-[0.98] mt-8 disabled:opacity-60"
                   >
                     {status === "submitting" ? (
                       <>
@@ -264,3 +266,4 @@ export default function ContactPage() {
     </main>
   );
 }
+
