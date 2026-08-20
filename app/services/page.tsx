@@ -83,7 +83,7 @@ export default function ServicesPage() {
                   </ul>
                 </div>
                 <div className="mt-auto border-t border-border-subtle pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                  <span className="text-lg text-ink font-medium tabular-nums">From £1,999</span>
+                  <span className="text-lg text-ink font-medium tabular-nums">From £1,499</span>
                   <Link href="/contact" className="text-xs font-semibold uppercase tracking-widest text-ink-muted hover:text-ink transition">
                     Get a Quote →
                   </Link>
@@ -199,7 +199,7 @@ export default function ServicesPage() {
                 { step: "01", title: "You share the brief", desc: "Tell us about your company, raise target, and who you are pitching." },
                 { step: "02", title: "We shape the narrative", desc: "We build the story arc, slide structure, and financial data layout." },
                 { step: "03", title: "We design the deck", desc: "Every slide crafted perfectly, then exported to PPTX and PDF." },
-                { step: "04", title: "You pitch and raise", desc: "Delivered in 5 to 7 days. You pitch with confidence." }
+                { step: "04", title: "You pitch and raise", desc: "Delivered in 10 days. You pitch with confidence." }
               ].map((process, i) => (
                 <div key={i} className="flex flex-col border-l border-border-subtle pl-6 py-2">
                   <span className="text-xs font-mono text-ink-dim mb-4">{process.step}</span>

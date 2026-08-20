@@ -96,7 +96,7 @@ export default function AboutPage() {
                   <span className="text-xs font-mono text-ink-dim block mb-3">03 · VELOCITY</span>
                   <h3 className="font-playfair text-2xl font-medium mb-3 text-ink">Founder Speed</h3>
                   <p className="text-ink-muted text-sm md:text-base leading-relaxed font-light">
-                    High-velocity execution without agency bureaucracy. 5 to 7 day delivery designed around rapid fundraising momentum.
+                    High-velocity execution without agency bureaucracy. Delivered in 10 days, designed around rapid fundraising momentum.
                   </p>
                 </div>
               </FadeInUp>
@@ -123,7 +123,7 @@ export default function AboutPage() {
               </p>
 
               <div className="flex flex-wrap items-center justify-center gap-6 text-xs font-mono text-ink-dim mb-10 tabular-nums">
-                <span className="inline-flex items-center gap-1.5"><Zap className="w-3.5 h-3.5 text-accent" /> 5-7 Day Turnaround</span>
+                <span className="inline-flex items-center gap-1.5"><Zap className="w-3.5 h-3.5 text-accent" /> Delivered in 10 Days</span>
                 <span className="text-border-subtle">•</span>
                 <span className="inline-flex items-center gap-1.5"><Layers className="w-3.5 h-3.5 text-accent" /> 100% Custom Decks</span>
                 <span className="text-border-subtle">•</span>

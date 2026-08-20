@@ -41,7 +41,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="text-xs text-ink-dim font-mono tabular-nums">
-              From £1,999 · Delivered in 5 to 7 days
+              From £1,499 · Delivered in 10 days
             </p>
           </FadeInUp>
         </div>
