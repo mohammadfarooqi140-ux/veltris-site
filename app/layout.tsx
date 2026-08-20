@@ -28,8 +28,28 @@ const cinzel = Cinzel({
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "Veltris | Luxury Pitch Deck Studio",
-  description: "Bespoke pitch deck agency for founders raising Pre-Seed through Series C. We clarify your narrative, visualize your financial data, and design investor-ready presentations.",
+  metadataBase: new URL("https://www.veltris.uk"),
+  title: {
+    default: "Veltris | Luxury Pitch Deck & Website Studio",
+    template: "%s | Veltris",
+  },
+  description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C and luxury real estate developments.",
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    title: "Veltris | Luxury Pitch Deck & Website Studio",
+    description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C.",
+    url: "https://www.veltris.uk",
+    siteName: "Veltris",
+    locale: "en_GB",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Veltris | Luxury Pitch Deck & Website Studio",
+    description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C.",
+  },
 };
 
 export default function RootLayout({

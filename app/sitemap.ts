@@ -17,12 +17,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
-      url: 'https://www.veltris.uk/about',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.9,
-    },
-    {
       url: 'https://www.veltris.uk/work',
       lastModified,
       changeFrequency: 'weekly',
@@ -33,72 +27,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.9,
-    },
-    {
-      url: 'https://www.veltris.uk/prototypes/noir-atelier',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.veltris.uk/prototypes/blackline-atelier',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.veltris.uk/prototypes/sterling',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.veltris.uk/prototypes/hartley',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://www.veltris.uk/noir-atelier',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/blackline-atelier',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/sterling',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/hartley',
-      lastModified,
-      changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: 'https://www.veltris.uk/privacy-policy',
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: 'https://www.veltris.uk/cookie-policy',
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.4,
-    },
-    {
-      url: 'https://www.veltris.uk/terms',
-      lastModified,
-      changeFrequency: 'yearly',
-      priority: 0.4,
     },
   ]
 }
