@@ -5,19 +5,20 @@
 @tailwind utilities;
 
 :root {
-  /* Hallmark Editorial Luxury Token System */
-  --color-paper: oklch(14% 0.012 45); /* Warm obsidian/charcoal */
-  --color-paper-subtle: oklch(17% 0.014 45);
-  --color-surface: oklch(19% 0.012 45);
-  --color-surface-raised: oklch(22% 0.014 45);
-  --color-border: oklch(26% 0.012 45);
-  --color-border-subtle: oklch(21% 0.01 45);
-  --color-ink: oklch(96% 0.005 50);
-  --color-ink-muted: oklch(72% 0.01 50);
-  --color-ink-dim: oklch(52% 0.01 50);
-  --color-accent: oklch(80% 0.12 75); /* Refined champagne gold */
-  --color-accent-subtle: oklch(75% 0.08 75 / 0.15);
+  /* Ultra-Deep Luxury Jet Black Token System */
+  --color-paper: #000000; /* Pure deep luxury black */
+  --color-paper-subtle: #08080a; /* Subtle deep onyx */
+  --color-surface: #0e0e11; /* Clean elevated surface */
+  --color-surface-raised: #16161a; /* Distinct hover/raised card */
+  --color-border: #27272a; /* Clean zinc border */
+  --color-border-subtle: #18181b; /* Refined subtle hairline */
+  --color-ink: #ffffff; /* Crisp pure white headers */
+  --color-ink-muted: #a1a1aa; /* High-clarity neutral text (zinc-400) */
+  --color-ink-dim: #71717a; /* Subtle secondary metadata */
+  --color-accent: #f59e0b; /* Crisp warm amber/gold */
+  --color-accent-subtle: rgba(245, 158, 11, 0.15);
 }
+
 
 @layer base {
   * {
