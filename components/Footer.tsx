@@ -1,6 +1,18 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+const mainPages = ["/", "/services", "/work", "/contact", "/about", "/privacy", "/terms", "/privacy-policy", "/cookie-policy"];
 
 export default function Footer() {
+  const pathname = usePathname();
+  const isConceptPage = !mainPages.includes(pathname);
+
+  if (isConceptPage) {
+    return null;
+  }
+
   return (
     <footer className="bg-paper border-t border-border-subtle pt-20 pb-12 text-ink">
       <div className="max-w-7xl mx-auto px-6 md:px-12">

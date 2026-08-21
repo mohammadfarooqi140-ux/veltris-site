@@ -100,12 +100,13 @@ export default function WorkPage() {
                 </h2>
               </div>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Noir Atelier", desc: "Luxury Bespoke Fashion", href: "/prototypes/noir-atelier" },
-                { name: "Blackline Atelier", desc: "Private Tattoo Studio", href: "/prototypes/blackline-atelier" },
-                { name: "Sterling", desc: "Architectural Flooring", href: "/prototypes/sterling" },
-                { name: "Hartley", desc: "Commercial Construction", href: "/prototypes/hartley" },
+                { name: "Tattoo Hub Studio Prototype", desc: "Black & Grey Realism Atelier", href: "/prototypes/tattoo-hub-studio" },
+                { name: "Noir Atelier Prototype", desc: "Luxury Bespoke Fashion", href: "/prototypes/noir-atelier" },
+                { name: "Blackline Atelier Prototype", desc: "Private Tattoo Studio", href: "/prototypes/blackline-atelier" },
+                { name: "Sterling Prototype", desc: "Architectural Flooring", href: "/prototypes/sterling" },
+                { name: "Hartley Prototype", desc: "Commercial Construction", href: "/prototypes/hartley" },
               ].map((proto, idx) => (
                 <Link
                   key={idx}
