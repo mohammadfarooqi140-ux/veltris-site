@@ -118,7 +118,7 @@ export default function TattooHubStudioPage() {
               alt="Bogdan Vodă tattooing a large-scale back piece by the Woodend Mill window"
               fill
               priority
-              className="object-cover filter grayscale contrast-115 group-hover:scale-105 transition-transform duration-700"
+              className="object-cover group-hover:scale-105 transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#070707]/80 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6">
@@ -137,14 +137,14 @@ export default function TattooHubStudioPage() {
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
             
-            {/* Left Image (studio.webp) */}
+            {/* Left Image (studio.jpg) */}
             <div className="lg:col-span-7">
               <div className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-[#121212] border border-white/[0.1] overflow-hidden">
                 <Image
-                  src="/TattooHubStudio/studio.webp"
+                  src="/TattooHubStudio/studio.jpg"
                   alt="Tattoo Hub Studio interior at Woodend Mill Level 3"
                   fill
-                  className="object-cover filter grayscale contrast-110"
+                  className="object-cover"
                 />
                 <div className="absolute bottom-3 right-3 px-2.5 py-1 bg-black/80 backdrop-blur-sm border border-white/10 text-[9px] font-mono uppercase tracking-widest text-[#C5A880]">
                   Yellow Door · Level 3
@@ -204,7 +204,7 @@ export default function TattooHubStudioPage() {
                   src="/TattooHubStudio/fathand.jpg"
                   alt="Sacred devotion religious sleeve detail by Bogdan Vodă"
                   fill
-                  className="object-cover filter grayscale contrast-120 hover:scale-105 transition-transform duration-700"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-5 sm:p-6">
@@ -228,7 +228,7 @@ export default function TattooHubStudioPage() {
                   src="/TattooHubStudio/thinhand.jpg"
                   alt="The Ricky Hatton boxing tribute portrait by Bogdan Vodă"
                   fill
-                  className="object-cover filter grayscale contrast-120 hover:scale-105 transition-transform duration-700"
+                  className="object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
               <div className="p-5 sm:p-6">
@@ -252,7 +252,7 @@ export default function TattooHubStudioPage() {
                   src="/TattooHubStudio/leg.jpg"
                   alt="Vintage analogue cassette and radio composition leg piece by Bogdan Vodă"
                   fill
-                  className="object-cover filter grayscale contrast-120"
+                  className="object-cover"
                 />
               </div>
               <div className="flex-grow">
