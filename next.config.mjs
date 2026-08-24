@@ -94,11 +94,11 @@ const nextConfig = {
             key: 'Content-Security-Policy',
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://cloudflareinsights.com https://googletagmanager.com",
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://va.vercel-scripts.com https://vitals.vercel-insights.com https://static.cloudflareinsights.com https://www.googletagmanager.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: blob: https://images.unsplash.com https://assets.aceternity.com",
-              "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://githack.com",
+              "connect-src 'self' https://vitals.vercel-insights.com https://va.vercel-scripts.com https://raw.githack.com",
               "media-src 'self'",
               "frame-src 'none'",
               "object-src 'none'",
