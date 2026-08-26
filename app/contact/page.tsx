@@ -72,7 +72,7 @@ export default function ContactPage() {
     setErrorMessage("");
 
     try {
-      const response = await fetch("https://formspree.io/f/mdajonkr", {
+      let response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -87,6 +87,23 @@ export default function ContactPage() {
         }),
       });
 
+      if (!response.ok && response.status === 404) {
+        response = await fetch("https://formspree.io/f/mdajonkr", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            businessName: formData.businessName.trim(),
+            websiteUrl: formData.websiteUrl.trim() || "Not Provided",
+            projectGoal: formData.projectGoal.trim(),
+          }),
+        });
+      }
+
       if (response.ok) {
         setStatus("success");
         setFormData({
@@ -97,14 +114,14 @@ export default function ContactPage() {
           projectGoal: "",
         });
       } else {
-        const data = await response.json();
+        const data = await response.json().catch(() => ({}));
         setErrorMessage(
-          data?.errors?.[0]?.message || "Something went wrong. Please try again or email muhammad@veltris.uk."
+          data?.error || data?.errors?.[0]?.message || "Something went wrong. Please try again or email muhammad@veltris.uk directly."
         );
         setStatus("error");
       }
     } catch {
-      setErrorMessage("Connection error. Please check your connection or email muhammad@veltris.uk directly.");
+      setErrorMessage("Something went wrong. Please try again or email muhammad@veltris.uk directly.");
       setStatus("error");
     }
   };
