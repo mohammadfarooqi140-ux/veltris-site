@@ -22,7 +22,7 @@ export default function Footer() {
               VELTRIS
             </Link>
             <p className="text-ink-muted text-sm md:text-base max-w-sm leading-relaxed font-light">
-              Digital architecture and conversion optimization for private aesthetic clinics and luxury property developers. Built strictly to The Veltris Standard.
+              Veltris is a UK based digital studio creating premium websites for selected private clinics, aesthetics practices, property brands, and interior design businesses.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:justify-self-end">
@@ -47,11 +47,11 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="text-[11px] font-mono font-semibold text-ink-dim mb-6 uppercase tracking-widest">Portfolio</h4>
+              <h4 className="text-[11px] font-mono font-semibold text-ink-dim mb-6 uppercase tracking-widest">Work</h4>
               <ul className="space-y-3.5 text-xs uppercase tracking-wider font-medium">
                 <li>
                   <Link href="/work" className="text-ink-muted hover:text-ink transition-colors">
-                    Work
+                    Selected Work
                   </Link>
                 </li>
                 <li>
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-subtle text-xs text-ink-dim font-mono gap-4">
-          <p>© 2025 Veltris Studio. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Veltris. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-ink-muted transition-colors">
               Privacy Policy

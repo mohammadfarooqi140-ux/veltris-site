@@ -155,18 +155,18 @@ export default function Navbar() {
           })}
           <Link
             href="/contact"
-            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-bold bg-ink text-paper hover:bg-zinc-200 transition-colors"
+            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-semibold bg-ink text-paper hover:bg-zinc-200 transition-colors"
           >
-            Check Availability
+            Discuss a Project
           </Link>
         </div>
 
-        {/* Mobile Menu Toggle — Three Dots */}
+        {/* Mobile Menu Toggle */}
         <button
           ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden relative z-[101] flex items-center justify-center w-10 h-10 bg-surface rounded-full text-ink hover:bg-surface-raised transition-colors border border-border-subtle"
-          aria-label={isOpen ? "Close Menu" : "Open Menu"}
+          aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
         >
           {isOpen ? <X size={18} /> : <MoreHorizontal size={18} />}
@@ -203,9 +203,9 @@ export default function Navbar() {
               <Link
                 href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-bold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
+                className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-semibold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
               >
-                Check Availability
+                Discuss a Project
               </Link>
             </div>
           </motion.div>

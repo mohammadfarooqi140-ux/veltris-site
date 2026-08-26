@@ -30,25 +30,25 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veltris.uk"),
   title: {
-    default: "Veltris | Luxury Web Design & Conversion Architecture UK",
-    template: "%s | Veltris",
+    default: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
+    template: "%s",
   },
-  description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
+  description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Veltris | Luxury Web Design & Conversion Architecture UK",
-    description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
-    url: "https://www.veltris.uk",
+    title: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
+    description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
+    url: "https://www.veltris.uk/",
     siteName: "Veltris",
     locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Veltris | Luxury Web Design & Conversion Architecture UK",
-    description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
+    title: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
+    description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
   },
 };
 

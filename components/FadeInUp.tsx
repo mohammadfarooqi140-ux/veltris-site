@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ReactNode } from "react";
 
 interface FadeInUpProps {
@@ -11,6 +11,12 @@ interface FadeInUpProps {
 }
 
 export const FadeInUp = ({ children, delay = 0, className = "", duration = 0.4 }: FadeInUpProps) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 14 }}
