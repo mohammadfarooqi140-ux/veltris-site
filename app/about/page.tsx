@@ -94,7 +94,7 @@ export default function AboutPage() {
                     02 · EXCLUSIVITY
                   </span>
                   <h3 className="font-playfair text-2xl font-medium mb-3 text-ink">
-                    1 Engagement Per Month
+                    3 Engagements Per Month
                   </h3>
                   <p className="text-ink-muted text-sm md:text-base leading-relaxed font-light">
                     Our strict capacity quota guarantees complete principal focus on your platform architecture, ensuring every viewport is audited and refined without compromise.

@@ -170,7 +170,7 @@ export default function ServicesPage() {
                 Secure Studio Availability.
               </h2>
               <p className="text-ink-muted text-base sm:text-lg max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                We accept only 1 exclusive brand engagement per month to protect uncompromising code integrity and direct principal involvement.
+                We accept only 3 exclusive brand engagements per month to protect uncompromising code integrity and direct principal involvement.
               </p>
               <Link
                 href="/contact"

@@ -79,7 +79,7 @@ export default function ContactPage() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface/80 border border-border-subtle text-[10px] md:text-[11px] font-mono tracking-widest text-accent uppercase mb-6 backdrop-blur-md">
             <Shield className="w-3 h-3" />
-            STRICT CAPACITY ALLOCATION // 1 CLIENT PER MONTH
+            STRICT CAPACITY ALLOCATION // 3 CLIENTS PER MONTH
           </div>
           
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-medium text-ink mb-6 tracking-tight leading-[1.08]">
@@ -93,7 +93,7 @@ export default function ContactPage() {
           {/* Waitlist Callout Note */}
           <div className="mt-8 p-4 md:p-5 rounded-2xl bg-surface border border-border-subtle max-w-lg mx-auto inline-block">
             <p className="text-xs font-mono text-ink leading-relaxed text-center">
-              <span className="text-accent font-semibold">Current Waitlist:</span> 1 Slot Available for {currentMonth}.
+              <span className="text-accent font-semibold">Current Waitlist:</span> 2 Slots Remaining for {currentMonth}.
             </p>
           </div>
         </motion.div>

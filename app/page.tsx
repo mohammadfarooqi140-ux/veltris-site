@@ -87,7 +87,7 @@ export default function Home() {
                 <span className="group-hover:translate-x-0.5 transition-transform">→</span>
               </Link>
               <span className="hidden sm:inline text-border-subtle">·</span>
-              <span className="text-accent/90">Limited to 1 Brand Engagement per Month.</span>
+              <span className="text-accent/90">Limited to 3 Brand Engagements per Month.</span>
             </div>
           </FadeInUp>
         </div>
@@ -174,12 +174,12 @@ export default function Home() {
                 </div>
 
                 <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium mb-6 text-ink leading-tight">
-                  One Client. Dedicated Focus. Absolute Precision.
+                  Three Clients. Dedicated Focus. Absolute Precision.
                 </h2>
 
                 <div className="space-y-4 text-ink-muted font-light leading-relaxed text-base md:text-lg">
                   <p>
-                    We are an elite boutique studio, not a high-volume agency. To protect production-grade integrity and maintain deep involvement in every build, the Veltris engine only accepts one exclusive brand engagement per calendar month.
+                    We are an elite boutique studio, not a high-volume agency. To protect production-grade integrity and maintain deep involvement in every build, the Veltris engine only accepts three exclusive brand engagements per calendar month.
                   </p>
                   <p>
                     We do not use pre-purchased templates, offshore execution, or work with low-ticket volume operations. Every interface is custom-architected for established private healthcare practices and premier luxury property groups requiring flawless digital prestige.
@@ -211,9 +211,9 @@ export default function Home() {
                         Monthly Capacity
                       </span>
                       <p className="text-xl font-playfair font-medium text-ink flex items-center justify-between">
-                        <span>1 / 1 Engagements Allocated</span>
+                        <span>3 Engagements / Month</span>
                         <span className="text-xs font-mono text-accent bg-surface-raised px-2.5 py-1 rounded-full border border-border-subtle">
-                          Strict
+                          Strict Quota
                         </span>
                       </p>
                     </div>
