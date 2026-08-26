@@ -102,11 +102,9 @@ export default function WorkPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { name: "Tattoo Hub Studio Prototype", desc: "Black & Grey Realism Atelier", href: "/prototypes/tattoo-hub-studio" },
-                { name: "Noir Atelier Prototype", desc: "Luxury Bespoke Fashion", href: "/prototypes/noir-atelier" },
-                { name: "Blackline Atelier Prototype", desc: "Private Tattoo Studio", href: "/prototypes/blackline-atelier" },
-                { name: "Sterling Prototype", desc: "Architectural Flooring", href: "/prototypes/sterling" },
-                { name: "Hartley Prototype", desc: "Commercial Construction", href: "/prototypes/hartley" },
+                { name: "Noir Atelier Prototype", desc: "Luxury Bespoke Architecture & Design", href: "/prototypes/noir-atelier" },
+                { name: "Sterling Prototype", desc: "Architectural Materials & Surfaces", href: "/prototypes/sterling" },
+                { name: "Hartley Prototype", desc: "Commercial & Private Development", href: "/prototypes/hartley" },
               ].map((proto, idx) => (
                 <Link
                   key={idx}
@@ -141,7 +139,7 @@ export default function WorkPage() {
               </h2>
               
               <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-4 max-w-2xl mx-auto">
-                Due to NDAs and active fundraising rounds, we share our work privately with prospective clients. If you&apos;d like to see our portfolio, just ask &mdash; we&apos;ll set up a short intro call.
+                Due to NDAs and client discretion, we share full architectural case studies privately with prospective clients. If you&apos;d like to review our clinic and luxury property builds, request a private audit.
               </p>
 
               <p className="text-ink-dim text-xs font-mono mb-10">
@@ -159,13 +157,13 @@ export default function WorkPage() {
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.16em] hover:bg-zinc-200 transition-colors"
                 >
-                  Start Your Deck <ArrowRight className="w-4 h-4" />
+                  Check Availability <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/services"
                   className="inline-flex items-center justify-center bg-surface border border-border-subtle text-ink font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.16em] hover:bg-surface-raised transition-colors"
                 >
-                  View Services &amp; Pricing
+                  View Services
                 </Link>
               </div>
             </div>

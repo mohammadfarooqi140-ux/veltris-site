@@ -114,7 +114,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                   className="mt-2 mx-2 py-3 bg-ink text-paper text-center text-[11px] uppercase tracking-[0.18em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
                 >
-                  Start Your Deck
+                  Check Availability
                 </Link>
               </div>
             </motion.div>
@@ -157,7 +157,7 @@ export default function Navbar() {
             href="/contact"
             className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-bold bg-ink text-paper hover:bg-zinc-200 transition-colors"
           >
-            Start Your Deck
+            Check Availability
           </Link>
         </div>
 
@@ -205,7 +205,7 @@ export default function Navbar() {
                 onClick={() => setIsOpen(false)}
                 className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-bold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
               >
-                Start Your Deck
+                Check Availability
               </Link>
             </div>
           </motion.div>

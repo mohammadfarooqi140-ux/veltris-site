@@ -22,7 +22,7 @@ export default function Footer() {
               VELTRIS
             </Link>
             <p className="text-ink-muted text-sm md:text-base max-w-sm leading-relaxed font-light">
-              A luxury pitch deck studio for founders who are serious about raising. We also build premium websites for startups and real estate projects.
+              Digital architecture and conversion optimization for private aesthetic clinics and luxury property developers. Built strictly to The Veltris Standard.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:justify-self-end">
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
         
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-subtle text-xs text-ink-dim font-mono gap-4">
-          <p>© 2025 Veltris Pitch Deck Studio. All rights reserved.</p>
+          <p>© 2025 Veltris Studio. All rights reserved.</p>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-ink-muted transition-colors">
               Privacy Policy

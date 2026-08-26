@@ -30,16 +30,16 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veltris.uk"),
   title: {
-    default: "Veltris | Luxury Pitch Deck & Website Studio",
+    default: "Veltris | Luxury Web Design & Conversion Architecture UK",
     template: "%s | Veltris",
   },
-  description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C and luxury real estate developments.",
+  description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Veltris | Luxury Pitch Deck & Website Studio",
-    description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C.",
+    title: "Veltris | Luxury Web Design & Conversion Architecture UK",
+    description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
     url: "https://www.veltris.uk",
     siteName: "Veltris",
     locale: "en_GB",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Veltris | Luxury Pitch Deck & Website Studio",
-    description: "Bespoke pitch deck agency and premium website studio for founders raising Pre-Seed through Series C.",
+    title: "Veltris | Luxury Web Design & Conversion Architecture UK",
+    description: "Bespoke digital flagships and conversion optimization for UK private clinics and luxury property developers. Built strictly to The Veltris Standard.",
   },
 };
 
