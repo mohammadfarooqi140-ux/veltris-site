@@ -20,7 +20,7 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="font-playfair text-2xl font-medium text-white mb-4">1. Data Controller &amp; Overview</h2>
               <p className="mb-4">
-                Veltris Pitch Deck Studio (&quot;Veltris&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) acts as Data Controller for personal data collected through <strong className="text-white">www.veltris.uk</strong>. We operate in full alignment with the United Kingdom Data Protection Act 2018, UK General Data Protection Regulation (UK GDPR), the Privacy and Electronic Communications Regulations (PECR), and international privacy frameworks spanning the United States, Canada, and Australia.
+                Veltris Studio (&quot;Veltris&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) acts as Data Controller for personal data collected through <strong className="text-white">www.veltris.uk</strong>. We operate in full alignment with the United Kingdom Data Protection Act 2018, UK General Data Protection Regulation (UK GDPR), the Privacy and Electronic Communications Regulations (PECR), and international privacy frameworks spanning the United States, Canada, and Australia.
               </p>
             </section>
 
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
                 <div className="bg-zinc-900/40 p-6 rounded-2xl border border-white/5">
                   <h3 className="font-medium text-white text-base mb-2">A. Contact Form Submissions</h3>
                   <p className="text-zinc-400 text-sm">
-                    When you submit a pitch deck brief via our contact form, we collect your name, business email address, company name, target fundraising stage (Pre-Seed to Series C), raise target, and project brief text.
+                    When you submit an audit or availability inquiry via our contact form, we collect your name, business email address, clinic/studio name, website URL, and primary mobile conversion notes.
                   </p>
                 </div>
                 <div className="bg-zinc-900/40 p-6 rounded-2xl border border-white/5">
@@ -45,9 +45,9 @@ export default function PrivacyPolicyPage() {
             <section>
               <h2 className="font-playfair text-2xl font-medium text-white mb-4">3. Lawful Basis for Processing</h2>
               <ul className="list-disc pl-6 space-y-3 text-zinc-300 text-base">
-                <li><strong className="text-white font-medium">Legitimate Interests (Art 6(1)(f) UK GDPR):</strong> To respond to inbound founder inquiries, evaluate pitch deck scope, and protect against security abuse.</li>
+                <li><strong className="text-white font-medium">Legitimate Interests (Art 6(1)(f) UK GDPR):</strong> To respond to inbound clinic and studio inquiries, evaluate digital architecture scope, and protect against security abuse.</li>
                 <li><strong className="text-white font-medium">Consent (Art 6(1)(a) UK GDPR / PECR):</strong> For non-essential analytics and performance tracking, activated only via our Cookie Preference Banner.</li>
-                <li><strong className="text-white font-medium">Contractual Necessity (Art 6(1)(b) UK GDPR):</strong> To perform custom pitch deck design engagements upon signing a formal studio agreement.</li>
+                <li><strong className="text-white font-medium">Contractual Necessity (Art 6(1)(b) UK GDPR):</strong> To perform custom web architecture and optimization engagements upon signing a formal studio agreement.</li>
               </ul>
             </section>
 

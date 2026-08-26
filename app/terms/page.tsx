@@ -20,14 +20,14 @@ export default function TermsPage() {
             <section>
               <h2 className="font-playfair text-2xl font-medium text-white mb-4">1. Scope of Engagement</h2>
               <p>
-                Veltris is a bespoke pitch deck design studio. Services encompass narrative architecture, visual design, and slide formatting for fundraising presentations. Final deliverables are transferred to the client upon full payment.
+                Veltris is a bespoke digital architecture studio. Services encompass conversion architecture, mobile viewport optimization, and patient/client intake engineering for private healthcare and luxury property brands. Final digital assets and codebases are transferred to the client upon full payment.
               </p>
             </section>
 
             <section>
               <h2 className="font-playfair text-2xl font-medium text-white mb-4">2. Intellectual Property</h2>
               <p>
-                Clients retain full ownership of all proprietary data, financial figures, brand assets, and trade secrets provided. Upon completion, full copyright of the customized presentation deck passes to the client.
+                Clients retain full ownership of all proprietary data, patient systems, brand assets, and trade secrets provided. Upon completion, full copyright and code ownership of the customized web architecture passes to the client.
               </p>
             </section>
 
@@ -45,7 +45,7 @@ export default function TermsPage() {
             <section>
               <h2 className="font-playfair text-2xl font-medium text-white mb-4">4. Limitation of Liability</h2>
               <p>
-                Veltris provides design and storytelling services for pitch decks. We do not guarantee capital raises, investor commitments, or specific valuation outcomes.
+                Veltris provides bespoke digital architecture and design services. While our builds follow strict conversion and layout standards, individual commercial results and patient booking volumes depend on the client&apos;s broader market operations.
               </p>
             </section>
           </div>
