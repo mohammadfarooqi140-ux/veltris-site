@@ -39,21 +39,28 @@ const structuredData = {
 const conceptStudies = [
   {
     tag: "CONCEPT STUDY 01",
-    title: "Private aesthetics clinic",
+    badge: "Not commissioned · Visual exploration by Veltris",
+    title: "Claudia Dorsch Interior Design",
     description:
-      "A calm, confident digital experience focused on trust, treatment clarity, and a clear consultation journey.",
+      "An independent 3D narrative concept for a residential interior design studio exploring city, coast, and mountain living.",
+    href: "/work/claudia-dorsch-concept",
+    status: "Independent concept study",
   },
   {
     tag: "CONCEPT STUDY 02",
+    badge: "Independent concept study",
     title: "Luxury property or interior design brand",
     description:
       "An image led editorial experience designed to present spaces, materials, and expertise with more impact.",
+    status: "Curating Study",
   },
   {
     tag: "CONCEPT STUDY 03",
+    badge: "Independent concept study",
     title: "Veltris digital flagship",
     description:
       "An experimental concept exploring three dimensional interaction, motion, and premium art direction while preserving usability.",
+    status: "Curating Study",
   },
 ];
 
@@ -109,17 +116,23 @@ export default function WorkPage() {
               </div>
             </FadeInUp>
 
-            {/* Concept Placeholders */}
+            {/* Concept Studies Grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {conceptStudies.map((study, idx) => (
-                <FadeInUp key={study.tag} delay={idx * 0.1}>
-                  <div className="bg-surface/50 border border-border-subtle rounded-3xl p-8 flex flex-col justify-between h-full hover:bg-surface-raised/40 transition-colors">
+              {conceptStudies.map((study, idx) => {
+                const CardInner = (
+                  <div className="bg-surface/50 border border-border-subtle rounded-3xl p-8 flex flex-col justify-between h-full hover:bg-surface-raised/40 transition-colors group">
                     <div>
-                      <span className="text-xs font-mono text-accent font-semibold block mb-4 tracking-widest">
-                        {study.tag}
-                      </span>
-                      <h3 className="font-playfair text-2xl font-medium mb-4 text-ink">
-                        {study.title}
+                      <div className="flex flex-col gap-1 mb-4">
+                        <span className="text-xs font-mono text-accent font-semibold tracking-widest">
+                          {study.tag}
+                        </span>
+                        <span className="text-[10px] font-mono text-ink-dim tracking-wider uppercase">
+                          {study.badge}
+                        </span>
+                      </div>
+                      <h3 className="font-playfair text-2xl font-medium mb-4 text-ink group-hover:text-accent transition-colors flex items-center justify-between">
+                        <span>{study.title}</span>
+                        {study.href && <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />}
                       </h3>
                       <p className="text-ink-muted text-sm sm:text-base font-light leading-relaxed mb-8">
                         {study.description}
@@ -128,11 +141,25 @@ export default function WorkPage() {
 
                     <div className="text-xs font-mono text-ink-dim pt-6 border-t border-border-subtle flex items-center justify-between">
                       <span>Status</span>
-                      <span className="text-ink">Curating Study</span>
+                      <span className={study.href ? "text-accent font-medium" : "text-ink"}>
+                        {study.status}
+                      </span>
                     </div>
                   </div>
-                </FadeInUp>
-              ))}
+                );
+
+                return (
+                  <FadeInUp key={study.tag} delay={idx * 0.1}>
+                    {study.href ? (
+                      <Link href={study.href} className="block h-full">
+                        {CardInner}
+                      </Link>
+                    ) : (
+                      CardInner
+                    )}
+                  </FadeInUp>
+                );
+              })}
             </div>
           </section>
 
