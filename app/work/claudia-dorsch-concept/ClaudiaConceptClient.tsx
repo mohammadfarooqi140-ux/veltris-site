@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { ArrowDown, ArrowUpRight, Compass, ShieldCheck } from "lucide-react";
 import ConceptHeader from "@/components/claudia-concept/ConceptHeader";
@@ -8,24 +7,6 @@ import ConceptFooter from "@/components/claudia-concept/ConceptFooter";
 import CanvasSequenceViewer from "@/components/claudia-concept/CanvasSequenceViewer";
 
 export default function ClaudiaConceptClient() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return;
-      const totalHeight = containerRef.current.scrollHeight - window.innerHeight;
-      if (totalHeight > 0) {
-        const currentProgress = Math.min(Math.max(window.scrollY / totalHeight, 0), 1);
-        setScrollProgress(currentProgress);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const scrollToNarrative = () => {
     const target = document.getElementById("narrative-start");
     if (target) {
@@ -33,11 +14,8 @@ export default function ClaudiaConceptClient() {
     }
   };
 
-  const currentFrame = Math.min(719, Math.max(0, Math.floor(scrollProgress * 719)));
-
   return (
     <div
-      ref={containerRef}
       className="relative bg-[#F5F1E9] text-[#332E28] font-sans selection:bg-[#AD9670]/30 selection:text-[#332E28]"
       style={{
         backgroundColor: "#F5F1E9",
@@ -47,41 +25,12 @@ export default function ClaudiaConceptClient() {
       {/* 1. Sticky Concept Header with Exact Protocol Banner */}
       <ConceptHeader />
 
-      {/* 2. Fixed Background HTML5 Canvas Sequence Renderer */}
+      {/* 2. Fixed Background Hardware-Accelerated Canvas Engine */}
       <div className="fixed inset-0 top-[90px] w-full h-[calc(100vh-90px)] pointer-events-none z-0 overflow-hidden">
-        <CanvasSequenceViewer scrollProgress={scrollProgress} />
+        <CanvasSequenceViewer />
       </div>
 
-      {/* 3. Floating Spatial HUD & Frame Index Indicator */}
-      <div className="fixed bottom-8 left-6 sm:left-10 z-30 pointer-events-auto hidden md:flex items-center gap-4 bg-[#E9E4DA]/90 backdrop-blur-md px-5 py-2.5 rounded-full border border-[#332E28]/15 shadow-sm">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-[#70785B] animate-pulse" />
-          <span className="text-[10px] font-mono tracking-[0.2em] text-[#70785B] uppercase font-semibold">
-            {scrollProgress < 0.25
-              ? "01 / Threshold"
-              : scrollProgress < 0.50
-              ? "02 / City"
-              : scrollProgress < 0.75
-              ? "03 / Coast"
-              : "04 / Composed Home"}
-          </span>
-        </div>
-
-        <span className="text-[10px] font-mono text-[#332E28]/50">|</span>
-
-        <span className="text-[10px] font-mono text-[#332E28]/70">
-          Frame {String(currentFrame + 1).padStart(3, "0")} / 720
-        </span>
-
-        <div className="w-16 h-1 bg-[#332E28]/15 rounded-full overflow-hidden">
-          <div
-            className="h-full bg-[#70785B] transition-all duration-75"
-            style={{ width: `${Math.round(scrollProgress * 100)}%` }}
-          />
-        </div>
-      </div>
-
-      {/* 4. 500vh Scroll Narrative Track with Edge-Aligned Minimal Editorial Cards */}
+      {/* 3. 500vh Scroll Narrative Track with Edge-Aligned Minimal Editorial Cards */}
       <div className="relative z-10 w-full" style={{ minHeight: "500vh" }}>
         
         {/* =========================================================================
@@ -239,7 +188,7 @@ export default function ClaudiaConceptClient() {
 
       </div>
 
-      {/* 5. Fixed Global Page Footer */}
+      {/* 4. Fixed Global Page Footer */}
       <ConceptFooter />
     </div>
   );
