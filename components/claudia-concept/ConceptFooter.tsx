@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export default function ConceptFooter() {
   return (
@@ -10,14 +10,14 @@ export default function ConceptFooter() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-14 border-b border-[#332E28]/15">
           {/* Col 1: Brand & Concept Statement */}
           <div className="md:col-span-6 space-y-4">
-            <span className="text-[10px] font-mono tracking-[0.25em] text-[#70785B] uppercase block">
-              CONCEPT STUDY 01
+            <span className="text-[10px] font-mono tracking-[0.25em] text-[#70785B] uppercase block font-semibold">
+              CONCEPT STUDY 01 · 720 FRAME SPATIAL SEQUENCE
             </span>
             <h3 className="font-playfair text-2xl sm:text-3xl font-medium tracking-tight text-[#332E28]">
               Claudia Dorsch Interior Design
             </h3>
             <p className="text-sm font-light text-[#332E28]/75 leading-relaxed max-w-md">
-              An independent Veltris concept study exploring a brand-aligned 3D narrative website direction for a residential interior design studio shaped by place, material, and light.
+              A deterministic HTML5 Canvas spatial narrative exploration mapping viewport scroll to continuous interior camera movement across city, coastal, and mountain settings.
             </p>
           </div>
 
@@ -53,7 +53,7 @@ export default function ConceptFooter() {
           {/* Col 3: Palette & Study Metadata */}
           <div className="md:col-span-3 space-y-3">
             <h4 className="text-[11px] font-mono uppercase tracking-[0.2em] text-[#332E28]/50 font-semibold">
-              Study System
+              Atmospheric System
             </h4>
             <div className="flex items-center gap-2 pt-1">
               <div className="w-4 h-4 rounded-full bg-[#F5F1E9] border border-[#332E28]/20" title="Warm Paper" />
@@ -64,16 +64,17 @@ export default function ConceptFooter() {
               <div className="w-4 h-4 rounded-full bg-[#AD9670]" title="Aged Brass" />
             </div>
             <p className="text-[11px] font-mono text-[#332E28]/60 leading-normal pt-2">
-              Atmospheres: City · Coast · Mountain<br />
-              Format: WebGL 3D Narrative
+              Palette: Paper · Chalk · Umber · Olive · Sea · Oxblood<br />
+              Engine: 720-Frame HTML5 Canvas
             </p>
           </div>
         </div>
 
-        {/* Legal Transparency Statement */}
-        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-[#332E28]/70 font-light leading-relaxed">
-          <p className="max-w-2xl text-[12px] sm:text-[13px] border-l-2 border-[#70785B] pl-3 py-0.5">
-            <strong>Transparency Notice:</strong> An independent Veltris concept study inspired by publicly available information. Not commissioned, endorsed, or affiliated with Claudia Dorsch Interior Design.
+        {/* Legal Transparency Protocol Statement (Exact Required Text) */}
+        <div className="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 text-xs text-[#332E28]/80 font-light leading-relaxed">
+          <p className="max-w-2xl text-[12px] sm:text-[13px] border-l-2 border-[#70785B] pl-3.5 py-1 flex items-start gap-2">
+            <ShieldCheck className="w-4 h-4 text-[#70785B] shrink-0 mt-0.5" />
+            <span>An independent Veltris concept study inspired by publicly available information. Not commissioned, endorsed, or affiliated with Claudia Dorsch Interior Design.</span>
           </p>
           <div className="text-[11px] font-mono text-[#332E28]/50 whitespace-nowrap">
             © {new Date().getFullYear()} Veltris
