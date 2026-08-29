@@ -22,7 +22,7 @@ export default function Footer() {
               VELTRIS
             </Link>
             <p className="text-ink-muted text-sm md:text-base max-w-sm leading-relaxed font-light">
-              Veltris is a UK based digital studio creating premium websites for selected private clinics, aesthetics practices, property brands, and interior design businesses.
+              Veltris is a focused digital studio creating clear, high-trust websites for businesses where credibility and conversion matter.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:justify-self-end">

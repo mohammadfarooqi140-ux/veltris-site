@@ -1,16 +1,16 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Veltris | Premium Website Studio UK",
+  title: "Contact Veltris | Website Strategy & Digital Design",
   description:
-    "Discuss a premium website project with Veltris. Enquiries are reviewed for fit before a project is offered.",
+    "Discuss your website with Veltris. We review each enquiry to ensure focused attention and respond within one working day.",
   alternates: {
     canonical: "https://www.veltris.uk/contact",
   },
   openGraph: {
-    title: "Contact Veltris | Premium Website Studio UK",
+    title: "Contact Veltris | Website Strategy & Digital Design",
     description:
-      "Discuss a premium website project with Veltris. Enquiries are reviewed for fit before a project is offered.",
+      "Discuss your website with Veltris. We review each enquiry to ensure focused attention and respond within one working day.",
     url: "https://www.veltris.uk/contact",
     siteName: "Veltris",
     locale: "en_GB",
@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Contact Veltris | Premium Website Studio UK",
+    title: "Contact Veltris | Website Strategy & Digital Design",
     description:
-      "Discuss a premium website project with Veltris. Enquiries are reviewed for fit before a project is offered.",
+      "Discuss your website with Veltris. We review each enquiry to ensure focused attention and respond within one working day.",
   },
 };
 

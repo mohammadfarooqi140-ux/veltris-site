@@ -11,7 +11,7 @@ const structuredData = {
   "name": "Contact Veltris",
   "url": "https://www.veltris.uk/contact",
   "description":
-    "Discuss a premium website project with Veltris. Enquiries are reviewed for fit before a project is offered.",
+    "Discuss your website project with Veltris. We review each enquiry for fit and respond within one working day.",
   "mainEntity": {
     "@type": "ProfessionalService",
     "name": "Veltris",
@@ -140,20 +140,20 @@ export default function ContactPage() {
             <div className="lg:col-span-6">
               <FadeInUp>
                 <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-6">
-                  SELECTED PROJECT ENQUIRIES
+                  START A CONVERSATION
                 </span>
 
                 <h1 className="text-4xl sm:text-6xl font-playfair font-medium tracking-tight mb-8 leading-[1.08] text-ink">
-                  Discuss a project.
+                  Discuss your website.
                 </h1>
 
                 <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8">
-                  Tell me what you are trying to improve. I review each enquiry for fit before offering a project and usually respond within one working day.
+                  Tell us what you are looking to improve. We review each enquiry to ensure a strong fit and respond within one working day.
                 </p>
 
                 <div className="space-y-4 text-xs text-ink-muted font-light border-t border-border-subtle pt-6 mb-8">
                   <p>
-                    Veltris accepts a maximum of three selected new engagements each month.
+                    We work with a limited number of businesses at a time so each project receives focused attention.
                   </p>
                   <p>
                     Every engagement is led directly by Muhammad, Founder and Principal.
@@ -257,7 +257,7 @@ export default function ContactPage() {
                           required
                           value={formData.businessName}
                           onChange={handleChange}
-                          placeholder="Practice or brand name"
+                          placeholder="Company or brand name"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none"
                         />
                       </div>

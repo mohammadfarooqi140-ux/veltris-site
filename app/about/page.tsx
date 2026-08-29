@@ -7,16 +7,16 @@ import FadeInUp from "@/components/FadeInUp";
 const About3D = dynamic(() => import("@/components/ui/About3D"), { ssr: false });
 
 export const metadata: Metadata = {
-  title: "About Veltris | UK Premium Web Design Studio",
+  title: "About Veltris | Clear Websites for High-Trust Decisions",
   description:
-    "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating considered websites for selected clinics, aesthetics practices, property brands, and interior design businesses.",
+    "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating clear, high-trust websites for businesses where credibility and conversion matter.",
   alternates: {
     canonical: "https://www.veltris.uk/about",
   },
   openGraph: {
-    title: "About Veltris | UK Premium Web Design Studio",
+    title: "About Veltris | Clear Websites for High-Trust Decisions",
     description:
-      "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating considered websites for selected clinics, aesthetics practices, property brands, and interior design businesses.",
+      "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating clear, high-trust websites for businesses where credibility and conversion matter.",
     url: "https://www.veltris.uk/about",
     siteName: "Veltris",
     locale: "en_GB",
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Veltris | UK Premium Web Design Studio",
+    title: "About Veltris | Clear Websites for High-Trust Decisions",
     description:
-      "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating considered websites for selected clinics, aesthetics practices, property brands, and interior design businesses.",
+      "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating clear, high-trust websites for businesses where credibility and conversion matter.",
   },
 };
 
@@ -36,7 +36,7 @@ const structuredData = {
   "name": "About Veltris",
   "url": "https://www.veltris.uk/about",
   "description":
-    "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating considered websites for selected clinics, aesthetics practices, property brands, and interior design businesses.",
+    "Veltris is a UK based digital studio led by Muhammad, Founder and Principal, creating clear, high-trust websites for businesses where credibility and conversion matter.",
   "mainEntity": {
     "@type": "ProfessionalService",
     "name": "Veltris",
@@ -93,7 +93,7 @@ export default function AboutPage() {
                   THE VELTRIS STANDARD
                 </span>
                 <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl leading-[1.08] font-medium tracking-tight mb-8 text-ink">
-                  Considered design for brands that cannot afford to feel generic.
+                  Considered design for businesses where trust and clarity matter.
                 </h1>
               </FadeInUp>
 
@@ -103,7 +103,7 @@ export default function AboutPage() {
                     Veltris is a UK based digital studio led by Muhammad, Founder and Principal.
                   </p>
                   <p>
-                    I handle strategy, visual direction, website design, responsive build, conversion thinking, and final quality review for every engagement.
+                    We handle strategy, visual direction, website design, responsive build, and enquiry journey improvement for every engagement.
                   </p>
                   <p>
                     Veltris was created for businesses where the quality of the first digital impression affects whether a valuable prospect continues, enquires, or moves on.
@@ -119,23 +119,23 @@ export default function AboutPage() {
         </section>
 
         {/* =========================================================================
-            WHY THESE BUSINESSES
+            WHY CLARITY & CREDIBILITY MATTER
         ========================================================================== */}
         <section className="py-24 bg-paper relative z-10 border-b border-border-subtle">
           <div className="container mx-auto px-6 md:px-12 max-w-4xl">
             <FadeInUp>
               <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink mb-8 leading-tight">
-                Why these businesses
+                Why clarity and credibility matter
               </h2>
               <div className="space-y-6 text-base sm:text-lg text-ink-muted font-light leading-relaxed">
                 <p>
-                  Private clinics, aesthetics practices, property brands, and interior design businesses often operate in environments where trust is formed before the first conversation takes place.
+                  In competitive markets, trust is formed before the first conversation takes place. Prospective clients evaluate your standard of work, reliability, and attention to detail through your website.
                 </p>
                 <p>
-                  Their websites need to communicate confidence, taste, clarity, and attention to detail without making the visitor work too hard.
+                  When a website is confusing, outdated, or hard to navigate, it creates unnecessary doubt. A clear, well-structured digital presence removes friction and gives people the confidence to take the next step.
                 </p>
                 <p className="text-ink font-normal">
-                  Veltris focuses on the point where visual quality and commercial clarity meet.
+                  Veltris focuses on the point where visual quality, commercial clarity, and easy enquiry journeys meet.
                 </p>
               </div>
             </FadeInUp>
@@ -225,7 +225,7 @@ export default function AboutPage() {
                 </div>
                 <div className="p-6 rounded-2xl bg-surface border border-border-subtle max-w-2xl mx-auto text-center">
                   <p className="text-xs text-ink leading-relaxed">
-                    Veltris accepts a maximum of three selected new engagements each month. Every enquiry is reviewed for fit before a project is offered.
+                    We work with a limited number of businesses at a time so each project receives focused attention. Every enquiry is reviewed for fit before a project is offered.
                   </p>
                 </div>
               </div>
@@ -240,16 +240,16 @@ export default function AboutPage() {
           <div className="max-w-4xl mx-auto text-center">
             <FadeInUp>
               <h2 className="font-playfair text-3xl sm:text-5xl font-medium text-ink mb-6 leading-tight">
-                Discuss a Project
+                Discuss your website
               </h2>
               <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                If your website needs more clarity, stronger presentation, or a smoother path to enquiry, submit the details for a private project review.
+                If your website needs more clarity, stronger presentation, or an easier enquiry journey, submit the details for a private project review.
               </p>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] hover:bg-zinc-200 transition-all duration-300 shadow-lg"
               >
-                Discuss a Project <ArrowRight className="w-4 h-4" />
+                Discuss your website <ArrowRight className="w-4 h-4" />
               </Link>
             </FadeInUp>
           </div>

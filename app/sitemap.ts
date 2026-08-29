@@ -4,6 +4,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date()
 
   return [
+    // Core pages
     {
       url: 'https://www.veltris.uk/',
       lastModified,
@@ -11,13 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
-      url: 'https://www.veltris.uk/work',
+      url: 'https://www.veltris.uk/services',
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
-      url: 'https://www.veltris.uk/services',
+      url: 'https://www.veltris.uk/work',
       lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -33,6 +34,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.9,
+    },
+    // Concept showcase pages
+    {
+      url: 'https://www.veltris.uk/hartley',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.veltris.uk/sterling',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    // Legal & policy pages
+    {
+      url: 'https://www.veltris.uk/terms',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: 'https://www.veltris.uk/privacy-policy',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: 'https://www.veltris.uk/cookie-policy',
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.3,
     },
   ]
 }

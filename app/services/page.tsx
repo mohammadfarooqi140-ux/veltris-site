@@ -4,16 +4,16 @@ import { ArrowRight } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 
 export const metadata: Metadata = {
-  title: "Website Strategy, Design and Build for UK Brands | Veltris",
+  title: "Website Strategy, Design, and Build | Veltris",
   description:
-    "Veltris provides website strategy, visual direction, responsive design, website build, conversion improvement, and SEO foundations for selected UK brands.",
+    "Veltris provides website strategy, positioning clarity, responsive design, website build, enquiry journey improvement, and launch foundations.",
   alternates: {
     canonical: "https://www.veltris.uk/services",
   },
   openGraph: {
-    title: "Website Strategy, Design and Build for UK Brands | Veltris",
+    title: "Website Strategy, Design, and Build | Veltris",
     description:
-      "Veltris provides website strategy, visual direction, responsive design, website build, conversion improvement, and SEO foundations for selected UK brands.",
+      "Veltris provides website strategy, positioning clarity, responsive design, website build, enquiry journey improvement, and launch foundations.",
     url: "https://www.veltris.uk/services",
     siteName: "Veltris",
     locale: "en_GB",
@@ -21,25 +21,25 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website Strategy, Design and Build for UK Brands | Veltris",
+    title: "Website Strategy, Design, and Build | Veltris",
     description:
-      "Veltris provides website strategy, visual direction, responsive design, website build, conversion improvement, and SEO foundations for selected UK brands.",
+      "Veltris provides website strategy, positioning clarity, responsive design, website build, enquiry journey improvement, and launch foundations.",
   },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Website Strategy, Design and Build for UK Brands | Veltris",
+  "name": "Website Strategy, Design, and Build | Veltris",
   "url": "https://www.veltris.uk/services",
   "description":
-    "Veltris provides website strategy, visual direction, responsive design, website build, conversion improvement, and SEO foundations for selected UK brands.",
+    "Veltris provides website strategy, positioning clarity, responsive design, website build, enquiry journey improvement, and launch foundations.",
   "hasPart": [
     {
       "@type": "Service",
-      "name": "Strategy and page structure",
+      "name": "Strategy and positioning clarity",
       "description":
-        "Clarifying what the website needs to say, who it needs to reach, and how the pages should guide the visitor.",
+        "Clarifying what the website needs to say, who it needs to reach, and how the pages guide the visitor.",
     },
     {
       "@type": "Service",
@@ -59,8 +59,8 @@ const structuredData = {
 const serviceGroups = [
   {
     num: "01",
-    title: "Strategy and page structure",
-    copy: "Clarifying what the website needs to say, who it needs to reach, and how the pages should guide the visitor.",
+    title: "Strategy and positioning clarity",
+    copy: "Clarifying what the website needs to say, who it needs to reach, and how the pages should guide the visitor toward an enquiry.",
     items: [
       "Website structure",
       "Page hierarchy",
@@ -113,26 +113,26 @@ export default function ServicesPage() {
           <section className="mb-24 md:mb-32">
             <FadeInUp className="text-center md:text-left">
               <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-6">
-                STRATEGY, DESIGN, BUILD, AND REVIEW
+                STRATEGY, DESIGN, BUILD, AND ENQUIRY JOURNEYS
               </span>
               <h1 className="text-4xl sm:text-6xl md:text-7xl font-playfair font-medium tracking-tight mb-8 max-w-4xl leading-[1.08] text-ink">
-                A clearer digital presence for businesses with something valuable to protect.
+                A clearer digital presence for businesses where trust matters.
               </h1>
               <p className="text-ink-muted text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed mb-10 font-light">
-                Veltris brings together website strategy, visual direction, responsive build, enquiry journey improvement, and SEO foundations in one focused process.
+                Veltris brings together website strategy, positioning clarity, responsive build, enquiry journey improvement, and search foundations in one focused process.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 md:justify-start justify-center">
                 <Link
                   href="/contact"
                   className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] w-full sm:w-auto shadow-lg"
                 >
-                  Discuss a Project <ArrowRight className="w-4 h-4" />
+                  Discuss your website <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/work"
                   className="inline-flex items-center justify-center bg-surface border border-border-subtle text-ink font-semibold min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-surface-raised active:scale-[0.98] w-full sm:w-auto"
                 >
-                  View Selected Work
+                  See how we work
                 </Link>
               </div>
             </FadeInUp>
@@ -226,21 +226,20 @@ export default function ServicesPage() {
                 </h2>
                 <div className="space-y-4 text-base sm:text-lg text-ink-muted font-light leading-relaxed mb-6">
                   <p>
-                    Veltris is best suited to selected businesses where trust, presentation, and the quality of the enquiry journey directly influence commercial decisions.
+                    Veltris is built for businesses where trust, clarity, and the quality of the enquiry journey directly influence commercial decisions.
                   </p>
                   <p>
-                    Every enquiry is reviewed for fit before a project is offered.
+                    We work with a limited number of businesses at a time so each project receives focused attention.
                   </p>
                 </div>
-                <p className="text-xs font-mono text-ink-dim mb-10">
-                  Veltris accepts a maximum of three selected new engagements each month. Every enquiry is reviewed for fit before a project is offered.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] px-10 py-4 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
-                >
-                  Discuss a Project <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="mt-10">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] px-10 py-4 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
+                  >
+                    Discuss your website <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             </FadeInUp>
           </section>

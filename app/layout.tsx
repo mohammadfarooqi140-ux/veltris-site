@@ -30,16 +30,16 @@ export const dynamic = "force-static";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veltris.uk"),
   title: {
-    default: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
-    template: "%s",
+    default: "A Clearer Website for the Decisions That Matter | Veltris",
+    template: "%s | Veltris",
   },
-  description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
+  description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
-    description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
+    title: "A Clearer Website for the Decisions That Matter | Veltris",
+    description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
     url: "https://www.veltris.uk/",
     siteName: "Veltris",
     locale: "en_GB",
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Luxury Web Design for UK Clinics and Property Brands | Veltris",
-    description: "Veltris creates premium websites for selected UK clinics, aesthetics practices, property brands, and interior design businesses, combining strategy, design, build, and SEO foundations.",
+    title: "A Clearer Website for the Decisions That Matter | Veltris",
+    description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
   },
 };
 
