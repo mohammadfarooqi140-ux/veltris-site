@@ -60,7 +60,7 @@ const serviceGroups = [
   {
     num: "01",
     title: "Strategy and positioning clarity",
-    copy: "Clarifying what the website needs to say, who it needs to reach, and how the pages should guide the visitor toward an enquiry.",
+    copy: "Clarifying what the website needs to say, who it needs to reach, and how the pages should guide the visitor toward a clear decision.",
     items: [
       "Website structure",
       "Page hierarchy",
@@ -72,7 +72,7 @@ const serviceGroups = [
   {
     num: "02",
     title: "Visual direction and website build",
-    copy: "Creating a distinctive digital experience that reflects the quality of the business without sacrificing clarity or usability.",
+    copy: "Creating a distinctive digital experience that reflects the quality of the business without sacrificing clarity, speed, or usability.",
     items: [
       "Visual direction",
       "Website design",
@@ -85,7 +85,7 @@ const serviceGroups = [
   {
     num: "03",
     title: "Search and quality foundations",
-    copy: "Improving the technical and structural details that help the website remain understandable, usable, and ready for organic search.",
+    copy: "Refining the technical and structural details that ensure the website remains fast, accessible, easy to find, and ready for launch.",
     items: [
       "Page titles and descriptions",
       "Open Graph metadata",
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                 A clearer digital presence for businesses where trust matters.
               </h1>
               <p className="text-ink-muted text-base sm:text-lg md:text-xl max-w-3xl leading-relaxed mb-10 font-light">
-                Veltris brings together website strategy, positioning clarity, responsive build, enquiry journey improvement, and search foundations in one focused process.
+                Veltris brings together website strategy, positioning clarity, responsive build, enquiry journey improvement, and search foundations into one focused process.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 md:justify-start justify-center">
                 <Link
@@ -141,21 +141,21 @@ export default function ServicesPage() {
           {/* =========================================================================
               SERVICE GROUPS
           ========================================================================== */}
-          <section className="mb-28">
+          <section className="mb-28" aria-label="Core Practice Areas">
             <FadeInUp>
               <div className="flex items-center justify-between border-b border-border-subtle pb-6 mb-12">
                 <h2 className="font-playfair text-2xl sm:text-4xl font-medium text-ink">
                   Core Practice Areas
                 </h2>
                 <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase">
-                  Comprehensive Delivery
+                  Focused Delivery
                 </span>
               </div>
             </FadeInUp>
 
             <div className="space-y-12">
-              {serviceGroups.map((group, idx) => (
-                <FadeInUp key={group.num} delay={idx * 0.08}>
+              {serviceGroups.map((group) => (
+                <FadeInUp key={group.num}>
                   <div className="border-t border-border-subtle pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
                     <div className="lg:col-span-5">
                       <span className="text-xs font-mono text-accent block mb-2">
@@ -208,6 +208,9 @@ export default function ServicesPage() {
                     The first stage establishes the structure and visual direction. The build then brings the approved experience to life across responsive layouts, followed by review, refinement, and launch preparation.
                   </p>
                 </div>
+                <p className="text-xs font-mono text-ink-dim">
+                  Project scope and investment are discussed privately.
+                </p>
               </div>
             </FadeInUp>
           </section>
@@ -248,4 +251,3 @@ export default function ServicesPage() {
     </>
   );
 }
-

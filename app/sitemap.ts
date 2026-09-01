@@ -24,6 +24,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: 'https://www.veltris.uk/work/hartley',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
+      url: 'https://www.veltris.uk/work/sterling',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.veltris.uk/about',
       lastModified,
       changeFrequency: 'monthly',
@@ -35,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.9,
     },
-    // Concept showcase pages
+    // Interactive concept prototype routes
     {
       url: 'https://www.veltris.uk/hartley',
       lastModified,

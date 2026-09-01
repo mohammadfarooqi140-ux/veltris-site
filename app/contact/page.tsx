@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import Link from "next/link";
-import { Loader2, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Loader2, ArrowRight, CheckCircle2, ShieldCheck } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 
 const structuredData = {
@@ -58,12 +58,12 @@ export default function ContactPage() {
       return;
     }
     if (!formData.businessName.trim()) {
-      setErrorMessage("Please provide your business name.");
+      setErrorMessage("Please provide your company or brand name.");
       setStatus("error");
       return;
     }
     if (!formData.projectGoal.trim()) {
-      setErrorMessage("Please describe what you would like to improve.");
+      setErrorMessage("Please describe what your current website falls short on or what you want to improve.");
       setStatus("error");
       return;
     }
@@ -136,7 +136,7 @@ export default function ContactPage() {
       <main className="min-h-screen bg-paper text-ink pt-32 pb-24 relative selection:bg-surface-raised selection:text-ink">
         <div className="max-w-6xl mx-auto px-6 md:px-12 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-            {/* Left Column: Context & Editorial Copy */}
+            {/* Left Column: Context & Direct Contact */}
             <div className="lg:col-span-6">
               <FadeInUp>
                 <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-6">
@@ -152,12 +152,18 @@ export default function ContactPage() {
                 </p>
 
                 <div className="space-y-4 text-xs text-ink-muted font-light border-t border-border-subtle pt-6 mb-8">
-                  <p>
-                    We work with a limited number of businesses at a time so each project receives focused attention.
-                  </p>
-                  <p>
-                    Every engagement is led directly by Muhammad, Founder and Principal.
-                  </p>
+                  <div className="flex items-start gap-3">
+                    <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <p>
+                      Every engagement is led directly by Muhammad, Founder and Principal.
+                    </p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
+                    <p>
+                      We work with a limited number of businesses at a time so each project receives focused attention.
+                    </p>
+                  </div>
                 </div>
 
                 <div className="p-6 rounded-2xl bg-surface/50 border border-border-subtle">
@@ -174,25 +180,25 @@ export default function ContactPage() {
               </FadeInUp>
             </div>
 
-            {/* Right Column: Semantic Form */}
+            {/* Right Column: Accessible Form */}
             <div className="lg:col-span-6">
               <FadeInUp delay={0.1}>
                 <div className="bg-surface border border-border-subtle rounded-3xl p-8 md:p-10 shadow-2xl relative">
                   {status === "success" ? (
-                    <div className="text-center py-12">
+                    <div className="text-center py-12" role="status" aria-live="polite">
                       <div className="w-12 h-12 rounded-full bg-surface-raised border border-border-subtle flex items-center justify-center mx-auto mb-6 text-accent">
                         <CheckCircle2 className="w-6 h-6" />
                       </div>
-                      <h3 className="font-playfair text-2xl md:text-3xl font-medium text-ink mb-4">
+                      <h2 className="font-playfair text-2xl md:text-3xl font-medium text-ink mb-4">
                         Enquiry Received
-                      </h3>
+                      </h2>
                       <p className="text-ink-muted text-base max-w-md mx-auto leading-relaxed mb-8 font-light">
                         Thank you for reaching out. Muhammad will review your details for fit and respond within one working day.
                       </p>
                       <button
                         type="button"
                         onClick={() => setStatus("idle")}
-                        className="text-xs font-mono uppercase tracking-widest text-ink-muted hover:text-ink transition-colors border-b border-border-subtle pb-1"
+                        className="text-xs font-mono uppercase tracking-widest text-ink-muted hover:text-ink transition-colors border-b border-border-subtle pb-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                       >
                         Submit Another Enquiry
                       </button>
@@ -205,7 +211,7 @@ export default function ContactPage() {
                           htmlFor="name"
                           className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2"
                         >
-                          Name <span className="text-accent">*</span>
+                          Your Name <span className="text-accent" aria-hidden="true">*</span>
                         </label>
                         <input
                           type="text"
@@ -216,6 +222,7 @@ export default function ContactPage() {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder="Your name"
+                          aria-required="true"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none"
                         />
                       </div>
@@ -226,7 +233,7 @@ export default function ContactPage() {
                           htmlFor="email"
                           className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2"
                         >
-                          Work email <span className="text-accent">*</span>
+                          Work Email <span className="text-accent" aria-hidden="true">*</span>
                         </label>
                         <input
                           type="email"
@@ -237,6 +244,7 @@ export default function ContactPage() {
                           value={formData.email}
                           onChange={handleChange}
                           placeholder="name@business.co.uk"
+                          aria-required="true"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none"
                         />
                       </div>
@@ -247,7 +255,7 @@ export default function ContactPage() {
                           htmlFor="businessName"
                           className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2"
                         >
-                          Business name <span className="text-accent">*</span>
+                          Company / Brand Name <span className="text-accent" aria-hidden="true">*</span>
                         </label>
                         <input
                           type="text"
@@ -257,7 +265,8 @@ export default function ContactPage() {
                           required
                           value={formData.businessName}
                           onChange={handleChange}
-                          placeholder="Company or brand name"
+                          placeholder="Your company or brand"
+                          aria-required="true"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none"
                         />
                       </div>
@@ -268,7 +277,7 @@ export default function ContactPage() {
                           htmlFor="websiteUrl"
                           className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2"
                         >
-                          Current website URL{" "}
+                          Current Website URL{" "}
                           <span className="text-ink-dim font-normal lowercase">(optional)</span>
                         </label>
                         <input
@@ -278,7 +287,7 @@ export default function ContactPage() {
                           autoComplete="url"
                           value={formData.websiteUrl}
                           onChange={handleChange}
-                          placeholder="https://yourwebsite.co.uk"
+                          placeholder="https://yourcurrentsite.co.uk"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none"
                         />
                       </div>
@@ -289,7 +298,7 @@ export default function ContactPage() {
                           htmlFor="projectGoal"
                           className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2"
                         >
-                          What would you like to improve? <span className="text-accent">*</span>
+                          What does your website fall short on, and what do you want to improve? <span className="text-accent" aria-hidden="true">*</span>
                         </label>
                         <textarea
                           id="projectGoal"
@@ -299,13 +308,18 @@ export default function ContactPage() {
                           value={formData.projectGoal}
                           onChange={handleChange}
                           placeholder="Describe what your current website is falling short on, and what you are looking to achieve."
+                          aria-required="true"
                           className="bg-paper border border-border-subtle text-ink px-4 py-3.5 rounded-xl w-full text-sm placeholder:text-ink-dim/60 focus:border-border transition-colors outline-none resize-none"
                         />
                       </div>
 
                       {/* Error State */}
                       {status === "error" && errorMessage && (
-                        <div className="p-3.5 rounded-xl bg-red-950/40 border border-red-900/50 text-xs text-red-300 font-mono">
+                        <div
+                          className="p-3.5 rounded-xl bg-red-950/40 border border-red-900/50 text-xs text-red-300 font-mono"
+                          role="alert"
+                          aria-live="assertive"
+                        >
                           {errorMessage}
                         </div>
                       )}
@@ -314,7 +328,7 @@ export default function ContactPage() {
                       <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="w-full flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] py-4 rounded-xl text-xs uppercase tracking-[0.18em] hover:bg-zinc-200 transition-colors disabled:opacity-50"
+                        className="w-full flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] py-4 rounded-xl text-xs uppercase tracking-[0.18em] hover:bg-zinc-200 transition-colors disabled:opacity-50 shadow-lg"
                       >
                         {status === "submitting" ? (
                           <>
@@ -351,4 +365,3 @@ export default function ContactPage() {
     </>
   );
 }
-

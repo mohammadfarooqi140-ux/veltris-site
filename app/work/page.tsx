@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Layers, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ArrowUpRight, ShieldAlert, Layers } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
 
 export const metadata: Metadata = {
   title: "Selected Concept Work | Veltris",
   description:
-    "Explore selected Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
+    "Explore independent Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
   alternates: {
     canonical: "https://www.veltris.uk/work",
   },
   openGraph: {
     title: "Selected Concept Work | Veltris",
     description:
-      "Explore selected Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
+      "Explore independent Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
     url: "https://www.veltris.uk/work",
     siteName: "Veltris",
     locale: "en_GB",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Selected Concept Work | Veltris",
     description:
-      "Explore selected Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
+      "Explore independent Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
   },
 };
 
@@ -33,34 +33,40 @@ const structuredData = {
   "name": "Selected Concept Work | Veltris",
   "url": "https://www.veltris.uk/work",
   "description":
-    "Explore selected Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
+    "Explore independent Veltris concept studies demonstrating clear positioning, refined visual direction, and purposeful enquiry journeys.",
 };
 
 const conceptStudies = [
   {
-    tag: "CONCEPT STUDY 01",
+    tag: "INDEPENDENT CONCEPT STUDY 01",
     title: "Hartley & Co. Builders",
     category: "Construction & Commercial Build",
+    label: "Independent concept study for a mainstream construction business",
     description:
-      "A focused single-page digital experience for a UK construction contractor, designed around clear service presentation, strong trust signals, and direct fixed-price quote requests.",
-    href: "/hartley",
-    features: [
+      "Hartley explores how a construction business can present its services with more clarity, confidence, and commercial credibility. The concept is structured around understandable service categories, visible trust signals, project context, and a direct route to request a quote.",
+    breakdownHref: "/work/hartley",
+    prototypeHref: "/hartley",
+    decisions: [
       "Fixed-price quote enquiry flow",
       "Clear service categorisation",
-      "Credibility and project proof",
+      "Immediate trust & accreditation signals",
+      "Dedicated project management reassurance",
     ],
   },
   {
-    tag: "CONCEPT STUDY 02",
+    tag: "INDEPENDENT CONCEPT STUDY 02",
     title: "Sterling Industrial Flooring",
     category: "Specialist Industrial Contracting",
+    label: "Independent concept study for an industrial trade business",
     description:
-      "A commercial website concept for an industrial flooring specialist, built around technical system specifications, sector accreditation, and friction-free site survey bookings.",
-    href: "/sterling",
-    features: [
-      "Site survey booking path",
+      "Sterling explores how a technical industrial business can make complex services easier to understand and easier to enquire about. The concept uses structured service information, technical specifications, accreditation and compliance signals, and a focused site survey booking path.",
+    breakdownHref: "/work/sterling",
+    prototypeHref: "/sterling",
+    decisions: [
+      "Frictionless site survey booking path",
       "Technical floor system breakdowns",
       "Accreditation & compliance proof",
+      "Operational downtime & weekend scheduling messaging",
     ],
   },
 ];
@@ -89,7 +95,7 @@ export default function WorkPage() {
               </h1>
 
               <p className="text-ink-muted text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light">
-                Explore concept studies created to demonstrate how positioning, visual hierarchy, responsive design, and intuitive enquiry routes come together in practice.
+                Explore independent Veltris concept studies created to demonstrate how positioning, visual hierarchy, responsive layout, and purposeful enquiry routes come together in practice.
               </p>
             </FadeInUp>
           </div>
@@ -97,22 +103,19 @@ export default function WorkPage() {
           {/* =========================================================================
               SHOWCASE CONCEPTS GRID
           ========================================================================== */}
-          <section className="mb-28">
+          <section className="mb-28" aria-label="Selected Concept Studies">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {conceptStudies.map((study, idx) => (
                 <FadeInUp key={study.tag} delay={idx * 0.1}>
-                  <Link
-                    href={study.href}
-                    className="bg-surface/50 border border-border-subtle rounded-3xl p-8 md:p-10 flex flex-col justify-between h-full transition-all group hover:bg-surface-raised/60 hover:border-accent/40 cursor-pointer block shadow-lg"
-                  >
+                  <div className="bg-surface/50 border border-border-subtle rounded-3xl p-8 md:p-10 flex flex-col justify-between h-full transition-all group hover:bg-surface-raised/60 hover:border-border shadow-lg">
                     <div>
-                      <div className="flex items-center justify-between mb-6">
-                        <span className="text-xs font-mono text-accent font-semibold tracking-widest">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
+                        <span className="text-[10px] font-mono text-accent font-semibold tracking-widest">
                           {study.tag}
                         </span>
                         <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-[#70785B] bg-[#70785B]/10 border border-[#70785B]/30 px-2.5 py-0.5 rounded-full">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#70785B]" />
-                          Showcase Concept
+                          Independent Concept
                         </span>
                       </div>
 
@@ -120,32 +123,47 @@ export default function WorkPage() {
                         {study.category}
                       </span>
 
-                      <h3 className="font-playfair text-2xl md:text-3xl font-medium mb-4 text-ink group-hover:text-accent transition-colors flex items-center justify-between">
-                        <span>{study.title}</span>
-                        <ArrowUpRight className="w-5 h-5 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all duration-300 text-accent" />
-                      </h3>
+                      <h2 className="font-playfair text-2xl md:text-3xl font-medium mb-3 text-ink">
+                        {study.title}
+                      </h2>
+
+                      <p className="text-xs font-mono text-ink-dim mb-4 leading-relaxed">
+                        {study.label}
+                      </p>
 
                       <p className="text-ink-muted text-sm sm:text-base font-light leading-relaxed mb-8">
                         {study.description}
                       </p>
 
                       <div className="space-y-2 mb-8 pt-6 border-t border-border-subtle">
-                        {study.features.map((feature) => (
-                          <div key={feature} className="flex items-center gap-2 text-xs font-light text-ink-muted">
-                            <span className="w-1 h-1 rounded-full bg-accent" />
-                            <span>{feature}</span>
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-ink-dim block mb-3">
+                          Website Decisions Demonstrated:
+                        </span>
+                        {study.decisions.map((decision) => (
+                          <div key={decision} className="flex items-center gap-2 text-xs font-light text-ink-muted">
+                            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                            <span>{decision}</span>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    <div className="text-xs font-mono pt-6 border-t border-border-subtle flex items-center justify-between">
-                      <span className="text-ink-dim">Interactive Study</span>
-                      <span className="font-semibold flex items-center gap-1 text-accent group-hover:underline underline-offset-4">
-                        View Concept <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </span>
+                    <div className="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                      <Link
+                        href={study.breakdownHref}
+                        className="inline-flex items-center justify-center gap-1.5 bg-surface-raised border border-border-subtle text-ink hover:bg-surface-raised/90 text-xs font-semibold uppercase tracking-widest px-5 py-3 rounded-full transition-colors group-hover:border-accent/40"
+                      >
+                        Read Concept Breakdown <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+                      </Link>
+
+                      <Link
+                        href={study.prototypeHref}
+                        className="inline-flex items-center justify-center gap-1 text-xs font-mono uppercase tracking-wider text-ink-dim hover:text-accent transition-colors py-2 px-3"
+                      >
+                        Interactive Prototype <ArrowUpRight className="w-3.5 h-3.5" />
+                      </Link>
                     </div>
-                  </Link>
+                  </div>
                 </FadeInUp>
               ))}
             </div>
@@ -154,7 +172,7 @@ export default function WorkPage() {
           {/* =========================================================================
               WHAT EACH STUDY SHOWCASES
           ========================================================================== */}
-          <section className="py-20 border-t border-border-subtle mb-24">
+          <section className="py-16 border-t border-border-subtle mb-20">
             <FadeInUp>
               <div className="max-w-3xl">
                 <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-3">
@@ -163,18 +181,18 @@ export default function WorkPage() {
                 <h2 className="font-playfair text-3xl sm:text-4xl font-medium text-ink mb-6">
                   What each concept demonstrates
                 </h2>
-                <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-6">
-                  Each concept study demonstrates the Veltris approach in practice: clear messaging, responsive layouts, purposeful enquiry routes, and high standards of typography and visual hierarchy.
+                <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8">
+                  Each independent concept study demonstrates the Veltris approach in practice: clear messaging, responsive layouts, purposeful enquiry routes, and high standards of typography and visual hierarchy.
                 </p>
                 <div className="p-6 rounded-2xl bg-surface/50 border border-border-subtle">
                   <div className="flex items-start gap-4">
-                    <Layers className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
+                    <ShieldAlert className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-sm font-semibold text-ink uppercase tracking-wider mb-1 font-mono">
-                        Concept Transparency
+                      <h3 className="text-xs font-semibold text-ink uppercase tracking-wider mb-1 font-mono">
+                        Concept Transparency Note
                       </h3>
                       <p className="text-xs text-ink-muted font-light leading-relaxed">
-                        Concept studies are developed by Veltris to demonstrate strategic structure, interface quality, and user journey flow. They are clearly labelled as concept explorations.
+                        This is an independent concept study created by Veltris. It is not commissioned client work and does not represent an existing company.
                       </p>
                     </div>
                   </div>
@@ -210,4 +228,3 @@ export default function WorkPage() {
     </>
   );
 }
-

@@ -25,21 +25,19 @@ const cinzel = Cinzel({
   display: "swap",
 });
 
-export const dynamic = "force-static";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.veltris.uk"),
   title: {
     default: "A Clearer Website for the Decisions That Matter | Veltris",
     template: "%s | Veltris",
   },
-  description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
+  description: "Veltris creates clear, high trust websites for businesses whose real standard is stronger than their current online presence.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
     title: "A Clearer Website for the Decisions That Matter | Veltris",
-    description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
+    description: "Veltris creates clear, high trust websites for businesses whose real standard is stronger than their current online presence.",
     url: "https://www.veltris.uk/",
     siteName: "Veltris",
     locale: "en_GB",
@@ -48,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "A Clearer Website for the Decisions That Matter | Veltris",
-    description: "Veltris is a focused digital studio for businesses whose website has to earn trust, explain value clearly, and turn attention into enquiries.",
+    description: "Veltris creates clear, high trust websites for businesses whose real standard is stronger than their current online presence.",
   },
 };
 

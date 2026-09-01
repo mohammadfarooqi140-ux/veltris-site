@@ -15,7 +15,8 @@ import {
   UserCog,
   ChevronRight,
   Menu,
-  X
+  X,
+  ArrowLeft
 } from "lucide-react";
 
 const fadeUp = {
@@ -28,26 +29,48 @@ export default function SterlingFlooringPage() {
 
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-[#1a1a1a] font-sans selection:bg-[#c75b2a] selection:text-white" style={{ fontFamily: 'var(--font-inter), sans-serif' }}>
-      
+      {/* 0. PERSISTENT CONCEPT BANNER */}
+      <div className="bg-[#0f0f0f] text-white py-2.5 px-4 text-xs font-mono border-b border-white/10 flex flex-wrap items-center justify-between gap-2 z-50 relative">
+        <div className="flex items-center gap-2">
+          <span className="w-2 h-2 rounded-full bg-[#c75b2a]" />
+          <span className="text-gray-300">
+            Veltris Independent Concept Study • Industrial Trade
+          </span>
+        </div>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/work/sterling"
+            className="text-gray-400 hover:text-white underline underline-offset-2 transition-colors"
+          >
+            Read Concept Breakdown
+          </Link>
+          <Link
+            href="/work"
+            className="inline-flex items-center gap-1 text-[#c75b2a] hover:text-[#e0713e] transition-colors"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" /> Back to Veltris
+          </Link>
+        </div>
+      </div>
+
       {/* NAVIGATION */}
-      <nav className="fixed top-0 w-full z-50 bg-[#1a1a1a] border-b border-white/10 text-white">
+      <nav className="sticky top-0 w-full z-40 bg-[#1a1a1a] border-b border-white/10 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-20 items-center">
+          <div className="flex justify-between h-16 items-center">
             {/* Logo */}
             <div className="flex-shrink-0 flex items-center">
-              <Link href="#hero" className="font-serif text-2xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+              <a href="#hero" className="font-serif text-xl sm:text-2xl font-bold tracking-wider" style={{ fontFamily: 'var(--font-playfair), serif' }}>
                 STERLING.
-              </Link>
+              </a>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
-              <Link href="#services" className="text-sm text-gray-300 hover:text-white transition-colors">Services</Link>
-              <Link href="#projects" className="text-sm text-gray-300 hover:text-white transition-colors">Projects</Link>
-              <Link href="#about" className="text-sm text-gray-300 hover:text-white transition-colors">About</Link>
-              <Link href="#contact" className="text-sm text-gray-300 hover:text-white transition-colors">Contact</Link>
+              <a href="#services" className="text-sm text-gray-300 hover:text-white transition-colors">Systems</a>
+              <a href="#capabilities" className="text-sm text-gray-300 hover:text-white transition-colors">Capabilities</a>
+              <a href="#projects" className="text-sm text-gray-300 hover:text-white transition-colors">Applications</a>
               <a href="#contact" className="bg-[#c75b2a] hover:bg-[#b04f24] text-white px-5 py-2.5 rounded-sm text-sm font-medium transition-all">
-                Get a Quote
+                Book Site Survey
               </a>
             </div>
 
@@ -55,9 +78,10 @@ export default function SterlingFlooringPage() {
             <div className="md:hidden flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-gray-300 hover:text-white"
+                className="text-gray-300 hover:text-white p-2"
+                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
               >
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>
@@ -67,13 +91,12 @@ export default function SterlingFlooringPage() {
         {isMenuOpen && (
           <div className="md:hidden bg-[#1a1a1a] border-t border-white/10">
             <div className="px-4 pt-2 pb-6 space-y-1">
-              <Link href="#services" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Services</Link>
-              <Link href="#projects" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Projects</Link>
-              <Link href="#about" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>About</Link>
-              <Link href="#contact" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Contact</Link>
+              <a href="#services" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Systems</a>
+              <a href="#capabilities" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Capabilities</a>
+              <a href="#projects" className="block px-3 py-3 text-base text-gray-300 hover:text-white hover:bg-white/5" onClick={() => setIsMenuOpen(false)}>Applications</a>
               <div className="pt-4 pb-2 px-3">
                 <a href="#contact" className="block w-full text-center bg-[#c75b2a] text-white px-5 py-3 rounded-sm font-medium" onClick={() => setIsMenuOpen(false)}>
-                  Get a Quote
+                  Book Site Survey
                 </a>
               </div>
             </div>
@@ -82,7 +105,7 @@ export default function SterlingFlooringPage() {
       </nav>
 
       {/* HERO SECTION */}
-      <section id="hero" className="relative pt-20 pb-32 md:pt-32 md:pb-48 flex items-center min-h-[90vh]">
+      <section id="hero" className="relative pt-16 pb-28 md:pt-28 md:pb-40 flex items-center min-h-[85vh]">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero.jpg"
@@ -95,25 +118,28 @@ export default function SterlingFlooringPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <motion.div 
+          <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeUp}
             className="max-w-2xl"
           >
+            <span className="text-xs font-mono uppercase tracking-widest text-[#c75b2a] font-semibold block mb-4">
+              High-Specification Industrial Flooring
+            </span>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6" style={{ fontFamily: 'var(--font-playfair), serif' }}>
               Industrial Flooring Built to Last
             </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-lg leading-relaxed">
-              Commercial epoxy, resin, and polished concrete for warehouses, factories, and retail spaces across the UK.
+            <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-lg leading-relaxed font-light">
+              Commercial epoxy, polyurethane resin, and polished concrete for warehouses, manufacturing plants, and logistics facilities across the UK.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-              <a href="#contact" className="bg-[#c75b2a] hover:bg-[#b04f24] text-white px-8 py-4 rounded-sm text-lg font-medium transition-all flex items-center group">
+              <a href="#contact" className="bg-[#c75b2a] hover:bg-[#b04f24] text-white px-8 py-4 rounded-sm text-base font-medium transition-all flex items-center group">
                 Get a Free Site Survey
                 <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <p className="text-sm text-gray-400 sm:ml-4">
-                Free, no-obligation assessment<br className="hidden sm:block" /> within 48 hours
+              <p className="text-xs text-gray-400 font-mono">
+                Technical assessment &amp; substrate testing within 48 hours
               </p>
             </div>
           </motion.div>
@@ -125,12 +151,12 @@ export default function SterlingFlooringPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-200">
             {[
-              { icon: ShieldCheck, text: "CHAS Accredited" },
+              { icon: ShieldCheck, text: "CHAS Accredited Contractor" },
               { icon: BadgeCheck, text: "SafeContractor Approved" },
-              { icon: Calendar, text: "10+ Years Experience" },
-              { icon: HardHat, text: "500,000+ sq ft Installed" }
+              { icon: Calendar, text: "Weekend Fast-Cure Scheduling" },
+              { icon: HardHat, text: "BS 8204-6 Compliance" }
             ].map((stat, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial="hidden"
                 whileInView="visible"
@@ -152,7 +178,7 @@ export default function SterlingFlooringPage() {
       {/* SERVICES SECTION */}
       <section id="services" className="py-20 md:py-32 bg-[#f8f9fa]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -160,7 +186,7 @@ export default function SterlingFlooringPage() {
             className="text-center max-w-3xl mx-auto mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-              Our Flooring Solutions
+              Industrial Flooring Solutions
             </h2>
             <div className="w-20 h-1 bg-[#c75b2a] mx-auto" />
           </motion.div>
@@ -169,21 +195,24 @@ export default function SterlingFlooringPage() {
             {[
               {
                 title: "Epoxy Flooring Systems",
-                desc: "Seamless, chemical-resistant epoxy coatings for warehouses, factories, and production facilities.",
-                img: "/images/epoxy-worker.jpg"
+                desc: "Seamless, chemical-resistant high-build epoxy coatings engineered for warehouses, distribution hubs, and automotive workshops.",
+                img: "/images/epoxy-worker.jpg",
+                spec: "High Chemical & Impact Resistance"
               },
               {
-                title: "Resin Flooring",
-                desc: "Heavy-duty polyurethane and methyl methacrylate systems for extreme temperature and traffic conditions.",
-                img: "/images/warehouse.jpg"
+                title: "Polyurethane Resin Systems",
+                desc: "Heavy-duty thermal shock resistant polyurethane screeds for food production, chemical processing, and wet processing environments.",
+                img: "/images/warehouse.jpg",
+                spec: "Operating Range -40°C to +120°C"
               },
               {
-                title: "Concrete Polishing",
-                desc: "Diamond-polished concrete with high-gloss or matte finish. Low maintenance, long lifespan.",
-                img: "/images/concrete.jpg"
+                title: "Diamond-Polished Concrete",
+                desc: "Industrial mechanical grinding and liquid hardener sealing for durable, dust-proof logistics and commercial retail floors.",
+                img: "/images/concrete.jpg",
+                spec: "Low Lifecycle Maintenance"
               }
             ].map((service, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial="hidden"
                 whileInView="visible"
@@ -192,22 +221,31 @@ export default function SterlingFlooringPage() {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.15 } }
                 }}
-                className="bg-white group cursor-pointer border border-gray-100 hover:shadow-xl transition-shadow duration-300"
+                className="bg-white border border-gray-100 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col justify-between"
               >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={service.img}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                <div>
+                  <div className="relative h-64 overflow-hidden">
+                    <Image
+                      src={service.img}
+                      alt={service.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-[#c75b2a] block mb-2 font-semibold">
+                      {service.spec}
+                    </span>
+                    <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed mb-6">{service.desc}</p>
+                  </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3" style={{ fontFamily: 'var(--font-playfair), serif' }}>{service.title}</h3>
-                  <p className="text-gray-600 mb-6 line-clamp-3">{service.desc}</p>
-                  <span className="text-[#c75b2a] font-medium flex items-center group-hover:underline">
-                    Learn more <ChevronRight className="w-4 h-4 ml-1" />
-                  </span>
+                <div className="px-8 pb-8 pt-0">
+                  <a href="#contact" className="text-xs font-semibold uppercase tracking-wider text-[#c75b2a] flex items-center hover:underline">
+                    Request Specification Sheet <ChevronRight className="w-4 h-4 ml-1" />
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -215,8 +253,8 @@ export default function SterlingFlooringPage() {
         </div>
       </section>
 
-      {/* WHY STERLING SECTION */}
-      <section id="about" className="py-20 md:py-32 bg-white">
+      {/* CAPABILITIES SECTION */}
+      <section id="capabilities" className="py-20 md:py-32 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -226,101 +264,87 @@ export default function SterlingFlooringPage() {
               variants={fadeUp}
             >
               <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-                Why Contractors Choose Sterling
+                Engineered Around Operational Continuity
               </h2>
-              <p className="text-lg text-gray-600 mb-10">
-                We understand that closing your facility costs money. Our rapid-cure systems and flexible scheduling mean we get in, install a world-class floor, and get out, often over a single weekend.
+              <p className="text-base md:text-lg text-gray-600 mb-10 leading-relaxed font-light">
+                Facility shutdowns directly impact output. Sterling specifies rapid-cure resin chemistries and phased project scheduling to execute high-specification installations with minimal disruption to logistics and production cycles.
               </p>
-              
+
               <div className="space-y-6">
                 {[
-                  { icon: Clock, text: "Fast turnaround with minimal downtime" },
-                  { icon: Shield, text: "Slip-resistant and safety-compliant finishes" },
-                  { icon: ClipboardList, text: "10-year warranty on all installations" },
-                  { icon: UserCog, text: "Works around your production schedule" }
+                  { icon: Clock, title: "Rapid Turnaround", text: "Fast-cure methyl methacrylate (MMA) and polyaspartic systems ready for foot traffic within hours." },
+                  { icon: Shield, title: "Safety & Slip Resistance", text: "Custom aggregate profiles tailored to meet specific HSE Pendulum Test Value (PTV) wet slip ratings." },
+                  { icon: ClipboardList, title: "Substrate Moisture Testing", text: "Comprehensive on-site relative humidity (RH) testing and damp-proof membrane (DPM) application." },
+                  { icon: UserCog, title: "Phased Execution", text: "Zone-by-zone installation allowing continuous facility operations throughout the installation window." }
                 ].map((point, i) => (
                   <div key={i} className="flex items-start">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#f8f9fa] flex items-center justify-center border border-gray-100">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-[#f8f9fa] flex items-center justify-center border border-gray-100">
                       <point.icon className="w-5 h-5 text-[#c75b2a]" />
                     </div>
-                    <div className="ml-4 pt-3">
-                      <p className="text-gray-900 font-medium">{point.text}</p>
+                    <div className="ml-4">
+                      <h4 className="text-sm font-bold text-gray-900">{point.title}</h4>
+                      <p className="text-gray-600 text-xs leading-relaxed mt-1">{point.text}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </motion.div>
-            
+
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative h-[600px] w-full bg-gray-200"
+              className="relative h-[540px] w-full rounded-2xl overflow-hidden border border-gray-200"
             >
               <Image
                 src="/images/hero.jpg"
-                alt="Sterling team at work"
+                alt="Sterling industrial installation"
                 fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="object-cover"
               />
-              <div className="absolute -bottom-8 -left-8 bg-[#1a1a1a] p-8 text-white max-w-xs hidden md:block">
-                <p className="font-playfair text-4xl font-bold text-[#c75b2a] mb-2">1M+</p>
-                <p className="text-sm font-medium uppercase tracking-wider text-gray-300">Sq Ft of Flooring Installed Nationwide</p>
+              <div className="absolute bottom-6 left-6 right-6 bg-[#1a1a1a]/95 backdrop-blur-md p-6 rounded-xl border border-white/10 text-white">
+                <p className="text-xs font-mono uppercase tracking-widest text-[#c75b2a] mb-1 font-semibold">Technical Standard</p>
+                <p className="text-sm font-light text-gray-200">
+                  Substrate preparation via captive shot-blasting and diamond planetary grinding to guarantee mechanical keying.
+                </p>
               </div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* PROJECTS SECTION */}
+      {/* APPLICATIONS SECTION */}
       <section id="projects" className="py-20 md:py-32 bg-[#1a1a1a] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-            <motion.div 
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="max-w-2xl"
-            >
-              <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-                Recent Installations
-              </h2>
-              <p className="text-gray-400">
-                Representative project showcase for high-specification flooring installations
-              </p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-            >
-              <a href="#" className="text-[#c75b2a] hover:text-white transition-colors font-medium flex items-center">
-                View all projects <ChevronRight className="w-5 h-5 ml-1" />
-              </a>
-            </motion.div>
+          <div className="max-w-2xl mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+              Facility Applications
+            </h2>
+            <p className="text-gray-400 text-sm md:text-base font-light">
+              System specifications matched to distinct mechanical loads, chemical exposures, and thermal cycles.
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                title: "Warehouse Flooring, Midlands",
-                desc: "35,000 sq ft epoxy coating for a distribution centre. Completed in 5 days with zero operational downtime.",
+                title: "High-Bay Logistics & Distribution",
+                desc: "High-abrasion resistance, aisle line-marking, and joint sealant treatments designed for continuous heavy forklift traffic.",
                 img: "/images/hero.jpg"
               },
               {
-                title: "Factory Refurbishment, North West",
-                desc: "Full resin floor system for a food production facility. Temperature-resistant and hygienically sealed.",
+                title: "Food & Pharmaceutical Processing",
+                desc: "Hygienic polyurethane screeds with integral perimeter coving, hot-water washdown resistance, and antimicrobial properties.",
                 img: "/images/warehouse.jpg"
               },
               {
-                title: "Retail Showroom, London",
-                desc: "Polished concrete with decorative aggregate exposure. High-traffic retail environment.",
+                title: "Commercial Showrooms & Retail Hubs",
+                desc: "Diamond-polished architectural concrete combining high aesthetic lustre with durable, low-maintenance surface resilience.",
                 img: "/images/concrete.jpg"
               }
             ].map((project, i) => (
-              <motion.div 
+              <motion.div
                 key={i}
                 initial="hidden"
                 whileInView="visible"
@@ -329,19 +353,22 @@ export default function SterlingFlooringPage() {
                   hidden: { opacity: 0, y: 30 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.15 } }
                 }}
-                className="group cursor-pointer"
+                className="bg-black/40 border border-white/10 rounded-xl overflow-hidden"
               >
-                <div className="relative h-72 overflow-hidden mb-6">
+                <div className="relative h-64 overflow-hidden">
                   <Image
                     src={project.img}
                     alt={project.title}
                     fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                    className="object-cover opacity-80"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 group-hover:text-[#c75b2a] transition-colors" style={{ fontFamily: 'var(--font-playfair), serif' }}>{project.title}</h3>
-                <p className="text-gray-400 text-sm">{project.desc}</p>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 text-white" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-400 text-xs leading-relaxed">{project.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
@@ -351,65 +378,16 @@ export default function SterlingFlooringPage() {
       {/* ACCREDITATIONS SECTION */}
       <section className="py-16 bg-white border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-10">
-            <h2 className="text-sm font-bold tracking-widest text-gray-400 uppercase">Certifications & Standards</h2>
+          <div className="text-center mb-8">
+            <h2 className="text-xs font-mono font-bold tracking-widest text-gray-400 uppercase">
+              Compliance &amp; Accreditation Standards
+            </h2>
           </div>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-60">
-            {["CHAS", "SafeContractor", "Constructionline", "ISO 9001"].map((cert, i) => (
-              <span key={i} className="text-xl md:text-2xl font-bold text-gray-800 tracking-wider">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+            {["CHAS Accredited", "SafeContractor", "Constructionline Gold", "ISO 9001 Quality Certified"].map((cert, i) => (
+              <span key={i} className="text-sm md:text-base font-mono font-semibold text-gray-700 tracking-wider">
                 {cert}
               </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIAL SECTION */}
-      <section className="py-20 md:py-32 bg-[#f8f9fa]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={fadeUp}
-            className="mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: 'var(--font-playfair), serif' }}>
-              What Our Clients Say
-            </h2>
-            <div className="w-20 h-1 bg-[#c75b2a] mx-auto" />
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            {[
-              {
-                quote: "Sterling installed 20,000 sq ft of epoxy flooring in our warehouse. Professional, fast, and no disruption to our operations.",
-                author: "Mark H., Operations Director"
-              },
-              {
-                quote: "The polished concrete in our showroom gets compliments from every customer. Exactly what we needed.",
-                author: "Priya K., Retail Manager"
-              }
-            ].map((testimonial, i) => (
-              <motion.div 
-                key={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={{
-                  hidden: { opacity: 0, y: 20 },
-                  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay: i * 0.2 } }
-                }}
-                className="bg-white p-10 shadow-sm border border-gray-100 text-left relative"
-              >
-                <div className="text-[#c75b2a] text-6xl font-serif absolute top-6 left-6 opacity-20">&ldquo;</div>
-                <p className="text-lg text-gray-700 italic mb-6 relative z-10 pt-4">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <p className="font-bold text-gray-900 uppercase tracking-wider text-sm">
-                  {testimonial.author}
-                </p>
-              </motion.div>
             ))}
           </div>
         </div>
@@ -427,12 +405,15 @@ export default function SterlingFlooringPage() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6" style={{ fontFamily: 'var(--font-playfair), serif' }}>
               Request Your Free Site Survey
             </h2>
-            <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              We&apos;ll assess your space, recommend the right system, and provide a fixed-price quote within 48 hours.
+            <p className="text-base md:text-lg text-gray-400 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+              We&apos;ll assess your facility substrate, test for moisture, specify the appropriate resin or concrete system, and provide a fixed-price proposal within 48 hours.
             </p>
-            <button className="bg-[#c75b2a] hover:bg-[#b04f24] text-white px-10 py-5 rounded-sm text-lg font-medium transition-all shadow-lg shadow-[#c75b2a]/20">
-              Get a Free Site Survey
-            </button>
+            <a
+              href="#contact"
+              className="inline-block bg-[#c75b2a] hover:bg-[#b04f24] text-white px-10 py-5 rounded-sm text-sm font-semibold uppercase tracking-widest transition-all shadow-lg"
+            >
+              Book Free Site Survey
+            </a>
           </motion.div>
         </div>
       </section>
@@ -440,45 +421,35 @@ export default function SterlingFlooringPage() {
       {/* FOOTER */}
       <footer className="bg-[#0a0a0a] text-gray-400 py-16 border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
-            <div className="col-span-1 md:col-span-2">
-              <Link href="#hero" className="font-serif text-2xl font-bold tracking-wider text-white mb-4 block" style={{ fontFamily: 'var(--font-playfair), serif' }}>
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start gap-8 border-b border-white/10 pb-12">
+            <div>
+              <a href="#hero" className="font-serif text-2xl font-bold tracking-wider text-white mb-2 block" style={{ fontFamily: 'var(--font-playfair), serif' }}>
                 STERLING.
-              </Link>
-              <p className="text-lg text-gray-500 max-w-sm">
-                Flooring That Works as Hard as You Do
+              </a>
+              <p className="text-xs text-gray-500 max-w-sm font-mono">
+                High-specification industrial epoxy, resin, and polished concrete solutions.
               </p>
             </div>
-            
-            <div>
-              <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Contact</h4>
-              <ul className="space-y-3">
-                <li><a href="mailto:hello@sterlingflooring.co.uk" className="hover:text-white transition-colors">hello@sterlingflooring.co.uk</a></li>
-                <li><a href="tel:01234567890" className="hover:text-white transition-colors">01234 567 890</a></li>
-              </ul>
-            </div>
 
-            <div>
-              <h4 className="text-white font-bold mb-4 uppercase tracking-widest text-sm">Navigation</h4>
-              <ul className="space-y-3">
-                <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li>
-                <li><Link href="#projects" className="hover:text-white transition-colors">Projects</Link></li>
-                <li><Link href="#about" className="hover:text-white transition-colors">About</Link></li>
-              </ul>
+            <div className="flex flex-wrap gap-6 text-xs font-semibold tracking-widest uppercase text-gray-400">
+              <a href="#services" className="hover:text-white transition-colors">Systems</a>
+              <a href="#capabilities" className="hover:text-white transition-colors">Capabilities</a>
+              <a href="#projects" className="hover:text-white transition-colors">Applications</a>
+              <a href="#contact" className="hover:text-white transition-colors">Survey</a>
             </div>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p>© 2025 Sterling Industrial Flooring</p>
-            <p className="text-gray-600">Concept direction created by Veltris</p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs mt-8">
+            <p>© {new Date().getFullYear()} Sterling Industrial Flooring</p>
+            <p className="uppercase tracking-widest text-[#666]">Independent concept study created by Veltris</p>
           </div>
         </div>
       </footer>
 
-      {/* Disclaimer */}
+      {/* TRANSPARENCY NOTICE */}
       <div className="bg-black py-4 px-6 text-center border-t border-white/5">
         <p className="text-[11px] text-zinc-500 font-mono tracking-wider">
-          Concept showcase created by Veltris to demonstrate commercial web structure and trust design.
+          This is an independent concept study created by Veltris. It is not commissioned client work and does not represent an existing company.
         </p>
       </div>
     </div>

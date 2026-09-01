@@ -6,8 +6,6 @@ import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { MoreHorizontal, X, Home } from "lucide-react";
 
-const mainPages = ["/", "/services", "/work", "/contact", "/about"];
-
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -15,8 +13,8 @@ export default function Navbar() {
   const menuRef = useRef<HTMLDivElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  // Check if current page is a concept site
-  const isConceptPage = !mainPages.includes(pathname);
+  // Check if current page is an isolated prototype route
+  const isPrototypePage = pathname === "/hartley" || pathname === "/sterling";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,11 +65,11 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  // If we are on a concept page, we render a floating button so it doesn't clash with the concept's own navbar.
-  if (isConceptPage) {
+  // If we are on an isolated interactive prototype page, render a floating drawer button
+  if (isPrototypePage) {
     return (
       <>
-        {/* Floating Toggle Button for Concept Sites */}
+        {/* Floating Toggle Button for Prototype Pages */}
         <button
           ref={toggleRef}
           onClick={() => setIsOpen(!isOpen)}
@@ -140,9 +138,9 @@ export default function Navbar() {
         {/* Desktop Navigation Links */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || (link.href === "/work" && pathname.startsWith("/work"));
             return (
-               <Link
+              <Link
                 key={link.name}
                 href={link.href}
                 className={`relative px-4 py-2 rounded-full text-[11px] tracking-[0.18em] uppercase font-medium transition-colors ${
@@ -186,7 +184,7 @@ export default function Navbar() {
           >
             <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-2">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = pathname === link.href || (link.href === "/work" && pathname.startsWith("/work"));
                 return (
                   <Link
                     key={link.name}

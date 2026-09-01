@@ -3,13 +3,11 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const mainPages = ["/", "/services", "/work", "/contact", "/about", "/privacy", "/terms", "/privacy-policy", "/cookie-policy"];
-
 export default function Footer() {
   const pathname = usePathname();
-  const isConceptPage = !mainPages.includes(pathname);
+  const isPrototypePage = pathname === "/hartley" || pathname === "/sterling";
 
-  if (isConceptPage) {
+  if (isPrototypePage) {
     return null;
   }
 
@@ -22,7 +20,7 @@ export default function Footer() {
               VELTRIS
             </Link>
             <p className="text-ink-muted text-sm md:text-base max-w-sm leading-relaxed font-light">
-              Veltris is a focused digital studio creating clear, high-trust websites for businesses where credibility and conversion matter.
+              Veltris creates clear, high-trust websites for businesses whose real standard is stronger than their current online presence.
             </p>
           </div>
           <div className="grid grid-cols-2 gap-8 md:justify-self-end">
@@ -63,7 +61,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        
+
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-subtle text-xs text-ink-dim font-mono gap-4">
           <p>© {new Date().getFullYear()} Veltris. All rights reserved.</p>
           <div className="flex items-center gap-6">
@@ -71,7 +69,7 @@ export default function Footer() {
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-ink-muted transition-colors">
-              Terms & Cookies
+              Terms &amp; Cookies
             </Link>
           </div>
         </div>
@@ -79,4 +77,3 @@ export default function Footer() {
     </footer>
   );
 }
-

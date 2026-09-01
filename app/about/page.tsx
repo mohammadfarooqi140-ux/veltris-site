@@ -64,7 +64,7 @@ const standardPrinciples = [
   {
     num: "03",
     title: "Purposeful enquiry journeys",
-    text: "Every important page should make the next step clear, whether that is making an enquiry, requesting a consultation, or exploring a service.",
+    text: "Every important page should make the next step clear, whether that is making an enquiry, booking an assessment, or exploring a service.",
   },
   {
     num: "04",
@@ -90,7 +90,7 @@ export default function AboutPage() {
             <div className="w-full lg:w-[60%] flex flex-col justify-center">
               <FadeInUp>
                 <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-6">
-                  THE VELTRIS STANDARD
+                  STUDIO LEADERSHIP &amp; PURPOSE
                 </span>
                 <h1 className="font-playfair text-4xl sm:text-6xl md:text-7xl leading-[1.08] font-medium tracking-tight mb-8 text-ink">
                   Considered design for businesses where trust and clarity matter.
@@ -100,13 +100,13 @@ export default function AboutPage() {
               <FadeInUp delay={0.1}>
                 <div className="space-y-6 text-base sm:text-lg md:text-xl text-ink-muted max-w-2xl font-light leading-relaxed">
                   <p>
-                    Veltris is a UK based digital studio led by Muhammad, Founder and Principal.
+                    Veltris is a UK based digital studio led directly by Muhammad, Founder and Principal.
                   </p>
                   <p>
-                    We handle strategy, visual direction, website design, responsive build, and enquiry journey improvement for every engagement.
+                    We handle strategy, positioning, visual direction, website design, responsive build, and enquiry journey improvement into one focused process.
                   </p>
                   <p>
-                    Veltris was created for businesses where the quality of the first digital impression affects whether a valuable prospect continues, enquires, or moves on.
+                    Veltris was created for businesses whose real standard is stronger than their current online presence, and where the first digital impression directly influences commercial decisions.
                   </p>
                 </div>
               </FadeInUp>
@@ -143,23 +143,23 @@ export default function AboutPage() {
         </section>
 
         {/* =========================================================================
-            HOW I WORK
+            HOW WE WORK
         ========================================================================== */}
         <section className="py-24 bg-paper relative z-10 border-b border-border-subtle">
           <div className="container mx-auto px-6 md:px-12 max-w-4xl">
             <FadeInUp>
               <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink mb-8 leading-tight">
-                How I work
+                How we work
               </h2>
               <div className="space-y-6 text-base sm:text-lg text-ink-muted font-light leading-relaxed">
                 <p>
-                  I begin by understanding the business, the audience, the offer, and the most important action the website needs to support.
+                  We begin by understanding the business, the audience, the offer, and the most important action the website needs to support.
                 </p>
                 <p>
-                  From there, I shape the page structure, visual direction, user journey, and responsive experience before refining the details that affect confidence and usability.
+                  From there, we shape the page structure, visual direction, user journey, and responsive experience before refining the details that affect confidence and usability.
                 </p>
                 <p className="text-ink font-normal">
-                  The work is personal because the responsibility is personal. Every project receives direct involvement from the Founder and Principal.
+                  Every engagement is led directly by Muhammad, Founder and Principal, ensuring high accountability and focused attention on every project.
                 </p>
               </div>
             </FadeInUp>
@@ -167,7 +167,7 @@ export default function AboutPage() {
         </section>
 
         {/* =========================================================================
-            WHAT EVERY PROJECT IS MEASURED AGAINST
+            THE VELTRIS STANDARD
         ========================================================================== */}
         <section className="py-28 bg-paper relative z-10">
           <div className="container mx-auto px-6 md:px-12 max-w-6xl">
@@ -183,8 +183,8 @@ export default function AboutPage() {
             </FadeInUp>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {standardPrinciples.map((principle, idx) => (
-                <FadeInUp key={principle.num} delay={idx * 0.08}>
+              {standardPrinciples.map((principle) => (
+                <FadeInUp key={principle.num}>
                   <div className="border-t border-border-subtle pt-8 pb-4">
                     <span className="text-xs font-mono text-accent block mb-3">
                       {principle.num}
@@ -203,31 +203,29 @@ export default function AboutPage() {
         </section>
 
         {/* =========================================================================
-            A CONSIDERED TEN WORKING DAY PROCESS
+            DELIVERY PROCESS
         ========================================================================== */}
         <section className="py-24 px-6 relative z-10 bg-paper-subtle border-y border-border-subtle">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto text-center">
             <FadeInUp>
-              <div className="text-center">
-                <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-4">
-                  Timeline &amp; Delivery
-                </span>
-                <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink leading-tight mb-6">
-                  A considered ten working day process
-                </h2>
-                <div className="space-y-4 text-base sm:text-lg text-ink-muted font-light leading-relaxed max-w-2xl mx-auto mb-8">
-                  <p>
-                    Most projects are delivered in around ten working days from approved direction and receipt of the required content. Where the scope allows, delivery may happen sooner.
-                  </p>
-                  <p>
-                    The first stage establishes the structure and visual direction. The build then brings the approved experience to life across responsive layouts, followed by review, refinement, and launch preparation.
-                  </p>
-                </div>
-                <div className="p-6 rounded-2xl bg-surface border border-border-subtle max-w-2xl mx-auto text-center">
-                  <p className="text-xs text-ink leading-relaxed">
-                    We work with a limited number of businesses at a time so each project receives focused attention. Every enquiry is reviewed for fit before a project is offered.
-                  </p>
-                </div>
+              <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-4">
+                Timeline &amp; Delivery
+              </span>
+              <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink leading-tight mb-6">
+                A focused ten working day process
+              </h2>
+              <div className="space-y-4 text-base sm:text-lg text-ink-muted font-light leading-relaxed max-w-2xl mx-auto mb-8">
+                <p>
+                  Most projects are delivered in around ten working days from approved direction and receipt of the required content. Where the scope allows, delivery may happen sooner.
+                </p>
+                <p>
+                  The first stage establishes the structure and visual direction. The build then brings the approved experience to life across responsive layouts, followed by review, refinement, and launch preparation.
+                </p>
+              </div>
+              <div className="p-6 rounded-2xl bg-surface border border-border-subtle max-w-2xl mx-auto text-center">
+                <p className="text-xs text-ink leading-relaxed">
+                  We work with a limited number of businesses at a time so each project receives focused attention. Every enquiry is reviewed for fit before a project is offered.
+                </p>
               </div>
             </FadeInUp>
           </div>
@@ -258,4 +256,3 @@ export default function AboutPage() {
     </>
   );
 }
-
