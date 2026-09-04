@@ -108,11 +108,11 @@ export default function Navbar() {
                   );
                 })}
                 <Link
-                  href="/contact"
+                  href="/#audit"
                   onClick={() => setIsOpen(false)}
                   className="mt-2 mx-2 py-3 bg-ink text-paper text-center text-[11px] uppercase tracking-[0.18em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
                 >
-                  Discuss your website
+                  Request Free Audit
                 </Link>
               </div>
             </motion.div>
@@ -152,10 +152,10 @@ export default function Navbar() {
             );
           })}
           <Link
-            href="/contact"
+            href="/#audit"
             className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-semibold bg-ink text-paper hover:bg-zinc-200 transition-colors"
           >
-            Discuss your website
+            Request Free Audit
           </Link>
         </div>
 
@@ -199,11 +199,11 @@ export default function Navbar() {
                 );
               })}
               <Link
-                href="/contact"
+                href="/#audit"
                 onClick={() => setIsOpen(false)}
                 className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-semibold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
               >
-                Discuss your website
+                Request Free Audit
               </Link>
             </div>
           </motion.div>

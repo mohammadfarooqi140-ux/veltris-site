@@ -169,10 +169,10 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                 <Link
-                  href="/contact"
+                  href="#audit"
                   className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
                 >
-                  Discuss your website <ArrowRight className="w-4 h-4" />
+                  Request Free Audit <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/work"
