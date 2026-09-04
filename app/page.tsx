@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight, CheckCircle2, ShieldAlert } from "lucide-react";
 import FadeInUp from "@/components/FadeInUp";
+import AuditCTAForm from "@/components/AuditCTAForm";
 import dynamic from "next/dynamic";
 
 const Hero3D = dynamic(() => import("@/components/ui/Hero3D"), { ssr: false });
@@ -109,8 +110,8 @@ const standardPrinciples = [
   },
   {
     num: "04",
-    title: "Thorough mobile and launch review",
-    text: "The finished experience is reviewed across responsive layouts, navigation, forms, content, links, metadata, and the details that affect trust.",
+    title: "Mathematical precision",
+    text: "Every layout we build is anchored to a strict, screen-density calibrated 8-point spacing grid (S(n) = 8n) and a 24px vertical typographic baseline grid. This ensures your brand's mobile presentation is structurally flawless, mathematically aligned, and perfectly responsive on every Retina viewport without visual overlap or layout cramping.",
   },
 ];
 
@@ -120,7 +121,7 @@ const homepageConcepts = [
     title: "Hartley & Co. Builders",
     category: "Mainstream Construction Business",
     description:
-      "Hartley explores how a construction business can present its services with more clarity, confidence, and commercial credibility. Structured around understandable service categories, visible trust signals, project context, and a direct route to request a quote.",
+      "Hartley explores how a construction business presents high-value capability with absolute clarity. The strategy focuses on solving 'Trapped Authority' by replacing cheap stock photography with authentic project context to eliminate procurement friction.",
     breakdownHref: "/work/hartley",
     prototypeHref: "/hartley",
   },
@@ -129,7 +130,7 @@ const homepageConcepts = [
     title: "Sterling Industrial Flooring",
     category: "Industrial Trade Business",
     description:
-      "Sterling explores how a technical industrial business can make complex services easier to understand and easier to enquire about. Uses structured service information, technical specifications, accreditation and compliance signals, and a focused site survey booking path.",
+      "Sterling explores how a technical industrial contractor makes complex services easier to understand and enquire about. The strategy satisfying procurement H&S standards, displaying accreditation signals, and framing weekend-only installation schedules to satisfy procurement and mitigate operational downtime risks.",
     breakdownHref: "/work/sterling",
     prototypeHref: "/sterling",
   },
@@ -243,7 +244,7 @@ export default function Home() {
                   The Veltris Standard
                 </h2>
                 <p className="text-ink-muted text-base md:text-lg font-light leading-relaxed">
-                  The Veltris Standard is the quality framework applied to every engagement. It guides how your positioning is clarified, your visual direction is shaped, your enquiry journey is simplified, and your website is prepared for launch.
+                  The Veltris Standard is the quality framework applied to every engagement. Rooted in mathematical precision, it guides how your positioning is clarified, your visual direction is shaped, your enquiry journey is simplified, and your website is prepared for launch.
                 </p>
               </div>
             </FadeInUp>
@@ -373,23 +374,23 @@ export default function Home() {
         </section>
 
         {/* =========================================================================
-            FINAL CTA
+            FINAL CTA: FRICTIONLESS 2-POINT AUDIT CONTACT FORM
         ========================================================================== */}
-        <section className="py-24 px-6 relative z-10 bg-paper">
+        <section id="audit" className="py-28 px-6 relative z-10 bg-paper">
           <div className="max-w-4xl mx-auto text-center">
             <FadeInUp>
-              <h2 className="font-playfair text-3xl sm:text-5xl font-medium text-ink mb-6 leading-tight">
-                Discuss your website
+              <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-4">
+                Frictionless Visual Audit
+              </span>
+              <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink mb-6 leading-tight">
+                Request a Free 2-Point Mobile Spacing &amp; Layout Audit
               </h2>
-              <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                If your website needs more clarity, stronger presentation, or an easier enquiry journey, submit the details for a private project review.
+              <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                Muhammad will personally review your current website&apos;s mobile presentation. We will email or DM you a single, annotated red-line markup image showing exactly where layout or spacing bugs are causing premium clients to bounce before booking. No phone calls, no videos, no obligation.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
-              >
-                Discuss your website <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="p-8 sm:p-12 rounded-3xl bg-surface/50 border border-border-subtle shadow-xl">
+                <AuditCTAForm />
+              </div>
             </FadeInUp>
           </div>
         </section>
