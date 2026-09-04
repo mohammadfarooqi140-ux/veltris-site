@@ -98,30 +98,29 @@ export default function FasciaConceptBreakdownPage() {
             <FadeInUp delay={0.1}>
               <div className="relative rounded-3xl overflow-hidden border border-border-subtle bg-surface shadow-2xl p-6 sm:p-10">
                 {/* Preview Banner Container */}
-                <div className="relative min-h-[320px] sm:min-h-[380px] w-full rounded-2xl overflow-hidden mb-8 border border-white/[0.08] bg-zinc-950 flex flex-col justify-between p-6 sm:p-8">
-                  {/* Visual Wireframe / Vector Atmosphere */}
-                  <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#d49a37_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#d49a37]/[0.06] rounded-full blur-[100px] pointer-events-none" />
+                <div className="relative min-h-[320px] sm:min-h-[380px] w-full rounded-2xl overflow-hidden mb-8 border border-[#E8E2D6] bg-[#FAF8F5] flex flex-col justify-between p-6 sm:p-8">
+                  {/* Subtle warm glow */}
+                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#967243]/[0.05] rounded-full blur-[100px] pointer-events-none" />
 
                   <div className="relative z-10 flex items-center justify-between">
-                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#d49a37] bg-[#d49a37]/10 border border-[#d49a37]/30 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#967243] bg-white border border-[#E2DDD3] px-3 py-1 rounded-full shadow-sm">
                       Interactive Prototype Available
                     </span>
-                    <span className="text-xs font-mono text-zinc-500">
+                    <span className="text-xs font-mono text-[#8C8479]">
                       Mobile-First Architecture
                     </span>
                   </div>
 
                   <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 my-6">
                     <div className="max-w-md">
-                      <span className="text-xs font-mono text-zinc-400 block mb-1">
+                      <span className="text-xs font-mono text-[#8C8479] block mb-1">
                         PRACTITIONER-LED CLINICAL RESTORATIONS
                       </span>
-                      <h2 className="text-2xl sm:text-3xl font-sans font-semibold tracking-[-0.03em] text-white leading-tight mb-4">
+                      <h2 className="text-2xl sm:text-3xl font-sans font-semibold tracking-[-0.03em] text-[#1C1917] leading-tight mb-4">
                         “Subtle, undetectable anti-ageing.”
                       </h2>
                       <div className="flex items-center gap-3">
-                        <div className="w-12 h-12 rounded-xl overflow-hidden relative border border-white/[0.08] bg-zinc-900 flex-shrink-0">
+                        <div className="w-12 h-12 rounded-xl overflow-hidden relative border border-[#E8E2D6] bg-white flex-shrink-0 shadow-sm">
                           <Image
                             src="/Katie.png"
                             alt="Katie, Founder & Registered Nurse"
@@ -130,15 +129,15 @@ export default function FasciaConceptBreakdownPage() {
                           />
                         </div>
                         <div>
-                          <span className="text-xs font-medium text-white block">Katie</span>
-                          <span className="text-[11px] font-mono text-zinc-400 block">Nurse Prescriber | Clinic Owner • Weybridge</span>
+                          <span className="text-xs font-medium text-[#1C1917] block">Katie</span>
+                          <span className="text-[11px] font-mono text-[#6E675F] block">Nurse Prescriber | Clinic Owner • Weybridge</span>
                         </div>
                       </div>
                     </div>
 
                     <Link
                       href="/fascia"
-                      className="inline-flex items-center justify-center gap-2 bg-[#d49a37] hover:bg-[#e4a844] text-zinc-950 px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest transition-all self-start md:self-auto shadow-[0_10px_30px_rgba(212,154,55,0.25)] hover:scale-105"
+                      className="inline-flex items-center justify-center gap-2 bg-[#967243] hover:bg-[#826135] text-white px-7 py-3.5 rounded-full text-xs font-semibold uppercase tracking-widest transition-all self-start md:self-auto shadow-sm hover:scale-105"
                     >
                       Launch Live Prototype <ArrowUpRight className="w-4 h-4" />
                     </Link>
