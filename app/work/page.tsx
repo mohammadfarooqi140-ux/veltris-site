@@ -38,7 +38,23 @@ const structuredData = {
 
 const conceptStudies = [
   {
-    tag: "INDEPENDENT CONCEPT STUDY 01",
+    tag: "FLAGSHIP CONCEPT STUDY 01",
+    title: "Fascia Aesthetics",
+    category: "Medical Aesthetics & Clinical Restorations",
+    label: "Independent concept study for an ultra-premium medical aesthetics clinic",
+    description:
+      "Fascia Aesthetics explores how a Weybridge clinic led by Nurse Prescriber Katie replaces generic booking engines with subtle, undetectable anti-ageing positioning, 8+ yrs of natural results, and a bespoke 3-field concierge consultation journey.",
+    breakdownHref: "/work/fascia",
+    prototypeHref: "/fascia",
+    decisions: [
+      "Subtle, undetectable anti-ageing positioning",
+      "Nurse Prescriber & Weybridge clinic authority",
+      "Bespoke 3-field concierge entry",
+      "Bento grid treatment matrix with wireframe depth",
+    ],
+  },
+  {
+    tag: "INDEPENDENT CONCEPT STUDY 02",
     title: "Hartley & Co. Builders",
     category: "Construction & Commercial Build",
     label: "Independent concept study for a mainstream construction business",
@@ -54,7 +70,7 @@ const conceptStudies = [
     ],
   },
   {
-    tag: "INDEPENDENT CONCEPT STUDY 02",
+    tag: "INDEPENDENT CONCEPT STUDY 03",
     title: "Sterling Industrial Flooring",
     category: "Specialist Industrial Contracting",
     label: "Independent concept study for an industrial trade business",
@@ -106,11 +122,15 @@ export default function WorkPage() {
           <section className="mb-28" aria-label="Selected Concept Studies">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {conceptStudies.map((study, idx) => (
-                <FadeInUp key={study.tag} delay={idx * 0.1}>
-                  <div className="bg-surface/50 border border-border-subtle rounded-3xl p-8 md:p-10 flex flex-col justify-between h-full transition-all group hover:bg-surface-raised/60 hover:border-border shadow-lg">
+                <FadeInUp key={study.tag} delay={idx * 0.1} className={idx === 0 ? "md:col-span-2" : ""}>
+                  <div className={`border rounded-3xl p-8 md:p-10 flex flex-col justify-between h-full transition-all group shadow-lg ${
+                    idx === 0
+                      ? "bg-surface/75 border-[#d49a37]/30 hover:border-[#d49a37]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                      : "bg-surface/50 border-border-subtle hover:bg-surface-raised/60 hover:border-border"
+                  }`}>
                     <div>
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-6">
-                        <span className="text-[10px] font-mono text-accent font-semibold tracking-widest">
+                        <span className={`text-[10px] font-mono font-semibold tracking-widest ${idx === 0 ? "text-[#d49a37]" : "text-accent"}`}>
                           {study.tag}
                         </span>
                         <span className="inline-flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-[#70785B] bg-[#70785B]/10 border border-[#70785B]/30 px-2.5 py-0.5 rounded-full">
@@ -139,19 +159,25 @@ export default function WorkPage() {
                         <span className="text-[10px] font-mono uppercase tracking-widest text-ink-dim block mb-3">
                           Website Decisions Demonstrated:
                         </span>
-                        {study.decisions.map((decision) => (
-                          <div key={decision} className="flex items-center gap-2 text-xs font-light text-ink-muted">
-                            <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
-                            <span>{decision}</span>
-                          </div>
-                        ))}
+                        <div className={idx === 0 ? "grid grid-cols-1 sm:grid-cols-2 gap-2" : "space-y-2"}>
+                          {study.decisions.map((decision) => (
+                            <div key={decision} className="flex items-center gap-2 text-xs font-light text-ink-muted">
+                              <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${idx === 0 ? "bg-[#d49a37]" : "bg-accent"}`} />
+                              <span>{decision}</span>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
                     <div className="pt-6 border-t border-border-subtle flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
                       <Link
                         href={study.breakdownHref}
-                        className="inline-flex items-center justify-center gap-1.5 bg-surface-raised border border-border-subtle text-ink hover:bg-surface-raised/90 text-xs font-semibold uppercase tracking-widest px-5 py-3 rounded-full transition-colors group-hover:border-accent/40"
+                        className={`inline-flex items-center justify-center gap-1.5 border text-ink text-xs font-semibold uppercase tracking-widest px-5 py-3 rounded-full transition-colors ${
+                          idx === 0
+                            ? "bg-[#d49a37] text-zinc-950 font-semibold border-[#d49a37] hover:bg-[#e4a844]"
+                            : "bg-surface-raised border-border-subtle hover:bg-surface-raised/90 group-hover:border-accent/40"
+                        }`}
                       >
                         Read Concept Breakdown <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
                       </Link>

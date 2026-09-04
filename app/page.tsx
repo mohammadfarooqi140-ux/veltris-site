@@ -117,6 +117,15 @@ const standardPrinciples = [
 
 const homepageConcepts = [
   {
+    tag: "FLAGSHIP CONCEPT STUDY",
+    title: "Fascia Aesthetics",
+    category: "Medical Aesthetics & Clinical Restorations",
+    description:
+      "Led by Nurse Prescriber Katie in Weybridge, Surrey (8+ yrs refining natural results), Fascia Aesthetics re-engineers clinical aesthetics around subtle, undetectable anti-ageing, anatomical depth, and an exclusive concierge consultation journey.",
+    breakdownHref: "/work/fascia",
+    prototypeHref: "/fascia",
+  },
+  {
     tag: "INDEPENDENT CONCEPT STUDY",
     title: "Hartley & Co. Builders",
     category: "Mainstream Construction Business",
@@ -322,11 +331,15 @@ export default function Home() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {homepageConcepts.map((concept, idx) => (
-                <FadeInUp key={concept.title} delay={idx * 0.1}>
-                  <div className="p-8 md:p-10 rounded-3xl bg-surface/50 border border-border-subtle flex flex-col justify-between h-full hover:bg-surface-raised/60 hover:border-border transition-all shadow-lg">
+                <FadeInUp key={concept.title} delay={idx * 0.1} className={idx === 0 ? "md:col-span-2" : ""}>
+                  <div className={`p-8 md:p-10 rounded-3xl border flex flex-col justify-between h-full transition-all shadow-lg ${
+                    idx === 0
+                      ? "bg-surface/75 border-[#d49a37]/30 hover:border-[#d49a37]/60 shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
+                      : "bg-surface/50 border-border-subtle hover:bg-surface-raised/60 hover:border-border"
+                  }`}>
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-4">
-                        <span className="text-[10px] font-mono text-accent font-semibold tracking-widest">
+                        <span className={`text-[10px] font-mono font-semibold tracking-widest ${idx === 0 ? "text-[#d49a37]" : "text-accent"}`}>
                           {concept.tag}
                         </span>
                         <span className="text-[11px] font-mono text-ink-dim uppercase tracking-wider">
@@ -334,7 +347,7 @@ export default function Home() {
                         </span>
                       </div>
 
-                      <h3 className="font-playfair text-2xl font-medium text-ink mb-3">
+                      <h3 className="font-playfair text-2xl md:text-3xl font-medium text-ink mb-3">
                         {concept.title}
                       </h3>
 
@@ -346,7 +359,9 @@ export default function Home() {
                     <div className="pt-6 border-t border-border-subtle flex flex-wrap items-center justify-between gap-3">
                       <Link
                         href={concept.breakdownHref}
-                        className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-ink hover:text-accent transition-colors"
+                        className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest transition-colors ${
+                          idx === 0 ? "text-[#d49a37] hover:text-[#e4a844]" : "text-ink hover:text-accent"
+                        }`}
                       >
                         Read Concept Breakdown <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
@@ -366,7 +381,7 @@ export default function Home() {
               <div className="p-6 rounded-2xl bg-surface/40 border border-border-subtle max-w-3xl mx-auto flex items-start gap-4">
                 <ShieldAlert className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <p className="text-xs text-ink-muted font-light leading-relaxed">
-                  Hartley and Sterling are independent concept studies created by Veltris to demonstrate strategic structure, interface quality, and user journey flow. They are not commissioned client work and do not represent existing companies.
+                  Fascia Aesthetics, Hartley, and Sterling are independent concept studies created by Veltris to demonstrate strategic structure, interface quality, and user journey flow. They are not commissioned client work and do not represent existing companies.
                 </p>
               </div>
             </FadeInUp>

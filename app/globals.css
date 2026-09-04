@@ -72,3 +72,69 @@
     background-color: var(--color-surface-raised);
   }
 }
+
+@layer utilities {
+  /* Strict Stacking Context Scale */
+  .layer-backdrop { z-index: 10; }
+  .layer-ground { z-index: 20; }
+  .layer-card { z-index: 30; }
+  .layer-badge { z-index: 40; }
+
+  /* Mathematical Typographic Scale (F_n = F_0 * r^n, F_0 = 16px, r = 1.20) */
+  /* Every line-height is strictly a multiple of 4px or 8px */
+  .text-display-lg {
+    font-size: 57.33px;
+    letter-spacing: -0.03em;
+    line-height: 64px; /* Multiple of 8px (ratio ~1.11 / 110%) */
+  }
+  .text-display-md {
+    font-size: 47.78px;
+    letter-spacing: -0.02em;
+    line-height: 56px; /* Multiple of 8px (ratio ~1.15 / 115%) */
+  }
+  .text-display-sm {
+    font-size: 33.18px;
+    letter-spacing: -0.02em;
+    line-height: 40px; /* Multiple of 8px (ratio ~1.20) */
+  }
+  .text-display-xs {
+    font-size: 27.65px;
+    letter-spacing: -0.015em;
+    line-height: 32px; /* Multiple of 8px */
+  }
+  .text-lead {
+    font-size: 23.04px;
+    letter-spacing: 0;
+    line-height: 32px; /* Multiple of 8px (ratio ~1.35) */
+  }
+  .text-body {
+    font-size: 16px;
+    letter-spacing: 0.015em;
+    line-height: 24px; /* Multiple of 8px (24px bounding box baseline lock) */
+  }
+  .text-caption {
+    font-size: 13.33px;
+    letter-spacing: 0.02em;
+    line-height: 16px; /* Multiple of 8px */
+  }
+  .text-micro {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    line-height: 16px; /* Multiple of 8px */
+  }
+
+  /* Multi-layered ultra-soft shadow elevation system */
+  .shadow-elevation-luxury {
+    box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.02),
+                0 16px 48px -6px rgba(0, 0, 0, 0.04),
+                0 40px 100px -10px rgba(0, 0, 0, 0.06);
+  }
+
+  /* Glassmorphic luxury card */
+  .glass-card-luxury {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}

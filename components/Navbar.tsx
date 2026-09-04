@@ -14,7 +14,7 @@ export default function Navbar() {
   const toggleRef = useRef<HTMLButtonElement>(null);
 
   // Check if current page is an isolated prototype route
-  const isPrototypePage = pathname === "/hartley" || pathname === "/sterling";
+  const isPrototypePage = pathname === "/hartley" || pathname === "/sterling" || pathname === "/fascia";
 
   useEffect(() => {
     const handleScroll = () => {
