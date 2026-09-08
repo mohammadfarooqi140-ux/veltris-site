@@ -1,0 +1,1597 @@
+"use client";
+
+import React, { useState, useRef } from "react";
+import Link from "next/link";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  ChevronRight,
+  Star,
+  ShieldCheck,
+  CheckCircle2,
+  Menu,
+  X,
+  Sparkles,
+  Info,
+  ArrowRight,
+  ArrowLeft
+} from "lucide-react";
+
+// ============================================================================
+// DATA STRUCTURES & VERIFIED CLINICAL CONTENT
+// ============================================================================
+
+interface TreatmentItem {
+  id: string;
+  title: string;
+  shortDesc: string;
+  fullDesc: string;
+  keyPoints: string[];
+}
+
+const PRIORITY_TREATMENTS: TreatmentItem[] = [
+  {
+    id: "implants",
+    title: "Dental Implants",
+    shortDesc: "Natural-looking, long-lasting replacement teeth planned with 3D digital precision.",
+    fullDesc:
+      "Dental implants provide a stable, permanent foundation for replacement teeth that look, feel, and function like natural dentition. Planned digitally by Visiting Implantologist Dr Ismael Khan using minimally invasive techniques to preserve bone and soft tissue.",
+    keyPoints: [
+      "Single tooth, multiple teeth, or full arch restorations",
+      "Digital surgical planning for predictable outcomes",
+      "Minimally invasive placement techniques",
+      "Long-term oral health and bone stability focus"
+    ]
+  },
+  {
+    id: "bonding",
+    title: "Cosmetic Bonding",
+    shortDesc: "Minimally invasive composite artistry to repair chips, close gaps, and refine contours.",
+    fullDesc:
+      "Composite bonding is an ultra-conservative cosmetic treatment using high-grade composite resin directly sculpted onto your teeth. In most cases, zero natural tooth structure is removed, making it a gentle, immediate smile enhancement.",
+    keyPoints: [
+      "Often completed in a single comfortable visit",
+      "No invasive enamel reduction in most cases",
+      "Ideal for minor chips, worn edges, and small gaps",
+      "Colour-matched to your natural tooth shade"
+    ]
+  },
+  {
+    id: "veneers",
+    title: "Porcelain Veneers",
+    shortDesc: "Custom-crafted ceramic shells for refined symmetry, radiant shade, and durable elegance.",
+    fullDesc:
+      "Custom-crafted porcelain veneers are ultra-thin ceramic restorations bonded to the front surface of the teeth. They correct deep discolouration, uneven alignment, and worn enamel while maintaining natural translucency and lifelike light reflection.",
+    keyPoints: [
+      "Individually designed to match facial aesthetics",
+      "Highly stain-resistant ceramic materials",
+      "Corrects alignment, spacing, and persistent staining",
+      "Carefully planned mock-ups prior to final placement"
+    ]
+  },
+  {
+    id: "whitening",
+    title: "Teeth Whitening",
+    shortDesc: "Safe, dentist-supervised brightening for a naturally luminous, refreshed smile.",
+    fullDesc:
+      "Professional teeth whitening gently lifts deep and superficial stains caused by tea, coffee, and natural ageing. Administered under dental supervision to ensure safety, minimal sensitivity, and predictable, natural brightness.",
+    keyPoints: [
+      "Dentist-supervised formulations for patient safety",
+      "Customised trays tailored to your dental anatomy",
+      "Formulated to protect enamel and minimise sensitivity",
+      "Gradual, controlled shade improvement"
+    ]
+  },
+  {
+    id: "invisalign",
+    title: "Invisalign",
+    shortDesc: "Discreet, removable clear aligners to straighten teeth comfortably without metal brackets.",
+    fullDesc:
+      "Invisalign straightens your teeth using a series of virtually invisible, custom-moulded clear aligners. Removable for eating and cleaning, clear aligners allow you to maintain your normal routine while gently guiding teeth into alignment.",
+    keyPoints: [
+      "Clear, discreet appearance with no metal wires",
+      "Removable for effortless eating and oral hygiene",
+      "3D digital treatment preview before starting",
+      "Comfortable custom fit tailored to your lifestyle"
+    ]
+  },
+  {
+    id: "makeovers",
+    title: "Smile Makeovers",
+    shortDesc: "A personalised combination of cosmetic and restorative treatments tailored to your goals.",
+    fullDesc:
+      "A comprehensive smile makeover combines multiple disciplines—such as bonding, veneers, whitening, and alignment—into a harmonious treatment plan. Designed collaboratively to achieve your aesthetic goals while respecting biological health.",
+    keyPoints: [
+      "Comprehensive digital aesthetic assessment",
+      "Bespoke multi-disciplinary treatment sequence",
+      "Balance between facial harmony and chewing function",
+      "Transparent consultation with step-by-step guidance"
+    ]
+  }
+];
+
+const ADDITIONAL_SERVICES = [
+  {
+    title: "Root Canal Treatment",
+    desc: "Gentle, precise endodontic therapy to eliminate infection, relieve pain, and save your natural tooth."
+  },
+  {
+    title: "Dentures",
+    desc: "Comfortable, modern full or partial dentures crafted for natural speech, chewing stability, and appearance."
+  },
+  {
+    title: "Dental Bridges",
+    desc: "Durable fixed prosthetics that anchor securely to neighbouring teeth to close gaps seamlessly."
+  },
+  {
+    title: "Dental Sedation",
+    desc: "Relaxed, anxiety-free dental visits with conscious sedation administered by qualified clinicians."
+  },
+  {
+    title: "Dental Hygienist and Airflow Stain Removal",
+    desc: "Advanced airflow polishing and periodontal care to remove stubborn stains and maintain healthy gums."
+  },
+  {
+    title: "Dental Checkups",
+    desc: "Thorough oral health screenings, soft tissue assessments, and low-dose digital diagnostics."
+  },
+  {
+    title: "Crowns and Veneers",
+    desc: "Precision-milled ceramic restorations that reinforce weakened teeth and restore natural aesthetics."
+  },
+  {
+    title: "Extractions",
+    desc: "Careful, atraumatic tooth removal performed with gentle techniques and prompt aftercare support."
+  },
+  {
+    title: "Orthodontics",
+    desc: "Corrective alignment solutions for adults and teens to improve both bite function and smile harmony."
+  },
+  {
+    title: "Appliances",
+    desc: "Custom-fitted nightguards, splints for clenching/grinding, and protective sports mouthguards."
+  }
+];
+
+// 4 Verified Before and After comparisons
+const BEFORE_AFTER_CASES = [
+  {
+    id: 1,
+    title: "Comparison 01",
+    subtitle: "Anterior alignment & natural ceramic restorations",
+    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1B-1.jpg",
+    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1A.jpg",
+    beforeAlt: "Before Case 1: Close-up of upper front teeth prior to restoration",
+    afterAlt: "After Case 1: Even alignment and bright natural ceramic restorations"
+  },
+  {
+    id: 2,
+    title: "Comparison 02",
+    subtitle: "Smile uniformity & shade transformation",
+    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2-B.jpg",
+    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2A.jpg",
+    beforeAlt: "Before Case 2: Upper anterior teeth before smile makeover",
+    afterAlt: "After Case 2: Visibly more uniform bright shade and smile makeover"
+  },
+  {
+    id: 3,
+    title: "Comparison 03",
+    subtitle: "Symmetry & incisal edge contour harmony",
+    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3B.jpg",
+    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3A.jpg",
+    beforeAlt: "Before Case 3: Upper anterior teeth with uneven edge wear",
+    afterAlt: "After Case 3: Improved symmetry, smooth incisal edges, and natural translucency"
+  },
+  {
+    id: 4,
+    title: "Comparison 04",
+    subtitle: "Bright uniform shade & polished contours",
+    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4B.jpg",
+    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4A.jpg",
+    beforeAlt: "Before Case 4: Upper front teeth before cosmetic enhancement",
+    afterAlt: "After Case 4: Bright uniform shade, polished surfaces, and harmonious contours"
+  }
+];
+
+// ============================================================================
+// TOUCH-FRIENDLY BEFORE/AFTER COMPARISON SLIDER COMPONENT
+// ============================================================================
+function BeforeAfterSlider({
+  caseItem
+}: {
+  caseItem: (typeof BEFORE_AFTER_CASES)[0];
+}) {
+  const [sliderPosition, setSliderPosition] = useState(50);
+  const [isDragging, setIsDragging] = useState(false);
+  const [activeMode, setActiveMode] = useState<"slider" | "before" | "after">("slider");
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMove = (clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const percentage = Math.max(0, Math.min(100, (x / rect.width) * 100));
+    setSliderPosition(percentage);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (e.touches.length > 0) {
+      handleMove(e.touches[0].clientX);
+    }
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (isDragging) {
+      handleMove(e.clientX);
+    }
+  };
+
+  return (
+    <div className="bg-[#FFFFFF] rounded-2xl border border-[#DDDDDD] overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+      {/* Interactive Visual Comparison Area */}
+      <div
+        ref={containerRef}
+        className="relative w-full aspect-[4/3] sm:aspect-[16/10] bg-[#1D1D1D] select-none overflow-hidden cursor-ew-resize"
+        onMouseDown={() => setIsDragging(true)}
+        onMouseUp={() => setIsDragging(false)}
+        onMouseLeave={() => setIsDragging(false)}
+        onMouseMove={handleMouseMove}
+        onTouchMove={handleTouchMove}
+      >
+        {/* AFTER Image (Background) */}
+        <div className="absolute inset-0 w-full h-full">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={caseItem.afterImg}
+            alt={caseItem.afterAlt}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null;
+              target.src =
+                "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80";
+            }}
+          />
+          <span className="absolute bottom-3 right-3 bg-[#1D1D1D]/85 backdrop-blur-sm text-[#F1E7D8] text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase">
+            After
+          </span>
+        </div>
+
+        {/* BEFORE Image (Clipped Overlay) */}
+        <div
+          className="absolute inset-0 h-full overflow-hidden transition-[clip-path] duration-75 ease-out"
+          style={{
+            clipPath:
+              activeMode === "before"
+                ? "inset(0 0 0 0)"
+                : activeMode === "after"
+                ? "inset(0 100% 0 0)"
+                : `inset(0 ${100 - sliderPosition}% 0 0)`
+          }}
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={caseItem.beforeImg}
+            alt={caseItem.beforeAlt}
+            className="absolute inset-0 w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.currentTarget;
+              target.onerror = null;
+              target.src =
+                "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80";
+            }}
+          />
+          <span className="absolute bottom-3 left-3 bg-[#292929]/85 backdrop-blur-sm text-[#FFFFFF] text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase">
+            Before
+          </span>
+        </div>
+
+        {/* Interactive Divider Bar */}
+        {activeMode === "slider" && (
+          <div
+            className="absolute top-0 bottom-0 w-0.5 bg-[#FFFFFF] shadow-[0_0_10px_rgba(0,0,0,0.6)] z-20 pointer-events-none"
+            style={{ left: `${sliderPosition}%` }}
+          >
+            <div className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-[#FFFFFF] border-2 border-[#292929] shadow-lg flex items-center justify-center text-[#292929] text-xs font-bold pointer-events-auto">
+              ⟷
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Touch-Friendly Mode Controls & Caption */}
+      <div className="p-4 sm:p-5 bg-[#FFFFFF]">
+        <div className="flex items-center justify-between gap-2 mb-2">
+          <div>
+            <h4 className="text-sm sm:text-base font-bold text-[#1D1D1D]">
+              {caseItem.title}
+            </h4>
+            <p className="text-xs text-[#292929]/80 font-medium">
+              {caseItem.subtitle}
+            </p>
+          </div>
+
+          {/* Touch-friendly view toggle */}
+          <div className="inline-flex rounded-lg p-0.5 bg-[#F1E7D8]/70 border border-[#DDDDDD] text-xs flex-shrink-0">
+            <button
+              onClick={() => setActiveMode("slider")}
+              className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
+                activeMode === "slider"
+                  ? "bg-[#292929] text-[#FFFFFF] shadow-sm"
+                  : "text-[#292929] hover:text-[#000000]"
+              }`}
+            >
+              Slider
+            </button>
+            <button
+              onClick={() => setActiveMode("before")}
+              className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
+                activeMode === "before"
+                  ? "bg-[#292929] text-[#FFFFFF] shadow-sm"
+                  : "text-[#292929] hover:text-[#000000]"
+              }`}
+            >
+              Before
+            </button>
+            <button
+              onClick={() => setActiveMode("after")}
+              className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all ${
+                activeMode === "after"
+                  ? "bg-[#292929] text-[#FFFFFF] shadow-sm"
+                  : "text-[#292929] hover:text-[#000000]"
+              }`}
+            >
+              After
+            </button>
+          </div>
+        </div>
+
+        {activeMode === "slider" && (
+          <p className="text-[11px] text-[#292929]/55 mt-2 italic">
+            Drag or swipe horizontally across the teeth to compare before and after
+          </p>
+        )}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================================
+// MAIN BERKSHIRE DENTAL SUITE HOMEPAGE CONCEPT (SINGLE-PAGE MOBILE-FIRST)
+// ============================================================================
+export default function BerkshireDentalSuitePage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeModalTreatment, setActiveModalTreatment] = useState<TreatmentItem | null>(null);
+
+  // Booking Prototype Form State
+  const [bookingData, setBookingData] = useState({
+    fullName: "",
+    email: "",
+    phone: "",
+    treatment: "Dental Implants"
+  });
+  const [bookingSubmitted, setBookingSubmitted] = useState(false);
+  const [bookingError, setBookingError] = useState("");
+
+  const handleBookingSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!bookingData.fullName.trim() || !bookingData.email.trim() || !bookingData.phone.trim()) {
+      setBookingError("Please provide your full name, email address, and telephone number.");
+      return;
+    }
+    setBookingError("");
+    setBookingSubmitted(true);
+  };
+
+  const scrollToSection = (id: string) => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div className="min-h-screen bg-[#FBF9F5] text-[#292929] font-['Montserrat',sans-serif] antialiased selection:bg-[#F1E7D8] selection:text-[#1D1D1D]">
+      {/* Montserrat Google Font Import */}
+      {/* eslint-disable-next-line @next/next/no-page-custom-font */}
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      />
+
+      {/* =====================================================================
+          0. VELTRIS BACK NAVIGATION BANNER
+          - Natural document flow — always above the sticky clinic header
+          - Styled in clinic warm tones (not Veltris dark chrome)
+          - Links back to /work/berkshire (case study) and /work (portfolio)
+      ====================================================================== */}
+      <aside
+        aria-label="Veltris Concept Study Navigation"
+        className="w-full bg-[#EDE3D6] border-b border-[#DDDDDD] text-[#5C5047] py-2 px-4 sm:px-6 text-[11px] leading-[16px] font-mono"
+      >
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#5E5EEE] flex-shrink-0" />
+            <span className="truncate">
+              Veltris Concept Study • Private Dentistry &amp; Implants
+            </span>
+          </div>
+          <div className="flex items-center gap-4 text-[11px] font-medium flex-shrink-0">
+            <Link
+              href="/work/berkshire"
+              className="text-[#5C5047] hover:text-[#1D1D1D] transition-colors"
+            >
+              Concept Breakdown
+            </Link>
+            <Link
+              href="/work"
+              className="inline-flex items-center gap-1 text-[#5E5EEE] hover:text-[#4d4de0] font-semibold transition-colors"
+            >
+              <ArrowLeft className="w-3 h-3" /> Veltris Portfolio
+            </Link>
+          </div>
+        </div>
+      </aside>
+
+      {/* =====================================================================
+          1. BERKSHIRE DENTAL SUITE HEADER
+          - Clinic branding only (zero Veltris elements)
+          - Mobile navigation drawer
+          - Call button using tel:01753933006
+          - “Book a consultation” CTA
+      ====================================================================== */}
+      <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DDDDDD] transition-all">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
+          {/* Clinic Brand Identity */}
+          <Link
+            href="/berkshire"
+            className="flex items-center gap-3 group focus:outline-none"
+            aria-label="Berkshire Dental Suite Home"
+          >
+            <div className="w-10 h-10 rounded-xl bg-[#F1E7D8] border border-[#DDDDDD] flex items-center justify-center text-[#1D1D1D] font-bold text-sm tracking-wider shadow-sm group-hover:bg-[#e8dcce] transition-colors">
+              BDS
+            </div>
+            <div className="flex flex-col">
+              <span className="text-base sm:text-lg font-bold tracking-tight text-[#1D1D1D] leading-tight">
+                Berkshire Dental Suite
+              </span>
+              <span className="text-[10px] font-medium tracking-wider text-[#292929]/70 uppercase">
+                Slough • Private Dentistry &amp; Implants
+              </span>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold text-[#292929] uppercase tracking-wider">
+            <button
+              onClick={() => scrollToSection("treatments")}
+              className="hover:text-[#5E5EEE] transition-colors"
+            >
+              Treatments
+            </button>
+            <button
+              onClick={() => scrollToSection("dr-ismael")}
+              className="hover:text-[#5E5EEE] transition-colors"
+            >
+              Dr Ismael
+            </button>
+            <button
+              onClick={() => scrollToSection("results")}
+              className="hover:text-[#5E5EEE] transition-colors"
+            >
+              Results
+            </button>
+            <button
+              onClick={() => scrollToSection("clinic")}
+              className="hover:text-[#5E5EEE] transition-colors"
+            >
+              The Clinic
+            </button>
+            <button
+              onClick={() => scrollToSection("hours-location")}
+              className="hover:text-[#5E5EEE] transition-colors"
+            >
+              Hours &amp; Location
+            </button>
+          </nav>
+
+          {/* Header Action Buttons */}
+          <div className="flex items-center gap-2 sm:gap-3">
+            {/* Quick Click-to-Call */}
+            <a
+              href="tel:01753933006"
+              className="inline-flex items-center gap-1.5 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-full bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold hover:bg-[#e8dcce] transition-colors border border-[#DDDDDD]"
+              title="Call Berkshire Dental Suite on 01753 933006"
+            >
+              <Phone className="w-3.5 h-3.5 text-[#1D1D1D]" />
+              <span className="hidden sm:inline">01753 933006</span>
+              <span className="sm:hidden font-medium">Call</span>
+            </a>
+
+            {/* Book Consultation Primary CTA */}
+            <button
+              onClick={() => scrollToSection("booking-form")}
+              className="inline-flex items-center gap-1 px-4 py-2 sm:px-5 sm:py-2.5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] text-xs font-semibold hover:bg-[#000000] active:scale-95 transition-all shadow-sm"
+            >
+              <span>Book a consultation</span>
+            </button>
+
+            {/* Mobile Menu Toggle */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 text-[#292929] hover:bg-[#F1E7D8] rounded-lg transition-colors"
+              aria-label="Toggle Navigation Menu"
+            >
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Navigation Drawer */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden bg-[#FFFFFF] border-b border-[#DDDDDD] px-6 py-5 shadow-xl transition-all">
+            <div className="flex flex-col space-y-4 text-sm font-semibold uppercase tracking-wider text-[#292929]">
+              <button
+                onClick={() => scrollToSection("treatments")}
+                className="text-left py-2 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE]"
+              >
+                Treatments
+              </button>
+              <button
+                onClick={() => scrollToSection("dr-ismael")}
+                className="text-left py-2 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE]"
+              >
+                Dr Ismael Khan
+              </button>
+              <button
+                onClick={() => scrollToSection("results")}
+                className="text-left py-2 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE]"
+              >
+                Before &amp; After Results
+              </button>
+              <button
+                onClick={() => scrollToSection("clinic")}
+                className="text-left py-2 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE]"
+              >
+                Clinic Environment
+              </button>
+              <button
+                onClick={() => scrollToSection("hours-location")}
+                className="text-left py-2 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE]"
+              >
+                Opening Hours &amp; Location
+              </button>
+
+              <div className="pt-2 flex flex-col gap-3">
+                <a
+                  href="tel:01753933006"
+                  className="w-full text-center py-3 rounded-xl bg-[#F1E7D8] text-[#1D1D1D] font-semibold text-xs uppercase tracking-wider border border-[#DDDDDD] flex items-center justify-center gap-2"
+                >
+                  <Phone className="w-4 h-4" /> Call 01753 933006
+                </a>
+                <button
+                  onClick={() => scrollToSection("booking-form")}
+                  className="w-full text-center py-3 rounded-xl bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider"
+                >
+                  Book a Consultation
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
+
+      {/* =====================================================================
+          2. HERO SECTION
+          - Warm cream background (#F1E7D8)
+          - Berkshire clinic imagery
+          - Slough location
+          - Copy direction: "Modern dental care, restorative expertise, and smile consultations in the heart of Slough."
+          - Primary CTA: “Book a consultation”
+          - Secondary CTA: “Call 01753 933006”
+      ====================================================================== */}
+      <section className="bg-[#F1E7D8] pt-12 pb-16 sm:pt-16 sm:pb-24 border-b border-[#DDDDDD] relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+            {/* Hero Text Column */}
+            <div className="lg:col-span-7 flex flex-col items-start">
+              {/* Slough Location Pill */}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#FFFFFF]/85 border border-[#DDDDDD] text-[#1D1D1D] text-xs font-semibold mb-6 shadow-sm">
+                <MapPin className="w-3.5 h-3.5 text-[#5E5EEE]" />
+                <span>Cornwall House, 55–57 High Street, Slough</span>
+              </div>
+
+              {/* Verified Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-[50px] font-bold text-[#1D1D1D] tracking-tight leading-[1.14] mb-6">
+                Modern dental care, restorative expertise, and smile consultations in the heart of Slough.
+              </h1>
+
+              {/* Subtitle with doctor reference and approachable clarity */}
+              <p className="text-base sm:text-lg text-[#292929] leading-relaxed font-normal mb-8 max-w-2xl">
+                Led by Restorative and Implant Dentistry Specialist Dr Ismael Khan DMD, PGCert, PGDip, Berkshire Dental Suite combines careful digital planning, minimally invasive techniques, and calm, personalized care for patients across Berkshire.
+              </p>
+
+              {/* Dual CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 w-full sm:w-auto mb-8">
+                <button
+                  onClick={() => scrollToSection("booking-form")}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-sm hover:bg-[#000000] active:scale-95 transition-all shadow-md"
+                >
+                  <span>Book a consultation</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <a
+                  href="tel:01753933006"
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 rounded-full bg-[#FFFFFF] text-[#1D1D1D] font-semibold text-sm border border-[#DDDDDD] hover:bg-[#FAF8F5] transition-colors shadow-sm"
+                >
+                  <Phone className="w-4 h-4 text-[#1D1D1D]" />
+                  <span>Call 01753 933006</span>
+                </a>
+              </div>
+
+              {/* Hero Trust Micro-Bar */}
+              <div className="flex flex-wrap items-center gap-3.5 text-xs font-medium text-[#292929]/80 pt-4 border-t border-[#DDDDDD]/60 w-full">
+                <div className="flex items-center gap-1">
+                  <div className="flex text-amber-500">
+                    {[...Array(5)].map((_, i) => (
+                      <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                    ))}
+                  </div>
+                  <span className="font-semibold text-[#1D1D1D] ml-1">5-star Google Reviews</span>
+                </div>
+                <span className="text-[#DDDDDD]">•</span>
+                <span>24 reviews • Excellent</span>
+                <span className="text-[#DDDDDD]">•</span>
+                <span className="text-[#1D1D1D] font-medium">Free Consultations Available</span>
+              </div>
+            </div>
+
+            {/* Hero Visual Column (Real Practice Exterior) */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-[#FFFFFF] shadow-2xl bg-[#FFFFFF] aspect-[4/3] sm:aspect-[4/3] lg:aspect-[5/4]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/berikshire-dental-practice.jpg"
+                  alt="Berkshire Dental Suite practice exterior at Cornwall House Slough"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src =
+                      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80";
+                  }}
+                />
+
+                {/* Overlay Card: Practice highlight */}
+                <div className="absolute bottom-4 left-4 right-4 bg-[#FFFFFF]/95 backdrop-blur-md rounded-2xl p-4 border border-[#DDDDDD] shadow-lg">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-bold text-[#1D1D1D]">Berkshire Dental Suite</p>
+                      <p className="text-[11px] text-[#292929]/70">Cornwall House • Slough High Street</p>
+                    </div>
+                    <span className="inline-flex items-center text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#5E5EEE]/10 text-[#5E5EEE]">
+                      Private Clinic
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          3. TRUST SECTION
+          - "5-star Google Reviews" sourced wording
+          - Trustindex "24 reviews" and "Excellent"
+          - Dr Ismael's verified role
+          - Real opening-hours advantage without exaggerating it
+      ====================================================================== */}
+      <section className="py-12 bg-[#FFFFFF] border-b border-[#DDDDDD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            {/* Trust Point 1: Google Reviews */}
+            <div className="p-6 rounded-2xl bg-[#FBF9F5] border border-[#DDDDDD] flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-1.5 mb-3 text-amber-500">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-current" />
+                  ))}
+                  <span className="text-xs font-bold text-[#1D1D1D] ml-1.5">5.0 Rating</span>
+                </div>
+                <h3 className="text-base font-bold text-[#1D1D1D] mb-1.5">
+                  5-star Google Reviews
+                </h3>
+                <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+                  Rated <strong className="font-semibold text-[#1D1D1D]">Excellent</strong> across 24 reviews on Trustindex for caring, thorough patient experiences and smile transformations.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#DDDDDD]/60 flex items-center justify-between text-[11px] text-[#292929]/70 font-medium">
+                <span>Trustindex Rating</span>
+                <span className="text-emerald-700 font-semibold uppercase tracking-wider">EXCELLENT</span>
+              </div>
+            </div>
+
+            {/* Trust Point 2: Dr Ismael Verified Role */}
+            <div className="p-6 rounded-2xl bg-[#FBF9F5] border border-[#DDDDDD] flex flex-col justify-between">
+              <div>
+                <div className="w-8 h-8 rounded-full bg-[#F1E7D8] flex items-center justify-center text-[#1D1D1D] font-bold text-xs mb-3">
+                  <ShieldCheck className="w-4 h-4 text-[#5E5EEE]" />
+                </div>
+                <h3 className="text-base font-bold text-[#1D1D1D] mb-1.5">
+                  Restorative &amp; Implant Specialist
+                </h3>
+                <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+                  Led by Dr Ismael Khan DMD, PGCert, PGDip — Principal Dentist, Founder, and Visiting Implantologist placing dental implants in private clinics.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#DDDDDD]/60 flex items-center justify-between text-[11px] text-[#292929]/70 font-medium">
+                <span>Clinical Approach</span>
+                <span className="text-[#1D1D1D] font-semibold">Minimally Invasive</span>
+              </div>
+            </div>
+
+            {/* Trust Point 3: Opening Hours Advantage */}
+            <div className="p-6 rounded-2xl bg-[#FBF9F5] border border-[#DDDDDD] flex flex-col justify-between">
+              <div>
+                <div className="w-8 h-8 rounded-full bg-[#F1E7D8] flex items-center justify-center text-[#1D1D1D] font-bold text-xs mb-3">
+                  <Clock className="w-4 h-4 text-[#1D1D1D]" />
+                </div>
+                <h3 className="text-base font-bold text-[#1D1D1D] mb-1.5">
+                  Evening &amp; Weekend Access
+                </h3>
+                <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+                  Appointments designed around your week: open late until 8pm on Mondays and Wednesdays, plus Friday through Sunday care 9am–6pm.
+                </p>
+              </div>
+              <div className="mt-4 pt-3 border-t border-[#DDDDDD]/60 flex items-center justify-between text-[11px] text-[#292929]/70 font-medium">
+                <span>Mon &amp; Wed Evenings</span>
+                <span className="text-[#1D1D1D] font-semibold">Open until 8:00pm</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          4. PRIORITY TREATMENTS SECTION
+          - Implants, Cosmetic bonding, Porcelain veneers, Teeth whitening, Invisalign, Smile makeovers
+          - In-page drawers/modals instead of broken external demo links
+          - No demo.awaikenthemes.com links
+      ====================================================================== */}
+      <section id="treatments" className="py-16 sm:py-24 bg-[#FBF9F5]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+            <span className="text-xs font-semibold text-[#5E5EEE] uppercase tracking-widest block mb-2">
+              Our Services
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#1D1D1D] tracking-tight mb-4">
+              Comprehensive Dental Treatments
+            </h2>
+            <p className="text-sm sm:text-base text-[#292929]/80 leading-relaxed font-normal">
+              Explore our core restorative, cosmetic, and alignment procedures. Select any treatment to read detailed clinical considerations.
+            </p>
+          </div>
+
+          {/* 6 Priority Treatment Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {PRIORITY_TREATMENTS.map((treatment) => (
+              <div
+                key={treatment.id}
+                className="bg-[#FFFFFF] rounded-2xl border border-[#DDDDDD] p-6 flex flex-col justify-between hover:border-[#1D1D1D] transition-all group shadow-sm hover:shadow-md"
+              >
+                <div>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="w-8 h-8 rounded-lg bg-[#F1E7D8] text-[#1D1D1D] flex items-center justify-center font-bold text-xs">
+                      {treatment.title[0]}
+                    </span>
+                    <span className="text-[10px] font-semibold tracking-wider text-[#292929]/50 uppercase">
+                      Private Care
+                    </span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#1D1D1D] mb-2.5 group-hover:text-[#5E5EEE] transition-colors">
+                    {treatment.title}
+                  </h3>
+
+                  <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed mb-6 font-normal">
+                    {treatment.shortDesc}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-[#DDDDDD]/60 flex items-center justify-between">
+                  <button
+                    onClick={() => setActiveModalTreatment(treatment)}
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#1D1D1D] hover:text-[#5E5EEE] transition-colors"
+                  >
+                    <span>Treatment Details</span>
+                    <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                  </button>
+
+                  <button
+                    onClick={() => {
+                      setBookingData((prev) => ({ ...prev, treatment: treatment.title }));
+                      scrollToSection("booking-form");
+                    }}
+                    className="text-[11px] font-medium text-[#292929]/70 hover:text-[#1D1D1D] underline underline-offset-4"
+                  >
+                    Enquire
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* In-Page Modal for Treatment Details (Safe, in-page navigation) */}
+      {activeModalTreatment && (
+        <div
+          className="fixed inset-0 z-50 bg-[#000000]/60 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6"
+          onClick={() => setActiveModalTreatment(null)}
+        >
+          <div
+            className="bg-[#FFFFFF] border border-[#DDDDDD] rounded-3xl max-w-xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setActiveModalTreatment(null)}
+              className="absolute top-5 right-5 p-2 rounded-full bg-[#F1E7D8] text-[#1D1D1D] hover:bg-[#e6d9c6] transition-colors"
+              aria-label="Close treatment details"
+            >
+              <X className="w-4 h-4" />
+            </button>
+
+            <span className="text-[10px] font-semibold uppercase tracking-widest text-[#5E5EEE] block mb-2">
+              Treatment Guide
+            </span>
+            <h3 className="text-2xl font-bold text-[#1D1D1D] mb-4">
+              {activeModalTreatment.title}
+            </h3>
+
+            <p className="text-sm text-[#292929] leading-relaxed mb-6 font-normal">
+              {activeModalTreatment.fullDesc}
+            </p>
+
+            <div className="mb-6 p-4 rounded-xl bg-[#FBF9F5] border border-[#DDDDDD]">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#1D1D1D] mb-3">
+                Key Considerations
+              </h4>
+              <ul className="space-y-2.5">
+                {activeModalTreatment.keyPoints.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-2 text-xs text-[#292929]">
+                    <CheckCircle2 className="w-4 h-4 text-[#5E5EEE] flex-shrink-0 mt-0.5" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              <button
+                onClick={() => {
+                  setBookingData((prev) => ({
+                    ...prev,
+                    treatment: activeModalTreatment.title
+                  }));
+                  setActiveModalTreatment(null);
+                  scrollToSection("booking-form");
+                }}
+                className="w-full sm:w-auto flex-1 py-3 px-6 rounded-full bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-xs text-center uppercase tracking-wider hover:bg-[#000000] transition-colors"
+              >
+                Discuss {activeModalTreatment.title} in Consultation
+              </button>
+              <button
+                onClick={() => setActiveModalTreatment(null)}
+                className="w-full sm:w-auto py-3 px-5 rounded-full bg-[#F1E7D8] text-[#1D1D1D] font-semibold text-xs text-center uppercase tracking-wider hover:bg-[#e6d9c6] transition-colors"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* =====================================================================
+          5. FULL SERVICES SECTION
+          - Display all 10 additional services concisely and in a patient-friendly way
+      ====================================================================== */}
+      <section className="py-16 sm:py-20 bg-[#F1E7D8] border-y border-[#DDDDDD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold text-[#1D1D1D] uppercase tracking-widest block mb-2">
+              Full Services
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1D1D] tracking-tight mb-3">
+              Routine, Specialist, and Preventative Care
+            </h2>
+            <p className="text-xs sm:text-sm text-[#292929] leading-relaxed font-normal">
+              In addition to smile makeovers and dental implants, Berkshire Dental Suite provides comprehensive family, restorative, and surgical dental services under one roof in Slough.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+            {ADDITIONAL_SERVICES.map((service, index) => (
+              <div
+                key={index}
+                className="bg-[#FFFFFF] p-5 rounded-xl border border-[#DDDDDD] shadow-sm hover:border-[#292929] transition-all"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="w-2 h-2 rounded-full bg-[#5E5EEE] mt-2 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-sm font-bold text-[#1D1D1D] mb-1">
+                      {service.title}
+                    </h3>
+                    <p className="text-xs text-[#292929]/80 leading-relaxed font-normal">
+                      {service.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          6. DR ISMAEL KHAN SECTION (CLINICIAN PROFILE)
+          - Verified photo
+          - Exact credential string: Dr Ismael Khan DMD, PGCert, PGDip
+          - Verified roles:
+            * Principal Dentist
+            * Founder of Berkshire Dental Suite
+            * Restorative and Implant Dentistry Specialist
+            * Visiting Implantologist
+          - Neutral background:
+            * Grew up in Berkshire
+            * Completed postgraduate training across private practices
+            * Undertook advanced implant and surgical training in UK and internationally, including Brazil
+            * Uses careful planning, digital dentistry, and minimally invasive techniques
+      ====================================================================== */}
+      <section id="dr-ismael" className="py-16 sm:py-24 bg-[#FFFFFF]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="bg-[#FBF9F5] rounded-3xl border border-[#DDDDDD] p-8 sm:p-12 md:p-14 overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              {/* Doctor Portrait Column */}
+              <div className="lg:col-span-5 flex flex-col items-center">
+                <div className="relative w-full max-w-sm aspect-[4/5] rounded-2xl overflow-hidden border-2 border-[#DDDDDD] bg-[#F1E7D8] shadow-lg">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/Ismael-Dr.webp"
+                    alt="Dr Ismael Khan DMD, PGCert, PGDip — Principal Dentist"
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      target.onerror = null;
+                      target.src =
+                        "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/dr-ismael.webp";
+                    }}
+                  />
+                </div>
+                <div className="mt-4 text-center">
+                  <span className="text-xs font-bold text-[#1D1D1D] block">
+                    Dr Ismael Khan DMD, PGCert, PGDip
+                  </span>
+                  <span className="text-[11px] text-[#292929]/70 font-medium">
+                    Founder &amp; Principal Dentist
+                  </span>
+                </div>
+              </div>
+
+              {/* Bio & Facts Column */}
+              <div className="lg:col-span-7">
+                <span className="text-xs font-semibold text-[#5E5EEE] uppercase tracking-widest block mb-2">
+                  Meet the Principal Dentist
+                </span>
+
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#1D1D1D] tracking-tight mb-4">
+                  Dr Ismael Khan DMD, PGCert, PGDip
+                </h2>
+
+                {/* Verified Roles Badge Strip */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold border border-[#DDDDDD]">
+                    Principal Dentist
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold border border-[#DDDDDD]">
+                    Founder of Berkshire Dental Suite
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#1D1D1D] text-[#FFFFFF] text-xs font-semibold">
+                    Restorative and Implant Dentistry Specialist
+                  </span>
+                  <span className="inline-flex items-center px-3 py-1 rounded-md bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold border border-[#DDDDDD]">
+                    Visiting Implantologist
+                  </span>
+                </div>
+
+                {/* Neutral Background Text */}
+                <div className="space-y-4 text-xs sm:text-sm text-[#292929] leading-relaxed font-normal mb-8">
+                  <p>
+                    Dr Ismael Khan grew up in Berkshire and founded Berkshire Dental Suite with the commitment to provide modern, patient-focused dental care to his local community.
+                  </p>
+                  <p>
+                    Having completed extensive postgraduate training across multiple private practices, he undertook advanced implant and surgical training both in the UK and internationally, including specialised surgical education in Brazil.
+                  </p>
+                  <p>
+                    His clinical approach centres on meticulous planning, digital dentistry, and minimally invasive techniques—focusing on predictable implant therapy, long-term outcomes, and oral health preservation. As a Visiting Implantologist, Dr Ismael also places dental implants in other private clinics.
+                  </p>
+                </div>
+
+                {/* Direct Action CTAs */}
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+                  <button
+                    onClick={() => {
+                      setBookingData((prev) => ({ ...prev, treatment: "Dental Implants" }));
+                      scrollToSection("booking-form");
+                    }}
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider hover:bg-[#000000] transition-colors shadow-sm"
+                  >
+                    <span>Consult with Dr Ismael</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+
+                  <a
+                    href="tel:01753933006"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#FFFFFF] text-[#1D1D1D] font-semibold text-xs uppercase tracking-wider border border-[#DDDDDD] hover:bg-[#FAF8F5] transition-colors"
+                  >
+                    <Phone className="w-3.5 h-3.5" />
+                    <span>Call 01753 933006</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          7. BEFORE-AND-AFTER GALLERY
+          - All four existing comparisons:
+            * 1B-1.jpg → 1A.jpg
+            * 2-B.jpg → 2A.jpg
+            * 3B.jpg → 3A.jpg
+            * 4B.jpg → 4A.jpg
+          - Touch-friendly sliders
+          - Do not claim definitive treatment names
+          - Mandatory notice:
+            “Case details to be confirmed with the clinic. The visual treatment interpretation is indicative only.”
+      ====================================================================== */}
+      <section id="results" className="py-16 sm:py-24 bg-[#FBF9F5] border-t border-[#DDDDDD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <span className="text-xs font-semibold text-[#5E5EEE] uppercase tracking-widest block mb-2">
+              Our Results
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#1D1D1D] tracking-tight mb-3">
+              Real Results, Real Smiles
+            </h2>
+            <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+              Compare smile transformations before and after care. Use the touch sliders to inspect contour, alignment, and aesthetic symmetry.
+            </p>
+          </div>
+
+          {/* Mandatory Clinical Notice Box */}
+          <div className="mb-10 max-w-3xl mx-auto bg-[#F1E7D8] border border-[#DDDDDD] rounded-2xl p-4 sm:p-5 flex items-start gap-3.5">
+            <Info className="w-5 h-5 text-[#1D1D1D] flex-shrink-0 mt-0.5" />
+            <div>
+              <h4 className="text-xs font-bold text-[#1D1D1D] uppercase tracking-wider mb-1">
+                Clinical Transparency Notice
+              </h4>
+              <p className="text-xs text-[#292929] leading-relaxed font-normal">
+                Case details to be confirmed with the clinic. The visual treatment interpretation is indicative only.
+              </p>
+            </div>
+          </div>
+
+          {/* 4 Interactive Before & After Sliders */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {BEFORE_AFTER_CASES.map((caseItem) => (
+              <BeforeAfterSlider key={caseItem.id} caseItem={caseItem} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          8. CLINIC ENVIRONMENT SECTION
+          - Practice exterior, reception, and treatment-room images
+          - Calm, modern, and welcoming atmosphere
+      ====================================================================== */}
+      <section id="clinic" className="py-16 sm:py-24 bg-[#FFFFFF] border-t border-[#DDDDDD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="max-w-2xl mb-12">
+            <span className="text-xs font-semibold text-[#5E5EEE] uppercase tracking-widest block mb-2">
+              The Practice
+            </span>
+            <h2 className="text-2xl sm:text-4xl font-bold text-[#1D1D1D] tracking-tight mb-4">
+              A Calm, Modern Clinical Environment
+            </h2>
+            <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+              Designed to put patients at ease from the moment they arrive. Situated in Cornwall House on Slough High Street, our modern practice combines warm, welcoming reception spaces with state-of-the-art digital treatment suites.
+            </p>
+          </div>
+
+          {/* Environment Gallery */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Image 1: Practice Exterior */}
+            <div className="bg-[#FBF9F5] rounded-2xl border border-[#DDDDDD] overflow-hidden shadow-sm flex flex-col">
+              <div className="relative aspect-[4/3] bg-[#DDDDDD]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/berikshire-dental-practice.jpg"
+                  alt="Berkshire Dental Suite exterior at Cornwall House Slough"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src =
+                      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80";
+                  }}
+                />
+              </div>
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm font-bold text-[#1D1D1D] mb-1">
+                    Practice Exterior
+                  </h3>
+                  <p className="text-xs text-[#292929]/80 leading-relaxed font-normal">
+                    Centrally located at Cornwall House, 55–57 High Street, with accessible ground floor entry and convenient nearby parking.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 2: Reception */}
+            <div className="bg-[#FBF9F5] rounded-2xl border border-[#DDDDDD] overflow-hidden shadow-sm flex flex-col">
+              <div className="relative aspect-[4/3] bg-[#DDDDDD]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/reception.jpeg"
+                  alt="Berkshire Dental Suite reception and patient lounge"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src =
+                      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80";
+                  }}
+                />
+              </div>
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm font-bold text-[#1D1D1D] mb-1">
+                    Welcoming Reception
+                  </h3>
+                  <p className="text-xs text-[#292929]/80 leading-relaxed font-normal">
+                    Warm, relaxed seating with comfortable amenities to ensure your consultation begins in comfort and confidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Image 3: Treatment Room */}
+            <div className="bg-[#FBF9F5] rounded-2xl border border-[#DDDDDD] overflow-hidden shadow-sm flex flex-col">
+              <div className="relative aspect-[4/3] bg-[#DDDDDD]">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/treatment-room-image.jpeg"
+                  alt="Berkshire Dental Suite digital treatment suite"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    target.onerror = null;
+                    target.src =
+                      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80";
+                  }}
+                />
+              </div>
+              <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-sm font-bold text-[#1D1D1D] mb-1">
+                    Treatment Suite
+                  </h3>
+                  <p className="text-xs text-[#292929]/80 leading-relaxed font-normal">
+                    Equipped with advanced digital imaging and dental technology for precise, minimally invasive clinical procedures.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          9. CONTACT AND OPENING HOURS
+          - Exact address: Cornwall House, 55–57 High Street, Slough, Berkshire, SL1 1DZ
+          - Phone: 01753 933006
+          - Email: info@berkshiredentalsuite.co.uk
+          - Exact schedule:
+            * Monday: 9am–8pm
+            * Tuesday: Closed
+            * Wednesday: 9am–8pm
+            * Thursday: 9am–12pm
+            * Friday: 9am–6pm
+            * Saturday: 9am–6pm
+            * Sunday: 9am–6pm
+          - Click-to-call & click-to-email
+          - Visual map element
+      ====================================================================== */}
+      <section id="hours-location" className="py-16 sm:py-24 bg-[#FBF9F5] border-t border-[#DDDDDD]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+            {/* Opening Hours & Contact Details Column */}
+            <div className="lg:col-span-6 flex flex-col justify-between">
+              <div>
+                <span className="text-xs font-semibold text-[#5E5EEE] uppercase tracking-widest block mb-2">
+                  Find &amp; Visit Us
+                </span>
+                <h2 className="text-2xl sm:text-4xl font-bold text-[#1D1D1D] tracking-tight mb-6">
+                  Contact &amp; Opening Hours
+                </h2>
+
+                {/* Contact Card */}
+                <div className="bg-[#FFFFFF] rounded-2xl border border-[#DDDDDD] p-6 mb-8 shadow-sm space-y-4">
+                  <div className="flex items-start gap-3.5">
+                    <MapPin className="w-5 h-5 text-[#5E5EEE] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#1D1D1D]">
+                        Practice Address
+                      </h3>
+                      <p className="text-xs sm:text-sm text-[#292929] mt-0.5 leading-relaxed font-normal">
+                        Berkshire Dental Suite<br />
+                        Cornwall House, 55–57 High Street<br />
+                        Slough, Berkshire, SL1 1DZ
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#DDDDDD]/60 flex items-start gap-3.5">
+                    <Phone className="w-5 h-5 text-[#5E5EEE] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#1D1D1D]">
+                        Telephone
+                      </h3>
+                      <a
+                        href="tel:01753933006"
+                        className="text-xs sm:text-sm font-semibold text-[#1D1D1D] hover:text-[#5E5EEE] transition-colors block mt-0.5"
+                      >
+                        01753 933006
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="pt-3 border-t border-[#DDDDDD]/60 flex items-start gap-3.5">
+                    <Mail className="w-5 h-5 text-[#5E5EEE] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <h3 className="text-xs font-bold uppercase tracking-wider text-[#1D1D1D]">
+                        Email Enquiries
+                      </h3>
+                      <a
+                        href="mailto:info@berkshiredentalsuite.co.uk"
+                        className="text-xs sm:text-sm font-semibold text-[#1D1D1D] hover:text-[#5E5EEE] transition-colors block mt-0.5 break-all"
+                      >
+                        info@berkshiredentalsuite.co.uk
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Opening Hours Schedule */}
+                <div className="bg-[#FFFFFF] rounded-2xl border border-[#DDDDDD] p-6 shadow-sm">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-xs font-bold uppercase tracking-wider text-[#1D1D1D] flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-[#1D1D1D]" /> Opening Schedule
+                    </h3>
+                    <span className="text-[10px] font-semibold text-[#5E5EEE] uppercase tracking-wider bg-[#5E5EEE]/10 px-2.5 py-0.5 rounded-full">
+                      Evening &amp; Weekend Care
+                    </span>
+                  </div>
+
+                  <div className="space-y-2.5 text-xs sm:text-sm">
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40">
+                      <span className="font-medium text-[#292929]">Monday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 8:00pm</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40 text-[#292929]/50">
+                      <span className="font-medium">Tuesday</span>
+                      <span className="italic font-medium">Closed</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40">
+                      <span className="font-medium text-[#292929]">Wednesday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 8:00pm</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40">
+                      <span className="font-medium text-[#292929]">Thursday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 12:00pm</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40">
+                      <span className="font-medium text-[#292929]">Friday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 6:00pm</span>
+                    </div>
+                    <div className="flex justify-between py-1.5 border-b border-[#DDDDDD]/40">
+                      <span className="font-medium text-[#292929]">Saturday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 6:00pm</span>
+                    </div>
+                    <div className="flex justify-between py-1.5">
+                      <span className="font-medium text-[#292929]">Sunday</span>
+                      <span className="font-semibold text-[#1D1D1D]">9:00am – 6:00pm</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Visual Location Map Column */}
+            <div className="lg:col-span-6 flex flex-col">
+              <div className="bg-[#FFFFFF] rounded-2xl border border-[#DDDDDD] overflow-hidden shadow-sm h-full flex flex-col min-h-[380px]">
+                <div className="p-4 border-b border-[#DDDDDD] bg-[#F1E7D8]/50 flex items-center justify-between">
+                  <span className="text-xs font-bold text-[#1D1D1D]">
+                    Location Map • Cornwall House
+                  </span>
+                  <a
+                    href="https://maps.google.com/maps?q=55-57%20High%20St%2C%20Slough%20SL1%201DZ"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[11px] font-semibold text-[#5E5EEE] hover:underline"
+                  >
+                    Open in Google Maps ↗
+                  </a>
+                </div>
+                <div className="flex-1 w-full relative min-h-[320px]">
+                  <iframe
+                    title="Berkshire Dental Suite Slough Location Map"
+                    src="https://maps.google.com/maps?q=55-57%20High%20St%2C%20Slough%20SL1%201DZ&t=m&z=15&output=embed&iwloc=near"
+                    className="w-full h-full absolute inset-0 border-0"
+                    loading="lazy"
+                    allowFullScreen
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          10. BOOKING PROTOTYPE SECTION
+          - Fields: Full Name, Email, Phone, Treatment
+          - Non-submitting prototype state with clear, helpful confirmation feedback
+      ====================================================================== */}
+      <section id="booking-form" className="py-16 sm:py-24 bg-[#FFFFFF] border-t border-[#DDDDDD]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="bg-[#FBF9F5] border-2 border-[#1D1D1D] rounded-3xl p-6 sm:p-10 shadow-xl">
+            <div className="text-center max-w-xl mx-auto mb-8">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F1E7D8] border border-[#DDDDDD] text-xs font-semibold text-[#1D1D1D] mb-3">
+                <Sparkles className="w-3.5 h-3.5 text-[#5E5EEE]" />
+                <span>Consultation Enquiry</span>
+              </span>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#1D1D1D] tracking-tight mb-2">
+                Book a Consultation
+              </h2>
+              <p className="text-xs sm:text-sm text-[#292929]/80 leading-relaxed font-normal">
+                Take the first step towards your new smile. Submit your details below to schedule an initial discussion with our clinical team.
+              </p>
+            </div>
+
+            {bookingSubmitted ? (
+              <div className="bg-[#FFFFFF] border border-[#DDDDDD] rounded-2xl p-6 sm:p-8 text-center space-y-4">
+                <div className="w-12 h-12 rounded-full bg-[#F1E7D8] text-[#1D1D1D] flex items-center justify-center mx-auto">
+                  <CheckCircle2 className="w-6 h-6 text-emerald-600" />
+                </div>
+                <h3 className="text-lg font-bold text-[#1D1D1D]">
+                  Thank you, {bookingData.fullName}
+                </h3>
+                <p className="text-xs sm:text-sm text-[#292929] max-w-md mx-auto leading-relaxed">
+                  Your consultation request for <strong className="font-semibold text-[#1D1D1D]">{bookingData.treatment}</strong> has been received in prototype mode.
+                </p>
+                <div className="p-3 bg-[#F1E7D8] rounded-xl text-[11px] text-[#292929] max-w-sm mx-auto font-mono">
+                  Concept Prototype Note: No external transmission occurred. In production, this connects directly to the clinic&apos;s reception desk.
+                </div>
+                <button
+                  onClick={() => {
+                    setBookingSubmitted(false);
+                    setBookingData({
+                      fullName: "",
+                      email: "",
+                      phone: "",
+                      treatment: "Dental Implants"
+                    });
+                  }}
+                  className="px-5 py-2.5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] text-xs font-semibold hover:bg-[#000000] transition-colors"
+                >
+                  Submit Another Enquiry
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleBookingSubmit} className="space-y-4 sm:space-y-5">
+                {bookingError && (
+                  <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium">
+                    {bookingError}
+                  </div>
+                )}
+
+                {/* Field 1: Full Name */}
+                <div>
+                  <label
+                    htmlFor="fullName"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#1D1D1D] mb-1.5"
+                  >
+                    Full Name <span className="text-rose-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    required
+                    value={bookingData.fullName}
+                    onChange={(e) =>
+                      setBookingData((prev) => ({ ...prev, fullName: e.target.value }))
+                    }
+                    placeholder="e.g. Sarah Jenkins"
+                    className="w-full px-4 py-3 rounded-xl bg-[#FFFFFF] border border-[#DDDDDD] text-sm text-[#1D1D1D] placeholder-[#292929]/40 focus:outline-none focus:border-[#1D1D1D] transition-colors font-medium"
+                  />
+                </div>
+
+                {/* Field 2 & 3: Email and Phone */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label
+                      htmlFor="email"
+                      className="block text-xs font-semibold uppercase tracking-wider text-[#1D1D1D] mb-1.5"
+                    >
+                      Email Address <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      required
+                      value={bookingData.email}
+                      onChange={(e) =>
+                        setBookingData((prev) => ({ ...prev, email: e.target.value }))
+                      }
+                      placeholder="e.g. sarah@example.com"
+                      className="w-full px-4 py-3 rounded-xl bg-[#FFFFFF] border border-[#DDDDDD] text-sm text-[#1D1D1D] placeholder-[#292929]/40 focus:outline-none focus:border-[#1D1D1D] transition-colors font-medium"
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor="phone"
+                      className="block text-xs font-semibold uppercase tracking-wider text-[#1D1D1D] mb-1.5"
+                    >
+                      Telephone Number <span className="text-rose-500">*</span>
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      required
+                      value={bookingData.phone}
+                      onChange={(e) =>
+                        setBookingData((prev) => ({ ...prev, phone: e.target.value }))
+                      }
+                      placeholder="e.g. 07123 456789"
+                      className="w-full px-4 py-3 rounded-xl bg-[#FFFFFF] border border-[#DDDDDD] text-sm text-[#1D1D1D] placeholder-[#292929]/40 focus:outline-none focus:border-[#1D1D1D] transition-colors font-medium"
+                    />
+                  </div>
+                </div>
+
+                {/* Field 4: Treatment Selection */}
+                <div>
+                  <label
+                    htmlFor="treatment"
+                    className="block text-xs font-semibold uppercase tracking-wider text-[#1D1D1D] mb-1.5"
+                  >
+                    Primary Treatment of Interest
+                  </label>
+                  <select
+                    id="treatment"
+                    value={bookingData.treatment}
+                    onChange={(e) =>
+                      setBookingData((prev) => ({ ...prev, treatment: e.target.value }))
+                    }
+                    className="w-full px-4 py-3 rounded-xl bg-[#FFFFFF] border border-[#DDDDDD] text-sm text-[#1D1D1D] focus:outline-none focus:border-[#1D1D1D] transition-colors font-medium"
+                  >
+                    <option value="Dental Implants">Dental Implants</option>
+                    <option value="Cosmetic Bonding">Cosmetic Bonding</option>
+                    <option value="Porcelain Veneers">Porcelain Veneers</option>
+                    <option value="Teeth Whitening">Teeth Whitening</option>
+                    <option value="Invisalign">Invisalign (Clear Aligners)</option>
+                    <option value="Smile Makeovers">Smile Makeovers</option>
+                    <option value="Root Canal Treatment">Root Canal Treatment</option>
+                    <option value="Dental Checkup & Hygienist">Dental Checkup &amp; Hygienist</option>
+                    <option value="Other Dental Service">Other Dental Service</option>
+                  </select>
+                </div>
+
+                {/* Submit Action */}
+                <div className="pt-3">
+                  <button
+                    type="submit"
+                    className="w-full py-4 rounded-full bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-sm uppercase tracking-wider hover:bg-[#000000] active:scale-[0.99] transition-all shadow-md flex items-center justify-center gap-2"
+                  >
+                    <span>Book a consultation</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                  <p className="text-center text-[11px] text-[#292929]/60 mt-3 font-medium">
+                    Or call our reception directly on{" "}
+                    <a href="tel:01753933006" className="text-[#1D1D1D] font-bold underline">
+                      01753 933006
+                    </a>
+                  </p>
+                </div>
+              </form>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          CLINIC FOOTER
+          - Pure Berkshire Dental Suite footer
+          - Zero Veltris branding
+      ====================================================================== */}
+      <footer className="bg-[#1D1D1D] text-[#F1E7D8] py-14 border-t border-[#292929]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            {/* Col 1: Brand & Address */}
+            <div className="md:col-span-2 space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg bg-[#F1E7D8] text-[#1D1D1D] flex items-center justify-center font-bold text-xs">
+                  BDS
+                </div>
+                <span className="text-base font-bold text-[#FFFFFF] tracking-tight">
+                  Berkshire Dental Suite
+                </span>
+              </div>
+              <p className="text-xs text-[#F1E7D8]/70 max-w-sm leading-relaxed font-normal">
+                Cornwall House, 55–57 High Street, Slough, Berkshire, SL1 1DZ. Modern dental care, restorative expertise, and smile consultations in Slough.
+              </p>
+              <div className="text-xs text-[#F1E7D8]/90 space-y-1">
+                <p>Phone: <a href="tel:01753933006" className="underline hover:text-[#FFFFFF]">01753 933006</a></p>
+                <p>Email: <a href="mailto:info@berkshiredentalsuite.co.uk" className="underline hover:text-[#FFFFFF]">info@berkshiredentalsuite.co.uk</a></p>
+              </div>
+            </div>
+
+            {/* Col 2: Priority Treatments */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#FFFFFF] mb-4">
+                Treatments
+              </h4>
+              <ul className="space-y-2 text-xs text-[#F1E7D8]/70">
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Dental Implants</button></li>
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Cosmetic Bonding</button></li>
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Porcelain Veneers</button></li>
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Teeth Whitening</button></li>
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Invisalign</button></li>
+                <li><button onClick={() => scrollToSection("treatments")} className="hover:text-[#FFFFFF] transition-colors">Smile Makeovers</button></li>
+              </ul>
+            </div>
+
+            {/* Col 3: Clinic Information */}
+            <div>
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#FFFFFF] mb-4">
+                Practice
+              </h4>
+              <ul className="space-y-2 text-xs text-[#F1E7D8]/70">
+                <li><button onClick={() => scrollToSection("dr-ismael")} className="hover:text-[#FFFFFF] transition-colors">Dr Ismael Khan</button></li>
+                <li><button onClick={() => scrollToSection("results")} className="hover:text-[#FFFFFF] transition-colors">Before &amp; Afters</button></li>
+                <li><button onClick={() => scrollToSection("clinic")} className="hover:text-[#FFFFFF] transition-colors">The Practice</button></li>
+                <li><button onClick={() => scrollToSection("hours-location")} className="hover:text-[#FFFFFF] transition-colors">Opening Hours</button></li>
+                <li><button onClick={() => scrollToSection("booking-form")} className="hover:text-[#FFFFFF] transition-colors">Book Consultation</button></li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Legal Strip */}
+          <div className="pt-8 border-t border-[#292929] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-[#F1E7D8]/50">
+            <p>© {new Date().getFullYear()} Berkshire Dental Suite. All rights reserved.</p>
+            <p>Cornwall House, 55–57 High Street, Slough, Berkshire, SL1 1DZ</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}

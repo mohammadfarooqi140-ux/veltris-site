@@ -85,6 +85,22 @@ const conceptStudies = [
       "Operational downtime & weekend scheduling messaging",
     ],
   },
+  {
+    tag: "INDEPENDENT CONCEPT STUDY 04",
+    title: "Berkshire Dental Suite",
+    category: "Private Dentistry & Implant Clinic",
+    label: "Mobile-first concept prototype for a modern private dental clinic in Slough",
+    description:
+      "Berkshire Dental Suite explores how a private dental clinic led by Restorative and Implant Specialist Dr Ismael Khan replaces broken external demo links and sterile clinical blue clichés with an authentic warm cream identity, verified doctor credentials, touch-friendly before-and-after results, and a streamlined mobile consultation booking journey.",
+    breakdownHref: "/work/berkshire",
+    prototypeHref: "/berkshire",
+    decisions: [
+      "Warm cream & charcoal brand palette (#F1E7D8 / #292929)",
+      "Dr Ismael Khan verified credential & role hierarchy",
+      "Touch-friendly Before-and-After case comparison module",
+      "In-page treatment drawers eliminating broken demo links",
+    ],
+  },
 ];
 
 export default function WorkPage() {

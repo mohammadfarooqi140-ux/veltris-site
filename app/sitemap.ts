@@ -36,6 +36,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: 'https://www.veltris.uk/work/berkshire',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: 'https://www.veltris.uk/about',
       lastModified,
       changeFrequency: 'monthly',
@@ -56,6 +62,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: 'https://www.veltris.uk/sterling',
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://www.veltris.uk/berkshire',
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
