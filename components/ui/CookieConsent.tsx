@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Shield, X, Check, Settings } from "lucide-react";
+import { Shield, X, Check, Settings, Cookie } from "lucide-react";
 import { getStoredConsent, saveConsent, ConsentState, CookieCategories } from "@/lib/cookieConsent";
 
 export default function CookieConsent() {
@@ -50,15 +50,16 @@ export default function CookieConsent() {
 
   return (
     <>
-      {/* Floating Re-open Shield Button (Bottom Left) */}
+      {/* Floating Re-open Cookie Settings Button (Bottom Left) */}
       {consent.hasResponded && !showBanner && !showModal && (
         <button
           onClick={() => setShowModal(true)}
-          className="fixed bottom-5 left-5 z-40 bg-zinc-900/90 border border-white/15 text-zinc-400 hover:text-white p-2.5 rounded-full shadow-2xl backdrop-blur-md transition-all duration-300 hover:scale-110 flex items-center justify-center group"
-          title="Privacy & Cookie Preferences"
-          aria-label="Privacy & Cookie Preferences"
+          className="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 z-30 bg-[#1D1D1D]/90 border border-white/20 text-zinc-300 hover:text-white px-2.5 py-2 sm:px-3 sm:py-2 rounded-full shadow-lg backdrop-blur-md transition-all duration-200 hover:scale-105 flex items-center gap-1.5 group text-[11px] font-medium min-h-[44px] min-w-[44px]"
+          title="Cookie Settings"
+          aria-label="Cookie Settings"
         >
-          <Shield className="w-4 h-4 text-amber-400 group-hover:rotate-12 transition-transform" />
+          <Cookie className="w-4 h-4 text-zinc-300 group-hover:text-white flex-shrink-0" />
+          <span className="hidden sm:inline text-zinc-300 group-hover:text-white">Cookies</span>
         </button>
       )}
 
