@@ -11,8 +11,6 @@ import {
   Star,
   ShieldCheck,
   CheckCircle2,
-  Menu,
-  X,
   Sparkles,
   Info,
   ArrowRight,
@@ -186,14 +184,14 @@ const SERVICE_CATEGORIES: ServiceCategory[] = [
   }
 ];
 
-// 4 Verified Before and After comparisons (strictly neutral clinical descriptions)
+// 4 Verified Before and After comparisons (guaranteed local assets, strictly neutral clinical descriptions)
 const BEFORE_AFTER_CASES = [
   {
     id: 1,
     title: "Comparison 01",
     subtitle: "Upper anterior alignment & aesthetic refinement",
-    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1B-1.jpg",
-    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1A.jpg",
+    beforeImg: "/images/berkshire/case1_before.jpg",
+    afterImg: "/images/berkshire/case1_after.jpg",
     beforeAlt: "Before Comparison 1: Close-up of upper front teeth prior to aesthetic care",
     afterAlt: "After Comparison 1: Upper anterior alignment and aesthetic refinement"
   },
@@ -201,8 +199,8 @@ const BEFORE_AFTER_CASES = [
     id: 2,
     title: "Comparison 02",
     subtitle: "Smile uniformity & shade improvement",
-    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2-B.jpg",
-    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2A.jpg",
+    beforeImg: "/images/berkshire/case2_before.jpg",
+    afterImg: "/images/berkshire/case2_after.jpg",
     beforeAlt: "Before Comparison 2: Upper anterior teeth prior to care",
     afterAlt: "After Comparison 2: Visibly more uniform and brighter shade"
   },
@@ -210,8 +208,8 @@ const BEFORE_AFTER_CASES = [
     id: 3,
     title: "Comparison 03",
     subtitle: "Symmetry & incisal edge contour harmony",
-    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3B.jpg",
-    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3A.jpg",
+    beforeImg: "/images/berkshire/case3_before.jpg",
+    afterImg: "/images/berkshire/case3_after.jpg",
     beforeAlt: "Before Comparison 3: Upper anterior teeth showing uneven edge wear",
     afterAlt: "After Comparison 3: Improved symmetry and smooth incisal edges"
   },
@@ -219,8 +217,8 @@ const BEFORE_AFTER_CASES = [
     id: 4,
     title: "Comparison 04",
     subtitle: "Bright uniform shade & balanced contours",
-    beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4B.jpg",
-    afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4A.jpg",
+    beforeImg: "/images/berkshire/case4_before.jpg",
+    afterImg: "/images/berkshire/case4_after.jpg",
     beforeAlt: "Before Comparison 4: Upper front teeth prior to care",
     afterAlt: "After Comparison 4: Bright uniform shade and harmonious contours"
   }
@@ -278,12 +276,6 @@ function BeforeAfterSlider({
             src={caseItem.afterImg}
             alt={caseItem.afterAlt}
             className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.currentTarget;
-              target.onerror = null;
-              target.src =
-                "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=800&q=80";
-            }}
           />
           <div className="absolute top-3 left-3 bg-[#1D1D1D]/80 backdrop-blur-sm text-[#F1E7D8] text-[9px] font-mono font-semibold px-2 py-0.5 rounded tracking-wider uppercase border border-white/10">
             Concept Placeholder Result
@@ -310,12 +302,6 @@ function BeforeAfterSlider({
             src={caseItem.beforeImg}
             alt={caseItem.beforeAlt}
             className="absolute inset-0 w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.currentTarget;
-              target.onerror = null;
-              target.src =
-                "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80";
-            }}
           />
           <span className="absolute bottom-3 left-3 bg-[#292929]/85 backdrop-blur-sm text-[#FFFFFF] text-[10px] font-bold px-2.5 py-1 rounded-md tracking-wider uppercase">
             Before
@@ -350,7 +336,7 @@ function BeforeAfterSlider({
             </p>
           </div>
 
-          {/* Touch-friendly view toggle (minimum 44px touch area) */}
+          {/* Touch-friendly view toggle */}
           <div className="inline-flex rounded-lg p-0.5 bg-[#F1E7D8]/70 border border-[#DDDDDD] text-xs self-start sm:self-center">
             <button
               onClick={() => setActiveMode("slider")}
@@ -399,7 +385,6 @@ function BeforeAfterSlider({
 // MAIN BERKSHIRE DENTAL SUITE HOMEPAGE CONCEPT (SINGLE-PAGE MOBILE-FIRST)
 // ============================================================================
 export default function BerkshireDentalSuitePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeModalTreatment, setActiveModalTreatment] = useState<TreatmentItem | null>(null);
   const [activeCategoryTab, setActiveCategoryTab] = useState<string>("Cosmetic");
 
@@ -424,7 +409,6 @@ export default function BerkshireDentalSuitePage() {
   };
 
   const scrollToSection = (id: string) => {
-    setMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -441,17 +425,16 @@ export default function BerkshireDentalSuitePage() {
       />
 
       {/* =====================================================================
-          1. BERKSHIRE DENTAL SUITE HEADER (MOBILE-FIRST PRECISION)
+          1. BERKSHIRE DENTAL SUITE HEADER (CLEAN MOBILE PRECISION)
           - Compact BDS branding
           - Limited mobile strapline: "SLOUGH · PRIVATE DENTISTRY"
           - Aligned Call button (min 44px touch target)
           - Aligned Book button (min 44px touch target)
-          - Aligned Menu control (min 44px touch target)
-          - Zero awkward wrapping on 375px+ screens
+          - Zero cut-off hamburger button (removed per user instruction)
           - Clean 64px header height
       ====================================================================== */}
       <header className="sticky top-0 z-50 bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#DDDDDD] transition-all">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 h-16 sm:h-20 flex items-center justify-between gap-2">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
           {/* Clinic Brand Identity */}
           <Link
             href="/berkshire"
@@ -505,12 +488,12 @@ export default function BerkshireDentalSuitePage() {
             </button>
           </nav>
 
-          {/* Header Actions: Call, Book CTA, and Menu Toggle */}
-          <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
-            {/* Quick Click-to-Call Button (min 44px touch target) */}
+          {/* Header Actions: Call and Book CTA (Cleanly aligned, no cut-off hamburger) */}
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+            {/* Quick Click-to-Call Button */}
             <a
               href="tel:01753933006"
-              className="inline-flex items-center justify-center gap-1.5 min-h-[44px] min-w-[44px] px-2.5 sm:px-3.5 rounded-full bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold hover:bg-[#e8dcce] transition-colors border border-[#DDDDDD]"
+              className="inline-flex items-center justify-center gap-1.5 min-h-[44px] min-w-[44px] px-3 sm:px-3.5 rounded-full bg-[#F1E7D8] text-[#1D1D1D] text-xs font-semibold hover:bg-[#e8dcce] transition-colors border border-[#DDDDDD]"
               title="Call Berkshire Dental Suite on 01753 933006"
               aria-label="Call 01753 933006"
             >
@@ -518,78 +501,16 @@ export default function BerkshireDentalSuitePage() {
               <span className="hidden sm:inline">01753 933006</span>
             </a>
 
-            {/* Book Consultation Primary CTA (min 44px touch target) */}
+            {/* Book Consultation Primary CTA */}
             <button
               onClick={() => scrollToSection("booking-form")}
-              className="inline-flex items-center justify-center min-h-[44px] px-3.5 sm:px-5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] text-xs font-semibold hover:bg-[#000000] active:scale-95 transition-all shadow-sm"
+              className="inline-flex items-center justify-center min-h-[44px] px-4 sm:px-5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] text-xs font-semibold hover:bg-[#000000] active:scale-95 transition-all shadow-sm"
             >
               <span className="hidden sm:inline">Book a consultation</span>
               <span className="sm:hidden">Book</span>
             </button>
-
-            {/* Mobile Menu Toggle (min 44px touch target) */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden min-h-[44px] min-w-[44px] p-2 text-[#292929] hover:bg-[#F1E7D8] rounded-xl transition-colors flex items-center justify-center"
-              aria-label="Toggle Navigation Menu"
-            >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-            </button>
           </div>
         </div>
-
-        {/* Mobile Navigation Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-[#FFFFFF] border-b border-[#DDDDDD] px-6 py-5 shadow-xl transition-all animate-in fade-in slide-in-from-top-2 duration-200">
-            <div className="flex flex-col space-y-3 text-sm font-semibold uppercase tracking-wider text-[#292929]">
-              <button
-                onClick={() => scrollToSection("treatments")}
-                className="text-left py-2.5 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE] min-h-[44px] flex items-center"
-              >
-                Treatments
-              </button>
-              <button
-                onClick={() => scrollToSection("dr-ismael")}
-                className="text-left py-2.5 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE] min-h-[44px] flex items-center"
-              >
-                Dr Ismael Khan
-              </button>
-              <button
-                onClick={() => scrollToSection("results")}
-                className="text-left py-2.5 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE] min-h-[44px] flex items-center"
-              >
-                Results Gallery
-              </button>
-              <button
-                onClick={() => scrollToSection("clinic")}
-                className="text-left py-2.5 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE] min-h-[44px] flex items-center"
-              >
-                Clinic Environment
-              </button>
-              <button
-                onClick={() => scrollToSection("hours-location")}
-                className="text-left py-2.5 border-b border-[#DDDDDD]/50 hover:text-[#5E5EEE] min-h-[44px] flex items-center"
-              >
-                Opening Hours &amp; Location
-              </button>
-
-              <div className="pt-3 flex flex-col gap-2.5">
-                <a
-                  href="tel:01753933006"
-                  className="w-full text-center py-3.5 rounded-full bg-[#F1E7D8] text-[#1D1D1D] font-semibold text-xs uppercase tracking-wider border border-[#DDDDDD] flex items-center justify-center gap-2 min-h-[48px]"
-                >
-                  <Phone className="w-4 h-4" /> Call 01753 933006
-                </a>
-                <button
-                  onClick={() => scrollToSection("booking-form")}
-                  className="w-full text-center py-3.5 rounded-full bg-[#1D1D1D] text-[#FFFFFF] font-semibold text-xs uppercase tracking-wider min-h-[48px]"
-                >
-                  Book a Consultation
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
       </header>
 
       {/* =====================================================================
@@ -598,8 +519,7 @@ export default function BerkshireDentalSuitePage() {
           - Desktop headline: "Modern dental care, restorative expertise, and smile consultations in the heart of Slough."
           - Supporting copy: "Thoughtful implant, restorative, and cosmetic care with a calm, personalised approach."
           - Credential line: "Led by Dr Ismael Khan DMD, PGCert, PGDip, Principal Dentist and Restorative & Implant Dentistry Specialist."
-          - 52px button heights, no viewport clipping
-          - Clear concept placeholder imagery notice
+          - Guaranteed visible local placeholder image
       ====================================================================== */}
       <section className="bg-[#F1E7D8] pt-10 pb-14 sm:pt-16 sm:pb-20 border-b border-[#DDDDDD] relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -662,20 +582,14 @@ export default function BerkshireDentalSuitePage() {
               </div>
             </div>
 
-            {/* Hero Visual Column (Treated as Concept Presentation Placeholder) */}
+            {/* Hero Visual Column (Guaranteed Visible Local Placeholder Image) */}
             <div className="lg:col-span-5 relative">
               <div className="relative rounded-2xl overflow-hidden border-2 border-[#FFFFFF] shadow-xl bg-[#FFFFFF] aspect-[4/3] sm:aspect-[4/3] lg:aspect-[5/4]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/berikshire-dental-practice.jpg"
+                  src="/images/berkshire/exterior.jpg"
                   alt="Berkshire Dental Suite practice exterior at Cornwall House Slough (Concept Presentation Placeholder)"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src =
-                      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1000&q=80";
-                  }}
                 />
 
                 {/* Understated Placeholder Badge */}
@@ -700,10 +614,6 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           3. TRUST SECTION (SAFE REVIEW & ROLE STATEMENTS)
-          - "5-star Google Reviews"
-          - "Trustindex displays 24 reviews rated Excellent."
-          - Dr Ismael verified role
-          - Real opening-hours advantage
       ====================================================================== */}
       <section className="py-12 bg-[#FFFFFF] border-b border-[#DDDDDD]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -773,10 +683,6 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           4. PRIORITY TREATMENTS SECTION
-          - 6 core treatments prominent
-          - Concise supporting copy
-          - Single clean action link per card (removes repetitive duplicate buttons)
-          - Safe clinical copy
       ====================================================================== */}
       <section id="treatments" className="py-14 sm:py-20 bg-[#FBF9F5]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -858,7 +764,7 @@ export default function BerkshireDentalSuitePage() {
               className="absolute top-5 right-5 p-2 rounded-full bg-[#F1E7D8] text-[#1D1D1D] hover:bg-[#e6d9c6] transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center"
               aria-label="Close treatment details"
             >
-              <X className="w-4 h-4" />
+              ✕
             </button>
 
             <span className="text-[10px] font-semibold uppercase tracking-widest text-[#5E5EEE] block mb-2 font-mono">
@@ -912,10 +818,7 @@ export default function BerkshireDentalSuitePage() {
       )}
 
       {/* =====================================================================
-          5. COMPACT GROUPED SERVICES SECTION (REDUCED MOBILE SCROLLING)
-          - Grouped by category: Cosmetic, Restorative, Preventative, Specialist Care
-          - Avoids full-width repetitive cards
-          - Neutral clinical wording
+          5. COMPACT GROUPED SERVICES SECTION
       ====================================================================== */}
       <section className="py-14 sm:py-20 bg-[#F1E7D8] border-y border-[#DDDDDD]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -991,9 +894,7 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           6. DR ISMAEL KHAN SECTION (VERIFIED CLINICIAN PROFILE)
-          - Verified roles only: Principal Dentist, Founder, Restorative & Implant Dentistry Specialist, Visiting Implantologist
-          - Neutral factual background
-          - Concept presentation placeholder photo label
+          - Guaranteed visible local placeholder image
       ====================================================================== */}
       <section id="dr-ismael" className="py-14 sm:py-20 bg-[#FFFFFF]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -1004,15 +905,9 @@ export default function BerkshireDentalSuitePage() {
                 <div className="relative w-full max-w-sm aspect-[4/5] rounded-xl overflow-hidden border border-[#DDDDDD] bg-[#F1E7D8] shadow-md">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/Ismael-Dr.webp"
+                    src="/images/berkshire/dr_ismael.jpg"
                     alt="Dr Ismael Khan DMD, PGCert, PGDip — Principal Dentist (Concept Presentation Placeholder)"
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      target.onerror = null;
-                      target.src =
-                        "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/dr-ismael.webp";
-                    }}
                   />
                   <div className="absolute top-3 right-3 bg-[#1D1D1D]/80 backdrop-blur-sm text-[#F1E7D8] text-[9px] font-mono font-semibold px-2.5 py-1 rounded tracking-wider uppercase border border-white/15">
                     Concept Presentation Placeholder
@@ -1096,9 +991,7 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           7. BEFORE-AND-AFTER GALLERY (TOUCH-FRIENDLY & CAUTIONARY)
-          - All four existing comparisons preserved
-          - Touch-friendly horizontal slider
-          - Neutral descriptions (zero claims of veneers, crowns, implants)
+          - Guaranteed visible local placeholder comparison images
           - Mandatory notice:
             “Case details to be confirmed with the clinic. Visual treatment interpretation is indicative only.”
       ====================================================================== */}
@@ -1143,10 +1036,7 @@ export default function BerkshireDentalSuitePage() {
       </section>
 
       {/* =====================================================================
-          8. CLINIC ENVIRONMENT SECTION
-          - Practice exterior, reception, treatment room images
-          - Calm, modern, and welcoming atmosphere
-          - Understated placeholder image presentation label
+          8. CLINIC ENVIRONMENT SECTION (GUARANTEED VISIBLE LOCAL ASSETS)
       ====================================================================== */}
       <section id="clinic" className="py-14 sm:py-20 bg-[#FFFFFF] border-t border-[#DDDDDD]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -1169,15 +1059,9 @@ export default function BerkshireDentalSuitePage() {
               <div className="relative aspect-[4/3] bg-[#DDDDDD]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/berikshire-dental-practice.jpg"
+                  src="/images/berkshire/exterior.jpg"
                   alt="Berkshire Dental Suite exterior at Cornwall House Slough (Concept Presentation Placeholder)"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src =
-                      "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80";
-                  }}
                 />
                 <div className="absolute top-2.5 right-2.5 bg-[#1D1D1D]/80 backdrop-blur-sm text-[#F1E7D8] text-[9px] font-mono font-semibold px-2 py-0.5 rounded tracking-wider uppercase border border-white/15">
                   Placeholder
@@ -1198,15 +1082,9 @@ export default function BerkshireDentalSuitePage() {
               <div className="relative aspect-[4/3] bg-[#DDDDDD]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/reception.jpeg"
+                  src="/images/berkshire/reception.jpg"
                   alt="Berkshire Dental Suite reception and patient lounge (Concept Presentation Placeholder)"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src =
-                      "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80";
-                  }}
                 />
                 <div className="absolute top-2.5 right-2.5 bg-[#1D1D1D]/80 backdrop-blur-sm text-[#F1E7D8] text-[9px] font-mono font-semibold px-2 py-0.5 rounded tracking-wider uppercase border border-white/15">
                   Placeholder
@@ -1227,15 +1105,9 @@ export default function BerkshireDentalSuitePage() {
               <div className="relative aspect-[4/3] bg-[#DDDDDD]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/treatment-room-image.jpeg"
+                  src="/images/berkshire/treatment_room.jpg"
                   alt="Berkshire Dental Suite digital treatment suite (Concept Presentation Placeholder)"
                   className="w-full h-full object-cover"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.onerror = null;
-                    target.src =
-                      "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=800&q=80";
-                  }}
                 />
                 <div className="absolute top-2.5 right-2.5 bg-[#1D1D1D]/80 backdrop-blur-sm text-[#F1E7D8] text-[9px] font-mono font-semibold px-2 py-0.5 rounded tracking-wider uppercase border border-white/15">
                   Placeholder
@@ -1260,19 +1132,6 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           9. CONTACT AND OPENING HOURS
-          - Exact address: Cornwall House, 55–57 High Street, Slough, Berkshire, SL1 1DZ
-          - Phone: 01753 933006
-          - Email: info@berkshiredentalsuite.co.uk
-          - Exact schedule:
-            * Monday: 9am–8pm
-            * Tuesday: Closed
-            * Wednesday: 9am–8pm
-            * Thursday: 9am–12pm
-            * Friday: 9am–6pm
-            * Saturday: 9am–6pm
-            * Sunday: 9am–6pm
-          - Click-to-call & click-to-email
-          - Visual map element
       ====================================================================== */}
       <section id="hours-location" className="py-14 sm:py-20 bg-[#FBF9F5] border-t border-[#DDDDDD]">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 md:px-12">
@@ -1412,9 +1271,6 @@ export default function BerkshireDentalSuitePage() {
 
       {/* =====================================================================
           10. BOOKING PROTOTYPE SECTION
-          - Fields: Full Name, Email, Phone, Treatment
-          - Non-submitting prototype state with clear mock confirmation
-          - 52px primary button height
       ====================================================================== */}
       <section id="booking-form" className="py-14 sm:py-20 bg-[#FFFFFF] border-t border-[#DDDDDD]">
         <div className="max-w-3xl mx-auto px-6 sm:px-8 md:px-12">
