@@ -15,8 +15,7 @@ import {
   X,
   Sparkles,
   Info,
-  ArrowRight,
-  ArrowLeft
+  ArrowRight
 } from "lucide-react";
 
 // ============================================================================
@@ -160,20 +159,20 @@ const BEFORE_AFTER_CASES = [
   {
     id: 1,
     title: "Comparison 01",
-    subtitle: "Anterior alignment & natural ceramic restorations",
+    subtitle: "Upper anterior alignment & aesthetic refinement",
     beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1B-1.jpg",
     afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/1A.jpg",
-    beforeAlt: "Before Case 1: Close-up of upper front teeth prior to restoration",
-    afterAlt: "After Case 1: Even alignment and bright natural ceramic restorations"
+    beforeAlt: "Before Comparison 1: Close-up of upper front teeth",
+    afterAlt: "After Comparison 1: Alignment and aesthetic refinement"
   },
   {
     id: 2,
     title: "Comparison 02",
-    subtitle: "Smile uniformity & shade transformation",
+    subtitle: "Smile uniformity & shade improvement",
     beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2-B.jpg",
     afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/2A.jpg",
-    beforeAlt: "Before Case 2: Upper anterior teeth before smile makeover",
-    afterAlt: "After Case 2: Visibly more uniform bright shade and smile makeover"
+    beforeAlt: "Before Comparison 2: Upper anterior teeth",
+    afterAlt: "After Comparison 2: Visibly more uniform and brighter shade"
   },
   {
     id: 3,
@@ -181,17 +180,17 @@ const BEFORE_AFTER_CASES = [
     subtitle: "Symmetry & incisal edge contour harmony",
     beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3B.jpg",
     afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/3A.jpg",
-    beforeAlt: "Before Case 3: Upper anterior teeth with uneven edge wear",
-    afterAlt: "After Case 3: Improved symmetry, smooth incisal edges, and natural translucency"
+    beforeAlt: "Before Comparison 3: Upper anterior teeth with uneven edge wear",
+    afterAlt: "After Comparison 3: Improved symmetry and smooth incisal edges"
   },
   {
     id: 4,
     title: "Comparison 04",
-    subtitle: "Bright uniform shade & polished contours",
+    subtitle: "Bright uniform shade & balanced contours",
     beforeImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4B.jpg",
     afterImg: "https://berkshiredentalsuite.co.uk/wp-content/uploads/2026/09/4A.jpg",
-    beforeAlt: "Before Case 4: Upper front teeth before cosmetic enhancement",
-    afterAlt: "After Case 4: Bright uniform shade, polished surfaces, and harmonious contours"
+    beforeAlt: "Before Comparison 4: Upper front teeth",
+    afterAlt: "After Comparison 4: Bright uniform shade and harmonious contours"
   }
 ];
 
@@ -402,39 +401,6 @@ export default function BerkshireDentalSuitePage() {
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       />
 
-      {/* =====================================================================
-          0. VELTRIS BACK NAVIGATION BANNER
-          - Natural document flow — always above the sticky clinic header
-          - Styled in clinic warm tones (not Veltris dark chrome)
-          - Links back to /work/berkshire (case study) and /work (portfolio)
-      ====================================================================== */}
-      <aside
-        aria-label="Veltris Concept Study Navigation"
-        className="w-full bg-[#EDE3D6] border-b border-[#DDDDDD] text-[#5C5047] py-2 px-4 sm:px-6 text-[11px] leading-[16px] font-mono"
-      >
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 sm:gap-4">
-          <div className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#5E5EEE] flex-shrink-0" />
-            <span className="truncate">
-              Veltris Concept Study • Private Dentistry &amp; Implants
-            </span>
-          </div>
-          <div className="flex items-center gap-4 text-[11px] font-medium flex-shrink-0">
-            <Link
-              href="/work/berkshire"
-              className="text-[#5C5047] hover:text-[#1D1D1D] transition-colors"
-            >
-              Concept Breakdown
-            </Link>
-            <Link
-              href="/work"
-              className="inline-flex items-center gap-1 text-[#5E5EEE] hover:text-[#4d4de0] font-semibold transition-colors"
-            >
-              <ArrowLeft className="w-3 h-3" /> Veltris Portfolio
-            </Link>
-          </div>
-        </div>
-      </aside>
 
       {/* =====================================================================
           1. BERKSHIRE DENTAL SUITE HEADER
@@ -609,9 +575,14 @@ export default function BerkshireDentalSuitePage() {
                 Modern dental care, restorative expertise, and smile consultations in the heart of Slough.
               </h1>
 
-              {/* Subtitle with doctor reference and approachable clarity */}
-              <p className="text-base sm:text-lg text-[#292929] leading-relaxed font-normal mb-8 max-w-2xl">
-                Led by Restorative and Implant Dentistry Specialist Dr Ismael Khan DMD, PGCert, PGDip, Berkshire Dental Suite combines careful digital planning, minimally invasive techniques, and calm, personalized care for patients across Berkshire.
+              {/* Doctor Credentials Subtitle */}
+              <p className="text-base sm:text-lg font-medium text-[#1D1D1D] leading-relaxed mb-3 max-w-2xl">
+                Led by Dr Ismael Khan DMD, PGCert, PGDip, Principal Dentist and Restorative &amp; Implant Dentistry Specialist.
+              </p>
+
+              {/* Supporting Clinical Paragraph */}
+              <p className="text-sm sm:text-base text-[#292929]/80 leading-relaxed font-normal mb-8 max-w-2xl">
+                Combining careful planning, digital dentistry, minimally invasive techniques, and calm patient care in the heart of Berkshire.
               </p>
 
               {/* Dual CTAs */}
@@ -1082,7 +1053,7 @@ export default function BerkshireDentalSuitePage() {
                 Clinical Transparency Notice
               </h4>
               <p className="text-xs text-[#292929] leading-relaxed font-normal">
-                Case details to be confirmed with the clinic. The visual treatment interpretation is indicative only.
+                Case details to be confirmed with the clinic. Visual treatment interpretation is indicative only.
               </p>
             </div>
           </div>
