@@ -120,6 +120,7 @@ const homepageConcepts = [
     tag: "FLAGSHIP CONCEPT STUDY",
     title: "Fascia Aesthetics",
     category: "Medical Aesthetics & Clinical Restorations",
+    demonstrates: "Clinical authority, anatomical depth, and an exclusive concierge consultation journey without sterile clinic clichés.",
     description:
       "Led by Nurse Prescriber Katie in Weybridge, Surrey (8+ yrs refining natural results), Fascia Aesthetics re-engineers clinical aesthetics around subtle, undetectable anti-ageing, anatomical depth, and an exclusive concierge consultation journey.",
     breakdownHref: "/work/fascia",
@@ -129,6 +130,7 @@ const homepageConcepts = [
     tag: "INDEPENDENT CONCEPT STUDY",
     title: "Hartley & Co. Builders",
     category: "Mainstream Construction Business",
+    demonstrates: "Solving 'Trapped Authority' in construction by replacing generic stock photography with transparent procurement clarity.",
     description:
       "Hartley explores how a construction business presents high-value capability with absolute clarity. The strategy focuses on solving 'Trapped Authority' by replacing cheap stock photography with authentic project context to eliminate procurement friction.",
     breakdownHref: "/work/hartley",
@@ -138,6 +140,7 @@ const homepageConcepts = [
     tag: "INDEPENDENT CONCEPT STUDY",
     title: "Sterling Industrial Flooring",
     category: "Industrial Trade Business",
+    demonstrates: "Demystifying complex industrial contracting, safety compliance, and zero-downtime weekend installation schedules.",
     description:
       "Sterling explores how a technical industrial contractor makes complex services easier to understand and enquire about. The strategy satisfying procurement H&S standards, displaying accreditation signals, and framing weekend-only installation schedules to satisfy procurement and mitigate operational downtime risks.",
     breakdownHref: "/work/sterling",
@@ -179,13 +182,13 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-6">
                 <Link
                   href="#audit"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-accent text-zinc-950 font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all hover:bg-amber-400 active:scale-[0.98] shadow-lg shadow-accent/15"
                 >
                   Request Free Audit <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/work"
-                  className="w-full sm:w-auto inline-flex items-center justify-center bg-surface border border-border-subtle text-ink font-semibold px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-surface-raised active:scale-[0.98]"
+                  className="w-full sm:w-auto inline-flex items-center justify-center bg-surface border border-border-subtle text-ink-muted hover:text-ink font-medium px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-surface-raised active:scale-[0.98]"
                 >
                   See how we work
                 </Link>
@@ -351,23 +354,35 @@ export default function Home() {
                         {concept.title}
                       </h3>
 
-                      <p className="text-ink-muted text-sm font-light leading-relaxed mb-6">
+                      <p className="text-ink-muted text-sm font-light leading-relaxed mb-4">
                         {concept.description}
                       </p>
+
+                      {/* Move 5: Explicit "What this demonstrates" framing */}
+                      <div className="p-3 rounded-xl bg-paper/60 border border-border-subtle/80 mb-6 text-xs">
+                        <span className="text-[10px] font-mono uppercase tracking-widest text-ink-dim block mb-1">
+                          What this demonstrates:
+                        </span>
+                        <p className="text-ink-muted font-light leading-relaxed">
+                          {concept.demonstrates}
+                        </p>
+                      </div>
                     </div>
 
                     <div className="pt-6 border-t border-border-subtle flex flex-wrap items-center justify-between gap-3">
                       <Link
                         href={concept.breakdownHref}
-                        className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest transition-colors ${
-                          idx === 0 ? "text-[#d49a37] hover:text-[#e4a844]" : "text-ink hover:text-accent"
+                        className={`inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest px-4 py-2.5 rounded-full transition-all ${
+                          idx === 0
+                            ? "bg-[#d49a37] text-zinc-950 hover:bg-[#e4a844] shadow-md shadow-[#d49a37]/20"
+                            : "bg-surface-raised border border-border-subtle text-ink hover:text-accent hover:border-accent/40"
                         }`}
                       >
                         Read Concept Breakdown <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                       <Link
                         href={concept.prototypeHref}
-                        className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-ink-dim hover:text-ink transition-colors"
+                        className="inline-flex items-center gap-1 text-xs font-mono uppercase tracking-wider text-ink-dim hover:text-ink transition-colors px-3 py-2"
                       >
                         Interactive Study <ArrowUpRight className="w-3 h-3" />
                       </Link>
@@ -392,19 +407,69 @@ export default function Home() {
             FINAL CTA: FRICTIONLESS 2-POINT AUDIT CONTACT FORM
         ========================================================================== */}
         <section id="audit" className="py-28 px-6 relative z-10 bg-paper">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto">
             <FadeInUp>
-              <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-4">
-                Frictionless Visual Audit
-              </span>
-              <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink mb-6 leading-tight">
-                Request a Free 2-Point Mobile Spacing &amp; Layout Audit
-              </h2>
-              <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                Muhammad will personally review your current website&apos;s mobile presentation. We will email or DM you a single, annotated red-line markup image showing exactly where layout or spacing bugs are causing premium clients to bounce before booking. No phone calls, no videos, no obligation.
-              </p>
-              <div className="p-8 sm:p-12 rounded-3xl bg-surface/50 border border-border-subtle shadow-xl">
-                <AuditCTAForm />
+              <div className="text-center max-w-3xl mx-auto mb-14">
+                <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-4">
+                  Diagnostic Entry Point
+                </span>
+                <h2 className="font-playfair text-3xl sm:text-4xl md:text-5xl font-medium text-ink mb-6 leading-tight">
+                  Request a Free 2-Point Mobile Spacing &amp; Layout Audit
+                </h2>
+                <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-6">
+                  Muhammad will personally review your current website&apos;s mobile presentation. We will email or DM you a single, annotated red-line markup image showing exactly where layout or spacing bugs are causing premium clients to bounce before booking.
+                </p>
+
+                {/* Move 2: The Bridge between 2-Point Audit & Broader 10-Day Offer */}
+                <div className="p-4 rounded-xl bg-surface/50 border border-border-subtle text-xs text-ink-muted font-light max-w-2xl mx-auto text-left sm:text-center leading-relaxed">
+                  <span className="font-mono text-[10px] text-accent uppercase tracking-wider block mb-1">
+                    How The Audit Bridges To Our Full Service
+                  </span>
+                  The free audit identifies the exact mobile friction points hurting conversion. If the diagnostic resonates and there is commercial alignment, it serves as the strategic starting point for our full 10-day positioning, design, and responsive build process.
+                </div>
+              </div>
+
+              {/* Expectation Block Beside the Form */}
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                <div className="lg:col-span-5 space-y-4 text-left">
+                  <div className="rounded-2xl bg-surface/60 border border-border-subtle p-6 space-y-4">
+                    <span className="text-[11px] font-mono uppercase tracking-wider text-accent font-semibold block">
+                      Audit Scope &amp; Delivery
+                    </span>
+
+                    <div className="space-y-3 text-xs">
+                      <div className="p-3.5 rounded-xl bg-paper/70 border border-border-subtle">
+                        <span className="font-mono text-[10px] text-ink-dim uppercase block mb-0.5">01 / Scope</span>
+                        <strong className="text-ink block font-medium mb-1">Two Critical Mobile Issues</strong>
+                        <p className="text-ink-muted font-light leading-relaxed">
+                          Focused on spacing collapse, typographic hierarchy, and awkward conversion barriers. No generic 50-page reports.
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-paper/70 border border-border-subtle">
+                        <span className="font-mono text-[10px] text-ink-dim uppercase block mb-0.5">02 / Delivery Format</span>
+                        <strong className="text-ink block font-medium mb-1">Annotated Red-Line Markup</strong>
+                        <p className="text-ink-muted font-light leading-relaxed">
+                          A single clear diagnostic visual showing exactly what is misaligned and how to resolve it.
+                        </p>
+                      </div>
+
+                      <div className="p-3.5 rounded-xl bg-paper/70 border border-border-subtle">
+                        <span className="font-mono text-[10px] text-ink-dim uppercase block mb-0.5">03 / Timing &amp; Route</span>
+                        <strong className="text-ink block font-medium mb-1">Within 24–48 Hours</strong>
+                        <p className="text-ink-muted font-light leading-relaxed">
+                          Delivered directly to your inbox or DM by Muhammad, Founder and Principal. Zero sales pitch, zero obligation.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="lg:col-span-7">
+                  <div className="p-6 sm:p-8 rounded-3xl bg-surface/60 border border-border-subtle shadow-xl">
+                    <AuditCTAForm />
+                  </div>
+                </div>
               </div>
             </FadeInUp>
           </div>

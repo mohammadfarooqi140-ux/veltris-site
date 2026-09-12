@@ -124,13 +124,13 @@ export default function ServicesPage() {
               <div className="flex flex-col sm:flex-row gap-4 md:justify-start justify-center">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] w-full sm:w-auto shadow-lg"
+                  className="inline-flex items-center justify-center gap-2 bg-accent text-zinc-950 font-semibold min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition-all hover:bg-amber-400 active:scale-[0.98] w-full sm:w-auto shadow-lg shadow-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 >
-                  Discuss your website <ArrowRight className="w-4 h-4" />
+                  Request Free Audit <ArrowRight className="w-4 h-4" />
                 </Link>
                 <Link
                   href="/work"
-                  className="inline-flex items-center justify-center bg-surface border border-border-subtle text-ink font-semibold min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-surface-raised active:scale-[0.98] w-full sm:w-auto"
+                  className="inline-flex items-center justify-center bg-surface border border-border-subtle text-ink-muted hover:text-ink font-medium min-h-[52px] px-8 py-3.5 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-surface-raised active:scale-[0.98] w-full sm:w-auto"
                 >
                   See how we work
                 </Link>
@@ -235,13 +235,29 @@ export default function ServicesPage() {
                     We work with a limited number of businesses at a time so each project receives focused attention.
                   </p>
                 </div>
-                <div className="mt-10">
+                <div className="p-4 rounded-2xl bg-surface/50 border border-border-subtle text-xs text-ink-muted font-light max-w-xl mx-auto mb-8 leading-relaxed">
+                  <span className="font-mono text-[10px] text-accent uppercase tracking-wider block mb-1">
+                    The Commercial Entry Point
+                  </span>
+                  Start with our free 2-point mobile spacing and layout audit to diagnose friction before committing to a full engagement.
+                </div>
+
+                <div className="flex flex-col items-center justify-center gap-4">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold min-h-[52px] px-10 py-4 rounded-full text-xs uppercase tracking-[0.18em] transition hover:bg-zinc-200 active:scale-[0.98] shadow-lg"
+                    className="inline-flex items-center justify-center gap-2 bg-accent text-zinc-950 font-semibold min-h-[52px] px-10 py-4 rounded-full text-xs uppercase tracking-[0.18em] transition-all hover:bg-amber-400 active:scale-[0.98] shadow-lg shadow-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   >
-                    Discuss your website <ArrowRight className="w-4 h-4" />
+                    Request Free Audit <ArrowRight className="w-4 h-4" />
                   </Link>
+                  <p className="text-xs text-ink-dim font-light">
+                    Or discuss project scope directly:{" "}
+                    <a
+                      href="mailto:muhammad@veltris.uk"
+                      className="text-ink-muted hover:text-ink underline underline-offset-2 transition-colors"
+                    >
+                      muhammad@veltris.uk
+                    </a>
+                  </p>
                 </div>
               </div>
             </FadeInUp>

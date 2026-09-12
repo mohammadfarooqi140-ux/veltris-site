@@ -65,7 +65,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-border-subtle text-xs text-ink-dim font-mono gap-4">
           <p>© {new Date().getFullYear()} Veltris. All rights reserved.</p>
           <div className="flex items-center gap-6">
-            <Link href="/privacy" className="hover:text-ink-muted transition-colors">
+            <Link href="/privacy-policy" className="hover:text-ink-muted transition-colors">
               Privacy Policy
             </Link>
             <Link href="/terms" className="hover:text-ink-muted transition-colors">

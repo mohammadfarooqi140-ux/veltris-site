@@ -8,7 +8,7 @@ export async function POST(request: Request) {
 
     // Handle audit requests from homepage CTA
     if (body.type === "audit" || (body.websiteUrl && body.contactHandle)) {
-      const { websiteUrl, contactHandle } = body;
+      const { websiteUrl, contactHandle, primaryFrustration } = body;
       if (!websiteUrl || !contactHandle) {
         return NextResponse.json(
           { error: "Please provide both your website URL and contact handle." },
@@ -26,6 +26,7 @@ export async function POST(request: Request) {
           _subject: "Free 2-Point Mobile Spacing & Layout Audit Request",
           websiteUrl,
           contactHandle,
+          primaryFrustration: primaryFrustration || "Not specified",
           requestType: "Free 2-Point Mobile Spacing & Layout Audit",
         }),
       });

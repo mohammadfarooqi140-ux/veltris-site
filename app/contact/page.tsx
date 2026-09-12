@@ -43,15 +43,56 @@ export default function ContactPage() {
                   Frictionless Visual Audit
                 </span>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-medium tracking-tight mb-8 leading-[1.1] text-ink">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-playfair font-medium tracking-tight mb-6 leading-[1.1] text-ink">
                   Request a Free 2-Point Mobile Spacing &amp; Layout Audit
                 </h1>
 
                 <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8">
-                  Muhammad will personally review your current website&apos;s mobile presentation. We will email or DM you a single, annotated red-line markup image showing exactly where layout or spacing bugs are causing premium clients to bounce before booking. No phone calls, no videos, no obligation.
+                  Muhammad will personally review your current website&apos;s mobile presentation. We will email or DM you a single, annotated red-line markup image showing exactly where layout or spacing bugs are causing premium clients to bounce before booking.
                 </p>
 
-                <div className="space-y-4 text-xs text-ink-muted font-light border-t border-border-subtle pt-6 mb-8">
+                {/* Move 2: Expectation Block (Scope, Format, Timing, Next Step) */}
+                <div className="space-y-4 rounded-2xl bg-surface/60 border border-border-subtle p-6 mb-8">
+                  <span className="text-[11px] font-mono uppercase tracking-wider text-accent font-semibold block">
+                    Audit Expectations &amp; Route
+                  </span>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                    <div className="p-3 rounded-xl bg-paper/70 border border-border-subtle">
+                      <span className="font-mono text-[10px] text-ink-dim uppercase block mb-1">01 / Scope</span>
+                      <strong className="text-ink block font-medium mb-1">Two Critical Mobile Friction Points</strong>
+                      <p className="text-ink-muted font-light leading-relaxed">
+                        Pinpoints layout crowding, baseline misalignment, or tap-target issues. No 40-page fluff.
+                      </p>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-paper/70 border border-border-subtle">
+                      <span className="font-mono text-[10px] text-ink-dim uppercase block mb-1">02 / Format</span>
+                      <strong className="text-ink block font-medium mb-1">Annotated Red-Line Markup</strong>
+                      <p className="text-ink-muted font-light leading-relaxed">
+                        A single clear screenshot showing precisely what is broken and why it hurts trust.
+                      </p>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-paper/70 border border-border-subtle">
+                      <span className="font-mono text-[10px] text-ink-dim uppercase block mb-1">03 / Timing</span>
+                      <strong className="text-ink block font-medium mb-1">Within 24–48 Hours</strong>
+                      <p className="text-ink-muted font-light leading-relaxed">
+                        Delivered straight to your inbox or DM. Quick turnaround, zero waiting in sales queues.
+                      </p>
+                    </div>
+
+                    <div className="p-3 rounded-xl bg-paper/70 border border-border-subtle">
+                      <span className="font-mono text-[10px] text-ink-dim uppercase block mb-1">04 / Route After</span>
+                      <strong className="text-ink block font-medium mb-1">Zero Obligation</strong>
+                      <p className="text-ink-muted font-light leading-relaxed">
+                        If aligned, discuss a 10-day rebuild. If not, the diagnostic markup is entirely yours to keep.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-3 text-xs text-ink-muted font-light mb-8">
                   <div className="flex items-start gap-3">
                     <ShieldCheck className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                     <p>
@@ -61,20 +102,25 @@ export default function ContactPage() {
                   <div className="flex items-start gap-3">
                     <CheckCircle2 className="w-4 h-4 text-accent flex-shrink-0 mt-0.5" />
                     <p>
-                      Zero spam, zero sales pressure. Just pure visual diagnostics sent straight to your inbox or DM.
+                      Zero spam, zero sales pressure. Pure visual diagnostics without unsolicited phone calls.
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 rounded-2xl bg-surface/50 border border-border-subtle">
-                  <span className="text-[11px] font-mono uppercase tracking-wider text-ink-dim block mb-2">
-                    Direct Email Contact
-                  </span>
+                <div className="p-5 rounded-2xl bg-surface/40 border border-border-subtle flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                  <div>
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-ink-dim block">
+                      Prefer direct discussion?
+                    </span>
+                    <span className="text-xs text-ink-muted font-light">
+                      Send project briefs or RFP materials directly
+                    </span>
+                  </div>
                   <a
                     href="mailto:muhammad@veltris.uk"
-                    className="text-sm font-mono text-accent hover:underline underline-offset-2"
+                    className="text-xs font-mono text-accent hover:underline underline-offset-2"
                   >
-                    muhammad@veltris.uk
+                    muhammad@veltris.uk →
                   </a>
                 </div>
               </FadeInUp>
@@ -83,19 +129,19 @@ export default function ContactPage() {
             {/* Right Column: Branded 2-Point Audit Form */}
             <div className="lg:col-span-6">
               <FadeInUp delay={0.1}>
-                <div className="bg-surface border border-border-subtle rounded-3xl p-8 md:p-10 shadow-2xl relative">
+                <div className="bg-surface border border-border-subtle rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl relative">
+                  <div className="mb-6 pb-4 border-b border-border-subtle">
+                    <span className="text-[10px] font-mono uppercase tracking-widest text-accent font-semibold block mb-1">
+                      Step 1 of 1
+                    </span>
+                    <h2 className="font-playfair text-xl sm:text-2xl text-ink font-medium">
+                      Enter Your Details
+                    </h2>
+                    <p className="text-ink-dim text-xs font-light mt-1">
+                      No password, credit card, or commitment required.
+                    </p>
+                  </div>
                   <AuditCTAForm />
-
-                  <p className="text-[11px] text-ink-dim font-light text-center leading-relaxed pt-6">
-                    Your details are used solely to deliver your visual audit. See our{" "}
-                    <Link
-                      href="/privacy"
-                      className="text-ink-muted hover:text-ink underline underline-offset-2"
-                    >
-                      Privacy Policy
-                    </Link>{" "}
-                    for details.
-                  </p>
                 </div>
               </FadeInUp>
             </div>

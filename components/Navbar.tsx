@@ -113,9 +113,9 @@ export default function Navbar() {
                   );
                 })}
                 <Link
-                  href="/#audit"
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
-                  className="mt-2 mx-2 py-3 bg-ink text-paper text-center text-[11px] uppercase tracking-[0.18em] font-bold rounded-lg transition-colors hover:bg-zinc-200"
+                  className="mt-2 mx-2 py-3 bg-accent text-zinc-950 text-center text-[11px] uppercase tracking-[0.18em] font-bold rounded-lg transition-all hover:bg-amber-400 shadow-md shadow-accent/15"
                 >
                   Request Free Audit
                 </Link>
@@ -157,8 +157,8 @@ export default function Navbar() {
             );
           })}
           <Link
-            href="/#audit"
-            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-semibold bg-ink text-paper hover:bg-zinc-200 transition-colors"
+            href="/contact"
+            className="px-6 py-2.5 rounded-full text-[11px] tracking-[0.18em] uppercase font-semibold bg-accent text-zinc-950 hover:bg-amber-400 transition-all shadow-md shadow-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             Request Free Audit
           </Link>
@@ -204,9 +204,9 @@ export default function Navbar() {
                 );
               })}
               <Link
-                href="/#audit"
+                href="/contact"
                 onClick={() => setIsOpen(false)}
-                className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-semibold bg-ink text-paper text-center transition-colors hover:bg-zinc-200"
+                className="mt-4 py-3.5 px-4 rounded-xl text-xs uppercase tracking-[0.18em] font-semibold bg-accent text-zinc-950 text-center transition-all hover:bg-amber-400 shadow-md shadow-accent/15"
               >
                 Request Free Audit
               </Link>

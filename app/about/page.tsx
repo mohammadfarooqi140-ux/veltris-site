@@ -237,18 +237,32 @@ export default function AboutPage() {
         <section className="py-24 px-6 relative z-10 bg-paper">
           <div className="max-w-4xl mx-auto text-center">
             <FadeInUp>
+              <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-4">
+                Begin With Clarity
+              </span>
               <h2 className="font-playfair text-3xl sm:text-5xl font-medium text-ink mb-6 leading-tight">
-                Discuss your website
+                Request a Free 2-Point Mobile Audit
               </h2>
-              <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-10 max-w-2xl mx-auto">
-                If your website needs more clarity, stronger presentation, or an easier enquiry journey, submit the details for a private project review.
+              <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
+                Discover the exact mobile spacing and layout bugs causing prospective clients to bounce. Handled personally by Muhammad, Founder and Principal, with zero obligation.
               </p>
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] hover:bg-zinc-200 transition-all duration-300 shadow-lg"
-              >
-                Discuss your website <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="flex flex-col items-center justify-center gap-4">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center justify-center gap-2 bg-accent text-zinc-950 font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] hover:bg-amber-400 transition-all duration-300 shadow-lg shadow-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                >
+                  Request Free Audit <ArrowRight className="w-4 h-4" />
+                </Link>
+                <p className="text-xs text-ink-dim font-light">
+                  Or discuss a project scope directly:{" "}
+                  <a
+                    href="mailto:muhammad@veltris.uk"
+                    className="text-ink-muted hover:text-ink underline underline-offset-2 transition-colors"
+                  >
+                    muhammad@veltris.uk
+                  </a>
+                </p>
+              </div>
             </FadeInUp>
           </div>
         </section>

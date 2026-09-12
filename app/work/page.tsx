@@ -212,20 +212,25 @@ export default function WorkPage() {
           </section>
 
           {/* =========================================================================
-              WHAT EACH STUDY SHOWCASES
+              WHAT EACH STUDY SHOWCASES (MOVE 5 & OBJECTIONS FROM AUDIT)
           ========================================================================== */}
           <section className="py-16 border-t border-border-subtle mb-20">
             <FadeInUp>
               <div className="max-w-3xl">
-                <span className="text-[11px] font-mono tracking-widest text-ink-dim uppercase block mb-3">
+                <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-3">
                   Design &amp; Strategy Focus
                 </span>
                 <h2 className="font-playfair text-3xl sm:text-4xl font-medium text-ink mb-6">
-                  What each concept demonstrates
+                  Why Veltris publishes independent concept studies
                 </h2>
-                <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8">
-                  Each independent concept study demonstrates the Veltris approach in practice: clear messaging, responsive layouts, purposeful enquiry routes, and high standards of typography and visual hierarchy.
-                </p>
+                <div className="space-y-4 text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8">
+                  <p>
+                    Veltris designs and builds production websites for real businesses. Prior to onboarding, we publish unconstrained, full-scale concept studies to pressure-test how positioning, mathematical spacing grids, and high-trust conversion paths operate in specific industries without corporate NDA friction.
+                  </p>
+                  <p>
+                    Each study demonstrates our standard in practice: solving trapped authority, clarifying technical services, elevating mobile presentation, and turning passive browsers into active enquiries.
+                  </p>
+                </div>
                 <div className="p-6 rounded-2xl bg-surface/50 border border-border-subtle">
                   <div className="flex items-start gap-4">
                     <ShieldAlert className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
@@ -234,7 +239,7 @@ export default function WorkPage() {
                         Concept Transparency Note
                       </h3>
                       <p className="text-xs text-ink-muted font-light leading-relaxed">
-                        This is an independent concept study created by Veltris. It is not commissioned client work and does not represent an existing company.
+                        Fascia Aesthetics, Hartley &amp; Co., Sterling Industrial Flooring, and Berkshire Dental Suite are independent concept studies developed by Veltris to demonstrate structural and visual standards. They are not commissioned client work and do not represent existing entities.
                       </p>
                     </div>
                   </div>
@@ -244,24 +249,38 @@ export default function WorkPage() {
           </section>
 
           {/* =========================================================================
-              CTA SECTION
+              CTA SECTION: UNIFIED PRIMARY COMMERCIAL ACTION
           ========================================================================== */}
           <section className="py-12 relative z-10 text-center">
             <FadeInUp>
-              <div className="bg-surface border border-border-subtle rounded-3xl p-8 sm:p-12 md:p-16 text-center max-w-4xl mx-auto">
+              <div className="bg-surface border border-border-subtle rounded-3xl p-8 sm:p-12 md:p-16 text-center max-w-4xl mx-auto shadow-xl">
+                <span className="text-[11px] font-mono tracking-widest text-accent uppercase block mb-3">
+                  Begin With Diagnostics
+                </span>
                 <h2 className="font-playfair text-3xl sm:text-5xl font-medium mb-6 text-ink leading-tight">
-                  Discuss your website
+                  Request a Free 2-Point Mobile Audit
                 </h2>
                 <p className="text-ink-muted text-base sm:text-lg font-light leading-relaxed mb-8 max-w-2xl mx-auto">
-                  If your website needs more clarity, stronger presentation, or an easier enquiry journey, submit the details for a private project review.
+                  If your website is underperforming or doesn&apos;t reflect your real capability, submit your URL for a private, annotated mobile diagnostic markup. Delivered in 24–48 hours by Muhammad, Founder and Principal.
                 </p>
 
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-ink text-paper font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] hover:bg-zinc-200 transition-colors shadow-lg"
-                >
-                  Discuss your website <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="flex flex-col items-center justify-center gap-4">
+                  <Link
+                    href="/contact"
+                    className="inline-flex items-center justify-center gap-2 bg-accent text-zinc-950 font-semibold px-9 py-4 rounded-full text-xs uppercase tracking-[0.18em] hover:bg-amber-400 transition-all shadow-lg shadow-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
+                  >
+                    Request Free Audit <ArrowRight className="w-4 h-4" />
+                  </Link>
+                  <p className="text-xs text-ink-dim font-light">
+                    Or discuss a project scope directly:{" "}
+                    <a
+                      href="mailto:muhammad@veltris.uk"
+                      className="text-ink-muted hover:text-ink underline underline-offset-2 transition-colors"
+                    >
+                      muhammad@veltris.uk
+                    </a>
+                  </p>
+                </div>
               </div>
             </FadeInUp>
           </section>
