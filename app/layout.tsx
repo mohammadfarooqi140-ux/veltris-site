@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     title: "A Clearer Website for the Decisions That Matter | Veltris",
     description: "Veltris creates clear, high trust websites for businesses whose real standard is stronger than their current online presence.",
   },
+  other: {
+    "p:domain_verify": "a9d7b334200367267c28aa438a54bb70",
+  },
 };
 
 export default function RootLayout({
