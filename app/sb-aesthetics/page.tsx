@@ -8,7 +8,6 @@ import {
   Check,
   RotateCcw,
   ExternalLink,
-  Shield,
   SlidersHorizontal,
 } from "lucide-react";
 
@@ -153,20 +152,18 @@ export default function SbAestheticsPrototypePage() {
     currentScreen === "experience" ||
     currentScreen === "pathway";
 
-  const getProgressDetails = () => {
+  const getProgressWidth = () => {
     switch (currentScreen) {
       case "goal":
-        return { stepLabel: "Step 1 of 3", percentage: "33%", width: "33.3%" };
+        return "33.3%";
       case "experience":
-        return { stepLabel: "Step 2 of 3", percentage: "66%", width: "66.6%" };
+        return "66.6%";
       case "pathway":
-        return { stepLabel: "Step 3 of 3", percentage: "100%", width: "100%" };
+        return "100%";
       default:
-        return null;
+        return "0%";
     }
   };
-
-  const progress = getProgressDetails();
 
   return (
     <div className="min-h-screen bg-[#121214] text-[#FAF8F5] font-sans antialiased selection:bg-[#C5A880]/20 selection:text-[#E8D7C0] flex flex-col justify-between items-center overflow-x-clip">
@@ -219,17 +216,13 @@ export default function SbAestheticsPrototypePage() {
             </div>
           </header>
 
-          {/* Progress Indicator Bar (Visible on Steps 1, 2, 3) */}
-          {isQuestionOrPathwayStage && progress && (
-            <div className="w-full bg-[#1F1F23] px-5 py-2.5 border-b border-[#27272A]/70 shrink-0">
-              <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#A1A1AA] mb-1.5">
-                <span className="font-medium text-[#FAF8F5]">{progress.stepLabel}</span>
-                <span className="text-[#C5A880]">{progress.percentage}</span>
-              </div>
+          {/* Progress Indicator Bar */}
+          {isQuestionOrPathwayStage && (
+            <div className="w-full bg-[#1F1F23] px-5 py-2 border-b border-[#27272A]/70 shrink-0">
               <div className="w-full h-1 bg-[#2E2E35] rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-[#C5A880] to-[#DFCAAF] transition-all duration-300 ease-out"
-                  style={{ width: progress.width }}
+                  style={{ width: getProgressWidth() }}
                 />
               </div>
             </div>
@@ -315,9 +308,6 @@ export default function SbAestheticsPrototypePage() {
                   className="flex-1 flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase block mb-1">
-                      Step 1 of 3
-                    </span>
                     <h2 className="font-playfair text-[22px] sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       What would you most like help with?
                     </h2>
@@ -409,9 +399,6 @@ export default function SbAestheticsPrototypePage() {
                   className="flex-1 flex flex-col justify-between"
                 >
                   <div>
-                    <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase block mb-1">
-                      Step 2 of 3
-                    </span>
                     <h2 className="font-playfair text-[22px] sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       How familiar are you with aesthetic treatments?
                     </h2>
@@ -502,13 +489,6 @@ export default function SbAestheticsPrototypePage() {
                   className="flex-1 flex flex-col justify-between"
                 >
                   <div>
-                    {/* Header Label */}
-                    <div className="flex items-center justify-between mb-1.5">
-                      <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase">
-                        Step 3 of 3 • Suggested Pathway
-                      </span>
-                    </div>
-
                     <h2 className="font-playfair text-[20px] sm:text-[22px] font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       A consultation looks like the most useful next step.
                     </h2>
@@ -547,17 +527,6 @@ export default function SbAestheticsPrototypePage() {
                           </div>
                         ))}
                       </div>
-                    </div>
-
-                    {/* Clear Suitability Notice */}
-                    <div className="p-3 rounded-xl bg-[#23211F] border border-[#524434]/40 flex items-start gap-2.5 mb-1.5">
-                      <Shield className="w-4 h-4 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                      <p className="text-[11px] text-[#DFD0BF] leading-relaxed font-light">
-                        <strong className="font-medium text-[#FAF8F5]">
-                          This pathway is for general guidance only.
-                        </strong>{" "}
-                        Treatment suitability is confirmed during a consultation with a qualified practitioner.
-                      </p>
                     </div>
                   </div>
 
