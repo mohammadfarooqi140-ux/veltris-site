@@ -9,37 +9,14 @@ import {
   RotateCcw,
   ExternalLink,
   Shield,
-  Sparkles,
-  Smartphone,
-  Maximize2,
-  CheckCircle2,
+  SlidersHorizontal,
 } from "lucide-react";
-
-function InstagramIcon({ className = "w-3 h-3" }: { className?: string }) {
-  return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-    </svg>
-  );
-}
 
 // ============================================================================
 // VERIFIED CLINIC CONTEXT & DATA (SPECULATIVE CONCEPT ONLY)
 // ============================================================================
 
 const VERIFIED_BOOKSY_URL = "https://sbaestheticsuk.booksy.com/";
-const VERIFIED_INSTAGRAM = "@sbaestheticsuk";
-const VERIFIED_LOCATION = "Manchester, UK";
 
 type ScreenId = "entry" | "goal" | "experience" | "pathway" | "handoff";
 
@@ -150,14 +127,13 @@ export default function SbAestheticsPrototypePage() {
   const [selectedGoalId, setSelectedGoalId] = useState<string | null>(null);
   const [selectedExperienceId, setSelectedExperienceId] = useState<string | null>(null);
 
-  // Prototype Presentation Controls
-  const [viewMode, setViewMode] = useState<"phone" | "fluid">("phone");
+  // Discreet Developer Jump Bar Toggle (Kept completely outside the phone frame)
+  const [showDevControls, setShowDevControls] = useState<boolean>(false);
 
-  // Derived current goal (falls back safely if jumper used)
+  // Derived current goal
   const currentGoal =
     GOAL_OPTIONS.find((g) => g.id === selectedGoalId) || GOAL_OPTIONS[0];
 
-  // Handler helpers
   const handleStartFlow = () => {
     setCurrentScreen("goal");
   };
@@ -172,7 +148,6 @@ export default function SbAestheticsPrototypePage() {
   // Goal screen = Step 1 of 3 (33%)
   // Experience screen = Step 2 of 3 (66%)
   // Pathway screen = Step 3 of 3 (100%)
-  // Entry and Handoff do not count as one of the 3 questions/stages.
   const isQuestionOrPathwayStage =
     currentScreen === "goal" ||
     currentScreen === "experience" ||
@@ -194,136 +169,16 @@ export default function SbAestheticsPrototypePage() {
   const progress = getProgressDetails();
 
   return (
-    <div className="min-h-screen bg-[#141416] text-[#FAF8F5] font-sans antialiased selection:bg-[#C5A880]/20 selection:text-[#E8D7C0] flex flex-col justify-between overflow-x-clip">
+    <div className="min-h-screen bg-[#121214] text-[#FAF8F5] font-sans antialiased selection:bg-[#C5A880]/20 selection:text-[#E8D7C0] flex flex-col justify-between items-center overflow-x-clip">
       {/* =========================================================================
-          TOP PERSISTENT METADATA & PRESENTATION CHROME
+          MAIN MOBILE PHONE FRAME (FOCUSED, ZERO OUTER DESKTOP TOOLBAR CHROME)
       ========================================================================== */}
-      <header className="w-full bg-[#18181B] border-b border-[#27272A] py-2.5 px-4 sm:px-8 text-xs z-30">
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-2.5">
-          {/* Speculative Concept Badge */}
-          <div className="flex flex-wrap items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-[#C5A880] animate-pulse" />
-            <span className="font-mono text-[11px] uppercase tracking-wider text-[#C5A880] font-medium">
-              Concept by Veltris — speculative UI exploration.
-            </span>
-            <span className="hidden sm:inline text-[#71717A] text-[10px]">•</span>
-            <span className="hidden sm:inline text-[#A1A1AA] text-[11px]">
-              SB Aesthetics UK ({VERIFIED_LOCATION})
-            </span>
-          </div>
-
-          {/* Prototype Controls Bar */}
-          <div className="flex flex-wrap items-center gap-2 self-end md:self-auto">
-            {/* Direct Screen Jumpers */}
-            <div className="hidden lg:flex items-center bg-[#222226] border border-[#2E2E33] rounded-lg p-1 text-[11px] font-mono">
-              <span className="px-2 text-[#71717A]">Jump to:</span>
-              <button
-                onClick={() => setCurrentScreen("entry")}
-                className={`px-2 py-0.5 rounded transition-colors ${
-                  currentScreen === "entry"
-                    ? "bg-[#C5A880] text-[#141416] font-semibold"
-                    : "text-[#A1A1AA] hover:text-[#FAF8F5]"
-                }`}
-              >
-                Entry
-              </button>
-              <button
-                onClick={() => setCurrentScreen("goal")}
-                className={`px-2 py-0.5 rounded transition-colors ${
-                  currentScreen === "goal"
-                    ? "bg-[#C5A880] text-[#141416] font-semibold"
-                    : "text-[#A1A1AA] hover:text-[#FAF8F5]"
-                }`}
-              >
-                1. Goal
-              </button>
-              <button
-                onClick={() => setCurrentScreen("experience")}
-                className={`px-2 py-0.5 rounded transition-colors ${
-                  currentScreen === "experience"
-                    ? "bg-[#C5A880] text-[#141416] font-semibold"
-                    : "text-[#A1A1AA] hover:text-[#FAF8F5]"
-                }`}
-              >
-                2. Experience
-              </button>
-              <button
-                onClick={() => setCurrentScreen("pathway")}
-                className={`px-2 py-0.5 rounded transition-colors ${
-                  currentScreen === "pathway"
-                    ? "bg-[#C5A880] text-[#141416] font-semibold"
-                    : "text-[#A1A1AA] hover:text-[#FAF8F5]"
-                }`}
-              >
-                3. Pathway
-              </button>
-              <button
-                onClick={() => setCurrentScreen("handoff")}
-                className={`px-2 py-0.5 rounded transition-colors ${
-                  currentScreen === "handoff"
-                    ? "bg-[#C5A880] text-[#141416] font-semibold"
-                    : "text-[#A1A1AA] hover:text-[#FAF8F5]"
-                }`}
-              >
-                Handoff
-              </button>
-            </div>
-
-            {/* View Mode Toggle (Desktop only) */}
-            <div className="hidden sm:flex items-center bg-[#222226] border border-[#2E2E33] rounded-lg p-0.5 text-[11px] font-mono">
-              <button
-                onClick={() => setViewMode("phone")}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded transition-colors ${
-                  viewMode === "phone"
-                    ? "bg-[#323238] text-[#FAF8F5] font-medium"
-                    : "text-[#71717A] hover:text-[#FAF8F5]"
-                }`}
-                title="View as Mobile Device (390px)"
-              >
-                <Smartphone className="w-3 h-3" />
-                <span>390px Frame</span>
-              </button>
-              <button
-                onClick={() => setViewMode("fluid")}
-                className={`flex items-center gap-1 px-2.5 py-1 rounded transition-colors ${
-                  viewMode === "fluid"
-                    ? "bg-[#323238] text-[#FAF8F5] font-medium"
-                    : "text-[#71717A] hover:text-[#FAF8F5]"
-                }`}
-                title="View as Fluid Screen"
-              >
-                <Maximize2 className="w-3 h-3" />
-                <span>Fluid</span>
-              </button>
-            </div>
-
-            {/* Restart Flow Button */}
-            <button
-              onClick={handleRestart}
-              className="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-[#222226] border border-[#2E2E33] text-[#A1A1AA] hover:text-[#FAF8F5] hover:bg-[#2A2A30] transition-colors text-[11px] font-mono"
-            >
-              <RotateCcw className="w-3 h-3" />
-              <span>Reset</span>
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* =========================================================================
-          MAIN INTERACTIVE CONTAINER (MOBILE-FIRST VIEWPORT)
-      ========================================================================== */}
-      <main className="flex-1 flex flex-col items-center justify-center p-2 sm:p-6 md:p-8 relative">
-        <div
-          className={`w-full transition-all duration-300 ${
-            viewMode === "phone"
-              ? "max-w-[400px] sm:my-3 sm:rounded-[36px] sm:shadow-[0_25px_70px_rgba(0,0,0,0.85)] sm:border sm:border-[#2A2A30]"
-              : "max-w-2xl sm:my-3 sm:rounded-3xl sm:border sm:border-[#2A2A30]"
-          } bg-[#18181B] flex flex-col overflow-hidden relative`}
-        >
-          {/* Mobile Shell Status / Top Bar */}
-          <div className="bg-[#18181B] border-b border-[#27272A] px-4 py-3 flex items-center justify-between select-none">
-            <div className="flex items-center gap-1.5 w-20">
-              {currentScreen !== "entry" ? (
+      <main className="w-full flex-1 flex flex-col items-center justify-center p-0 sm:p-6 md:p-8">
+        <div className="w-full sm:max-w-[390px] min-h-[100dvh] sm:min-h-[720px] bg-[#18181B] sm:rounded-[40px] sm:border sm:border-[#2A2A30] sm:shadow-[0_25px_80px_rgba(0,0,0,0.9)] flex flex-col justify-between overflow-hidden relative">
+          {/* Internal Mobile Header (Clean, Compact Clinic Header) */}
+          <header className="bg-[#18181B] border-b border-[#27272A] px-5 py-3.5 flex items-center justify-between select-none shrink-0">
+            <div className="w-16 flex items-center">
+              {currentScreen !== "entry" && (
                 <button
                   onClick={() => {
                     if (currentScreen === "goal") setCurrentScreen("entry");
@@ -335,47 +190,38 @@ export default function SbAestheticsPrototypePage() {
                   aria-label="Previous step"
                 >
                   <ArrowLeft className="w-3.5 h-3.5" />
-                  <span className="text-[10px] uppercase tracking-wider">Back</span>
+                  <span className="text-[11px] uppercase tracking-wider">Back</span>
                 </button>
-              ) : (
-                <div className="flex items-center gap-1 text-[#71717A] text-[10px] font-mono">
-                  <InstagramIcon className="w-3 h-3 text-[#C5A880]" />
-                  <span>Bio Link</span>
-                </div>
               )}
             </div>
 
-            {/* Clinic Wordmark & Verified Positioning */}
-            <div className="text-center flex-1 px-1">
-              <span className="font-playfair font-medium text-xs tracking-[0.22em] text-[#FAF8F5] uppercase block truncate">
+            {/* Compact Clinic Wordmark */}
+            <div className="text-center flex-1">
+              <span className="font-playfair font-medium text-xs tracking-[0.22em] text-[#FAF8F5] uppercase block">
                 SB AESTHETICS UK
               </span>
               <span className="text-[9px] font-mono tracking-widest text-[#C5A880] uppercase block">
-                {VERIFIED_LOCATION} • Consultation Pathway
+                Consultation Pathway
               </span>
             </div>
 
-            {/* Reset or info link */}
-            <div className="flex items-center justify-end w-20">
-              {currentScreen !== "entry" ? (
+            {/* Reset Action */}
+            <div className="w-16 flex items-center justify-end">
+              {currentScreen !== "entry" && (
                 <button
                   onClick={handleRestart}
                   className="text-[10px] font-mono text-[#71717A] hover:text-[#C5A880] transition-colors"
-                  title="Restart guidance flow"
+                  title="Restart flow"
                 >
-                  Start Over
+                  Restart
                 </button>
-              ) : (
-                <span className="text-[9px] font-mono uppercase text-[#71717A] tracking-wider">
-                  Speculative
-                </span>
               )}
             </div>
-          </div>
+          </header>
 
-          {/* Progress Indicator Bar (Correctly shows Step 1 of 3, Step 2 of 3, Step 3 of 3) */}
+          {/* Progress Indicator Bar (Visible on Steps 1, 2, 3) */}
           {isQuestionOrPathwayStage && progress && (
-            <div className="w-full bg-[#202024] px-4 py-2.5 border-b border-[#27272A]/70">
+            <div className="w-full bg-[#1F1F23] px-5 py-2.5 border-b border-[#27272A]/70 shrink-0">
               <div className="flex items-center justify-between text-[10px] font-mono uppercase tracking-wider text-[#A1A1AA] mb-1.5">
                 <span className="font-medium text-[#FAF8F5]">{progress.stepLabel}</span>
                 <span className="text-[#C5A880]">{progress.percentage}</span>
@@ -389,65 +235,40 @@ export default function SbAestheticsPrototypePage() {
             </div>
           )}
 
-          {/* Active Screen Viewport with smooth transitions */}
-          <div className="p-4 sm:p-6 flex flex-col justify-between overflow-y-auto">
+          {/* Active Screen Body (Consistent 20-24px padding, no vertical sprawl) */}
+          <div className="flex-1 px-5 sm:px-6 py-5 flex flex-col justify-between overflow-y-auto">
             <AnimatePresence mode="wait">
               {/* ===================================================================
-                  SCREEN 1: ENTRY SCREEN
+                  SCREEN 1: ENTRY SCREEN (Streamlined, zero unnecessary copy)
               ==================================================================== */}
               {currentScreen === "entry" && (
                 <motion.div
                   key="screen-entry"
-                  initial={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex flex-col justify-between"
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.16 }}
+                  className="flex-1 flex flex-col justify-between"
                 >
-                  <div>
-                    {/* Reassurance Tag */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#232328] border border-[#2E2E36] mb-4">
-                      <Sparkles className="w-3 h-3 text-[#C5A880]" />
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A880]">
-                        Guided Consultation Flow
-                      </span>
-                    </div>
+                  <div className="pt-2">
+                    {/* Eyebrow */}
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C5A880] block mb-2.5 font-medium">
+                      CONSULTATION PATHWAY
+                    </span>
 
-                    {/* Headline */}
-                    <h1 className="font-playfair text-2xl sm:text-3xl font-medium tracking-tight text-[#FAF8F5] leading-snug mb-3">
+                    {/* Heading */}
+                    <h1 className="font-playfair text-[26px] sm:text-[28px] font-medium tracking-tight text-[#FAF8F5] leading-[1.2] mb-3">
                       Not sure which consultation is right for you?
                     </h1>
 
                     {/* Supporting Text */}
-                    <p className="text-[#A1A1AA] text-sm leading-relaxed font-light mb-5">
-                      Answer three quick questions and explore a possible next step before continuing to booking.
+                    <p className="text-[#A1A1AA] text-sm leading-relaxed font-light mb-8">
+                      Answer three quick questions and explore a possible next step before booking.
                     </p>
-
-                    {/* Reassuring Calm Bullet Points */}
-                    <div className="space-y-3 mb-6 p-3.5 rounded-2xl bg-[#1D1D21] border border-[#27272D]">
-                      <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-[#D4D4D8] leading-relaxed">
-                          Reassuring, non-pushy guidance tailored to your goals
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-[#D4D4D8] leading-relaxed">
-                          Clarifies body contouring vs facial rejuvenation pathways
-                        </p>
-                      </div>
-                      <div className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-[#C5A880] flex-shrink-0 mt-0.5" />
-                        <p className="text-xs text-[#D4D4D8] leading-relaxed">
-                          Designed to guide visitors towards the clinic’s existing booking route
-                        </p>
-                      </div>
-                    </div>
                   </div>
 
-                  {/* Actions Area */}
-                  <div className="pt-3 border-t border-[#27272A] space-y-2.5">
+                  {/* Actions & Discreet Reassurance */}
+                  <div className="pt-4 space-y-3">
                     {/* Primary CTA */}
                     <button
                       onClick={handleStartFlow}
@@ -457,20 +278,25 @@ export default function SbAestheticsPrototypePage() {
                       <ArrowRight className="w-4 h-4" />
                     </button>
 
-                    {/* Secondary Bypass CTA: Goes directly to verified Booksy URL */}
+                    {/* Secondary CTA: Direct Booksy Route */}
                     <a
                       href={VERIFIED_BOOKSY_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-full py-3 px-6 rounded-full bg-transparent hover:bg-[#222226] border border-[#2E2E33] text-[#D4D4D8] text-xs font-mono uppercase tracking-wider transition-colors flex items-center justify-center gap-2"
                     >
-                      <span>I already know what I want — Continue to Booksy</span>
+                      <span>I already know what I want</span>
                       <ExternalLink className="w-3.5 h-3.5 text-[#C5A880]" />
                     </a>
 
-                    {/* Ethical guidance disclaimer */}
-                    <p className="text-[10px] text-[#71717A] text-center leading-relaxed pt-1 font-mono">
-                      Suitability is confirmed during a consultation with a qualified practitioner. This concept is for guidance only and does not provide medical advice.
+                    {/* Small Reassurance Note */}
+                    <p className="text-[11px] text-[#8E8E93] text-center leading-relaxed pt-2 font-light">
+                      Guidance only. Suitability is confirmed during a consultation.
+                    </p>
+
+                    {/* Discreet Speculative Label */}
+                    <p className="text-[9px] text-[#52525B] text-center leading-relaxed pt-1 font-mono">
+                      Concept by Veltris — speculative UI exploration.
                     </p>
                   </div>
                 </motion.div>
@@ -482,17 +308,17 @@ export default function SbAestheticsPrototypePage() {
               {currentScreen === "goal" && (
                 <motion.div
                   key="screen-goal"
-                  initial={{ opacity: 0, x: 12 }}
+                  initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -12 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex flex-col justify-between"
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.16 }}
+                  className="flex-1 flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase block mb-1">
                       Step 1 of 3
                     </span>
-                    <h2 className="font-playfair text-xl sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
+                    <h2 className="font-playfair text-[22px] sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       What would you most like help with?
                     </h2>
                     <p className="text-xs text-[#A1A1AA] mb-4 font-light">
@@ -576,17 +402,17 @@ export default function SbAestheticsPrototypePage() {
               {currentScreen === "experience" && (
                 <motion.div
                   key="screen-experience"
-                  initial={{ opacity: 0, x: 12 }}
+                  initial={{ opacity: 0, x: 10 }}
                   animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: -12 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex flex-col justify-between"
+                  exit={{ opacity: 0, x: -10 }}
+                  transition={{ duration: 0.16 }}
+                  className="flex-1 flex flex-col justify-between"
                 >
                   <div>
                     <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase block mb-1">
                       Step 2 of 3
                     </span>
-                    <h2 className="font-playfair text-xl sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
+                    <h2 className="font-playfair text-[22px] sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       How familiar are you with aesthetic treatments?
                     </h2>
                     <p className="text-xs text-[#A1A1AA] mb-4 font-light">
@@ -672,8 +498,8 @@ export default function SbAestheticsPrototypePage() {
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex flex-col justify-between"
+                  transition={{ duration: 0.16 }}
+                  className="flex-1 flex flex-col justify-between"
                 >
                   <div>
                     {/* Header Label */}
@@ -681,24 +507,21 @@ export default function SbAestheticsPrototypePage() {
                       <span className="text-[10px] font-mono tracking-widest text-[#C5A880] uppercase">
                         Step 3 of 3 • Suggested Pathway
                       </span>
-                      <span className="text-[10px] font-mono text-[#71717A]">
-                        Based on the goals you selected
-                      </span>
                     </div>
 
-                    <h2 className="font-playfair text-xl sm:text-2xl font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
+                    <h2 className="font-playfair text-[20px] sm:text-[22px] font-medium tracking-tight text-[#FAF8F5] mb-1.5 leading-snug">
                       A consultation looks like the most useful next step.
                     </h2>
 
                     <p className="text-xs text-[#A1A1AA] font-light leading-relaxed mb-3.5">
-                      Based on the goals you selected, a practitioner can discuss your options, assess suitability and explain the most appropriate route.
+                      Based on the goals you selected, a qualified practitioner can discuss your options and assess suitability.
                     </p>
 
                     {/* Suggested Consultation Card */}
                     <div className="p-4 rounded-2xl bg-[#1D1D21] border border-[#C5A880]/30 shadow-lg shadow-black/40 mb-3">
                       <div className="flex items-center justify-between mb-1.5">
                         <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A880] bg-[#C5A880]/10 border border-[#C5A880]/20 px-2 py-0.5 rounded-full">
-                          Suggested consultation pathway
+                          Suggested Consultation
                         </span>
                         <span className="text-[10px] font-mono text-[#8E8E93]">
                           In-person
@@ -766,22 +589,18 @@ export default function SbAestheticsPrototypePage() {
               {currentScreen === "handoff" && (
                 <motion.div
                   key="screen-handoff"
-                  initial={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 6 }}
                   animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -8 }}
-                  transition={{ duration: 0.18 }}
-                  className="flex flex-col justify-between"
+                  exit={{ opacity: 0, y: -6 }}
+                  transition={{ duration: 0.16 }}
+                  className="flex-1 flex flex-col justify-between"
                 >
                   <div>
-                    {/* Status Pill */}
-                    <div className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#242220] border border-[#C5A880]/30 mb-4">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-[#C5A880]" />
-                      <span className="text-[10px] font-mono uppercase tracking-widest text-[#C5A880]">
-                        Consultation Handoff
-                      </span>
-                    </div>
+                    <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-[#C5A880] block mb-2 font-medium">
+                      BOOKING HANDOFF
+                    </span>
 
-                    <h1 className="font-playfair text-2xl sm:text-3xl font-medium tracking-tight text-[#FAF8F5] leading-snug mb-2">
+                    <h1 className="font-playfair text-[24px] sm:text-[26px] font-medium tracking-tight text-[#FAF8F5] leading-snug mb-2">
                       You’re ready to explore the next step.
                     </h1>
 
@@ -820,26 +639,11 @@ export default function SbAestheticsPrototypePage() {
                         </span>
                       </div>
                     </div>
-
-                    {/* Verified Route Pill */}
-                    <div className="p-3 rounded-xl bg-[#171719] border border-[#2A2A30] mb-3">
-                      <div className="flex items-center justify-between mb-1">
-                        <span className="text-[10px] font-mono uppercase tracking-wider text-[#71717A]">
-                          Booking Route URL
-                        </span>
-                        <span className="text-[10px] font-mono text-[#C5A880]">
-                          Verified Clinic Profile
-                        </span>
-                      </div>
-                      <p className="font-mono text-[11px] text-[#E4D5C3] break-all bg-[#101012] p-2 rounded border border-[#222226]">
-                        {VERIFIED_BOOKSY_URL}
-                      </p>
-                    </div>
                   </div>
 
                   {/* Actions Area */}
                   <div className="pt-3 border-t border-[#27272A] space-y-2.5">
-                    {/* Primary Button: Connects to verified Booksy route */}
+                    {/* Primary Button: Direct Booksy Route */}
                     <a
                       href={VERIFIED_BOOKSY_URL}
                       target="_blank"
@@ -867,32 +671,74 @@ export default function SbAestheticsPrototypePage() {
               )}
             </AnimatePresence>
           </div>
-
-          {/* Bottom Persistent Concept Footer Inside Mobile Shell */}
-          <div className="bg-[#121214] border-t border-[#222226] py-2 px-4 text-center">
-            <span className="text-[9px] font-mono uppercase tracking-widest text-[#71717A]">
-              Concept by Veltris — speculative UI exploration.
-            </span>
-          </div>
         </div>
       </main>
 
       {/* =========================================================================
-          PERSISTENT PRESENTATION SPEC FOOTER (OUTSIDE PHONE FRAME)
+          DISCREET EXTERNAL SPECULATIVE NOTICE (OUTSIDE PHONE FRAME)
       ========================================================================== */}
-      <footer className="w-full bg-[#121214] border-t border-[#222226] py-4 px-6 sm:px-12 text-center text-xs">
-        <div className="max-w-3xl mx-auto space-y-1.5">
-          <p className="text-[11px] font-mono text-[#A1A1AA] leading-relaxed">
-            <strong className="text-[#C5A880] font-normal">Speculative Concept Notice:</strong>{" "}
-            This visual concept was created independently by Veltris. It has not been commissioned, approved or endorsed by SB Aesthetics UK.
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-3 text-[10px] font-mono text-[#71717A]">
-            <span>• No clinical diagnoses</span>
-            <span>• Suitability confirmed during consultation</span>
-            <span>• Links directly to verified Booksy profile ({VERIFIED_BOOKSY_URL})</span>
-          </div>
-        </div>
+      <footer className="w-full py-4 px-6 text-center text-xs shrink-0 select-none">
+        <p className="text-[11px] font-mono text-[#71717A] leading-relaxed max-w-xl mx-auto">
+          This visual concept was created independently by Veltris. It has not been commissioned, approved or endorsed by SB Aesthetics UK.
+        </p>
       </footer>
+
+      {/* =========================================================================
+          DEVELOPER ONLY SHORTCUT PILL (COMPLETELY UNOBTRUSIVE FLOATING TRIGGER)
+      ========================================================================== */}
+      <div className="fixed bottom-4 right-4 z-40 hidden sm:block">
+        {showDevControls ? (
+          <div className="bg-[#1D1D21] border border-[#2E2E35] rounded-2xl p-2 shadow-2xl flex items-center gap-1 text-[10px] font-mono">
+            <span className="px-2 text-[#71717A]">Jump:</span>
+            <button
+              onClick={() => setCurrentScreen("entry")}
+              className={`px-2 py-1 rounded ${currentScreen === "entry" ? "bg-[#C5A880] text-[#141416]" : "text-[#A1A1AA] hover:text-white"}`}
+            >
+              Entry
+            </button>
+            <button
+              onClick={() => setCurrentScreen("goal")}
+              className={`px-2 py-1 rounded ${currentScreen === "goal" ? "bg-[#C5A880] text-[#141416]" : "text-[#A1A1AA] hover:text-white"}`}
+            >
+              1. Goal
+            </button>
+            <button
+              onClick={() => setCurrentScreen("experience")}
+              className={`px-2 py-1 rounded ${currentScreen === "experience" ? "bg-[#C5A880] text-[#141416]" : "text-[#A1A1AA] hover:text-white"}`}
+            >
+              2. Exp
+            </button>
+            <button
+              onClick={() => setCurrentScreen("pathway")}
+              className={`px-2 py-1 rounded ${currentScreen === "pathway" ? "bg-[#C5A880] text-[#141416]" : "text-[#A1A1AA] hover:text-white"}`}
+            >
+              3. Path
+            </button>
+            <button
+              onClick={() => setCurrentScreen("handoff")}
+              className={`px-2 py-1 rounded ${currentScreen === "handoff" ? "bg-[#C5A880] text-[#141416]" : "text-[#A1A1AA] hover:text-white"}`}
+            >
+              Handoff
+            </button>
+            <button
+              onClick={() => setShowDevControls(false)}
+              className="ml-2 text-[#71717A] hover:text-[#FAF8F5] px-1"
+              title="Close controls"
+            >
+              ×
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={() => setShowDevControls(true)}
+            className="px-2.5 py-1.5 rounded-full bg-[#1F1F23]/80 hover:bg-[#2A2A30] border border-[#2E2E35] text-[10px] font-mono text-[#71717A] hover:text-[#C5A880] transition-colors flex items-center gap-1 shadow-lg backdrop-blur-sm"
+            title="Open developer quick-jump controls"
+          >
+            <SlidersHorizontal className="w-3 h-3" />
+            <span>Dev Jump</span>
+          </button>
+        )}
+      </div>
     </div>
   );
 }
