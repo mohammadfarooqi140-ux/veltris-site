@@ -65,8 +65,8 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
-  // Berkshire Dental Suite is a pure clinic concept — zero Veltris chrome
-  if (pathname === "/berkshire") {
+  // Pure standalone concept prototypes — zero Veltris chrome
+  if (pathname === "/berkshire" || pathname === "/sb-aesthetics") {
     return null;
   }
 
